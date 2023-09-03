@@ -242,11 +242,43 @@ Lo esperado es que sean el mismo valor mientras se parte en más piezas, tendien
 Un pequeño fabricante de electrodomésticos descubre que
 cuesta 9000 dólares producir 1000 tostadoras a la semana y 12000 dólares producir 1500 tostadoras a la semana.
 \begin{enumerate}
-\item Exprese el costo en función del número de tostadoras
-producidas, suponiendo que es lineal. Después, trace
-la gráfica.
+\item Exprese el costo en función del número de tostadoras producidas, suponiendo que es lineal. Después, trace la gráfica.\\ 
+Para obtener la función líneal hacemos uso de la formúla 
+\[
+	y = mx + b
+\]
+Considerando que conocemos los puntos (1000, 9000) y (1500, 12000)
+\[
+	 m = \frac{\Delta {y}}{\Delta{x}} = \frac{12000-9000}{1500-1000} = \frac{3000}{500} = 6
+\]
+Tenemos: 
+\[
+	y = 6x + b  
+\]
+Para calcular b usamos un punto:
+\[
+	9000 =6(1000) + b 
+\]
+\[
+	b = 9000 -6000 = 3000 
+\]
+Resultando 
+\begin{figure}[h]
+\centering
+\includegraphics[ width=9cm]{img/tostadoras.png}
+\end{figure}
+
+\[
+	f(t) = 6t + 3000
+\]
 \item  ¿Cuál es la pendiente de la gráfica y qué representa?
+\\ \\
+La pendiente es 6 y reprensetan el aumento de costo de producción de cada tostadora.
+\\  
 \item  ¿Cuál es la intersección de la gráfica con el eje y y qué representa?
+\\ \\
+La intersección con el eje y es 3000, representa el costo inicial de producción. No depende del número de tostadoras, es una constante sumada al costo independiente del número de tostadoras.
+\\
 \end{enumerate}
 
 \clearpage

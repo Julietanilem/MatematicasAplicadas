@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{multicol}
 %% Título
 \title{Matemáticas para las Ciencias Aplicadas I}
 
@@ -141,9 +142,11 @@ donde
 \[  h_p = h-\frac{(h * No. Parte)}{50}\]
 La formúla del volúmen sería entonces:
 \[
-V_p=\frac{(L_i)^2 * h} {50}  = \frac{(L_i)^2 * 71.17} {50}
+V_p=\frac{(L_p)^2 * h} {50}  = \frac{(L_p)^2 * 71.17} {50}
 \]
-
+\clearpage
+Aplicándola para calcular el volúmen de cada parte: 
+\begin{multicols}{2}
 \begin{tabular}{||c c c||} 
  \hline
  Parte & Lado $L_p$ & Volúmen $V_p$\\ [0.5ex] 
@@ -173,7 +176,15 @@ $p21$	 &	129.6184	 &	23914.44322 \\
 $p22$	 &	125.1488	 &	22293.607 \\
 $p23$	 &	120.6792	 &	20729.64222 \\
 $p24$	 &	116.2096	 &	19222.54889 \\
-$p25$ 	&	111.74	 &	17772.32701 \\
+$p25$ 	&	111.74	 &	17772.32701 \\ [1ex] 
+\hline
+\end{tabular}
+
+
+\begin{tabular}{||c c c||} 
+ \hline
+ Parte & Lado $L_p$ & Volúmen $V_p$\\ [0.5ex] 
+ \hline\hline
 $p26$ 	&	107.2704	 &	16378.97657 \\
 $p27$	 &	102.8008	 &	15042.49758 \\
 $p28$	 &	98.3312	 &	13762.89003 \\
@@ -202,6 +213,8 @@ $p50$	&	0	&	0\\ [1ex]
 \hline
 \end{tabular}
 
+\end{multicols}
+
 3. Sume los volúmenes que obtuvo en el inciso anterior y explique por qué el volumen de la
 pirámide del sol debe ser menor que la suma de los volúmenes de los prismas circunscritos y mayor que la suma de los volúmenes de los prismas inscritos.\\
 Volúmenes de los primas circunscritos : 
@@ -223,4 +236,65 @@ Debe ser menor al volúmen real ya que a las piezas en que se dividió les falta
 rebanadas más y más grande?
 \\
 Lo esperado es que sean el mismo valor mientras se parte en más piezas, tendiendo al valor del volúmen real mientras el número de las piezas tienda a infinito.
+\clearpage
+%sección 3
+\section{Problema 22}
+Un pequeño fabricante de electrodomésticos descubre que
+cuesta 9000 dólares producir 1000 tostadoras a la semana y 12000 dólares producir 1500 tostadoras a la semana.
+\begin{enumerate}
+\item Exprese el costo en función del número de tostadoras
+producidas, suponiendo que es lineal. Después, trace
+la gráfica.
+\item  ¿Cuál es la pendiente de la gráfica y qué representa?
+\item  ¿Cuál es la intersección de la gráfica con el eje y y qué
+representa?
+\end{enumerate}
+
+\clearpage
+%sección 4
+\section{Problema 27}
+La población de ciertas especies en un ambiente limitado con una población inicial de 100 y capacidad para 1 000 es 
+\[
+P (t) = \frac{100 000}{100 + 900 e^{-t}} 
+\]
+
+donde t se mide en años.\\
+\begin{enumerate}
+\item Grafique esta función y estime cuánto tiempo le toma a la población llegar a 900.\\
+\begin{figure}[h]
+\centering
+\includegraphics[ width=1\textwidth]{img/graficaPob.png}
+\end{figure}
+\\
+Aprox 4.4 años. $P(4.4) = 900.4984$
+
+\item Encuentre la inversa de esta función y explique su
+significado.
+\[
+P = \frac{100 000}{100 + 900 e^{-t}} 
+\]
+Para encontrar la inversa hay que despejar t
+\[
+ \frac{100 000}{P} = 100 + 900 e^{-t}
+\]
+\[
+\frac{100 000- 100P}{900P}  = e^{-t}
+\]
+\[
+-ln (\frac{100 000- 100P}{900P} ) = t
+\]
+
+Entonces la función inversa es :
+\[
+f(P) = -ln (\frac{100 000- 100P}{900P} )
+\]
+\item Utilice la función inversa para encontrar el tiempo
+necesario para que la población llegue a 900. Compare
+con el resultado del inciso \\
+\[
+f(900) = -ln (\frac{100 000- 100(900)}{900(900)} ) \approx 4.394
+\]
+\end{enumerate}
+
+
 \end{document}

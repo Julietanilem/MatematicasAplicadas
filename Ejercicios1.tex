@@ -1,10 +1,12 @@
 \documentclass[12pt]{article}
+
 \usepackage[spanish]{babel}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{multicol}
+
 %% Título
 \title{Matemáticas para las Ciencias Aplicadas I}
 
@@ -15,7 +17,6 @@
 \author{Flores Morán Julieta Melina \\ Zarco Romero José Antonio}
 
 
-
 %% Se marca el inicio del documento.
 \begin{document}
 
@@ -24,24 +25,24 @@
 
 %% Inicio de sección 1.
 \section{Un cohete}
-Un cohete es disparado verticalmente hacia arriba y el combustible que lo impulsa se quema durante 60 segundos. Se sabe que, a los $\Delta t$ s de haber iniciado su desplazamiento, la altura h (en metros) a la que se encuentra el cohete es de 
-
+Un cohete es disparado verticalmente hacia arriba y el combustible que lo impulsa se quema durante 60 segundos. Se sabe que, a los $\Delta t$ s de haber iniciado su desplazamiento, la altura $h$ (en metros) a la que se encuentra el cohete es de 
 \[h (t) = 40 t^2 ~ m\]
 
 1. ¿A qué altura se halla el cohete cuando se le agota el combustible?
 \[h (60) = 40 (60)^2 ~ m = 144000m\]
 
-2. ¿Cuál es la rapidez promedio del cohete durante los primeros 60 s de su vuelo?
-
+2. ¿Cuál es la rapidez promedio del cohete durante los primeros 60s de su vuelo?
 \[
-v = \frac{d}{t} = \frac{ 144000m}{60s} =  2400 m/s
+r = |v| = \frac{d}{t} = \frac{ 144000m}{60s} =  2400 m/s
 \]
 
-3. Haga una tabla con tres columnas: una para el tiempo t (donde t = 0, 10, 20, . . . , 60), otra para la posición h (t) y, una tercera para el incremento $\Delta h$ entre un valor de t y el siguiente.Con base en ella, calcule la rapidez promedio del cohete para cada lapso de 10 s desde t = 0 hasta t = 60.\\
+3. Haga una tabla con tres columnas: una para el tiempo $t$ (donde $t = 0, 10, 20, . . . , 60$), otra para la posición $h(t)$ y, una tercera para el incremento $\Delta h$ entre un valor de $t$ y el siguiente. Con base en ella, calcule la rapidez promedio del cohete para cada lapso de 10s desde $t = 0$ hasta $t = 60$.\\
+
 %% Ejemplo de una tabla.
+\begin{center}
 \begin{tabular}{||c c c c||} 
  \hline
- t & h(t) &  $\Delta h$  & $v =\frac{\Delta h}{10}$ \\ [0.5ex] 
+ $t$ & $h(t)$ &  $\Delta h$  & $v =\frac{\Delta h}{10}$ \\ [0.5ex] 
  \hline\hline
  0	& 0 & 0 & 0\\
 10 & 	4000 &	4000 &	4000 \\
@@ -52,33 +53,34 @@ v = \frac{d}{t} = \frac{ 144000m}{60s} =  2400 m/s
 60 & 	144000	& 44000	& 4400 \\ [1ex] 
 \hline
 \end{tabular}
-\\
+\end{center}
 
-4. Haga ahora otra tabla en la que muestre el cálculo de la rapidez promedio del cohete $\Delta t$ s antes y t s después de $\Delta t $ = 3 s, para los siguientes valores de t:
+4. Haga ahora otra tabla en la que muestre el cálculo de la rapidez promedio del cohete $\Delta t$ s antes y $t$ s después de $\Delta t $ = 3 s, para los siguientes valores de $t$:
 \[
 \frac{1}{10},\frac{1}{10 ^ 2} , \frac{1}{10 ^ 3}, \frac{1}{10 ^ 4}, \frac{1}{10 ^ 5}
 \]
-\\
+
 %% Ejemplo de una tabla.
+\begin{center}
 \resizebox{14cm}{!} {
 \begin{tabular}{||c c c c c c c||} 
  \hline
-  $t$ & $h(3- \Delta t)$ &  $h(3+ \Delta t)$ &  $\Delta h^-= h(3)-h(3- \Delta t)$ & $\Delta h^+ = h(3- \Delta t) - h(3)$ & $v^- =\frac{\Delta h^-}{\Delta t}$  & $v^+ =\frac{\Delta h^+}{\Delta t}$  \\ [0.5ex] 
+  $\Delta t$ & $h(3- \Delta t)$ &  $h(3+ \Delta t)$ &  $\Delta h^-= h(3)-h(3- \Delta t)$ & $\Delta h^+ = h(3+ \Delta t) - h(3)$ & $v^- =\frac{\Delta h^-}{\Delta t}$  & $v^+ =\frac{\Delta h^+}{\Delta t}$  \\ [0.5ex] 
  \hline\hline
  $1$ 	& $h(2)=160$ & $h(4)=640$ & $360-160=200$ &  $640-360=280$ & $ \frac{200}{1}=200$ & $\frac{280}{1}=280$  \\ 
 $ \frac{1}{10}$ & $h(2.9)=336.4$ & $h(3.1)=384.4$ & $336.4-160=23.6$ &  $640-384.4=24.4$ & $ \frac{23.6}{0.1}=236$ & $\frac{24.4}{0.1}=244$  \\ 
 $ \frac{1}{10^2}$ & $h(2.99)=357.604$ & $h(3.01)=362.404$ & $360-357.604=2.396$ &  $362.404-360=2.404$ & $ \frac{2.396}{0.01}=239.6$ & $\frac{2.404}{0.01}=240.4$  \\ 
 $ \frac{1}{10^3}$ & $h(2.999)=359.76004$ & $h(3.001)=360.24004$ & $360-359.76004=0.23996$ &  $360.24004-360=0.24004$ & $ \frac{0.23996}{0.0001}=239.96$ & $\frac{0.24004}{0.0001}=240.04$  \\ 
 $ \frac{1}{10^4}$ & $h(2.9999)=359.9760004$ & $h(3.0001)=360.0240004$ & $360-359.9760004=0.0239996$ &  $360.0240004-360=0.0240004$ & $ \frac{0.0239996}{0.00001}=239.996$ & $\frac{0.0240004}{0.00001}=240.004$  \\
-$ \frac{1}{10^5}$ 	& $h(2.99999)=259.9976$ & $h(3.00001)=360.0024$ & $360-259.9976=0.002399996$ &  $360.0024-360=0.002400004$ & $ \frac{0.002399996}{0.000001}=239.9996$ & $\frac{0.002400004}{0.000001}=240.0004$  \\ [1ex] 
+$ \frac{1}{10^5}$ 	& $h(2.99999)=359.97600004$ & $h(3.00001)=360.002400004$ & $360-359.97600004=0.002399996$ &  $360.0240004-360=0.002400004$ & $ \frac{0.002399996}{0.000001}=239.9996$ & $\frac{0.002400004}{0.000001}=240.0004$  \\ [1ex] 
 \hline
 \end{tabular}
 }
-\\
+\end{center}
 
-5. Es razonable suponer que la rapidez instantánea del cohete exactamente a los t = 3 s, tome un valor intermedio entre la rapidez promedio t s antes y t s después de t = 3. Si esto es cierto, según sus cálculos, ¿cuánto vale esa rapidez instantánea?
+5. Es razonable suponer que la rapidez instantánea del cohete exactamente a los $t = 3 s$, tome un valor intermedio entre la rapidez promedio $t$ s antes y $t$ s después de $t = 3$. Si esto es cierto, según sus cálculos, ¿cuánto vale esa rapidez instantánea?\\
 
-La tabla muestra que tanto por la izquierda como por la derecha el valor se acerca a 240, por lo que la velocidad instantanea en exactamente 3 segundos debe ser 240 m/s. Este valor, es el valor obtenido al acercarnos lo más posible a 3, por lo que podemos entender este como el limite cuando el tiempo tienda a 3. 
+La tabla muestra que tanto por la izquierda como por la derecha el valor se acerca a $240$, por lo que la velocidad instántanea en exactamente $3$ segundos debe ser $240 m/s$. Este valor es el valor obtenido al acercarnos lo más posible a $3$, por lo que podemos entender este como el límite cuando el tiempo tienda a $3$. 
 \[
 \lim_{t \to 3 }\frac{h(3)-h(t)}{3-t}=\lim_{t \to 3 }\frac{40(9)-40t^2}{3-t}=\lim_{t \to 3 }\frac{40(9-t^2)}{3-t}
 \]

@@ -237,7 +237,7 @@ $p50$	&	0	&	0\\ [1ex]
 Volúmenes de los primas circunscritos: 
 
 \[
-\sum_{i=1}^{50} V_{pc} = 1.14951411073 \times 10^6 m^3
+\sum_{i=0}^{49} V_{pc} = 1.22060341876 \times 10^6 m^3  
 \]
 
 Debe ser mayor que el volumen real, ya que todas las partes en que se dividió la pirámide tienen un excedente de la figura real.\\
@@ -245,60 +245,79 @@ Debe ser mayor que el volumen real, ya que todas las partes en que se dividió l
 Volúmenes de los primas inscritos:
 
 \[
-\sum_{i=0}^{49} V_{pi} = 1.22060341876 \times 10^6 m^3    
+\sum_{i=1}^{50} V_{pi} = 1.14951411073 \times 10^6 m^3
 \]
 
 Debe ser menor al volumen real, ya que a las piezas en que se dividió les faltaba una parte para completar la figura de la pirámide. \\
 
 \[
-\therefore \sum_{i=0}^{49} V_{pi} < V < \sum_{i=1}^{50} V_{pc}
+1.14951411073 \times 10^6 m^3 < V < 1.22060341876 \times 10^6 m^3 
+\]
+
+\[
+\therefore \sum_{i=1}^{50} V_{pi} < V < \sum_{i=0}^{49} V_{pc}
 \]
 
 4. ¿Qué espera que suceda con estas cotas al hacer los mismos cálculos para un número de rebanadas más y más grande? 
 
 Al rebanar la pirámide entre más piezas, lo esperado es que la suma de los volúmenes de los prismas, tanto circunscritos como inscritos, se aproximen al mismo valor. De esta manera, se obtendría el valor del volumen real de la pirámide cuando el número de las piezas tienda a infinito.
 \clearpage
+
 %sección 3
 \section{Problema 22}
-Un pequeño fabricante de electrodomésticos descubre que
-cuesta 9000 dólares producir 1000 tostadoras a la semana y 12000 dólares producir 1500 tostadoras a la semana.
+Un pequeño fabricante de electrodomésticos descubre que cuesta 9000 dólares producir 1000 tostadoras a la semana y 12000 dólares producir 1500 tostadoras a la semana.
 \begin{enumerate}
 \item Exprese el costo en función del número de tostadoras producidas, suponiendo que es lineal. Después, trace la gráfica.\\ 
-Para obtener la función líneal hacemos uso de la formúla 
+
+Ya que suponemos que el costo $C$ es una función lineal del número de tostadoras $t$ de la forma $y = mx + b$, podemos escribir:
+
 \[
-	y = mx + b
+	C=mt+b
 \]
-Considerando que conocemos los puntos (1000, 9000) y (1500, 12000)
+
+Utilizando los datos del problema, consideremos que conocemos los puntos (1000, 9000) y (1500, 12000). Por lo que la pendiente de la recta es
+
 \[
 	 m = \frac{\Delta {y}}{\Delta{x}} = \frac{12000-9000}{1500-1000} = \frac{3000}{500} = 6
 \]
-Tenemos: 
-\[
-	y = 6x + b  
-\]
-Para calcular b usamos un punto:
-\[
-	9000 =6(1000) + b 
-\]
-\[
-	b = 9000 -6000 = 3000 
-\]
-Resultando 
-\begin{figure}[h]
-\centering
-\includegraphics[ width=9cm]{img/tostadoras.png}
-\end{figure}
+
+de modo que
 
 \[
-	f(t) = 6t + 3000
+C=6t+b
 \]
+
+y su ecuación de la forma punto-pendiente $y-y_1=m(x-x_1)$, en el punto (1000, 9000) es 
+
+\[
+	C-9000=6(t-1000)
+\]
+
+o bien
+\[
+	C=6t+3000
+\]
+
+\[
+\therefore f(t) = 6t + 3000
+\]
+
+Dicha ecuación da un posible modelo lineal, representado gráficamente como
+\begin{figure}[h!]
+\centering
+\includegraphics[width=10cm]{img/tostadoras.png}
+\end{figure}
+
 \item  ¿Cuál es la pendiente de la gráfica y qué representa?
 \\ \\
-La pendiente es 6 y reprensetan el aumento de costo de producción de cada tostadora.
+La pendiente de la recta es $m=6$ y representa la razón de cambio, en este caso el aumento, del costo de producción en dólares respecto al número de tostadoras producidas.
 \\  
-\item  ¿Cuál es la intersección de la gráfica con el eje y y qué representa?
-\\ \\
-La intersección con el eje y es 3000, representa el costo inicial de producción. No depende del número de tostadoras, es una constante sumada al costo independiente del número de tostadoras.
+\item  ¿Cuál es la intersección de la gráfica con el eje $y$ y qué representa?
+\\
+\[
+f(0) = (6 \cdot 0) + 3000 = 3000
+\]
+La intersección con el eje $y$ es 3000 y representa el costo inicial de producción. No depende del número de tostadoras, es una constante sumada al costo independiente del número de tostadoras.
 \\
 \end{enumerate}
 

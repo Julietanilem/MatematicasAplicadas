@@ -328,8 +328,8 @@ La población de ciertas especies en un ambiente limitado con una población ini
 \[
 P (t) = \frac{100 000}{100 + 900 e^{-t}} 
 \]
+donde t se mide en años.
 
-donde t se mide en años.\\
 \begin{enumerate}
 \item Grafique esta función y estime cuánto tiempo le toma a la población llegar a 900.\\
 \begin{figure}[h]
@@ -339,32 +339,40 @@ donde t se mide en años.\\
 \\
 Aprox 4.4 años. $P(4.4) = 900.4984$
 
-\item Encuentre la inversa de esta función y explique su
-significado.
+\item Encuentre la inversa de esta función y explique su significado.
 \[
 P = \frac{100 000}{100 + 900 e^{-t}} 
 \]
 Para encontrar la inversa hay que despejar t
 \[
- \frac{100 000}{P} = 100 + 900 e^{-t}
+ 100 + 900 e^{-t}=\frac{100 000}{P}
 \]
 \[
-\frac{100 000- 100P}{900P}  = e^{-t}
+e^{-t}=\frac{100 000- 100P}{900P}
 \]
 \[
--ln (\frac{100 000- 100P}{900P} ) = t
+t=-ln (\frac{100 000- 100P}{900P} )
+\]
+\[
+\therefore t=-ln (\frac{1 000- P}{9P} )
 \]
 
-Entonces la función inversa es :
+Entonces, la función inversa es
 \[
-f(P) = -ln (\frac{100 000- 100P}{900P} )
+f^{-1}(t) = t(P) = -ln (\frac{1 000- P}{9P} )
 \]
+y representa el tiempo requerido t para que la población de ciertas especies alcance un número P.
+
 \item Utilice la función inversa para encontrar el tiempo
 necesario para que la población llegue a 900. Compare
 con el resultado del inciso \\
 \[
-f(900) = -ln (\frac{100 000- 100(900)}{900(900)} ) \approx 4.394
+f(900) = -ln (\frac{1 000- 900}{9(900)} )=-ln(\frac{100}{8100})=-ln(\frac{1}{81})=-(ln1-ln81)
 \]
+\[
+=ln81+ln1=ln81+0=ln(81) = 4.3944491546724 
+\]
+$\approx 4.4$ años.
 \end{enumerate}
 
 

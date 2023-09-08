@@ -374,6 +374,93 @@ f(900) = -ln (\frac{1 000- 900}{9(900)} )=-ln(\frac{100}{8100})=-ln(\frac{1}{81}
 \]
 $\approx 4.4$ años.
 \end{enumerate}
-
-
+\clearpage
+\section{La malahora del occiso}
+Según la ley de enfriamiento de Newton, si un cuerpo con temperatura inicial $T (0) = T_0$ se
+sumerge en un medio cuya temperatura ambiente $T_a$ permanece constante, donde $T_0 > T_a$, la
+temperatura $T(t)$ del cuerpo en el momento $t$ viene dada por la función: \\
+(1)\\
+\[
+T(t)= T_a + (T_0-T_a)e^{-kt},
+\]
+donde k es una constante positiva.\\ \\
+El cadáver de una víctima de asesinato es descubierto a la media noche y, en ese momento,
+el médico forense registra que la temperatura del cuerpo es de $31  ^{\circ} C$ y, una hora más tarde, la temperatura del cadáver es de $29  ^{\circ} C $. 
+Si se supone que la temperatura del aire circundante permanece constante a $21 ^{\circ}  C$ y que la temperatura "normal" de un ser humano vivo es de $37  ^{\circ} C$, con base en estos datos y la ley de enfriamiento de Newton, calcular la hora en que ocurrió el asesinato. Para ello, siga este procedimiento:
+\begin{enumerate}
+\item Suponga que $t = 0$ es el momento en que se encuentra el cadáver. Identifique los valores
+correspondientes a $T_0$ y $T_a$ de este problema y sustitúyalos en la ecuación (1) para obtener
+que, en este caso:
+\[
+T_0 = Temperatura \;a \;la\; media \;noche= 31  ^{\circ} C
+\]
+\[
+T_a = Temperatura \;del \;ambiente = 21 ^{\circ}  C
+\]
+Remplazando estos valores se tiene que : 
+\[
+T(t)= 21 + (31-21)e^{-kt}
+\]
+(2)
+\[
+\therefore  T(t)= 21 + 10e^{-kt}
+\]  
+\item Para determinar el valor de $-k$, tome en cuenta que $T(1) = 29$, sustituya $t = 1$ en la ecuación (2) y despeje $k$ para mostrar que:
+\[
+ T(1)= 21 + 10e^{-k} = 29
+\]  
+\[
+ 10e^{-k} = 29-21
+\]  
+\[
+  e^{-k} = \frac{8}{10}
+\]  
+\[
+ -k = ln\frac{8}{10}
+\]  
+\[
+ \therefore  k = -ln\frac{8}{10} = 0.2231435513
+\] 
+\item Sustituya el valor de $-K$ en la ecuación (2) para obtener la ecuación de enfriamiento del
+cadáver:\\
+(3)
+\[
+T(t)= 21 + 10e^{-0.2231435513t}
+\] 
+\item Por último, use el dato de que en el momento de la muerte, la víctima tenía una temperatura
+corporal de $37  ^{\circ} C$ para concluir que el asesinato ocurrió a las 21 : 54 horas; es decir, dos horas y seis minutos antes de la media noche.
+\\
+Para conocer el tiempo transcutido dada una temperatura, necesitamos la inversa de esta función, la cúal tendrá como variable independiente la temperatura y variable dependiente el tiempo transcurrido. \\
+Despejamos T para conocer la inversa en: 
+\[
+T= 21 + 10e^{-0.2231t}
+\] 
+Entonces, 
+\[
+\frac{T-21}{10}= e^{-0.2231t}
+\] 
+\[
+ln \frac{T-21}{10}= -0.2231t
+\] 
+\[
+t = -ln \frac{T-21}{10} \times \frac{1}{0.2231}
+\]
+\[
+\therefore f^{-1}(t) = -ln \frac{t-21}{10} \times \frac{1}{0.2231}
+\]
+$f^{-1}$ es la función inversa , dada una t que es la temperatura de la que se quiere saber el tiempo transcurrido.\\
+Para  $37  ^{\circ} C$:
+\[
+f^{-1}(37) = -ln \frac{37-21}{10} \times \frac{1}{0.2231} = -2.106694
+\]
+Este resultado indica que los $37  ^{\circ} C$ fue la temperatura de cuerpo 2.106694 horas antes de $T_0$ que se tomó a la media noche.\\
+Considerando que:
+\[
+	0.106694\;h \;(\frac{60 \; min}{1\; hora}) = 6.4016 minutos
+\]
+\[
+2.106694 \; horas \approx 2 \;horas \;y \;6 \;minutos
+\]
+Por lo tanto, podemos saber que el asesinato fue a las 00:00 horas menos 2 horas y 6 minutos, es decir, 21:54 horas.
+\end{enumerate}
 \end{document}

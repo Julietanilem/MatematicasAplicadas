@@ -375,6 +375,75 @@ f(900) = -ln (\frac{1 000- 900}{9(900)} )=-ln(\frac{100}{8100})=-ln(\frac{1}{81}
 $\approx 4.4$ años.
 \end{enumerate}
 \clearpage
+
+\section{La edad de la sábana santa}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{img/sabanaSanta.png}
+\end{figure}
+Figura 1: La sábana de Turín: foto moderna de la cara; el positivo a la izquierda y la imagen digitalmente procesada, a la derecha.\\
+
+En 1988, el Vaticano autorizó que el Museo Británico datara la reliquia conocida como la sábana de Turín, posiblemente el sudario del entierro de Jesús de Nazareth. La sábana tiene impresa la imagen de un cuerpo humano que fue venerada como la de Jesús, aunque en la misma iglesia católica ha habido controversias respecto a su autenticidad. Los resultados del Museo Británico mostraron que el contenido de carbono 14 de la sábana estaba entre el $92 \%$ y el $93 \%$ del correspondiente a una tela recién hecha. Con base en esta información y el dato de que la vida media del carbono 14 es de aproximadamente 5730 años:
+
+\begin{enumerate}	
+\item Calcule la cantidad de carbono 14 que debería haberse encontrado en la sábana de Turín en 1988, si hubiera sido tejida en tiempos de Jesús.
+
+Para resolver el problema debemos conocer la fórmula para calcular la cantidad del Carbono 14
+\[
+f(t)=a_1 \cdot e^{-a_2 \cdot t}
+\]
+donde $a_1$ y $a_2$ son constantes. En este caso, $a_1$ es la cantidad inicial de Carbono 14 (expresada en porcentaje)
+\[
+f(t)=100 \cdot e^{-a_2 \cdot t}
+\]
+Para calcular el valor de la constante $a_2$, utilizaremos el dato de la vida media, el cual expresa lo siguiente $f(5730)=\frac{100}{2}$. Por lo que
+\[
+\frac{100}{2}=100 \cdot e^{-a_2 \cdot 5730}
+\]
+\[
+\frac{1}{2}=e^{-a_2 \cdot 5730}
+\]
+\[
+ln(\frac{1}{2}) = ln ( e^{-a_2 \cdot 5730} )
+\]
+\[
+ln(2^{-1}) = ln ( e^{-a_2 \cdot 5730} )
+\]
+\[
+-ln(2) = -a_2 \cdot 5730
+\]
+\[
+ln(2) = a_2 \cdot 5730
+\]
+\[
+a_2 = \frac{ln(2)}{5730}
+\]
+Sustituyendo $a_2$ en la fórmula original, nuestra fórmula para calcular la cantidad del Carbono 14 en base al tiempo queda de la siguiente manera
+\[
+f(t)=100 \cdot e^{-\frac{ln(2)}{5730} \cdot t}
+\]
+Si $t=1988$
+\[
+f(1988)=100 \cdot e^{-\frac{ln(2)}{5730} \cdot 1988}
+\]
+\[
+f(1988)=100 \cdot e^{-0.24048}
+\]
+\[
+f(1988)=100 \cdot 0.78624
+\]
+\[
+\therefore f(1988)=78.624\%
+\]
+
+\item Explique por qué los arqueólogos del Museo Británico dictaminaron que la tela del sudario debió haberse tejido entre 1299 y 1380.
+
+\item Dé su opinión sobre la siguiente afirmación: “ únicamente un milagro explicaría que la imagen impresa en la sábana de Turín sea la de Jesús de Nazareth”.
+
+\end{enumerate}
+
+\clearpage
+
 \section{La malahora del occiso}
 Según la ley de enfriamiento de Newton, si un cuerpo con temperatura inicial $T (0) = T_0$ se
 sumerge en un medio cuya temperatura ambiente $T_a$ permanece constante, donde $T_0 > T_a$, la

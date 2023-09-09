@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 
+\usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{hyperref}
 \usepackage{graphicx}
@@ -7,7 +8,7 @@
 \usepackage{color}
 \usepackage{multicol}
 \usepackage{amssymb}
-
+\spanishdecimal{.}
 %% Título
 \title{Matemáticas para las Ciencias Aplicadas I}
 
@@ -26,6 +27,8 @@
 
 %% Inicio de sección 1.
 \section{Un cohete}
+Flores Morán Julieta Melina \\
+\\
 Un cohete es disparado verticalmente hacia arriba y el combustible que lo impulsa se quema durante 60 segundos. Se sabe que, a los $\Delta t$ s de haber iniciado su desplazamiento, la altura $h$ (en metros) a la que se encuentra el cohete es de 
 \[h (t) = 40 t^2 ~ m\]
 
@@ -61,8 +64,8 @@ r = |v| = \frac{d}{t} = \frac{ 144000m}{60s} =  2400 m/s
 \frac{1}{10},\frac{1}{10 ^ 2} , \frac{1}{10 ^ 3}, \frac{1}{10 ^ 4}, \frac{1}{10 ^ 5}
 \]
 
-%% Ejemplo de una tabla.
 \begin{center}
+\large
 \resizebox{14cm}{!} {
 \begin{tabular}{||c c c c c c c||} 
  \hline
@@ -94,6 +97,8 @@ La tabla muestra que tanto por la izquierda como por la derecha el valor se acer
 
 %% Sección 2.
 \section{La pirámide del sol}
+Zarco Romero José Antonio\\
+\\
 Según la Wikipedia, si se supone que la base de la pirámide del sol de Teotihuacan es cuadrada y que sus caras son lisas, su volumen es de
 \[
 1.184828 \times 10^6 m^3
@@ -104,7 +109,7 @@ La versión en español de la misma informa que la altura de la pirámide es de 
 \[
 V =\frac{1}{3}Ah 
 \]
-donde <$A$ es el  área de la base y $h$, la altura? \\ \\
+donde $A$ es el  área de la base y $h$, la altura? \\ \\
 Versión en español:
 \[
 V =\frac{1}{3}(223m^2)(65m)=1.0774616666666 \times 10^6 m^3
@@ -119,9 +124,9 @@ Si bien la fórmula 1 se puede obtener mediante argumentos geométricos relativa
 
 1. Imagine que hace 49 cortes paralelos a la base, a intervalos regulares de longitud $ \Delta h = \frac{h}{50}$, donde $h$ es la altura de la pirámide, y suponga que el volumen $V_j$ de la j-ésima rebanada es aproximadamente igual
 \begin{enumerate}
-\item al volumen del prisma circunscrito a la pirámide de base cuadrada y altura $\Delta h$, para
+\item al volumen del prisma inscrito a la pirámide de base cuadrada y altura $\Delta h$, para
 j = 1, 2, . . . , 50;
-\item al volumen del prisma inscrito en la pirámide de base cuadrada y altura $\Delta h$, para
+\item al volumen del prisma circunscrito en la pirámide de base cuadrada y altura $\Delta h$, para
 j = 0, 1, . . . , 49;\\
 \end{enumerate} 
 2. Adapte el argumento que sugiere la siguiente figura (para el cálculo del volumen de un cono) al caso de la pirámide
@@ -261,275 +266,5 @@ Debe ser menor al volumen real, ya que a las piezas en que se dividió les falta
 4. ¿Qué espera que suceda con estas cotas al hacer los mismos cálculos para un número de rebanadas más y más grande? 
 
 Al rebanar la pirámide entre más piezas, lo esperado es que la suma de los volúmenes de los prismas, tanto circunscritos como inscritos, se aproximen al mismo valor. De esta manera, se obtendría el valor del volumen real de la pirámide cuando el número de las piezas tienda a infinito.
-\clearpage
 
-%sección 3
-\section{Problema 22}
-Un pequeño fabricante de electrodomésticos descubre que cuesta 9000 dólares producir 1000 tostadoras a la semana y 12000 dólares producir 1500 tostadoras a la semana.
-\begin{enumerate}
-\item Exprese el costo en función del número de tostadoras producidas, suponiendo que es lineal. Después, trace la gráfica.\\ 
-
-Ya que suponemos que el costo $C$ es una función lineal del número de tostadoras $t$ de la forma $y = mx + b$, podemos escribir:
-
-\[
-	C=mt+b
-\]
-
-Utilizando los datos del problema, consideremos que conocemos los puntos (1000, 9000) y (1500, 12000). Por lo que la pendiente de la recta es
-
-\[
-	 m = \frac{\Delta {y}}{\Delta{x}} = \frac{12000-9000}{1500-1000} = \frac{3000}{500} = 6
-\]
-
-de modo que
-
-\[
-C=6t+b
-\]
-
-y su ecuación de la forma punto-pendiente $y-y_1=m(x-x_1)$, en el punto (1000, 9000) es 
-
-\[
-	C-9000=6(t-1000)
-\]
-
-o bien
-\[
-	C=6t+3000
-\]
-
-\[
-\therefore f(t) = 6t + 3000
-\]
-
-Dicha ecuación da un posible modelo lineal, representado gráficamente como
-\begin{figure}[h!]
-\centering
-\includegraphics[width=10cm]{img/tostadoras.png}
-\end{figure}
-
-\item  ¿Cuál es la pendiente de la gráfica y qué representa?
-\\ \\
-La pendiente de la recta es $m=6$ y representa la razón de cambio, en este caso el aumento, del costo de producción en dólares respecto al número de tostadoras producidas.
-\\  
-\item  ¿Cuál es la intersección de la gráfica con el eje $y$ y qué representa?
-\\
-\[
-f(0) = (6 \cdot 0) + 3000 = 3000
-\]
-La intersección con el eje $y$ es 3000 y representa el costo inicial de producción. No depende del número de tostadoras, es una constante sumada al costo independiente del número de tostadoras.
-\\
-\end{enumerate}
-
-\clearpage
-%sección 4
-\section{Problema 27}
-La población de ciertas especies en un ambiente limitado con una población inicial de 100 y capacidad para 1 000 es 
-\[
-P (t) = \frac{100 000}{100 + 900 e^{-t}} 
-\]
-donde t se mide en años.
-
-\begin{enumerate}
-\item Grafique esta función y estime cuánto tiempo le toma a la población llegar a 900.\\
-\begin{figure}[h]
-\centering
-\includegraphics[ width=1\textwidth]{img/graficaPob.png}
-\end{figure}
-\\
-Aprox 4.4 años. $P(4.4) = 900.4984$
-
-\item Encuentre la inversa de esta función y explique su significado.
-\[
-P = \frac{100 000}{100 + 900 e^{-t}} 
-\]
-Para encontrar la inversa hay que despejar t
-\[
- 100 + 900 e^{-t}=\frac{100 000}{P}
-\]
-\[
-e^{-t}=\frac{100 000- 100P}{900P}
-\]
-\[
-t=-ln (\frac{100 000- 100P}{900P} )
-\]
-\[
-\therefore t=-ln (\frac{1 000- P}{9P} )
-\]
-
-Entonces, la función inversa es
-\[
-f^{-1}(t) = t(P) = -ln (\frac{1 000- P}{9P} )
-\]
-y representa el tiempo requerido t para que la población de ciertas especies alcance un número P.
-
-\item Utilice la función inversa para encontrar el tiempo
-necesario para que la población llegue a 900. Compare
-con el resultado del inciso \\
-\[
-f(900) = -ln (\frac{1 000- 900}{9(900)} )=-ln(\frac{100}{8100})=-ln(\frac{1}{81})=-(ln1-ln81)
-\]
-\[
-=ln81+ln1=ln81+0=ln(81) = 4.3944491546724 
-\]
-$\approx 4.4$ años.
-\end{enumerate}
-\clearpage
-
-\section{La edad de la sábana santa}
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.7\textwidth]{img/sabanaSanta.png}
-\end{figure}
-Figura 1: La sábana de Turín: foto moderna de la cara; el positivo a la izquierda y la imagen digitalmente procesada, a la derecha.\\
-
-En 1988, el Vaticano autorizó que el Museo Británico datara la reliquia conocida como la sábana de Turín, posiblemente el sudario del entierro de Jesús de Nazareth. La sábana tiene impresa la imagen de un cuerpo humano que fue venerada como la de Jesús, aunque en la misma iglesia católica ha habido controversias respecto a su autenticidad. Los resultados del Museo Británico mostraron que el contenido de carbono 14 de la sábana estaba entre el $92 \%$ y el $93 \%$ del correspondiente a una tela recién hecha. Con base en esta información y el dato de que la vida media del carbono 14 es de aproximadamente 5730 años:
-
-\begin{enumerate}	
-\item Calcule la cantidad de carbono 14 que debería haberse encontrado en la sábana de Turín en 1988, si hubiera sido tejida en tiempos de Jesús.
-
-Para resolver el problema debemos conocer la fórmula para calcular la cantidad del Carbono 14
-\[
-f(t)=a_1 \cdot e^{-a_2 \cdot t}
-\]
-donde $a_1$ y $a_2$ son constantes. En este caso, $a_1$ es la cantidad inicial de Carbono 14 (expresada en porcentaje)
-\[
-f(t)=100 \cdot e^{-a_2 \cdot t}
-\]
-Para calcular el valor de la constante $a_2$, utilizaremos el dato de la vida media, el cual expresa lo siguiente $f(5730)=\frac{100}{2}$. Por lo que
-\[
-\frac{100}{2}=100 \cdot e^{-a_2 \cdot 5730}
-\]
-\[
-\frac{1}{2}=e^{-a_2 \cdot 5730}
-\]
-\[
-ln(\frac{1}{2}) = ln ( e^{-a_2 \cdot 5730} )
-\]
-\[
-ln(2^{-1}) = ln ( e^{-a_2 \cdot 5730} )
-\]
-\[
--ln(2) = -a_2 \cdot 5730
-\]
-\[
-ln(2) = a_2 \cdot 5730
-\]
-\[
-a_2 = \frac{ln(2)}{5730}
-\]
-Sustituyendo $a_2$ en la fórmula original, nuestra fórmula para calcular la cantidad del Carbono 14 en base al tiempo queda de la siguiente manera
-\[
-f(t)=100 \cdot e^{-\frac{ln(2)}{5730} \cdot t}
-\]
-Si $t=1988$
-\[
-f(1988)=100 \cdot e^{-\frac{ln(2)}{5730} \cdot 1988}
-\]
-\[
-f(1988)=100 \cdot e^{-0.24048}
-\]
-\[
-f(1988)=100 \cdot 0.78624
-\]
-\[
-\therefore f(1988)=78.624\%
-\]
-
-\item Explique por qué los arqueólogos del Museo Británico dictaminaron que la tela del sudario debió haberse tejido entre 1299 y 1380.
-
-\item Dé su opinión sobre la siguiente afirmación: “ únicamente un milagro explicaría que la imagen impresa en la sábana de Turín sea la de Jesús de Nazareth”.
-
-\end{enumerate}
-
-\clearpage
-
-\section{La malahora del occiso}
-Según la ley de enfriamiento de Newton, si un cuerpo con temperatura inicial $T (0) = T_0$ se
-sumerge en un medio cuya temperatura ambiente $T_a$ permanece constante, donde $T_0 > T_a$, la
-temperatura $T(t)$ del cuerpo en el momento $t$ viene dada por la función: \\
-(1)\\
-\[
-T(t)= T_a + (T_0-T_a)e^{-kt},
-\]
-donde k es una constante positiva.\\ \\
-El cadáver de una víctima de asesinato es descubierto a la media noche y, en ese momento,
-el médico forense registra que la temperatura del cuerpo es de $31  ^{\circ} C$ y, una hora más tarde, la temperatura del cadáver es de $29  ^{\circ} C $. 
-Si se supone que la temperatura del aire circundante permanece constante a $21 ^{\circ}  C$ y que la temperatura "normal" de un ser humano vivo es de $37  ^{\circ} C$, con base en estos datos y la ley de enfriamiento de Newton, calcular la hora en que ocurrió el asesinato. Para ello, siga este procedimiento:
-\begin{enumerate}
-\item Suponga que $t = 0$ es el momento en que se encuentra el cadáver. Identifique los valores
-correspondientes a $T_0$ y $T_a$ de este problema y sustitúyalos en la ecuación (1) para obtener
-que, en este caso:
-\[
-T_0 = Temperatura \;a \;la\; media \;noche= 31  ^{\circ} C
-\]
-\[
-T_a = Temperatura \;del \;ambiente = 21 ^{\circ}  C
-\]
-Remplazando estos valores se tiene que : 
-\[
-T(t)= 21 + (31-21)e^{-kt}
-\]
-(2)
-\[
-\therefore  T(t)= 21 + 10e^{-kt}
-\]  
-\item Para determinar el valor de $-k$, tome en cuenta que $T(1) = 29$, sustituya $t = 1$ en la ecuación (2) y despeje $k$ para mostrar que:
-\[
- T(1)= 21 + 10e^{-k} = 29
-\]  
-\[
- 10e^{-k} = 29-21
-\]  
-\[
-  e^{-k} = \frac{8}{10}
-\]  
-\[
- -k = ln\frac{8}{10}
-\]  
-\[
- \therefore  k = -ln\frac{8}{10} = 0.2231435513
-\] 
-\item Sustituya el valor de $-K$ en la ecuación (2) para obtener la ecuación de enfriamiento del
-cadáver:\\
-(3)
-\[
-T(t)= 21 + 10e^{-0.2231435513t}
-\] 
-\item Por último, use el dato de que en el momento de la muerte, la víctima tenía una temperatura
-corporal de $37  ^{\circ} C$ para concluir que el asesinato ocurrió a las 21 : 54 horas; es decir, dos horas y seis minutos antes de la media noche.
-\\
-Para conocer el tiempo transcutido dada una temperatura, necesitamos la inversa de esta función, la cúal tendrá como variable independiente la temperatura y variable dependiente el tiempo transcurrido. \\
-Despejamos T para conocer la inversa de: 
-\[
-T= 21 + 10e^{-0.2231t}
-\] 
-Entonces, 
-\[
-\frac{T-21}{10}= e^{-0.2231t}
-\] 
-\[
-ln \frac{T-21}{10}= -0.2231t
-\] 
-\[
-t = -ln \frac{T-21}{10} \times \frac{1}{0.2231}
-\]
-\[
-\therefore T^{-1}(t) = -ln \frac{t-21}{10} \times \frac{1}{0.2231}
-\]
-$T^{-1}$ es la función inversa , dada una t que es la temperatura de la que se quiere saber el tiempo transcurrido.\\
-Para  $37  ^{\circ} C$:
-\[
-T^{-1}(37) = -ln \frac{37-21}{10} \times \frac{1}{0.2231} = -2.106694
-\]
-Este resultado indica que los $37  ^{\circ} C$ fue la temperatura de cuerpo 2.106694 horas antes de $T_0$ que se tomó a la media noche.\\
-Considerando que:
-\[
-	0.106694\;h \;(\frac{60 \; min}{1\; hora}) = 6.4016 minutos
-\]
-\[
-2.106694 \; horas \approx 2 \;horas \;y \;6 \;minutos
-\]
-Por lo tanto, podemos saber que el asesinato fue a las 00:00 horas menos 2 horas y 6 minutos, es decir, 21:54 horas.
-\end{enumerate}
 \end{document}

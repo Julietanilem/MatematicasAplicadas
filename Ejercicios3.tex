@@ -42,11 +42,11 @@ En 1988, el Vaticano autorizó que el Museo Británico datara la reliquia conoci
 
 Para resolver el problema debemos conocer la fórmula para calcular la cantidad del Carbono 14
 \[
-f(t)=a_1 \cdot e^{-a_2 \cdot t}
+C_{14}=f(t)=a_1 \cdot e^{-a_2 \cdot t}
 \]
 donde $a_1$ y $a_2$ son constantes. En este caso, $a_1$ es la cantidad inicial de Carbono 14 (expresada en porcentaje)
 \[
-f(t)=100 \cdot e^{-a_2 \cdot t}
+C_{14}=f(t)=100 \cdot e^{-a_2 \cdot t}
 \]
 Para calcular el valor de la constante $a_2$, utilizaremos el dato de la vida media, el cual expresa lo siguiente $f(5730)=\frac{100}{2}$. Por lo que
 \[
@@ -72,7 +72,7 @@ a_2 = \frac{ln(2)}{5730}
 \]
 Sustituyendo $a_2$ en la fórmula original, nuestra fórmula para calcular la cantidad del Carbono 14 en base al tiempo queda de la siguiente manera
 \[
-f(t)=100 \cdot e^{-\frac{ln(2)}{5730} \cdot t}
+C_{14}=f(t)=100 \cdot e^{-\frac{ln(2)}{5730} \cdot t}
 \]
 Si $t=1988$
 \[
@@ -85,12 +85,53 @@ f(1988)=100 \cdot e^{-0.24048}
 f(1988)=100 \cdot 0.78624
 \]
 \[
-\therefore f(1988)=78.624\%
+\therefore C_{14}=f(1988)=78.624\%
 \]
+La cantidad de Carbono 14 que debería haberse encontrado en la sábana de Turín en 1988, si hubiera sido tejida en tiempos de Jesús, sería de 78.624\%
 
 \item Explique por qué los arqueólogos del Museo Británico dictaminaron que la tela del sudario debió haberse tejido entre 1299 y 1380.
 
-\item Dé su opinión sobre la siguiente afirmación: “ únicamente un milagro explicaría que la imagen impresa en la sábana de Turín sea la de Jesús de Nazareth”.
+Ahora, debemos interesarnos en encontrar la función inversa $f^{-1}$ de $C_{14}=f(t)=100 \cdot e^{-\frac{ln(2)}{5730} \cdot t}$. Así, podremos calcular el tiempo transcurrido en base a los porcentajes $92\%$ y $93\%$ de Carbono 14 obtenidos por el Museo Británico.
+Para esto, resolveremos la ecuación para t en términos de $C_{14}$
+\[
+C_{14}=100 \cdot e^{-\frac{ln(2)}{5730} \cdot t}
+\]
+\[
+\frac{C_{14}}{100}=e^{-\frac{ln(2)}{5730} \cdot t}
+\]
+\[
+ln(\frac{C_{14}}{100})=ln(e^{-\frac{ln(2)}{5730} \cdot t})
+\]
+\[
+ln(\frac{C_{14}}{100})=-\frac{ln(2)}{5730} \cdot t
+\]
+\[
+\therefore t =-\frac{5730 \cdot ln(\frac{C_{14}}{100})}{ln(2)}
+\]
+
+Si $C_{14}=92$, entonces el tiempo transcurrido en años sería de
+\[
+t =-\frac{5730 \cdot ln(\frac{92}{100})}{ln(2)}=689.28595
+\]
+Así, el año cuando debió habese tejido la sábana sería
+\[
+1988-689.28595=1298.71404
+\]
+Si $C_{14}=93$, entonces el tiempo transcurrido en años sería de
+\[
+t =-\frac{5730 \cdot ln(\frac{93}{100})}{ln(2)}=599.91597
+\]
+Así, el año cuando debió habese tejido la sábana sería
+\[
+1988-599.91597=1388.08402
+\]
+$\therefore$ En caso al procentaje $C_{14}=92$, se tiene que el sudario debió haberse tejido alrededor del año 1298.71404. A su vez, si $C_{14}=93$, se tiene que el sudario debió haberse tejido alrededor del año 1388.08402
+
+\item Dé su opinión sobre la siguiente afirmación: “únicamente un milagro explicaría que la imagen impresa en la sábana de Turín sea la de Jesús de Nazareth”.
+
+Desde una perspectiva científica, basada en los avances tecnológicos, concluimos en los apartados anteriores que la sábana de Turín no puede ser el auténtico sudario del entierro de Jesús de Nazareth, ya que la prueba de carbono-14 indica que fue tejido entre los años 1299 y 1380.
+
+Por lo tanto, la afirmación de que solo un milagro podría explicar la imagen en la Sábana de Turín es una declaración basada en la fe y la interpretación personal.
 
 \end{enumerate}
 
@@ -99,14 +140,15 @@ f(1988)=100 \cdot 0.78624
 \section{La malahora del occiso}
 Flores Morán Julieta Melina\\
 \\
-Según la ley de enfriamiento de Newton, si un cuerpo con temperatura inicial $T (0) = T_0$ se
+Según la \textit{ley de enfriamiento de Newton}, si un cuerpo con temperatura inicial $T (0) = T_0$ se
 sumerge en un medio cuya temperatura ambiente $T_a$ permanece constante, donde $T_0 > T_a$, la
 temperatura $T(t)$ del cuerpo en el momento $t$ viene dada por la función: \\
 (1)\\
 \[
 T(t)= T_a + (T_0-T_a)e^{-kt},
 \]
-donde k es una constante positiva.\\ \\
+donde k es una constante positiva.\\ 
+
 El cadáver de una víctima de asesinato es descubierto a la media noche y, en ese momento,
 el médico forense registra que la temperatura del cuerpo es de $31  ^{\circ} C$ y, una hora más tarde, la temperatura del cadáver es de $29  ^{\circ} C $. 
 Si se supone que la temperatura del aire circundante permanece constante a $21 ^{\circ}  C$ y que la temperatura "normal" de un ser humano vivo es de $37  ^{\circ} C$, con base en estos datos y la ley de enfriamiento de Newton, calcular la hora en que ocurrió el asesinato. Para ello, siga este procedimiento:
@@ -153,7 +195,7 @@ T(t)= 21 + 10e^{-0.2231435513t}
 \item Por último, use el dato de que en el momento de la muerte, la víctima tenía una temperatura
 corporal de $37  ^{\circ} C$ para concluir que el asesinato ocurrió a las 21 : 54 horas; es decir, dos horas y seis minutos antes de la media noche.
 \\
-Para conocer el tiempo transcurrido dada una temperatura, necesitamos la inversa de esta función, la cúal tendrá como variable independiente la temperatura y como variable dependiente el tiempo transcurrido. \\
+Para conocer el tiempo transcurrido dada una temperatura, necesitamos la inversa de esta función, la cual tendrá como variable independiente la temperatura y como variable dependiente el tiempo transcurrido. \\
 Despejamos t para conocer la inversa de: 
 \[
 T= 21 + 10e^{-0.2231t}
@@ -188,6 +230,8 @@ Por lo tanto, podemos saber que el asesinato fue a las 00:00 horas menos 2 horas
 \end{enumerate}
 
 \section{Problema 34}
+Flores Morán Julieta Melina\\
+\\
 El diseñador de una instalación deportiva quiere poner una pista de un cuarto de milla (1320 pies) para correr alrededor de un campo de fútbol, orientada como en la figura adjunta. \\
 
 El campo tiene 360 pies de largo y 160 pies de ancho.\\
@@ -202,6 +246,7 @@ La pista consta de dos rectas y dos semicírculos. Las rectas  se extendienden a
 \item Demuestre que es posible construir una pista de un cuarto de milla
 alrededor del campo de fútbol. [Sugerencia: encuentre la
 pista más corta que se puede construir alrededor del campo.]
+
 Para esto, primero podemos construir una fórmula que determine la longitud de la pista considerando
 \[
 P = 2L + d\pi 
@@ -217,7 +262,7 @@ P = 2(360) + 160 \pi= 720 + 160\pi \approx 1222.654825 pies
 Y ya que 1222.65 pies es menor que 1320, significa que sí es posible construir una pista de esta longitud con medidas más grandes.
 
 \item Sea L la longitud de una recta (en pies) y sea x
-la distancia (en pies) entre unalateral del campo y una recta de la pista. Haz una gráfica de L versus x. \\
+la distancia (en pies) entre una lateral del campo y una recta de la pista. Haz una gráfica de L versus x. \\
 En este caso, podemos adaptar la formúla anterior, considerando $P=1320$ pies.
 \[
 1320 = 2L + d\pi  
@@ -242,6 +287,7 @@ Graficando la función $L(x) =  660-80 \pi -\pi x $ obtenemos:
 \item Utilice la gráfica para estimar el valor de x que produce
 las rectas más cortas, y luego encuentre este valor de x
 exactamente.
+
 El valor más corto de un lado recto debe ser al menos los 360 pies de largo de la cancha, según la gráfica esto se alcanza aproximadamente cuando x vale 15 pies.\\
 Para calcular el valor exacto de x a partir del valor de L podemos encontrar la inversa de la función $L(x)$
 \[
@@ -260,7 +306,8 @@ Considerando el valor más corto para L es 360 pies sustituimos
 \[
 x= \frac{660-80\pi-360}{\pi} \approx 15.492965  \; pies 
 \]
-\item Utilice la gráfica para estimar la longitud más larga posible de laas recta, y luego encuentre esa longitud exactamente.
+\item Utilice la gráfica para estimar la longitud de las rectas más largas posibles, y luego encuentre esa longitud exactamente.
+
 La longitud más larga es cuando x vale 0, que en la gráfica se puede interpretar que es aproximadamente 410 pies.\\
 Usando la función $L(x) =  660-80 \pi -\pi x$ podemos sustituir el valor de x por 0
 \[

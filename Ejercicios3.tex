@@ -317,10 +317,11 @@ L(x) =  660-80 \pi -\pi 0 = 660-80 \pi \approx408.6725 \; pies
 
 
 \section{Problema 54}
+Flores Morán Julieta Melina\\
+\\
 Una cámara está colocada a x pies de la base de la 
-plataforma de lanzamiento de misiles(ver la figura adjunta). Si un misil
-de longitud a se lanza verticalmente, demuestre que cuando el
-la base del misil está a b pies por encima de la lente de la cámara, el ángulo $\theta $ subtendido en la lente por el misil es
+plataforma de lanzamiento de misiles (ver la figura adjunta). Si un misil
+de longitud $a$ se lanza verticalmente, demuestre que cuando la base del misil está a $b$ pies por encima de la lente de la cámara, el ángulo $\theta $ subtendido en la lente por el misil es
 \[
 \theta  = cot ^{-1} \frac{x}{a+b} - cot ^{-1} \frac{x}{b}
 \]
@@ -328,13 +329,13 @@ la base del misil está a b pies por encima de la lente de la cámara, el ángul
 \centering
 \includegraphics[width=0.5\textwidth]{img/cam.png}
 \end{figure}
-Podemos interpretar el ángulo $\theta$ que es  el ángulo formado por el triángulo formado por los catetos x y  b como la resta entre los ángulos:
+Podemos interpretar el ángulo $\theta$ como la resta entre los ángulos:
 \begin{enumerate}
 \item $\beta$, considerándolo el ángulo formado por el triángulo formado por los catetos  x y a+b
-\item $\alpha$, considerándoloel ángulo formado por el triángulo formado por los catetos x y b
+\item $\alpha$, considerándolo el ángulo formado por el triángulo formado por los catetos x y b
 \end{enumerate}
 Entonces, $ \theta = \beta  - \alpha$.
-Podemos expresar estos en términos de de la cotangente considerando los catetos del triángulo rectángulo que los forman.
+Podemos expresar estos en términos de la cotangente considerando los catetos del triángulo rectángulo que los forman.
 \[
 cotx= \frac{cateto \; adyacente}{cateto \; opuesto }
 \]
@@ -353,7 +354,7 @@ Entonces, los ángulos $\beta$ y $\alpha$ se pueden calcular con la función inv
 \]
 Y podemos remplazar estos valores por $\alpha$ y $\beta$ en  $ \theta = \beta  - \alpha$, obteniendo que:
 \[
- \theta = cot^{-1}\; \frac{x}{a}  - cot^{-1}\;\frac{x}{b}
+ \theta = cot^{-1}\; \frac{x}{a+b}  - cot^{-1}\;\frac{x}{b}
  \]
 \begin{figure}[H]
 \centering
@@ -362,32 +363,110 @@ Y podemos remplazar estos valores por $\alpha$ y $\beta$ en  $ \theta = \beta  -
 
 
 \section{Problema 6}
+Zarco Romero José Antonio\\
+\\
 Una bola de 3 pulgadas de radio está recubierta uniformemente con plástico.
 \begin{enumerate}[label=\alph*)]
-\item  Exprese el volumen del plástico en función de su espesor.
-\item  ¿Cuál es el dominio de la función de volumen obtenida en
-parte (a)?
+\item  Exprese el volumen del plástico en función de su espesor.\\
+Sea $h$ el espesor del plástico. El volumen del recubrimiento se puede expresar como la diferencia del volumen de la esfera con recubrimiento menos el volumen de la esfera original.
+\[
+V_{recubrimiento} = V_1 - V_0
+\]
+\[
+V_{recubrimiento} = \frac{4}{3}\pi (r+h)^3 - \frac{4}{3}\pi r^3
+\]
+Sustituyendo el radio $r=3$pulgadas en la ecuación
+\[
+V_{recubrimiento} = \frac{4}{3}\pi (3+h)^3 - \frac{4}{3}\pi 3^3
+\]
+\[
+\therefore V_{recubrimiento} = \frac{4}{3}\pi (3+h)^3 - 36\pi
+\]
+
+\item  ¿Cuál es el dominio de la función de volumen obtenida en parte (a)?\\
+Dado que el espesor no puede ser negativo, entonces
+\[
+\frac{4}{3}\pi (3+h)^3 - 36\pi \geq 0
+\]
+\[
+\frac{4}{3}\pi (3+h)^3 \geq 36\pi
+\]
+\[
+(3+h)^3 \geq 36\pi \cdot \frac{3}{4\pi}
+\]
+\[
+(3+h)^3 \geq 27
+\]
+\[
+h \geq 0
+\]
+Además, $h$ no debería exceder el radio de la bola original (3 pulgadas) porque el recubrimiento no puede ser más grueso que el radio de la bola misma.
+\[
+h \leq 3
+\]
+$\therefore$ El dominio queda espresado como $[0,3]$
 \end{enumerate}
 
 \section{Problema 7}
+Zarco Romero José Antonio\\
+\\
 Se va a hacer una caja de cartón, con la parte superior cerrada a partir de un piso de 6 por 10 pies cortando cuatro cuadrados de igual tamaño (ver la figura adjunta), doblando a lo largo de la línea discontinua
 líneas y metiendo las dos solapas adicionales hacia adentro.
+
 \begin{enumerate}[label=\alph*)]
-\item Encuentre una fórmula que exprese el volumen de la caja como
-función de la longitud de los lados de los cuadrados recortados.
-\item Encuentre una desigualdad que especifique el dominio de la función.
-ción en la parte (a).
-\item Utilice la gráfica de la función de volumen para estimar las dimensiones de la caja de mayor volumen.
-\end{enumerate}
+\item Encuentre una fórmula que exprese el volumen de la caja como función de la longitud de los lados de los cuadrados recortados.
+
+Sea $x$ la longitud de cada lado de los cuadrados recortados, las dimensiones de la base quedan expresadas como
+\begin{itemize}
+	\item Alto $=x$ ft
+	\item Ancho $=6-2x$ ft
+	\item Largo $=5-x$ ft
+\end{itemize}
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.7\textwidth]{img/prob7.png}
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/prob7.png}
 \end{figure}
+
+Sustituimos los valores en la fórmula para calcular el $Volumen = Largo \cdot Ancho \cdot Alto$
+\[
+\therefore V(x) = (5-x) \cdot (6-2x) \cdot x \ \  ft^3
+\]
+
+\item Encuentre una desigualdad que especifique el dominio de la función en la parte (a).
+
+Dado que la longitud de los lados de los cuadrados recortados $x$ debe recortarse del cartón, $x > 0$. Además, la longitud no puede ser más grande que la mitad de la longitud del lado más corto del cartón, $x < 3$.
+\[\therefore 0<x<3\]
+
+\item Utilice la gráfica de la función de volumen para estimar las dimensiones de la caja de mayor volumen.
+
+La gráfica nos dice que la caja de volumen máximo se da para un valor de $x$ que está entre 1 y 2 pies (aproximadamente $x \approx 1.21$ft).
+
+Si $x=1.21$ ft, entonces las dimensiones de la base quedan expresadas como:
+
+\begin{itemize}
+	\item Alto $=1.21$ ft
+	\item Ancho $=6-2(1.21)=6-2.42=3.58$ ft
+	\item Largo $=5-x=5-1.21=3.79$ ft
+\end{itemize}
+
+También, muestra que el volumen máximo es de aproximadamente $V \approx 16.41 ft^3$. 
+
+A su vez, muestra que el volumen disminuye hacia cero a medida que x se acerca a 0 o 3.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=0.6\textheight]{img/p7_vmax.png}
+\end{figure}
+
+\end{enumerate}
+
 \section{Problema 22}
+Flores Morán Julieta Melina\\
+\\
 La figura adjunta muestra un modelo para la variación de mareas en una entrada a la Bahía de San Francisco durante un período de 24 horas.
-Encuentre una ecuación de la forma y = y0 + y1 sin(at + b) para el
-modelo, suponiendo que t = 0 corresponde a la medianoche.
+Encuentre una ecuación de la forma $y = y_0 + y_1 sin(at + b)$ para el
+modelo, suponiendo que t = 0 corresponde a la medianoche.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{img/prob22.png}
@@ -415,7 +494,6 @@ T=\frac{2\pi}{w}
 \[
  w = \frac{2\pi}{12} = \frac{\pi}{6}
 \]
-
 $\phi$ siendo la fase, la podemos encontrar en base al desfase de la funsión seno con la dada, que es 10 hacía la derecha, entonces
 \[
  w(t+\phi)  = \frac{\pi}{6}(t-10) = \frac{\pi}{6}t+\frac{-10\pi}{6} = \frac{\pi}{6}t-\frac{5\pi}{3} 

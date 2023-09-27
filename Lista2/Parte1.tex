@@ -74,8 +74,41 @@ hasta tres decimales mediante la construcción de una tabla de valores apropiada
 Encuentre valores de $x$, si los hay, en los que la función dada no sea continua.
 \begin{enumerate}[label=(\alph*)]
 \item \[ f(x)=\frac{x}{x^2-1} \]
-\item \[ f(x)= ~|~ x^3-2x^2 ~|~ \]
-\item \[ f(x)=\frac{x+3}{~|~ x^2+3x ~|~} \]
+Sabemos que las funciones $y=x$ y $y=x^2-1$ son funciones polinomiales. De modo que son continuas en todo su dominio (para toda $x$); es decir, son continuas sobre $\mathbb R=(-\infty,\infty)$. Ahora, la función $f(x)=\frac{x}{x^2-1}$ es racional, así que es continua siempre que está definida; es decir, en su dominio que es $\{ x ~|~ (x^2-1) \neq 0 \}$. Si $x^2-1=0$, entonces:
+\[
+x^2-1=0
+\]
+\[
+x^2=1
+\]
+\[
+x=\sqrt{1}
+\]
+\[
+x_0=1 \text{ , } x_1=-1
+\]
+$\therefore$ La función $f(x)=\frac{x}{x^2-1}$ no es continua en los valores de $x_0=1 \text{ y } x_1=-1$.
+
+\item \[ f(x)= | x^3-2x^2 | \]
+\begin{enumerate}
+	\item[1)] La función dada es polinomial, por lo que está definida para toda $x$.
+	\item[2)] Calculando los límites laterales cuando $x$ se acerca a un punto $a$.
+	\begin{itemize}
+		\item Límite derecho en $a$:
+		\[ 
+		\lim_{x \to a^+}f(x) = \lim_{x \to a^+}| x^3-2x^2 | =\lim_{x \to a^+}| a^3-2a^2 |
+		\]
+		\item Límite izquierdo en $a$:
+		\[ 
+		\lim_{x \to a^-}f(x) = \lim_{x \to a^-}| x^3-2x^2 | =\lim_{x \to a^-}| a^3-2a^2 |
+		\]
+	\end{itemize}
+	Dado que los límites son iguales, entonces el límite existe para cualquier $a$.
+	\item[3)] Por el punto anterior, el valor del límite cuando $x$ tiende a $a$ es igual al valor de la función en $a$.
+\end{enumerate}
+$\therefore$ La función $f(x)= |x^3-2x^2 |$ es continua para toda $x$.
+
+\item \[ f(x)=\frac{x+3}{~|x^2+3x|~} \]
 \end{enumerate}
 
 %6

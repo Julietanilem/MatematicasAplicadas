@@ -156,6 +156,18 @@ Ahora será más fácil calcular el límite de esta expresión
 \[
 \lim_{x \to + \infty} (1+\frac{a}{x})^{bx} ~ ~ ~,~ ~ a,b>0
 \]
+Supongamos que $t=\frac{a}{x}$ y, despejando $x=\frac{a}{t}$. Por lo anterior, se tiene que si $x$ tiende a $+ \infty$, entonces $t$ tiende a $0$. Por lo tanto, la fórmula original queda reescrita como:
+\[
+\lim_{t \to 0} (1+t)^{b \cdot \frac{a}{t}}
+= \lim_{t \to 0} (1+t)^{\frac{1}{t} \cdot a \cdot b}
+= [\lim_{t \to 0} (1+t)^{\frac{1}{t}}]^{a \cdot b}
+= e^{a \cdot b}
+\]
+\[
+\therefore \lim_{x \to + \infty} (1+\frac{a}{x})^{bx}
+= e^{a \cdot b}
+ ~ ~ ~ ~\text{donde}~ ~ a,b>0
+\]
 
 %5
 \section{Ejercicio 31}

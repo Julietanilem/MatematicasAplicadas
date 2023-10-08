@@ -32,29 +32,81 @@
 %% 5, 10, 20, 36 y 40
 
 %% 1
-\section{Ejercicio 5} 
-Utilice una aproximación cuadrática local apropiada para aproximar $\tan 61^{\circ}$ y compare el resultado con el producido directamente por su utilidad de cálculo.
+\section{Ejercicio 5} Zarco Romero José Antonio \\
+
+Utilice una aproximación cuadrática local apropiada para aproximar $\tan 61^{\circ}$ y compare el resultado con el producido directamente por su utilidad de cálculo. \\
+
+A fin de encontrar una fórmula para la aproximación cuadrática local de una función $f$ acerca de $x=x_0$. Esta aproximación tiene la forma:
+\[p_2(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^2\]
+Dado que $61^{\circ} = \frac{\pi}{3} + \frac{\pi}{180} rad$. Entonces, sea $f(x_0)=\tan x_0$ y $x_0=\frac{\pi}{3}$; de este modo:
+\begin{center}
+\begin{tabular}{r l}
+$f(x_0)=\tan x_0$ & $f(\frac{\pi}{3})=\tan \frac{\pi}{3}=\sqrt 3 rad$ \\
+$f'(x_0)=(\sec x_0)^2$ & $f'(\frac{\pi}{3})=(\sec \frac{\pi}{3})^2=4 rad$ \\
+$f''(x_0)=2 (\sec x_0)^2 \tan x_0$ & $f''(\frac{\pi}{3})=2 (\sec \frac{\pi}{3})^2 \tan \frac{\pi}{3}=8\sqrt 3 rad$ \\
+\end{tabular}
+\end{center}
+Sustituyendo los valores, tenemos que:
+\[
+p_2(x)=\sqrt 3 + 4(x-\frac{\pi}{3}) + \frac{8 \sqrt 3}{2 \cdot 1}(x-\frac{\pi}{3})^2
+=\sqrt 3 + 4(x-\frac{\pi}{3}) + 4 \sqrt 3(x-\frac{\pi}{3})^2
+\]
+Ya que $x=61^{\circ}=\frac{\pi}{3} + \frac{\pi}{180}rad$
+\[
+p_2(\frac{\pi}{3} + \frac{\pi}{180}rad)
+=\sqrt 3 + 4[(\frac{\pi}{3} + \frac{\pi}{180}rad)-\frac{\pi}{3}] + 4 \sqrt 3[(\frac{\pi}{3} + \frac{\pi}{180}rad)-\frac{\pi}{3}]^2
+\]
+\[
+=\sqrt 3 + 4(\frac{\pi}{180}rad) + 4 \sqrt 3(\frac{\pi}{180}rad)^2
+= \sqrt 3 + \frac{\pi}{45}rad + 4 \sqrt 3(\frac{\pi}{180}rad)^2
+\]
+\[\therefore p_2(61^{\circ}) \approx 1.803974\]
+El valor de la aproximación cuadrática local fue de $1.803974$, mientras que el produccido directamente por la calculadora fue de $1.804047$.
 
 %% 2
-\section{Ejercicio 10}
-\[\sin \pi x\]
+\section{Ejercicio 10} Zarco Romero José Antonio \\
 
 Encuentre los polinomios de Maclaurin de orden $n = 0, 1, 2, 3, 4$, y luego encuentre los polinomios de Maclaurin enésimos para la función en notación sigma.
+\[\sin \pi x\]
+
+Sea $f(x)=\sin \pi x$; de este modo:
+\begin{center}
+  \begin{tabular}{r l}
+    $f(x)=\sin (\pi x)$ & $f(0)=0$ \\
+    $f'(x)=\pi \cos (\pi x)$ & $f'(0)=\pi$ \\
+    $f''(x)= - \pi ^2 \sin (\pi x)$ & $f''(0)=0$ \\
+    $f'''(x)= - \pi ^3 \cos (\pi x)$ & $f'''(0)=-\pi ^3$ \\
+    $f^{(4)}(x)= \pi ^4 \sin (\pi x)$ & $f^{(4)}(0)=0$ \\
+  \end{tabular}
+\end{center}
+Dado que el patrón $0, \pi ^k, 0, -\pi ^k$ se repetirá a medida que evaluemos derivadas sucesivas en 0; ya que $f^{(k)}(x)=0$ cuando $k$ es par y, cuando $k$ es impar el resultado de $f^{(k)}(x)$ alterna entre $\pi ^k$ y $-\pi ^k$.
+Por lo tanto, los polinomios de Maclaurin de orden $n = 0, 1, 2, 3, 4$ para $\sin \pi x$ son:
+\begin{center}
+  \begin{tabular}{l}
+    $p_0(x)=0$ \\
+    $p_1(x)=0+\pi x=\pi x$ \\
+    $p_2(x)=0+\pi x+0=\pi x$ \\
+    $p_3(x)=0+\pi x+0+\frac{-\pi ^3}{3!}x^3=\pi - \frac{\pi ^3}{3!}x^3=\pi - \frac{\pi ^3}{6}x^3$ \\
+    $p_4(x)=0+\pi x+0+\frac{-\pi ^3}{3!}x^3+0=\pi - \frac{\pi ^3}{3!}x^3+0=\pi - \frac{\pi ^3}{6}x^3$ \\
+  \end{tabular}
+\end{center}
 
 %% 3
 \section{Ejercicio 20}
-\[\frac{1}{x+2}\text{; }x_0=3\]
 
+\[\frac{1}{x+2}\text{; }x_0=3\]
 Encuentre los polinomios de Taylor de orden $n = 0, 1, 2, 3, 4$ alrededor de $x = x_0$ y luego encuentre el enésimo polinomio de Taylor para la función en notación sigma.
 
 %% 4
 \section{Ejercicio 36}
+
 \[\frac{1}{e}\text{; precisión de tres decimales}\]
 
 Utilice el método del ejemplo 7 para aproximar la expresión dada a la precisión especificada. Verifique su respuesta con la producida directamente por su utilidad de cálculo.
 
 %% 5
 \section{Ejercicio 40}
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\textwidth]{../img/img_Lista2/2_40.png}
@@ -66,6 +118,7 @@ Utilice el método del ejemplo 7 para aproximar la expresión dada a la precisi�
 
 %% 6
 \section{Identidad de Euler}
+
 Aplicar las definiciones de las funciones exponencial natural, seno y coseno como series de Taylor para demostrar la identidad de Euler:
 \[exp(i\theta) = \cos(\theta) + i \sin(\theta)\]
 y deducir, de aquí, que:

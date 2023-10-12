@@ -12,6 +12,7 @@
 \usepackage{dsfont}
 \usepackage{amsmath}
 \usepackage{tipa}
+\usepackage{float}
 \spanishdecimal{.}
 
 \title{Matemáticas para las Ciencias Aplicadas I}
@@ -33,7 +34,7 @@
 %% 11, 28, 31 y 41
 %% 25, 31 y 40
 
-%% 1
+%% 1 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Ejercicio 11} name \\
 
 \begin{figure}[h!]
@@ -48,7 +49,7 @@ La figura adjunta muestra la gráfica de $y = f'(x)$ para una función $f$ no es
 \item Dado que $g(x) = f(x) \sin x$, encuentre $g''(0)$.
 \end{enumerate}
 
-%% 2
+%% 2 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Ejercicio 28} name \\
 
 En cada parte, evalúa la expresión dado que $f(1)=1$, $g(1)=-2$, $f'(1)=3$ y $g'(1)=-1$.
@@ -104,7 +105,7 @@ En cada parte, evalúa la expresión dado que $f(1)=1$, $g(1)=-2$, $f'(1)=3$ y $
   
 \end{enumerate}
 
-%% 3
+%% 3 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Ejercicio 31} name \\
 
 Encuentre $f'(x)$.
@@ -112,7 +113,7 @@ Encuentre $f'(x)$.
 \item .
 \end{enumerate}
 
-%% 4
+%% 4 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Ejercicio 41} name \\
 
 Supongamos que $f'(x) = 2x \cdot f(x)$ y $f(2) = 5$.
@@ -120,29 +121,76 @@ Supongamos que $f'(x) = 2x \cdot f(x)$ y $f(2) = 5$.
 \item .
 \end{enumerate}
 
-%% 5
+%% 5 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Ejercicio 25} name \\
 
 Utilice la diferenciación implícita para encontrar la pendiente de la recta tangente a la curva en el punto especificado y verifique que su respuesta sea consistente con la gráfica adjunta en la página siguiente.
-\begin{figure}[h!]
+\begin{equation*}
+x^4+y^4=16; \qquad (1, \sqrt[4]15)
+\end{equation*}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{../img/img_Lista2/3_25.png}
+\includegraphics[width=0.4\textwidth]{../img/img_Lista2/3_25.png}
 \end{figure}
 
-%% 6
+%% 6 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Ejercicio 31} name \\
 
 Utilice la diferenciación implícita para encontrar la derivada especificada.
-\[ a^2 \omega^2 + b^2 \lambda^2 = 1 \text{ (a, b constantes); } d\omega /d\lambda \]
+\[ a^2 \omega^2 + b^2 \lambda^2 = 1 \text{ ($a$, $b$ constantes);}\qquad d\omega /d\lambda \]
 
-%% 7
+Diferenciando implícitamente ambos lados de la ecuación con respecto a $\lambda$ produce
+\begin{align*}
+  2a^2\omega \frac{d\omega}{d\lambda}+2b^2\lambda=0\\
+  2(a^2\omega \frac{d\omega}{d\lambda}+b^2\lambda)=0\\
+  a^2\omega \frac{d\omega}{d\lambda}+b^2\lambda=0\\
+  a^2\omega \frac{d\omega}{d\lambda}=-b^2\lambda\\
+  \therefore \frac{d\omega}{d\lambda}=-\frac{b^2\lambda}{a^2\omega}\\
+\end{align*}
+
+%% 7 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Ejercicio 40} name \\
 
 Se dice que dos curvas son \textbf{ortogonales} si sus rectas tangentes son perpendiculares en cada punto de intersección, y se dice que dos familias de curvas son \textbf{trayectorias ortogonales} entre sí si cada miembro de una familia es ortogonal a cada miembro de la otra familia. Esta terminología se utiliza en estos ejercicios.
-%%La figura adjunta muestra algunos miembros típicos de las familias de hipérbolas $xy=c$ (curvas negras) y $x^2 − y^2 = k$ (curvas grises), donde $c \neq 0$ y $k \neq 0$. Utilice la sugerencia del ejercicio 39 para demostrar que estas familias son trayectorias ortogonales entre sí. [\textit{Sugerencia}: para que las rectas tangentes sean perpendiculares en un punto de intersección, las pendientes de esas rectas tangentes deben ser recíprocas negativas entre sí.]
-\begin{figure}[h!]
+
+La figura adjunta muestra algunos miembros típicos de las familias de hipérbolas $xy=c$ (curvas negras) y $x^2-y^2=k$ (curvas grises), donde $c \neq 0$ y $k \neq 0$. Utilice la sugerencia del ejercicio 39 para demostrar que estas familias son trayectorias ortogonales entre sí. [\textit{Sugerencia}: para que las rectas tangentes sean perpendiculares en un punto de intersección, las pendientes de esas rectas tangentes deben ser recíprocas negativas entre sí.]
+
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{../img/img_Lista2/3_40.png}
+\includegraphics[width=0.4\textwidth]{../img/img_Lista2/3_40.png}
 \end{figure}
 
+Primero, desarrollaremos los polinomios de las ecuaciones para encontrar los puntos de intersección de las curvas.
+Sea $xy=c$, obtenemos que
+\begin{equation} \label{eqn: y_c_negras}
+y=\frac{c}{x}
+\end{equation}
+Sustituyendo el valor de $y$ de la ecuación \eqref{eqn: y_c_negras}
+  \begin{align*} 
+    x^2-y^2=k \underset{y=\frac{c}{x}}{\Longrightarrow} x^2- \left( \frac{c}{x} \right) ^2=k\\
+    x^2-\frac{c^2}{x^2}-k=0\\
+    x^4-kx^2-c^2=0
+  \end{align*}
+
+Diferenciar implícitamente ambos lados de las siguientes ecuaciones con respecto a $x$ produce
+\begin{enumerate}
+\item $xy=c$
+  \[ x\frac{dy}{dx}+1\cdot y=0 \]
+  De la que obtenemos
+  \begin{equation} \label{eqn: d_c_negras}
+    \frac{dy}{dx}=-\frac{y}{x}
+  \end{equation}
+
+\item $x^2-y^2=k$
+  \begin{align*} 
+    2x - 2y\frac{dy}{dx}=0\\
+    2(x-y\frac{dy}{dx})=0\\
+    x-y\frac{dy}{dx}=0\\
+  \end{align*}
+  De la que obtenemos
+  \begin{equation} \label{eqn: d_c_grises}
+    \frac{dy}{dx}=\frac{x}{y}
+  \end{equation}
+
+\end{enumerate}
 \end{document}

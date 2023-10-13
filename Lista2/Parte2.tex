@@ -32,7 +32,7 @@
 %% 5, 10, 20, 36 y 40
 
 %% 1
-\section{Ejercicio 5} name \\
+\section{Ejercicio 5} Zarco Romero José Antonio \\
 
 Utilice una aproximación cuadrática local apropiada para aproximar $\tan 61^{\circ}$ y compare el resultado con el producido directamente por su utilidad de cálculo. \\
 
@@ -64,7 +64,7 @@ p_2(\frac{\pi}{3} + \frac{\pi}{180}rad)
 El valor de la aproximación cuadrática local fue de $1.803974$, mientras que el producido directamente por la calculadora fue de $1.804047$.
 
 %% 2
-\section{Ejercicio 10} name \\
+\section{Ejercicio 10} Zarco Romero José Antonio \\
 
 Encuentre los polinomios de Maclaurin de orden $n = 0, 1, 2, 3, 4$, y luego encuentre los polinomios de Maclaurin enésimos para la función en notación sigma.
 \[\sin \pi x\]
@@ -92,11 +92,11 @@ Por lo tanto, los polinomios de Maclaurin de orden $n = 0, 1, 2, 3, 4$ para $\si
 \end{center}
 Se obtiene el enésimo polinomio de Maclaurin para la función $\sin \pi x$ en notación sigma.
 \[
-p_n(x)=\sum_{k=0}^{n} \frac{(\pi)^k \cdot \sin(\frac{k \pi }{2})}{j!}(x)^k
+p_n(x)=\sum_{k=0}^{n} \frac{(\pi)^k \cdot \sin(\frac{k \pi }{2})}{k!}(x)^k
 \]
 
 %% 3
-\section{Ejercicio 20} name \\
+\section{Ejercicio 20} Zarco Romero José Antonio \\
 
 Encuentre los polinomios de Taylor de orden $n = 0, 1, 2, 3, 4$ alrededor de $x = x_0$ y luego encuentre el enésimo polinomio de Taylor para la función en notación sigma.
 \[\frac{1}{x+2}\text{; }x_0=3\]
@@ -125,7 +125,7 @@ Por lo tanto, los polinomios de Taylor de orden $n = 0, 1, 2, 3, 4$ para $f(x)=\
     $=\frac{1}{5}-\frac{1}{25}x+\frac{1}{125}(x-3)^2-\frac{1}{625}(x-3)^3+\frac{1}{3125}(x-3)^4$ \\
   \end{tabular}
 \end{center}
-Por tanto, sustituyendo $f^{(k)}(x_0)=\sum_{k=0}^{n} (-1)^k \frac{k!}{5^{k+1}}$ en la fórmula
+Por tanto, sustituyendo $f^{(k)}(x_0)=\sum_{k=0}^{n} (-1)^k \frac{k!}{(x+2)^{k+1}}$ en la fórmula
 \[ \sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k \]
 Se obtiene el enésimo polinomio de Taylor para la función $\frac{1}{x+2} \text{; } x_0=3$ en notación sigma.
 \[
@@ -133,7 +133,7 @@ p_n(x)=\sum_{k=0}^{n} \frac{(-1)^k}{5^{k+1}}(x-3)^k
 \]
 
 %% 4
-\section{Ejercicio 36} name \\
+\section{Ejercicio 36} Flores Morán Julieta Melina \\
 
 Utilice el método del ejemplo 7 para aproximar la expresión dada a la precisión especificada. Verifique su respuesta con la producida directamente por su utilidad de cálculo.
 \[\frac{1}{e}\text{; precisión de tres decimales}\]
@@ -151,15 +151,15 @@ El problema consiste en determinar cuantos términos incluir en e polinomio de M
 \left| R_n (-1) \right| \leq 0.0005
 \]
 Para determinar $n$ usamos el el Teorema de Estimación del Residuo 
-Remplazando la inecuación del teorema 
+remplazando la inecuación del teorema 
 \[
 \left| R_n (x)  \right|  \leq \frac{M}{(n+1)!} \left| x-x_0  \right|^{n+1}
 \]
-Con con $f(x) = e ^{x}$, $x = -1$, $x_0 = 0$ y el intervalo $[-1, 0]$ obtenemos
+Con $f(x) = e ^{x}$, $x = -1$, $x_0 = 0$ y el intervalo $[-1, 0]$ obtenemos
 \[
 \left| R_n (-1)  \right|  \leq \frac{M}{(n+1)!} \left| -1-0  \right|^{n+1}
 \]
-Donde M es una cota superior en el intervalo $f^{n+1}(x) = e^{x}$ para x en el intervalo $[-1, 0]$, esto es $\left|f^{n+1}(x)\right| \leq M$ para toda  x en el intervalo. $e^x$ es una función creciente, así que su máximo valor en el intervalo $[-1, 0]$ ocurre en $x=0$, es decir, $e^{x} \leq e^{0} =1$ en este intervalo. Enonces podemos considerar $M = 1$ para obtener:
+Donde M es una cota superior en el intervalo $f^{n+1}(x) = e^{x}$ para x en el intervalo $[-1, 0]$, esto es $\left|f^{n+1}(x)\right| \leq M$ para toda  x en el intervalo. $e^x$ es una función creciente, así que su máximo valor en el intervalo $[-1, 0]$ ocurre en $x=0$, es decir, $e^{x} \leq e^{0} =1$ en este intervalo. Entonces podemos considerar $M = 1$ para obtener:
 \begin{eqnarray}
 \left| R_n (-1)  \right| = \left| e^{-1}- p_n(-1)  \right|
 &\leq & \frac{1}{(n+1)!} \left| -1\right|^{n+1} \nonumber
@@ -201,7 +201,6 @@ así que se cumple que
 & = & 0.0001761144286  \nonumber 
 \end{eqnarray}
 \[ y ~ 0.0001761144286  \leq 0.0005 \]
-
 Para $n = 7$ \\
 $(7+1)! \geq 40320$ \\
 $ 40320 \geq  2000$ sí se cumple \\ \\
@@ -226,14 +225,14 @@ así que se cumple que
 \[ y ~ 0.0000229826986  \leq 0.0005 \]
 Además, en 3 decimales $p_7(-1) = 0.367$  y $e^{-1} = 0.367 $
 
-$n = 6$ es el valor más pequeño para el que se cumple que el residuo es menor a 0.0005, sin embargo $n=7$  tiene un menor residuo y al ser R7(-1) positivo se mantienen los primeros 3 decimales.
+$n = 6$ es el valor más pequeño para el que se cumple que el residuo es menor a 0.0005, sin embargo $n=7$  tiene un menor residuo y al ser $ R_7(-1)$ positivo se mantienen los primeros 3 decimales.
 
 \[
 \therefore \text{El polinomio } \sum_{k=0}^{7}\frac{(-1)^{k}}{k!} 
 \]
-apróxima a $\frac{1}{e}$  con una presición de 3 décimales.
+aproxima a $\frac{1}{e}$  con una presición de 3 décimales.
 %% 5
-\section{Ejercicio 40} name \\
+\section{Ejercicio 40} Flores Morán Julieta Melina \\
 
 \begin{figure}[h!]
 \centering
@@ -283,8 +282,11 @@ x
 \[
 \therefore x \approx \frac{r \cdot \alpha^2 }{2}
 \]
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
 \item Suponiendo que la Tierra es una esfera de radio $4000 mi$, use el resultado del inciso $(a)$ para aproximar la cantidad máxima en la que un arco de $100 mi$ a lo largo del ecuador divergirá de su cuerda.\\
-Encontrar cantidad en la que un arco de la Tierra divergira del ecuador es equivalente a encontra $x$ en el inciso anterior.
+Encontrar la cantidad en la que un arco de la Tierra divergira del ecuador es equivalente a encontrar $x$ en el inciso anterior.
 Para usar $x \approx \frac{r \cdot \alpha^2 }{2}$ conocemos que el radio es de 4000 mi pero necesitamos conocer el ángulo támbien. \\
 Conocemos que el tamaño del arco es de 100 mi y este se puede calcular dar en términos del radio y el ángulo, siendo que:
 \[
@@ -302,7 +304,7 @@ Remplazando por los datos conocidos:
 \[
 \theta = \frac{100}{4000} = 0.025 rad
 \]
-Sin embargo, la ecuación segun la figura esta dada para un ángulo $\alpha$ que es la mitad del ángulo $\theta$ que corresponde al del total del segmento.	Así que
+Sin embargo, la ecuación según la figura esta dada para un ángulo $\alpha$ que es la mitad del ángulo $\theta$ que corresponde al del total del segmento.	Así que
 \[
 \alpha = \frac{\theta}{2} = \frac{0.025}{2}= 0.0125 rad
 \]
@@ -322,12 +324,12 @@ $\therefore$  La cantidad máxima en la que un arco de $100 mi$ a lo largo del e
 
 
 %% 6
-\section{Identidad de Euler} name \\
+\section{Identidad de Euler} Flores Morán Julieta Melina \\
 
 Aplicar las definiciones de las funciones exponencial natural, seno y coseno como series de Taylor para demostrar la identidad de Euler:
 \[e^{i\theta} = \cos(\theta) + i \sin(\theta)\]
 y deducir, de aquí, que:
-\[exp(i\pi) + 1 = 0\]
+\[e^{i\pi} + 1 = 0\]
 
 Para demostrar que $e^{i\theta} = \cos(\theta) + i \sin(\theta)$ hay que considerar las sigueintes definiciones:
 \[
@@ -341,32 +343,30 @@ e^x = \sum_{k=0}^{\infty}\frac{x^{k}}{k!}
 \sin\theta = \sum_{k=0}^{\infty}\frac{(-1)^{k}}{(2k+1)!} \cdot \theta ^{2k+1} =  \theta - \frac{\theta^3}{3!} + \frac{\theta ^5}{5!} -   \frac{\theta^7}{7!} + \ldots
 \]
 Podemos desarrollar la función de exponencial natural como serie de Taylor
-\[
-e^{i\theta} = \sum_{k=0}^{\infty}\frac{(i\theta)^{k}}{k!} = 1 + i\theta+ \frac{(i\theta)^2}{2!} + \frac{(i\theta)^3}{3!}+ \frac{(i\theta)^4}{4!}+ \frac{(i\theta)^5}{5!} + \frac{(i\theta)^6}{6!} + \frac{(i\theta)^7}{7!}     
-\]
+
 \begin{eqnarray}
 e^{i\theta} 
 & = &   \sum_{k=0}^{\infty}\frac{(i\theta)^{k}}{k!} \nonumber
 \\
 & = & 1 + i\theta + \frac{(i\theta)^2}{2!} + \frac{(i\theta)^3}{3!}+ \frac{(i\theta)^4}{4!}+ \frac{(i\theta)^5}{5!} + \frac{(i\theta)^6}{6!} + \frac{(i\theta)^7}{7!}+ \ldots  \nonumber
 \\
-& = &  1 + i\theta - \frac{\theta^2}{2!} - \frac{(i\theta)^3}{3!}+ \frac{\theta^4}{4!}+ \frac{(i\theta)^5}{5!} - \frac{\theta^6}{6!} - \frac{(i\theta)^7}{7!}+ \ldots  \nonumber
+& = &  1 + i\theta - \frac{\theta^2}{2!} - \frac{i\theta^3}{3!}+ \frac{\theta^4}{4!}+ \frac{i\theta^5}{5!} - \frac{\theta^6}{6!} - \frac{i\theta^7}{7!}+ \ldots  \nonumber
 \\\nonumber
 \end{eqnarray}
 Al agrupar los terminos complejos y los reales.
 \begin{eqnarray}
 e^{i\theta} 
-& = &  1 + i\theta - \frac{\theta^2}{2!} - \frac{(i\theta)^3}{3!}+ \frac{\theta^4}{4!}+ \frac{(i\theta)^5}{5!} - \frac{\theta^6}{6!} - \frac{(i\theta)^7}{7!}+ \ldots  \nonumber
+& = &  1 + i\theta - \frac{\theta^2}{2!} - \frac{i\theta^3}{3!}+ \frac{\theta^4}{4!}+ \frac{i\theta^5}{5!} - \frac{\theta^6}{6!} - \frac{i\theta^7}{7!}+ \ldots  \nonumber
 \\
-& = &  [1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!}- \frac{\theta^6}{6!} + \ldots ]+[i\theta   - \frac{(i\theta)^3}{3!}+ \frac{(i\theta)^5}{5!} - \frac{(i\theta)^7}{7!}+ \ldots]  \nonumber
+& = &  [1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!}- \frac{\theta^6}{6!} + \ldots ]+[i\theta   - \frac{i\theta^3}{3!}+ \frac{i\theta^5}{5!} - \frac{i\theta^7}{7!}+ \ldots]  \nonumber
 \\
-& = &  [1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!}- \frac{\theta^6}{6!} + \ldots ]+i[\theta   - \frac{(\theta)^3}{3!}+ \frac{(\theta)^5}{5!} - \frac{(\theta)^7}{7!}+ \ldots]  \nonumber
+& = &  [1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!}- \frac{\theta^6}{6!} + \ldots ]+i[\theta   - \frac{\theta^3}{3!}+ \frac{\theta^5}{5!} - \frac{\theta^7}{7!}+ \ldots]  \nonumber
 \\\nonumber
 \end{eqnarray}
 Estos grupos son las definiciones de $\cos\theta$ y $\sin\theta$
 \begin{eqnarray}
 e^{i\theta} \nonumber
-& = &  [1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!}- \frac{\theta^6}{6!} + \ldots ]+i[\theta   - \frac{(\theta)^3}{3!}+ \frac{(\theta)^5}{5!} - \frac{(\theta)^7}{7!}+ \ldots]  \nonumber
+& = &  [1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!}- \frac{\theta^6}{6!} + \ldots ]+i[\theta   - \frac{\theta^3}{3!}+ \frac{\theta^5}{5!} - \frac{\theta^7}{7!}+ \ldots]  \nonumber
 \\
 & = & \sum_{k=0}^{\infty}\frac{(-1)^{k}}{2k!} \cdot \theta ^{2k} +i [\sum_{k=0}^{\infty}\frac{(-1)^{k}}{(2k+1)!} \cdot \theta ^{2k+1}] \nonumber
 \\
@@ -376,6 +376,9 @@ e^{i\theta} \nonumber
 \[
 \therefore e^{i\theta} = \cos(\theta) + i \sin(\theta)
 \]
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
 Con este resultado, sustituyendo $\theta$ por $\pi$ :
 \begin{eqnarray}
 e^{i\pi} \nonumber

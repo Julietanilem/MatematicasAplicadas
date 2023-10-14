@@ -39,7 +39,7 @@
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.5\textwidth]{../img/img_Lista2/3_11.png}
+\includegraphics[width=0.6\textwidth]{../img/img_Lista2/3_11.png}
 \end{figure}
 La figura adjunta muestra la gráfica de $y = f'(x)$ para una función $f$ no especificada.
 \begin{enumerate}[label=(\alph*)]
@@ -179,6 +179,36 @@ Encuentre $f'(x)$.
 Supongamos que $f'(x) = 2x \cdot f(x)$ y $f(2) = 5$.
 \begin{enumerate}[label=(\alph*)]
 \item Encuentra $g'(\pi / 3)$ si $g(x)=f(\sec x)$.
+  \begin{equation*}
+    \begin{split}
+      g'(x)
+      &= f'(\sec x)\frac{d}{dx}\sec x\\
+      &= 2\sec x\cdot f(\sec x)\frac{d}{dx}\sec x\\
+      &= 2\sec x\cdot f(\sec x)\cdot \sec x\tan x\\
+      g'(\frac{\pi}{3})
+      &= 2\sec \frac{\pi}{3}\cdot f(\sec \frac{\pi}{3})\cdot \sec \frac{\pi}{3}\tan \frac{\pi}{3}\\
+      &= 2\cdot 2 \cdot f(2)\cdot 2\cdot \sqrt{3}\\
+      &= 8\cdot 5 \sqrt{3}\\
+      &= 40\sqrt{3}\\
+    \end{split}
+  \end{equation*}
+  
+\item Encuentra $h'(2)$ si $h(x)=\left[ f(x)/(x-1) \right]^4$.
+  \begin{equation*}
+    \begin{split}
+      h'(x)
+      &= 4\left(\frac{f(x)}{x-1}\right)^3\frac{(x-1)f'(x)-f(x)}{(x-1)^2}\\
+      &= 4\left(\frac{f(x)}{x-1}\right)^3\frac{(x-1)(2x\cdot f(x))-f(x)}{(x-1)^2}\\
+      &= 4\cdot \frac{[f(x)]^3}{(x-1)^3}\cdot \frac{f(x)[(x-1)(2x)-1]}{(x-1)^2}\\
+      &= \frac{4[f(x)]^3}{(x-1)^3}\cdot \frac{f(x)(2x^2-2x-1)}{(x-1)^2}\\
+      &= \frac{4[f(x)]^4(2x^2-2x-1)}{(x-1)^5}\\
+      h'(2)
+      &= \frac{4[f(2)]^4(2(2^2)-2\cdot 2-1)}{(2-1)^5}\\
+      &= \frac{4(5)^4(2(4)-4-1)}{1^5}\\
+      &= 4\cdot 625\cdot 3\\
+      &= 7500
+    \end{split}
+  \end{equation*}
 \end{enumerate}
 
 %% 5 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -186,12 +216,29 @@ Supongamos que $f'(x) = 2x \cdot f(x)$ y $f(2) = 5$.
 
 Utilice la diferenciación implícita para encontrar la pendiente de la recta tangente a la curva en el punto especificado y verifique que su respuesta sea consistente con la gráfica adjunta en la página siguiente.
 \begin{equation*}
-x^4+y^4=16; \qquad (1, \sqrt[4]15)
+x^4+y^4=16; \qquad (1, \sqrt[4]15) \qquad \text{\textbf{[Lamé’s special quartic]}}
 \end{equation*}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{../img/img_Lista2/3_25.png}
+\includegraphics[width=0.35\textwidth]{../img/img_Lista2/3_25.png}
 \end{figure}
+Derivamos y con respecto de x
+\begin{align*}
+  4x^3+4y^3\frac{dy}{dx}=0\\
+  4(x^3+y^3\frac{dy}{dx})=0\\
+  x^3+y^3\frac{dy}{dx}=0\\
+  \therefore \frac{dy}{dx}=-\frac{x^3}{y^3}
+\end{align*}
+Evaluamos en el punto $(1, \sqrt[4]15)$
+\begin{equation*}
+  \begin{split}
+    \frac{dy}{dx}
+    &=-\frac{x^3}{y^3} ~ \vline_{(1, \sqrt[4]15)}\\
+    &= -\frac{1^3}{(\sqrt[4]15)^3}\\
+    &= -\frac{1}{\sqrt[4]{15^3}}\\
+    &\approx -0.1312\\
+  \end{split}
+\end{equation*}
 
 %% 6 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Ejercicio 31} name \\
@@ -217,20 +264,8 @@ La figura adjunta muestra algunos miembros típicos de las familias de hipérbol
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{../img/img_Lista2/3_40.png}
+\includegraphics[width=0.35\textwidth]{../img/img_Lista2/3_40.png}
 \end{figure}
-
-Primero, desarrollaremos los polinomios de las ecuaciones para encontrar los puntos de intersección de las curvas.
-Sea $xy=c$, obtenemos que
-\begin{equation} \label{eqn: y_c_negras}
-y=\frac{c}{x}
-\end{equation}
-Sustituyendo el valor de $y$ de la ecuación \eqref{eqn: y_c_negras}
-  \begin{align*} 
-    x^2-y^2=k \underset{y=\frac{c}{x}}{\Longrightarrow} x^2- \left( \frac{c}{x} \right) ^2=k\\
-    x^2-\frac{c^2}{x^2}-k=0\\
-    x^4-kx^2-c^2=0
-  \end{align*}
 
 Diferenciar implícitamente ambos lados de las siguientes ecuaciones con respecto a $x$ produce
 \begin{enumerate}
@@ -251,6 +286,104 @@ Diferenciar implícitamente ambos lados de las siguientes ecuaciones con respect
   \begin{equation} \label{eqn: d_c_grises}
     \frac{dy}{dx}=\frac{x}{y}
   \end{equation}
-
 \end{enumerate}
+
+Al multiplicar las pendientes de las rectas tangentes de las familias de las hipérbolas, obtenemos\\
+\[
+  m_1 \cdot m_2 = -\frac{y}{x}\cdot \frac{x}{y}=-1\\
+  \]
+  
+Por tanto, las pendientes de las rectas tangentes son recíprocas negativas entre sí, es decir:
+  \[\therefore xy=c \perp x^2-y^2=k\]
+
+Lo demostrado anteriormente aplica para cualquier valor dado de $x$ y $y$. No obstante, desarrollaremos los polinomios de las ecuaciones para encontrar los puntos de intersección de las curvas.\\
+
+Sea $xy=c$, obtenemos que
+\begin{equation} \label{eqn: y_c_negras}
+y=\frac{c}{x}
+\end{equation}
+
+Sustituyendo el valor de $y$ de la ecuación \eqref{eqn: y_c_negras}
+
+\begin{align*} 
+  x^2-y^2=k \underset{y=\frac{c}{x}}{\Longrightarrow} x^2- \left( \frac{c}{x} \right) ^2=k\\
+  x^2-\frac{c^2}{x^2}-k=0\\
+  x^4-kx^2-c^2=0
+\end{align*}
+
+Por lo tanto, los valores de $x$ son
+
+\begin{align*}
+  x_0=\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\\
+  x_1=-\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\\
+  x_2=\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}\\
+  x_3=-\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}\\
+\end{align*}
+
+Sustituyendo el valor de cada $x$ en la ecuación \eqref{eqn: y_c_negras}, obtenemos los valores de y para cada valor de $x$
+\begin{align*}
+  y_0=\frac{1}{c}\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\\
+  y_1=-\frac{1}{c}\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\\
+  y_2=\frac{1}{c}\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}\\
+  y_3=-\frac{1}{c}\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}\\
+\end{align*}
+
+Ahora, evaluamos cada punto de intersección en la derivada de la ecuación $xy=c$
+\begin{equation*}
+  \begin{split}
+    \frac{dy}{dx}
+    &= -\frac{y}{x} ~ \vline _{(x_0,y_o)}\\
+    &=  -\frac{y}{x} ~ \vline _{\left(\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}, \frac{1}{c}\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\right)}\\
+    &= -\frac{\frac{1}{c}\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}}{\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}}\\
+    &= -\frac{1}{c}\\
+  \end{split}
+\end{equation*}
+\begin{equation*}
+  \begin{split}
+    \frac{dy}{dx}
+    &= -\frac{y}{x} ~ \vline _{(x_1,y_1)}\\
+    &=  -\frac{y}{x} ~ \vline _{\left(-\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}, -\frac{1}{c}\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\right)}\\
+    &= -\frac{\frac{1}{c}\left(-\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\right)}{-\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}}\\
+    &= -\frac{1}{c}\\
+  \end{split}
+\end{equation*}
+\begin{equation*}
+  \begin{split}
+    \frac{dy}{dx}
+    &= -\frac{y}{x} ~ \vline _{(x_2,y_2)}\\
+    &=  -\frac{y}{x} ~ \vline _{\left(\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}, \frac{1}{c}\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}\right)}\\
+    &= -\frac{\frac{1}{c}\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}}{\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}}\\
+    &= -\frac{1}{c}\\
+  \end{split}
+\end{equation*}
+\begin{equation*}
+  \begin{split}
+    \frac{dy}{dx}
+    &= -\frac{y}{x} ~ \vline _{(x_3,y_3)}\\
+    &=  -\frac{y}{x} ~ \vline _{\left(-\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}, -\frac{1}{c}\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}\right)}\\
+    &= -\frac{\frac{1}{c}\left(-\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}\right)}{-\sqrt{\frac{k-\sqrt{k^2+4c^2}}{2}}}\\
+    &= -\frac{1}{c}\\
+  \end{split}
+\end{equation*}
+
+Enseguida, evaluamos cada punto de intersección en la derivada de la ecuación $x^2-y^2=k$
+\begin{equation*}
+  \begin{split}
+    \frac{dy}{dx}
+    &= \frac{x}{y} ~ \vline _{(x_0,y_o)}\\
+    &= \frac{x}{y} ~ \vline _{\left(\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}, \frac{1}{c}\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\right)}\\
+    &= \frac{\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}}{\frac{1}{c}\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}}\\
+    &= c\\
+  \end{split}
+\end{equation*}
+\begin{equation*}
+  \begin{split}
+    \frac{dy}{dx}
+    &= \frac{x}{y} ~ \vline _{(x_1,y_1)}\\
+    &= \frac{x}{y} ~ \vline _{\left(-\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}, -\frac{1}{c}\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\right)}\\
+    &= \frac{-\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}}{\frac{1}{c}\left(-\sqrt{\frac{k+\sqrt{k^2+4c^2}}{2}}\right)}\\
+    &= c\\
+  \end{split}
+\end{equation*}
+
 \end{document}

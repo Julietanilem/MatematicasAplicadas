@@ -47,12 +47,50 @@ y=\frac{\sin{x}\cos{x}\tan^3{x}}{\sqrt{x}}
 \]
 \begin{equation*}
   \begin{split}
-    \frac{dy}{dx}
+  \ln(x)
+  &= \ln(\sin{x}\cos{x}\tan^3{x})-\ln(\sqrt{x}) \\
+  &= \ln(\sin{x})+\ln(\cos{x})+\ln(\tan^3{x})-\ln \left(x^{\frac{1}{2}}\right) \\
+  &= \ln(\sin{x})+\ln(\cos{x})+3\ln(\tan{x})-\frac{1}{2}\ln x \\
+  \frac{1}{y}\frac{dy}{dy}
+  &= \frac{\cos{x}}{\sin{x}} + \frac{-\sin{x}}{\cos{x}} + \frac{3\sec^2{x}}{\tan{x}} - \frac{1}{2x} \\
+  \frac{dy}{dy}
+  &= y \left[ \cot{x}-\tan{x} + \frac{3\sec^2{x}}{\tan{x}} - \frac{1}{2x} \right] \\
+  \therefore \frac{dy}{dy}
+  &= \frac{\sin{x}\cos{x}\tan^3{x}}{\sqrt{x}}
+  \left[ \cot{x}-\tan{x} + \frac{3\sec^2{x}}{\tan{x}} - \frac{1}{2x} \right] \\
   \end{split}
 \end{equation*}
 
 % 57 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 57} name \\
+
+Sea $p$ el número de paramecios en una solución nutritiva $t$ días después del inicio de un experimento, y supongamos que $p$ es definido implícitamente como una función de $t$ por la ecuación
+\[
+0 = \ln p + 0.83 − \ln(2.3 − 0.0046p) − 2.3t
+\]
+Utilice la diferenciación implícita para demostrar que la tasa de cambio de $p$ con respecto a $t$ satisface la ecuación
+\[
+\frac{dp}{dt} = 0.0046p(500 − p)
+\]
+\begin{equation*}
+  \begin{split}
+    \ln p - \ln(2.3 − 0.0046p)
+    &= 2.3t -0.83 \\
+    \frac{1}{p}\frac{dp}{dt}+\frac{0.0046}{2.3-0.0046p}\frac{dp}{dt}
+    &= 2.3 \\
+    \frac{dp}{dt}\left[\frac{1}{p}+\frac{0.0046}{2.3-0.0046p}\right]
+    &= 2.3 \\
+    \frac{dp}{dt}\left[\frac{2.3-0.0046p+ 0.0046p}{p(2.3-0.0046p)}\right]
+    &= 2.3 \\
+    \frac{dp}{dt}\left[\frac{2.3}{2.3p-0.0046p^2}\right]
+    &= 2.3 \\
+    \frac{dp}{dt}
+    &= 2.3\left[\frac{2.3p-0.0046p^2}{2.3}\right] \\
+    &= 2.3p-0.0046p^2 \\
+    \therefore \frac{dp}{dt}
+    &= 0.0046p(500 − p)
+  \end{split}
+\end{equation*}
 
 %% 3.3 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 3.3 \\ Derivadas De Funciones Trigonométricas Exponenciales E Inversas} 

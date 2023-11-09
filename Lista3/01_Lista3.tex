@@ -101,6 +101,18 @@ Encuentre $\frac{dy}{dx}$.
 \[
 y=x^2(\sin^{-1}{x})^3
 \]
+\begin{equation*}
+  \begin{split}
+    \frac{dy}{dx}
+    &= \left[x^2\cdot \frac{d}{dx}(\sin^{-1}{x})^3 \right] + \left[(\sin^{-1}{x})^3\cdot \frac{d}{dx}x^2\right] \\
+    &= \left\lbrace x^2\cdot \left[3(\sin^{-1}{x})^2\cdot \frac{d}{dx}(\sin^{-1}{x}) \right] \right\rbrace + \left[(\sin^{-1}{x})^3\cdot 2x\right] \\
+    &= \left\lbrace x^2\cdot \left[3(\sin^{-1}{x})^2\cdot \frac{1}{\sqrt{1-x^2}} \right] \right\rbrace + \left[2x(\sin^{-1}{x})^3\right] \\
+    &= \left\lbrace x^2\cdot \left[ \frac{3(\sin^{-1}{x})^2}{\sqrt{1-x^2}} \right] \right\rbrace + 2x(\sin^{-1}{x})^3 \\
+    \therefore
+    \frac{dy}{dx}
+    &= \frac{3x^2(\sin^{-1}{x})^2}{\sqrt{1-x^2}} + 2x(\sin^{-1}{x})^3 \\
+  \end{split}
+\end{equation*}
 
 % 70 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 70} name \\
@@ -128,12 +140,34 @@ donde $P(t)$ es la población (en miles de millones) $t$ días después de una o
 % 83 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 83} name \\
 
-Supongamos que un cojinete de bolas de acero se suelta dentro de una tina de fluido y comienza a hundirse. Según un modelo, la velocidad $v(t)$ (en $m/s$) del rodamiento de bolas t segundos después de su liberación viene dada por la fórmula
+Supongamos que un rodamiento  de bolas de acero se suelta dentro de una tina de fluido y comienza a hundirse. Según un modelo, la velocidad $v(t)$ (en $m/s$) del rodamiento de bolas $t$ segundos después de su liberación viene dada por la fórmula
 \[
 v(t)=\frac{9.8}{k}(1-e^{-kt})
 \]
 donde $k$ es una constante positiva que corresponde a la resistencia que ofrece el fluido contra el movimiento del rodamiento. (Cuanto menor sea el valor de $k$, más débil será la resistencia).
-Para $t$ fijo, determine el valor límite de la velocidad como $k\rightarrow 0^+$ y dé una interpretación física del límite.
+Para $t$ fijo, determine el valor límite de la velocidad cuando $k\rightarrow 0^+$ y dé una interpretación física del límite.
+\begin{equation*}
+  \begin{split}
+    \lim_{k \to 0^+} v(t)
+    &= \lim_{k \to 0^+} \left[ \frac{9.8}{k}(1-e^{-kt}) \right] \\
+    &= 9.8 \lim_{k \to 0^+} \frac{1-e^{-kt}}{k} \\
+    & \qquad \text{Aplicando la serie de MacLaurin, tenemos que:} \\
+    &= 9.8 \lim_{k \to 0^+} \frac{1-
+      \left(1+\frac{(-kt)}{1!}+\frac{(-kt)^2}{2!}+\frac{(-kt)^3}{3!}+\ldots \right)
+    }{k} \\
+    &= 9.8 \lim_{k \to 0^+} \frac{1-
+      \left(1-kt+\frac{(kt)^2}{2!}-\frac{(kt)^3}{3!}+\ldots \right)
+    }{k} \\
+    &= 9.8 \lim_{k \to 0^+} \frac{kt-\frac{(kt)^2}{2!}+\frac{(kt)^3}{3!}-\ldots}{k} \\
+    &= 9.8 \lim_{k \to 0^+} \left[ t-\frac{k(t)^2}{2!}+\frac{k^2t^3}{3!}-\ldots \right] \\
+    &= 9.8 ( t-0+0-\ldots ) \\
+    \therefore
+    \lim_{k \to 0^+} v(t)
+    &= 9.8 t \\
+  \end{split}
+\end{equation*}
+
+Esto significa que si el fluido no ofrece resistencia, entonces la velocidad aumentará a una tasa constante de $9.8 m/s$.
 
 %% 3.4 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 3.4 \\ Tasas Relacionadas} 

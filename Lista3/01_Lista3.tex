@@ -66,7 +66,8 @@ y=\frac{\sin{x}\cos{x}\tan^3{x}}{\sqrt{x}}
 
 Sea $p$ el número de paramecios en una solución nutritiva $t$ días después del inicio de un experimento, y supongamos que $p$ es definido implícitamente como una función de $t$ por la ecuación
 \[
-0 = \ln p + 0.83 − \ln(2.3 − 0.0046p) − 2.3t
+0 = \ln p + 0.83 − \ln(2.3-
+0.0046p) − 2.3t
 \]
 Utilice la diferenciación implícita para demostrar que la tasa de cambio de $p$ con respecto a $t$ satisface la ecuación
 \[
@@ -356,7 +357,33 @@ Verifique estos resultados.
 
 % 63 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 63} name \\
+
+El diagrama esquemático adjunto representa un circuito eléctrico que consta de una fuerza electromotriz que produce un voltaje $V$, una resistencia con resistencia $R$ y un inductor con inductancia $L$. En la teoría de circuitos eléctricos se muestra que si el voltaje se aplica por primera vez en el momento $t = 0$, entonces la corriente $I$ que fluye a través del circuito en el tiempo $t$ está dada por
+\[
+I=\frac{V}{R}\left(1-e^{-Rt/L}\right)
+\]
+
+¿Cuál es el efecto sobre la corriente en un tiempo fijo $t$ si la resistencia se acerca a $0$ (es decir, $R\rightarrow 0^+$)?
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{../img/img_Lista3/circuit63.png}
+\end{figure}
+
 % 65 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 65} name \\
+
+\begin{enumerate}[label=\alph*)]
+\item Utilice un CAS para demostrar que si $k$ es una constante positiva, entonces
+  \[
+  \lim_{x \to +\infty} x(k^{1/x}-1)=\ln{k}
+  \]
+\item Confirme este resultado utilizando la regla de L'Hôpital. [\textit{Sugerencia}: Exprese el límite en términos de $t = 1/x$.]
+\item Si $n$ es un entero positivo, entonces se deduce del inciso (a) con $x = n$ que la aproximación
+  \[
+  n(\sqrt[n]{k}-1)\approx \ln{k}
+\]
+debería ser bueno cuando $n$ es grande. Utilice este resultado y la tecla de raíz cuadrada en una calculadora para aproximar los valores de $\ln{0.3}$ y $\ln{2}$ con $n = 1024$, luego compare los valores obtenidos con los valores de los logaritmos generados directamente desde la calculadora. [\textit{Sugerencia}: Las raíces enésimas para las cuales $n$ es una potencia de 2 se pueden obtener como raíces cuadradas sucesivas.]
+\end{enumerate}
 
 \end{document}

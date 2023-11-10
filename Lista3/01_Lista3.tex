@@ -313,8 +313,137 @@ r=\frac{4995}{1+0.12\cos{\theta}}
 \]
 donde $\theta$ es el ángulo medido desde el punto de la órbita más cercano a la superficie de la Tierra (consulte la figura adjunta).
 \begin{enumerate}
-\item Encuentre la altitud del satélite en el \textit{\textbf{perigeo}} (el punto más cercano a la superficie de la Tierra) y en el \textit{\textbf{apogeo}} (el punto más alejado de la superficie de la Tierra). Utilice $3960 mi$ como radio de la Tierra.
-\item En el instante en que $\theta$ es $120^{\circ}$, el ángulo $\theta$ aumenta a razón de $2.7^{\circ} /min$. Encuentre la altitud del satélite y la velocidad a la que cambia la altitud en este instante. Exprese la velocidad en unidades de $mi/min$.
+\item Encuentre la altitud del satélite en el \textit{\textbf{perigeo}} (el punto más cercano a la superficie de la Tierra) y en el \textit{\textbf{apogeo}} (el punto más alejado de la superficie de la Tierra). Utilice $3960~  mi$ como radio de la Tierra.\\
+La altitud del satélite será la distancia desde la corteza de la tierra hasta el sátelite. Es decir, r menos el radio de la tierra dado como $3960~  mi$.\\ En el perigeo el ángulo $\theta$ vale 0 rad. Por lo tanto la distancia desde el centro de la Tierra será:
+ 
+\begin{equation*}
+  \begin{split}
+    r
+    &= \frac{4995}{1+0.12\cos{0}}\\
+    &= \frac{4995}{1+0.12\cdot 1}\\
+    &= \frac{4995}{1.12}\\
+    &= 4459.8214\\
+    \therefore
+    r
+    &= 4459.8214 ~ mi  \\
+  \end{split}
+\end{equation*}
+
+Con este dato, ya podemos calcular la altitud en el perigeo.
+
+\begin{equation*}
+  \begin{split}
+    \text{altitud en el perigeo}
+    &= r - 3960 \\
+    &= 4459.8214 - 3960\\
+    \therefore
+    altitud
+    &= 499.8214 ~ mi  \\
+  \end{split}
+\end{equation*}
+
+Gracias a la figura, es fácil notar que $\theta$ durante el apogeo vale $180^{\circ}$ o  $\pi$ rad. Siguiendo un procedemiento análogo al anterior, podemos calcular la altitut restando 3960 mi de lo que obtengamos para r dado este ángulo.
+\begin{equation*}
+  \begin{split}
+    r
+    &= \frac{4995}{1+0.12\cos{\pi}}\\
+    &= \frac{4995}{1+0.12\cdot -1}\\
+    &= \frac{4995}{1 - 0.12}\\
+    &= \frac{4995}{0.88}\\
+    \therefore
+    r
+    &= 5676.1363 ~ mi \\
+  \end{split}
+\end{equation*}
+
+Con este dato, ya podemos calcular la altitud en el apogeo.
+
+\begin{equation*}
+  \begin{split}
+    \text{altitud en el apogeo}
+    &= r - 3960 \\
+    &=  5676.1363 - 3960\\
+    \therefore
+    altitud
+    &= 1716.136364 ~ mi \\
+  \end{split}
+\end{equation*}
+
+\item En el instante en que $\theta$ es $120^{\circ}$, el ángulo $\theta$ aumenta a razón de $2.7^{\circ} /min$. Encuentre la altitud del satélite y la velocidad a la que cambia la altitud en este instante. Exprese la velocidad en unidades de $mi/min$.\\
+Primero convine tener los ángulos dados radianes.
+  \[
+  120^{\circ} =  120^{\circ} \left( \frac{\pi rad}{180 ^{\circ}} \right) = \frac{2\pi}{3} rad
+  \]
+   \[
+  2.7^{\circ} =  2.7^{\circ} \left( \frac{\pi rad}{180 ^{\circ}} \right) = \frac{3\pi}{200} rad
+   \]
+
+   \\La altitud del satélite en el ángulo dado se calcula restando la distancia desde el centro de la Tierra menos el radio de la misma.
+
+   \begin{equation*}
+  \begin{split}
+    r
+    &= \frac{4995}{1+0.12\cos{\frac{2\pi}{3}}}\\
+    &= \frac{4995}{1+0.12\cdot - \frac{1}{2}}\\
+    &= \frac{4995}{1 - 0.06}\\
+    &= \frac{4995}{0.94}\\
+    \therefore
+    r
+    &= 5313.829787 ~ mi \\
+  \end{split}
+\end{equation*}
+
+Con este dato, ya podemos calcular la altitud en el apogeo.
+
+\begin{equation*}
+  \begin{split}
+    \text{altitud en el apogeo}
+    &= r - 3960 \\
+    &=  5676.1363 - 3960\\
+    \therefore
+    altitud
+    &= 1716.136364 ~ mi \\
+  \end{split}
+\end{equation*}
+
+\\ Para encontrar la tasa de cambio de la altitud con respecto al tiempo. Podemos derivar implicitamente la fórmula de la altitud que podemos describir como :
+\[
+a = \frac{4995}{1+0.12\cos{\theta}} - 3960
+\]
+
+\begin{equation*}
+  \begin{split}
+  \frac{da}{dt}
+    &= \frac{d}{dt}\left[\frac{4995}{1+0.12\cos{\theta}}-3960\right]\\
+  &= \frac{d}{dt}\left[4995 \cdot (1+0.12\cos{\theta})^{-1}\right]- \frac{d}{dt} (3960)\\
+  &= \frac{d}{dt}\left[4995 \cdot (1+0.12\cos{\theta})^{-1}\right]\\
+  &= 4995 \cdot \frac{d}{dt}\left[(1+0.12\cos{\theta})^{-1}\right]\\
+  &= 4995 \cdot \left[-(1+0.12\cos{\theta})^{-2} \cdot -0.12sen\theta \cdot   \frac{d\theta}{dt}  \right]\\
+   &=  4995 \cdot (1+0.12\cos{\theta})^{-2} \cdot 0.12sen\theta \cdot   \frac{d\theta}{dt}  \\
+    \therefore
+   \frac{da}{dt} 
+   &= \frac{dr}{dt} 
+   = \frac{4995 \cdot  0.12sen\theta }{(1+0.12\cos{\theta})^{2}}  \cdot   \frac{d\theta}{dt} \\
+  \end{split}
+\end{equation*}
+
+Evaluada en ese instante dónde sabemos que  $\theta =  \frac{2\pi}{3} ~ rad $ y $\frac{d\theta}{dt} = \frac{3\pi}{200} ~ rad/min $ tenemos que:
+
+\begin{equation*}
+  \begin{split}
+  \frac{da}{dt} \vline _{\theta = \frac{2\pi}{3} }
+  &=\frac{4995 \cdot  0.12sen\theta }{(1+0.12\cos{\theta})^{2}}  \cdot   \frac{d\theta}{dt}  \vline _{\theta = \frac{2\pi}{3} } \\
+  &=\frac{4995 \cdot  0.12sen\theta }{(1+0.12\cos{\theta})^{2}}  \cdot    \frac{3\pi}{200}  \vline _{\theta = \frac{2\pi}{3} } \\
+  &=\frac{4995 \cdot  0.12\sin{\frac{2\pi}{3}} }{(1+0.12\cos{\frac{2\pi}{3}})^{2}}  \cdot    \frac{3\pi}{200}  \\
+  &=587.478075  \cdot    \frac{3\pi}{200}  \\
+  &=27.68425207  \\
+  \therefore
+   \frac{da}{dt} \vline _{\theta = \frac{2\pi}{3} }
+     &=27.68425207 ~ mi/min \\
+  \end{split}
+\end{equation*}
+
+
 \end{enumerate}
 
 % 36 -------------------------------------------------------------------------------------------------------------
@@ -329,7 +458,33 @@ Un helicóptero de la policía vuela hacia el norte a $100 mi/h$ y a una altitud
 % 45 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 45} name \\
 
-Un meteoro entra en la atmósfera terrestre y se quema a un ritmo que, en cada instante, es proporcional a su superficie. Suponiendo que el meteoro es siempre esférico, demuestre que el radio disminuye a un ritmo constante.
+Un meteoro entra en la atmósfera terrestre y se quema a un ritmo que, en cada instante, es proporcional a su superficie. Suponiendo que el meteoro es siempre esférico, demuestre que el radio disminuye a un ritmo constante.\\ \\
+La quema del meteoro implica una disminución del volúmen. Este se dice que ocurre a un ritmo que siempre es proporcionalmente a la superficie. Lo que significa que la tasa de cambio del volúmen es negativa porque disminuye y esta dado por una constante y la superficie del metéoro. Entonces, si S es la superficie del metéoro y C una constante de proporcionalidad.
+\[
+\frac{dV}{dt} = -C \cdot S
+\]
+Sabemos además que para una esfera, como lo es el meteoro, $V= \frac{4}{3}\cdot \pi \cdot r^{3}$ y que la superficie está dada por la fórmula $S=4 \cdot \pi \cdot r^{2}$.
+Calculando la tasa de cambio a partir de esta información encontrtamos que:
+\begin{equation*}
+  \begin{split}
+  \frac{dV}{dt} 
+  &= \frac{d}{dt} (\frac{4}{3}\cdot \pi \cdot r^{3})\\
+  &= \frac{4}{3} \pi \cdot  \frac{d}{dt} (r^{3})\\
+  &= \frac{4}{3} \pi \cdot  3r^{2} \cdot \frac{dr}{dt}\\
+  &= 4  \pi r^{2} \cdot \frac{dr}{dt}\\
+  \therefore
+   \frac{dV}{dt}
+     &= S  \cdot \frac{dr}{dt} \\
+  \end{split}
+\end{equation*}
+Para saber el valor de $\frac{dr}{dt}$, podemos igualar estas expresiones ya que ambas son $  \frac{dV}{dt}$.
+\[
+ S  \cdot \frac{dr}{dt} =  -C \cdot S  
+ \]
+ \[
+  \frac{dr}{dt} =  -C  
+  \]
+La tasa de cambio de radio es negativa, y por tanto decreciente, además que su valor es una constante C. Esto demuestra que el radio disminuye a un ritmo constante. 
 
 % 47 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 47} name \\

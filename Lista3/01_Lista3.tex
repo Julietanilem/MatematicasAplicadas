@@ -1,3 +1,4 @@
+
 \documentclass[12pt]{article}
 
 \usepackage[spanish]{babel}
@@ -66,7 +67,8 @@ y=\frac{\sin{x}\cos{x}\tan^3{x}}{\sqrt{x}}
 
 Sea $p$ el número de paramecios en una solución nutritiva $t$ días después del inicio de un experimento, y supongamos que $p$ es definido implícitamente como una función de $t$ por la ecuación
 \[
-0 = \ln p + 0.83 − \ln(2.3 − 0.0046p) − 2.3t
+0 = \ln p + 0.83 − \ln(2.3-
+0.0046p) − 2.3t
 \]
 Utilice la diferenciación implícita para demostrar que la tasa de cambio de $p$ con respecto a $t$ satisface la ecuación
 \[
@@ -120,50 +122,55 @@ y=x^2(\sin^{-1}{x})^3
 Sea $f(x)=\frac{exp(4-x^2)}{x}$, $x>0$.
 \begin{enumerate}
 \item Demuestre que $f$ es uno a uno. \\
-  Para demostrar que la función f es uno a uno basta con demostrar que es creciente o decreciente en todo el dominio su f, lo que se deduce si la derivada no cambia de signo en ningún valor del dominio.
+Para demostrar que la función f es uno a uno basta con demostrar que es creciente o decreciente en todo el dominio su f, lo que se deduce si la derivada no cambia de signo en ningún valor del dominio.
 
-\[ \begin{equation*}
+\begin{equation*}
   \begin{split}
-    f'(x) =  \frac{d}{dx} \left[\frac{1}{x} \cdot e^{4-x^2}\right]
+    f'(x)
+    &=  \frac{d}{dx} \left[\frac{1}{x} \cdot e^{4-x^2}\right] \\
     &= \left[\frac {1}{x}\cdot \frac{d}{dx}(e^{4-x^2}) \right] + \left[e^{4-x^2}\cdot \frac{d}{dx}(x^{-1})\right] \\
     &= \left\lbrace \frac{1}{x} \cdot \left[e^{4-x^2} \cdot \frac{d}{dx}(4-x^2) \right] \right\rbrace + \left[e^{4-x^2}(-x^{-2})] \\
     &=  \left\lbrace \frac{1}{x} \cdot \left[e^{4-x^2} ( -2x) \right] \right\rbrace + \left[e^{4-x^2}(-x^{-2})] \\
     &= \frac{-2x \cdot e^{4-x^2}}{x} - \frac {e^{4-x^2}}{x^{2}}= \frac{x(-2x  e^{4-x^2})- e^{4-x^2} }{x^2}\\
-    &= \frac{-e^{4-x^2} (2x^{2}+1) }{x^2} = -e^{4-x^2} ( \frac{2x^{2}+1}{x^2})\\
+    &= \frac{-e^{4-x^2} (2x^{2}+1) }{x^2} = -e^{4-x^2} ( \frac{2x^{2}+1}{x^2} )\\
      &=  -e^{4-x^2}( \frac{2x^{2}}{x^2} +\frac{1}{x^2}) =   -e^{4-x^2} (2 +\frac{1}{x^2})\\
     \therefore
     f'(x) 
     & =  -e^{4-x^2} (2 +\frac{1}{x^2})  \\
   \end{split}
 \end{equation*}
-\]
-  Los factores $ e^{4-x^2}$  y  $2 +\frac{1}{x^2}$ siempre serán positivos para toda x. Por lo que al multiplicarlo por -1 podemos aseverar que: \\
+
+Los factores $ e^{4-x^2}$  y  $2 +\frac{1}{x^2}$ siempre serán positivos para toda x. Por lo que al multiplicarlo por -1 podemos aseverar que: \\
   $f'(x) <0 $ para toda x.\\
   Sabiendo que la derivada no cambia de signo en todo el dominio de la función, y que la función es decreciente en todo el dominio queda demostrado que f es una función uno a uno.\\
-\item 2. Sea $g(x)=f^{-1}(x)$ y defina $F(X)=f([g(x)]^2)$. Encuentre $F'\left(\frac{1}{2}\right)$ \\
   
-  \[ \begin{equation*}
+\item Sea $g(x)=f^{-1}(x)$ y defina $F(X)=f([g(x)]^2)$. Encuentre $F'\left(\frac{1}{2}\right)$
+  
+ \begin{equation*}
   \begin{split}
-    F'(x) =\frac{d}{dx} \left[ f([g(x)]^2) \right]
+    F'(x)
+    &= \frac{d}{dx} \left[ f([g(x)]^2) \right] \\
     &= f'([g(x)]^2) \cdot  \frac{d}{dx} \left[g(x)^2\right] \cdot g'(x) \\
     &= f'([g(x)]^2) \cdot  2g(x) \cdot g'(x) \\
     &= f'([f^{-1}(x)]^2) \cdot  2f^{-1}(x) \cdot (f^{-1})'(x) \\
-    \text{Podemos hacer uso de la fórmula } (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}\\
+    \text{Podemos hacer uso de la fórmula } \\
+    (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}\\
     &= f'([f^{-1}(x)]^2) \cdot  2f^{-1}(x) \cdot \frac{1}{f'(f^{-1}(x))} \\
   \end{split}
 \end{equation*}
-\]
-  Notemos que para poder resolver  $F'\left(\frac{1}{2}\right)$ necesitaremos conocer el valor de $f^{-1}\left(\frac{1}{2}\right)$. Consideremos entonces que:\\
+
+Notemos que para poder resolver  $F'\left(\frac{1}{2}\right)$ necesitaremos conocer el valor de $f^{-1}\left(\frac{1}{2}\right)$. Consideremos entonces que:\\
   \[
   f(2) = \frac{e^{4-2^2}}{2} = \frac{e^{4-4}}{2} = \frac{e^{0}}{2} = \frac{1}{2}
   \]
   Por lo tanto, ya que $f(2) = \frac{1}{2}$, entonces  $f^{-1}\left(\frac{1}{2}\right) = 2$.\\
   Con esta información, procedemos a evaluar en $\frac{1}{2}$.
 
-\[
+
 \begin{equation*}
   \begin{split}
-    F'\left(\frac{1}{2}\right) =  f'([f^{-1}(x)]^2) \cdot  2f^{-1}(x) \cdot \frac{1}{f'(f^{-1}(x))} \vline _{x=\frac{1}{2}} \\
+    F'\left(\frac{1}{2}\right)
+    &=  f'([f^{-1}(x)]^2) \cdot  2f^{-1}(x) \cdot \frac{1}{f'(f^{-1}(x))} \vline _{x=\frac{1}{2}} \\
     &=   f'([f^{-1} \left(\frac{1}{2}\right)]^2) \cdot  2f^{-1}\left(\frac{1}{2}\right) \cdot \frac{1}{f'(f^{-1}\left(\frac{1}{2}\right))}  \\
     &=   f'([2]^2) \cdot  2\cdot 2 \cdot \frac{1}{f'(2)}  \\
     &=   f'(4) \cdot 4 \cdot \frac{1}{f'(2)}  
@@ -181,7 +188,7 @@ Sea $f(x)=\frac{exp(4-x^2)}{x}$, $x>0$.
     & = \frac{11}{3e^{12}}  \\
   \end{split}
 \end{equation*}
-\]
+
 \end{enumerate}
 
 % 76 -------------------------------------------------------------------------------------------------------------
@@ -205,7 +212,9 @@ donde $P(t)$ es la población (en miles de millones) $t$ días después de una o
 
 \[ \begin{equation*}
   \begin{split}
-    \lim_{t \to +\infty} P(t) = \lim_{t \to +\infty} \frac{60}{5+7e^{-t}} = \frac{ \lim_{t \to +\infty} 60}{ \lim_{t \to +\infty} (5+7e^{-t})} \\
+    \lim_{t \to +\infty} P(t)
+    &= \lim_{t \to +\infty} \frac{60}{5+7e^{-t}} \\
+    &= \frac{ \lim_{t \to +\infty} 60}{ \lim_{t \to +\infty} (5+7e^{-t})} \\
     &= \frac{ 60}{ \lim_{t \to +\infty}5+  \lim_{t \to +\infty} 7e^{-t}} \\
    & =  \frac{ 60}{ 5+ 7  \lim_{t \to +\infty} e^{-t}}
  \end{split}
@@ -511,7 +520,33 @@ Verifique estos resultados.
 
 % 63 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 63} name \\
+
+El diagrama esquemático adjunto representa un circuito eléctrico que consta de una fuerza electromotriz que produce un voltaje $V$, una resistencia con resistencia $R$ y un inductor con inductancia $L$. En la teoría de circuitos eléctricos se muestra que si el voltaje se aplica por primera vez en el momento $t = 0$, entonces la corriente $I$ que fluye a través del circuito en el tiempo $t$ está dada por
+\[
+I=\frac{V}{R}\left(1-e^{-Rt/L}\right)
+\]
+
+¿Cuál es el efecto sobre la corriente en un tiempo fijo $t$ si la resistencia se acerca a $0$ (es decir, $R\rightarrow 0^+$)?
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{../img/img_Lista3/circuit63.png}
+\end{figure}
+
 % 65 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 65} name \\
+
+\begin{enumerate}[label=\alph*)]
+\item Utilice un CAS para demostrar que si $k$ es una constante positiva, entonces
+  \[
+  \lim_{x \to +\infty} x(k^{1/x}-1)=\ln{k}
+  \]
+\item Confirme este resultado utilizando la regla de L'Hôpital. [\textit{Sugerencia}: Exprese el límite en términos de $t = 1/x$.]
+\item Si $n$ es un entero positivo, entonces se deduce del inciso (a) con $x = n$ que la aproximación
+  \[
+  n(\sqrt[n]{k}-1)\approx \ln{k}
+\]
+debería ser bueno cuando $n$ es grande. Utilice este resultado y la tecla de raíz cuadrada en una calculadora para aproximar los valores de $\ln{0.3}$ y $\ln{2}$ con $n = 1024$, luego compare los valores obtenidos con los valores de los logaritmos generados directamente desde la calculadora. [\textit{Sugerencia}: Las raíces enésimas para las cuales $n$ es una potencia de 2 se pueden obtener como raíces cuadradas sucesivas.]
+\end{enumerate}
 
 \end{document}

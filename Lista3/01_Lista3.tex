@@ -518,6 +518,144 @@ valor:
 \end{enumerate}
 Verifique estos resultados.
 
+
+\begin{enumerate}[label=(\alph*)]
+\item $\lim_{x \to 0^+} [x^{(\ln a)/(1+\ln x)}] \qquad$\\
+Primero verifiquemos los límites de los factores.
+\[
+\lim_{x \to 0^+} x= 0
+\]
+\[
+ \lim_{x \to 0^+} \frac{\ln a}{1+\ln x} =  \frac{\ln a}{1+  \lim_{x \to 0^+} \ln x}  =  \lim_{t \to \infty}  \frac{\ln a}{t} = 0
+ \]
+ Así que tenemos un tipo de indeterminación $0^{0}$ para la que podemos usar la regla de L'Hôpital.
+
+ Ahora, por propiedades de los logaritmos.
+ \[
+ y =  x^{(\ln a)/(1+\ln x)}
+ \]
+  \[
+ lny =  ln \left[x^{(\ln a)/(1+\ln x)}\right]
+ \]
+ Entonces
+\[
+   lny =  \frac{\ln a}{1+\ln x}   lnx
+   \]
+   \[
+     \lim_{x \to 0^+} lny =  \frac{\ln a \cdot lnx}{1+\ln x}   
+   \]
+Y con esta información ya podemos sacar el límite de lny aplicando la regla de  L'Hôpital.
+\begin{equation*}
+  \begin{split}
+    \lim_{x \to 0^+}lny
+    &=  \lim_{x \to 0^+}  \frac{\ln a \cdot lnx}{1+\ln x}   \qquad\\
+    &=  \lim_{x \to 0^+}  \frac{ \frac{d}{dx} [\ln a \cdot lnx]}{ \frac{d}{dx} [ 1+\ln x ]}   \qquad\\
+    &=  \lim_{x \to 0^+}  \frac{ lna \cdot \frac{1}{x}}{  \frac{1}{x}}   \qquad\\
+    &=  \lim_{x \to 0^+}  \frac{ lna}{1}   \qquad\\
+  \therefore
+   \lim_{x \to 0^+}lny
+     &= lna \\
+  \end{split}
+\end{equation*}
+
+Hemos demostrado que $lny   \rightarrow lna $ mientras $x \rightarrow 0^{+}$.La continuidad de la función exponencial implica que $e^{lny}  \rightarrow e^{lna} $ mientras   $x \rightarrow 0^{+}$. Lo que implica que $y \rightarrow a $.
+\[
+\therefore
+\lim_{x \to 0^+} [x^{(\ln a)/(1+\ln x)}]=a \qquad 
+\]
+
+\item $\lim_{x \to +\infty} [x^{(\ln a)/(1+\ln x)}] \qquad$\\
+
+Primero verifiquemos los límites de los factores.
+\[
+\lim_{x \to +\infty}  x= + \infty
+\]
+\[
+\lim_{x \to +\infty}  \frac{\ln a}{1+\ln x} =  \frac{\ln a}{1+  \lim_{x \to +\infty} \ln x}  =  \lim_{t \to \infty}  \frac{\ln a}{t} = 0
+ \]
+ Así que tenemos un tipo de indeterminación $\infty ^{0}$ para la que podemos usar la regla de L'Hôpital.
+
+ Ahora, por propiedades de los logaritmos.
+ \[
+ y =  x^{(\ln a)/(1+\ln x)}
+ \]
+  \[
+ lny =  ln \left[x^{(\ln a)/(1+\ln x)}\right]
+ \]
+ Entonces
+\[
+   lny =  \frac{\ln a}{1+\ln x}   lnx
+ \]
+   \[
+    \lim_{x \to +\infty}   lny =  \frac{\ln a \cdot lnx}{1+\ln x}   
+   \]
+Y con esta información ya podemos sacar el límite de lny aplicando la regla de  L'Hôpital.
+\begin{equation*}
+  \begin{split}
+    \lim_{x \to +\infty} lny
+    &= \lim_{x \to +\infty}   \frac{\ln a \cdot lnx}{1+\ln x}   \qquad\\
+    &=  \lim_{x \to +\infty}  \frac{ \frac{d}{dx} [\ln a \cdot lnx]}{ \frac{d}{dx} [ 1+\ln x ]}   \qquad\\
+    &=  \lim_{x \to +\infty}  \frac{ lna \cdot \frac{1}{x}}{  \frac{1}{x}}   \qquad\\
+    &=  \lim_{x \to +\infty}   \frac{ lna}{1}   \qquad\\
+  \therefore
+   \lim_{x \to +\infty}  lny
+     &= lna \\
+  \end{split}
+\end{equation*}
+
+Hemos demostrado que $lny   \rightarrow lna $ mientras $x \rightarrow +\infty $.La continuidad de la función exponencial implica que $e^{lny}  \rightarrow e^{lna} $ mientras   $x \rightarrow +\infty$. Lo que implica que $y \rightarrow a $.
+\[
+\therefore
+\lim_{x \to +\infty}   [x^{(\ln a)/(1+\ln x)}]=a \qquad 
+\]
+\item $\lim_{x \to 0} [(x+1)^{(\ln a)/x}] \qquad$ \\
+Primero verifiquemos los límites de los factores.
+\[
+\lim_{x \to 0} x+1= 1
+\]
+\[
+ \lim_{x \to 0} \frac{\ln a}{x} = \infty
+ \]
+ Así que tenemos un tipo de indeterminación $1^{\infty}$ para la que podemos usar la regla de L'Hôpital.
+
+ Ahora, por propiedades de los logaritmos.
+ \[
+ y =  (x+1)^{(\ln a)/x}
+ \]
+  \[
+ \ln y =  \ln \left[(x+1)^{(\ln a)/x}}\right]
+ \]
+ Entonces
+\[
+   \ln y =  \frac{\ln a}{x}  \ln (x+1)
+   \]
+   \[
+     \lim_{x \to 0} \ln y =  \frac{\ln a \cdot  \ln (x+1)  }{x} 
+   \]
+Y con esta información ya podemos sacar el límite de $\ln y$ aplicando la regla de  L'Hôpital.
+\begin{equation*}
+  \begin{split}
+    \lim_{x \to 0} \ln y
+    &=  \lim_{x \to 0}  \frac{\ln a \cdot  \ln (x+1)} {x}   \qquad \\
+    &=  \lim_{x \to 0}  \frac{ \frac{d}{dx} [\ln a \cdot  \ln (x+1)] } { \frac{d}{dx} [x] }   \qquad \\
+    &=  \lim_{x \to 0}  \frac{ \ln a \cdot  \frac {1}{x+1} \cdot 1} { 1 }   \qquad \\
+    &=  \lim_{x \to 0}  \frac{\ln a}{x+1} \qquad \\
+    &=    \frac{\ln a}{0+1} \qquad \\
+    &=    \frac{\ln a}{1} \qquad \\
+  \therefore
+   \lim_{x \to 0} \ln y
+     &= lna \\
+  \end{split}
+\end{equation*}
+
+Hemos demostrado que $lny   \rightarrow lna $ mientras $x \rightarrow 0$.La continuidad de la función exponencial implica que $e^{lny}  \rightarrow e^{lna} $ mientras   $x \rightarrow 0$. Lo que implica que $y \rightarrow a $.
+\[
+\therefore
+\lim_{x \to 0} [(x+1)^{(\ln a)/x}]=a \qquad
+\]
+
+\end{enumerate}
+
 % 63 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 63} name \\
 

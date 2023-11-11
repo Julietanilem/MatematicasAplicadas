@@ -465,11 +465,27 @@ Un helicóptero de la policía vuela hacia el norte a $100 mi/h$ y a una altitud
 Se nos da la velocidad constante con la que viajan un helicóptero y un automóvil por una carretera. Así, sea
 \begin{itemize}
 \item $t=$ Número de horas transcurridas desde los comienzos de los respectivos vehículos.
-\item $d=$ La distancia entre el automóvil y el helicóptero.
+\item $z=$ La distancia entre el automóvil y el helicóptero.
 \item $x=$ La distancia horizontal entre el automóvil y el helicóptero.
-\item $y=$ La distancia vertical entre el automóvil y el helicóptero.
-\item $z=$ La distancia entre el helicóptero y la carretera.
+\item $y=$ La distancia entre el helicóptero y la carretera.
+\item $d=\frac{1}{2} mi$ La altitud del helicóptero.
 \end{itemize}
+Sabemos las velocidades a las que viajan los vehículos y queremos encontrar a qué velocidad cambia la distancia entre el automóvil y el helicóptero en el momento en que el helicóptero cruza la carretera; es decir, cuando el automóvil se encuentra a 2 millas al este del helicóptero y la distancia entre el helicóptero y la carretera es 0. 
+
+De este modo, queremos encontrar
+\begin{align*}
+  \frac{dz}{dt}\vline_{x=2, y=0} \qquad \text{ dado que } \qquad \frac{dx}{dt}=-75\frac{mi}{h} \text{, } \frac{dy}{dt}=100\frac{mi}{h}
+\end{align*}
+Dado que z es la distancia entre el automóvil y el helicóptero, se puede obtener una ecuación que relaciona las variables $x,y,z$ usando el teorema de Pitágoras:
+\begin{equation*}
+  \begin{split}
+    z^2
+    &=[(\sqrt{x^2+d^2})^2+y^2] \\
+    &=[(\sqrt{x^2+(1/2)^2})^2+y^2] \\
+    &=(x^2+1/4)+y^2 \\
+    &=x^2+y^2+\frac{1}{4} \\
+  \end{split}
+\end{equation*}
 
 \item ¿La distancia entre el coche y el helicóptero aumenta o disminuye en ese momento?
 \end{enumerate}

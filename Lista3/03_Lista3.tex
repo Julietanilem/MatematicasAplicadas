@@ -39,11 +39,26 @@
 %%  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 4.4 \\ Máximos Y Mínimos Absolutos}
 % 48 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 48} name \\
+\subsection{Ejercicio 48} Zarco Romero José Antonio \\
 
-Una forma de demostrar que $f(x) \leq g(x)$ para todo $x$ en un intervalo dado es demostrar que $0 \leq g(x)-f(x)$ para todo $x$ en el intervalo; y una forma de demostrar esta última desigualdad es demostrar que el valor mínimo absoluto de $g(x)-f(x)$ en el intervalo no es negativo. Utilice esta idea para demostrar las desigualdades en estos ejercicios.
+Demuestre que $\cos{x} \geq 1-(x^2 /2)$ para todo $x$ en el intervalo $[0, 2\pi]$. \\
 
-Demuestre que $\cos{x} \geq 1-(x^2 /2)$ para todo $x$ en el intervalo $[0, 2\pi]$.
+Una manera de demostrar que $\cos{x} \geq 1-(x^2 /2)$ para todo $x$ en el intervalo $[0, 2\pi]$ es demostrar que $0 \leq \cos{x}-[1-(x^2 /2)]$, es decir $0 \leq \frac{x^2}{2}+\cos{x}-1$, para todo $x$ en el intervalo dado; y una forma de demostrar esta última desigualdad es demostrar que el valor mínimo absoluto de $y=\frac{x^2}{2}+\cos{x}-1$ en el intervalo no es negativo. Para demostrar esto, tenemos que la continuidad de $f$ junto con el hecho de que
+\[
+\lim_{x \to 0} \frac{x^2}{2}+\cos{x}-1 = \frac{0^2}{2}+\cos{0}-1 = 0+1-1=0
+\]
+es finito y permite la posibilidad de que $f$ tenga un mínimo absoluto en $[0, 2\pi]$. Si es así, tendría que ocurrir en un punto crítico de $f$, por lo que consideramos
+\[
+f'(x) = x-\sin{x}
+\]
+dicha derivada es $\geq 0$ para todo valor de $x$ en el intervalo $[0, 2\pi]$
+\[
+f'(0)=0-\sin{0}=0-0=0
+\]
+$\therefore \cos{x} \geq 1-(x^2 /2)$ para todo $x$ en el intervalo $[0, 2\pi]$.
+\begin{flushright}
+  $\blacksquare$
+\end{flushright}
 
 % 53 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 53} name \\

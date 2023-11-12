@@ -61,14 +61,37 @@ $\therefore \cos{x} \geq 1-(x^2 /2)$ para todo $x$ en el intervalo $[0, 2\pi]$.
 \end{flushright}
 
 % 53 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 53} name \\
+\subsection{Ejercicio 53} Zarco Romero José Antonio \\
 
 Supongamos que las ecuaciones de movimiento de un avión de papel durante los primeros 12 segundos de vuelo son
 \begin{align*}
   x=t-2\sin{t} && y=2-2\cos{t} && (0\leq t\leq 12)
 \end{align*}
-¿Cuáles son los puntos más alto y más bajo de la trayectoria, y cuándo está el avión en esos puntos?
 
+¿Cuáles son los puntos más alto y más bajo de la trayectoria, y cuándo está el avión en esos puntos? \\
+
+A fin de conocer los extremos absolutos, debemos encontrar $y'(t)$, esto es
+\[
+y'(t)=2\sin{t}
+\]
+
+Sabemos, por el comportamiento de $\sin{t}$, que $y'(t)=0$ cuando $t$ es múltilpo de $\pi$, es decir $t=k\pi$ donde $k$ es un entero entre 0 y 3, incusive.
+
+Evaluando $y$ en los siguientes puntos, obtenemos que
+\begin{align*}
+  y(0)
+  &= 2-2\cos{0} = 2-2 = 0 \\
+  y(\pi)
+  &= 2-2\cos{\pi} = 2+2 = 4\\
+  y(2\pi)
+  &= 2-2\cos{2\pi} = 2-2 = 0\\
+  y(3\pi)
+  &= 2-2\cos{3\pi} =  2+2 = 4
+\end{align*}
+
+de lo cual concluimos que el mínimo absoluto de $y$ en $0\leq t\leq 12$ es 0, que ocurre en $t=0,2\pi$, y el máximo absoluto de $y$ en $0\leq t\leq 12$ es 4, que ocurre en $t = \pi,3\pi$.
+
+$\therefore $ Los puntos más altos de trayectoria son $(\pi,4)$ y $(3\pi,4)$. A su vez, los puntos más bajos de trayectoria son $(0,0)$ y $(2\pi,0)$.
 
 %%  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 4.5 \\ Problemas De Máximos Y Mínimos Aplicados}

@@ -14,6 +14,7 @@
 \usepackage{amsmath}
 \usepackage{tipa}
 \usepackage{float}
+\usepackage{tikz}
 \spanishdecimal{.}
 
 \title{Matemáticas para las Ciencias Aplicadas I}
@@ -40,7 +41,7 @@
 %% 3.2 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 3.2 \\ Derivadas De Funciones Logarítmicas}
 % 38 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 38} name \\
+\subsection{Ejercicio 38} Flores Morán Julieta Melina \\
 
 Encuentre $dy/dx$ usando diferenciación logarítmica.
 \[
@@ -63,7 +64,7 @@ y=\frac{\sin{x}\cos{x}\tan^3{x}}{\sqrt{x}}
 \end{equation*}
 
 % 57 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 57} name \\
+\subsection{Ejercicio 57} Zarco Romero José Antonio \\
 
 Sea $p$ el número de paramecios en una solución nutritiva $t$ días después del inicio de un experimento, y supongamos que $p$ es definido implícitamente como una función de $t$ por la ecuación
 \[
@@ -97,7 +98,7 @@ Utilice la diferenciación implícita para demostrar que la tasa de cambio de $p
 %% 3.3 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 3.3 \\ Derivadas De Funciones Trigonométricas Exponenciales E Inversas} 
 % 54 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 54} name \\
+\subsection{Ejercicio 54} Zarco Romero José Antonio \\
 
 Encuentre $\frac{dy}{dx}$.
 \[
@@ -117,7 +118,7 @@ y=x^2(\sin^{-1}{x})^3
 \end{equation*}
 
 % 70 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 70} name \\
+\subsection{Ejercicio 70} Flores Morán Julieta Melina \\
 
 Sea $f(x)=\frac{exp(4-x^2)}{x}$, $x>0$.
 \begin{enumerate}
@@ -192,7 +193,7 @@ Notemos que para poder resolver  $F'\left(\frac{1}{2}\right)$ necesitaremos cono
 \end{enumerate}
 
 % 76 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 76} name \\
+\subsection{Ejercicio 76} Flores Morán Julieta Melina \\
 
 Supongamos que la población de bacterias dependientes de oxígeno en un estanque se modela mediante la ecuación
 \[
@@ -276,7 +277,7 @@ Con esto demostramos que la tasa de crecimiento tiende a volverse 0 a lo largo d
 \end{enumerate}
 
 % 83 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 83} name \\
+\subsection{Ejercicio 83} Zarco Romero José Antonio \\
 
 Supongamos que un rodamiento  de bolas de acero se suelta dentro de una tina de fluido y comienza a hundirse. Según un modelo, la velocidad $v(t)$ (en $m/s$) del rodamiento de bolas $t$ segundos después de su liberación viene dada por la fórmula
 \[
@@ -310,7 +311,7 @@ Esto significa que si el fluido no ofrece resistencia, entonces la velocidad aum
 %% 3.4 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 3.4 \\ Tasas Relacionadas} 
 % 23 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 23} name \\
+\subsection{Ejercicio 23} Flores Morán Julieta Melina \\
 
 \begin{figure}[H]
 \centering
@@ -456,16 +457,88 @@ Evaluada en ese instante dónde sabemos que  $\theta =  \frac{2\pi}{3} ~ rad $ y
 \end{enumerate}
 
 % 36 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 36} name \\
+\subsection{Ejercicio 36} Zarco Romero José Antonio \\
 
 Un helicóptero de la policía vuela hacia el norte a $100 mi/h$ y a una altitud constante de $\frac{1}{2} mi$. A continuación, un automóvil viaja hacia el oeste por una carretera a $75 mi/h$. En el momento en que el helicóptero cruza la carretera, el automóvil se encuentra a 2 millas al este del helicóptero.
 \begin{enumerate}
 \item ¿A qué velocidad cambia la distancia entre el automóvil y el helicóptero en el momento en que el helicóptero cruza la carretera?
+
+Se nos da la velocidad constante con la que viajan un helicóptero y un automóvil por una carretera. Así, sea
+\begin{itemize}
+\item $t=$ Número de horas transcurridas desde los comienzos de los respectivos vehículos.
+\item $z=$ La distancia entre el automóvil y el helicóptero.
+\item $x=$ La distancia horizontal entre el automóvil y el helicóptero.
+\item $y=$ La distancia entre el helicóptero y la carretera.
+\item $d=\frac{1}{2} mi$ La altitud del helicóptero.
+\end{itemize}
+Sabemos las velocidades a las que viajan los vehículos y queremos encontrar a qué velocidad cambia la distancia entre el automóvil y el helicóptero en el momento en que el helicóptero cruza la carretera; es decir, cuando el automóvil se encuentra a 2 millas al este del helicóptero y la distancia entre el helicóptero y la carretera es 0. 
+
+De este modo, queremos encontrar
+\begin{align*}
+  \frac{dz}{dt}\vline_{x=2, y=0} \qquad \text{ dado que } \qquad \frac{dx}{dt}=-75\frac{mi}{h} \text{, } \frac{dy}{dt}=100\frac{mi}{h}
+\end{align*}
+Dado que z es la distancia entre el automóvil y el helicóptero, se puede obtener una ecuación que relaciona las variables $x,y,z$ usando el teorema de Pitágoras:
+\begin{equation*}
+  \begin{split}
+    z^2
+    &=[(\sqrt{x^2+d^2})^2+y^2] \\
+    &=[(\sqrt{x^2+(1/2)^2})^2+y^2] \\
+    &=(x^2+1/4)+y^2 \\
+    &=x^2+y^2+\frac{1}{4} \\
+  \end{split}
+\end{equation*}
+
+Diferenciar ambos lados con respecto a $t$ produce
+\begin{equation*}
+  \begin{split}
+    2z\frac{dz}{dt}
+    &= 2x\frac{dx}{dt} + 2y\frac{dy}{dt}\\
+    z\frac{dz}{dt}
+    &= x\frac{dx}{dt} + y\frac{dy}{dt}\\
+    \therefore
+    \frac{dz}{dt}
+    &= \frac{1}{z}\left( x\frac{dx}{dt} + y\frac{dy}{dt} \right) \\
+  \end{split}
+\end{equation*}
+
+Ahora, calculamos el valor de $z$ cuando $x=2$ y $y=0$
+\begin{equation*}
+  \begin{split}
+    z^2
+    &=x^2+y^2+\frac{1}{4} \\
+    &= 2^2+0^2+\frac{1}{4} \\
+    &= 4+\frac{1}{4} \\
+    &= \frac{17}{4} \\
+    \therefore
+    z
+    &= \frac{\sqrt{17}}{2} \\
+  \end{split}
+\end{equation*}
+
+Enseguida, sustituimos $z=\frac{\sqrt{17}}{2}$ y evaluamos $\frac{dz}{dt}\vline_{x=2, y=0}$
+\begin{equation*}
+  \begin{split}
+    \frac{dz}{dt}\vline_{x=2, y=0} 
+    &= \frac{1}{z}\left( x\frac{dx}{dt} + y\frac{dy}{dt} \right) \\
+    &= \frac{1}{\frac{\sqrt{17}}{2}}\left( 2\cdot -75+0\cdot 100 \right) \\
+    &= \frac{2}{\sqrt{17}}(-150)\\
+    &= - \frac{300}{\sqrt{17}} \\
+  \end{split}
+\end{equation*}
+
+$\therefore $ La velocidad a la que cambia a distancia entre el automóvil y el helicóptero
+en el momento en que el helicóptero cruza la carretera es de 
+\[
+\frac{dz}{dt}=- \frac{300\sqrt{17}}{17} \frac{mi}{h}
+\]
+
 \item ¿La distancia entre el coche y el helicóptero aumenta o disminuye en ese momento?
+  
+  Dado que, por el insciso anterior, sabemos que $\frac{dz}{dt}<0$. Entonces, podemos afirmar que la distancia entre el coche y el helicóptero \textbf{disminuye} en ese momento.
 \end{enumerate}
 
 % 45 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 45} name \\
+\subsection{Ejercicio 45} Flores Morán Julieta Melina \\
 
 Un meteoro entra en la atmósfera terrestre y se quema a un ritmo que, en cada instante, es proporcional a su superficie. Suponiendo que el meteoro es siempre esférico, demuestre que el radio disminuye a un ritmo constante.\\ \\
 La quema del meteoro implica una disminución del volúmen. Este se dice que ocurre a un ritmo que siempre es proporcionalmente a la superficie. Lo que significa que la tasa de cambio del volúmen es negativa porque disminuye y esta dado por una constante y la superficie del metéoro. Entonces, si S es la superficie del metéoro y C una constante de proporcionalidad.
@@ -496,18 +569,62 @@ Para saber el valor de $\frac{dr}{dt}$, podemos igualar estas expresiones ya que
 La tasa de cambio de radio es negativa, y por tanto decreciente, además que su valor es una constante C. Esto demuestra que el radio disminuye a un ritmo constante. 
 
 % 47 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 47} name \\
+\subsection{Ejercicio 47} Zarco Romero José Antonio \\
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\textwidth]{../img/img_Lista3/47.png}
 \end{figure}
-Se vierte café a una velocidad uniforme de $20 cm^3/s$ en una taza cuyo interior tiene forma de cono truncado (consulte la figura adjunta). Si los radios superior e inferior de la taza son 4 cm y 2 cm y la altura de la taza es 6 cm, ¿con qué rapidez aumentará el nivel del café cuando el café esté a la mitad? [\textit{Sugerencia}: extienda la copa hacia abajo para formar un cono.]
+Se vierte café a una velocidad uniforme de $20 cm^3/s$ en una taza cuyo interior tiene forma de cono truncado (consulte la figura adjunta). Si los radios superior e inferior de la taza son 4 cm y 2 cm y la altura de la taza es 6 cm, ¿con qué rapidez aumentará el nivel del café cuando el café esté a la mitad? [\textit{Sugerencia}: extienda la copa hacia abajo para formar un cono.]\\
+
+Si extendemos la copa hacia abajo, con tal de formar un cono, donde $V_0$ sea el volumen de la porción agregada.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.35\textwidth]{../img/img_Lista3/cono.png}
+\end{figure}
+
+Primero calculamos el valor del radio
+\[
+\frac{r}{h}=\frac{4}{12}=\frac{1}{3}\qquad \therefore r=\frac{1}{3}h
+\]
+
+Así, tenemos entonces que el volumen es de
+
+\[
+V=\frac{1}{3}\pi r^2h-V_0 \underset{r=\frac{h}{3}}{\Longrightarrow} V=\frac{1}{27}\pi h^3-V_0
+\]
+
+Diferenciamos ambos lados de con respecto a $t$
+\begin{align*}
+  \frac{dV}{dt}
+  &=\frac{1}{9}\pi h^2 \frac{dh}{dt}\\
+\end{align*}
+
+Entonces
+
+\begin{align*}
+  \frac{dh}{dt}
+  &= \frac{9}{\pi h^2}\frac{dV}{dt}\\
+\end{align*}
+
+Sustituimos $\frac{dV}{dt}=20$ y evaluamos cuando $h=9$
+
+\begin{align*}
+  \frac{dh}{dt}\vline_{h=9}
+  &= \frac{9}{\pi \cdot 9^2}\cdot 20\\
+  &= \frac{20}{9\pi}
+\end{align*}
+
+$\therefore $ La rapidez con la que aumenta  el nivel del café cuando el café esté a la mitad es de
+\[
+\frac{20}{9\pi}\frac{cm}{s}
+\]
 
 %% 3.6 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 3.6 \\ La Regla De L'Hôpital; Formas Indeterminadas} 
 % 58 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 58} name \\
+\subsection{Ejercicio 58} Flores Morán Julieta Melina \\
 
 Hay un mito que circula entre los estudiantes principiantes de cálculo que afirma que todas las formas indeterminadas de tipos $0^0,\infty^0$ y $1^{\infty}$ tienen valor 1 porque ''cualquier cosa elevada a cero es 1'' y ''1 elevado a cualquier potencia es 1''. La falacia es que $0^0,\infty^0$ y $1^{\infty}$ no son potencias de números, sino descripciones de límites. Los siguientes ejemplos, sugeridos por el Prof. Jack Staib de la Universidad de Drexel, muestran que estas formas indeterminadas pueden tener cualquier valor real positivo.
 valor:
@@ -657,7 +774,7 @@ Hemos demostrado que $lny   \rightarrow lna $ mientras $x \rightarrow 0$.La cont
 \end{enumerate}
 
 % 63 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 63} name \\
+\subsection{Ejercicio 63} Zarco Romero José Antonio \\
 
 El diagrama esquemático adjunto representa un circuito eléctrico que consta de una fuerza electromotriz que produce un voltaje $V$, una resistencia con resistencia $R$ y un inductor con inductancia $L$. En la teoría de circuitos eléctricos se muestra que si el voltaje se aplica por primera vez en el momento $t = 0$, entonces la corriente $I$ que fluye a través del circuito en el tiempo $t$ está dada por
 \[
@@ -671,20 +788,155 @@ I=\frac{V}{R}\left(1-e^{-Rt/L}\right)
 \includegraphics[width=0.7\textwidth]{../img/img_Lista3/circuit63.png}
 \end{figure}
 
+Para conocer el efecto sobre la corriente tenemos que calcular el límite de la ecuación cuando $R\rightarrow 0^+$, es decir
+\begin{align*}
+  \lim_{R \to 0^+} I
+  &= \lim_{R \to 0^+} \frac{V}{R}\left(1-e^{-Rt/L}\right) \\
+  &= \lim_{R \to 0^+} \frac{V \left(1-e^{-Rt/L}\right)}{R} \\
+  &= \lim_{R \to 0^+} \frac{V-Ve^{-Rt/L}}{R} \\
+\end{align*}
+
+Dado que, el numerador y el denominador tienen un límite de 0, por lo que el límite es una forma indeterminada de tipo 0/0. Aplicando la regla de L'Hôpital se obtiene
+\begin{align*}
+  \lim_{R \to 0^+} I
+  &= \lim_{R \to 0^+} \frac{\frac{d}{dt}[V-Ve^{-Rt/L}]}{\frac{d}{dt}[R]} \\
+  &= \lim_{R \to 0^+} \frac{-Ve^{-Rt/L}\cdot \frac{d}{dt}[-Rt/L]}{1} \\
+  &= \lim_{R \to 0^+} -Ve^{-Rt/L}\cdot -t/L \\
+  &= \lim_{R \to 0^+} \frac{Vt}{L}e^{-Rt/L} \\ \\
+  \therefore
+  \lim_{R \to 0^+} I
+  &= \frac{Vt}{L}
+\end{align*}
+
+
 % 65 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 65} name \\
+\subsection{Ejercicio 65} Zarco Romero José Antonio \\
 
 \begin{enumerate}[label=\alph*)]
 \item Utilice un CAS para demostrar que si $k$ es una constante positiva, entonces
   \[
   \lim_{x \to +\infty} x(k^{1/x}-1)=\ln{k}
   \]
+  
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{../img/img_Lista3/cas65.png}
+\end{figure}
+  
 \item Confirme este resultado utilizando la regla de L'Hôpital. [\textit{Sugerencia}: Exprese el límite en términos de $t = 1/x$.]
+
+  El problema planteado es una forma indeterminada de tipo $\infty \cdot 0$. Lo convertiremos a una forma indeterminada de tipo 0/0:
+  \begin{align*}
+    \lim_{x \to +\infty} x(k^{1/x}-1)
+    &= \lim_{x \to +\infty} \frac{k^{1/x}-1}{\frac{1}{x}} \\
+    \text{Sea } t=\frac{1}{x}
+    & \text{, entonces } t\rightarrow 0^+ \leftrightarrow x\rightarrow +\infty \\
+    \lim_{t \to 0^+}
+    &= \frac{k^t-1}{t} \\
+    &= \frac{\frac{d}{dt}[k^t-1]}{\frac{d}{dt}[t]} \\
+    &= \frac{k^t\ln{k}}{1} \\
+    &= k^t\ln{k} \\
+    \therefore
+    \lim_{x \to +\infty} x(k^{1/x}-1)
+    &= \ln{k} \\
+  \end{align*}
+  
 \item Si $n$ es un entero positivo, entonces se deduce del inciso (a) con $x = n$ que la aproximación
   \[
   n(\sqrt[n]{k}-1)\approx \ln{k}
 \]
 debería ser bueno cuando $n$ es grande. Utilice este resultado y la tecla de raíz cuadrada en una calculadora para aproximar los valores de $\ln{0.3}$ y $\ln{2}$ con $n = 1024$, luego compare los valores obtenidos con los valores de los logaritmos generados directamente desde la calculadora. [\textit{Sugerencia}: Las raíces enésimas para las cuales $n$ es una potencia de 2 se pueden obtener como raíces cuadradas sucesivas.]
+
+\begin{enumerate}
+\item Calculadora: $\ln{0.3} = -1.20397\ldots$
+  \begin{align*}
+    1024(\sqrt[1024]{0.3}-1)
+    &= 1024 \left[
+      ((((((((((0.3)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (((((((((0.54772\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      ((((((((0.74008\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (((((((0.86028\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      ((((((0.92751\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (((((0.96307\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      ((((0.98136\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (((0.99063\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      ((0.99530\ldots)^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (0.99765\ldots)^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      0.99882\ldots
+      -1\right]\\
+    &= 1024 [-0.00117\ldots] \\
+    &= -1.20326\ldots \\ \\
+    -1.20326\ldots \approx -1.20397\ldots\\ \\
+    \therefore
+    1024(\sqrt[1024]{0.3}-1)\approx \ln{0.3}
+  \end{align*}
+  
+\item Calculadora: $\ln{2} = 0.693147\ldots$
+  
+  \begin{align*}
+    1024(\sqrt[1024]{0.3}-1)
+    &= 1024 \left[
+      ((((((((((2)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (((((((((1.41421\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      ((((((((1.18920\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (((((((1.09050\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      ((((((1.0442\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (((((1.02189\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      ((((1.01088\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (((1.00542\ldots)^{\frac{1}{2}})^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      ((1.00271\ldots)^{\frac{1}{2}})^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      (1.00135\ldots)^{\frac{1}{2}}
+      -1\right]\\
+    &= 1024 \left[
+      1.00067\ldots
+      -1\right]\\
+    &= 1024 [0.00067\ldots] \\
+    &= 0.69338\ldots \\ \\
+    0.69338\ldots \approx 0.693147\ldots\\ \\
+    \therefore
+    1024(\sqrt[1024]{2}-1)\approx \ln{2}
+  \end{align*}
+\end{enumerate}
+
+
 \end{enumerate}
 
 \end{document}

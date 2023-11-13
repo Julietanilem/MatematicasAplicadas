@@ -75,7 +75,7 @@ A fin de conocer los extremos absolutos, debemos encontrar $y'(t)$, esto es
 y'(t)=2\sin{t}
 \]
 
-Sabemos, por el comportamiento de $\sin{t}$, que $y'(t)=0$ cuando $t$ es múltilpo de $\pi$, es decir $t=k\pi$ donde $k$ es un entero entre 0 y 3, incusive.
+Sabemos, por el comportamiento de $\sin{t}$, que $y'(t)=0$ cuando $t$ es múltiplo de $\pi$, es decir $t=k\pi$ donde $k$ es un entero entre 0 y 3, inclusive.
 
 Evaluando $y$ en los siguientes puntos, obtenemos que
 \begin{align*}
@@ -185,12 +185,12 @@ Un trapezoide está inscrito en un semicírculo de radio 2 de modo que un lado e
 \centering
 \includegraphics[width=0.4\textwidth]{../img/img_Lista3/3_47.png}
 \end{figure}
-La cantidad a máximizar es el área del trapecio, cuya fórmula general es $A= \frac{B+b}{2}h$. Entonces las variables cuyos valores necesitamos expresar on la información que tenemos son:\\
-- Base mayor (B): La base mayor del trapecio siempre será el diametro del semicirculo que es $D=2r$, es decir $D=2(2) = 4$. Así  que (B = 4).\\
-- Altura (h) : Hay que notar que se puede construir un triángulo rectangulo con el ángulo donde la hipotenusa es el radio, el cateto adyacente parte de la Base mayor y el cateto opuesto la altura del trapecio. Así que la altura la podemos entender en terminos del seno. Considerando que $\sin{\theta}\frac{co}{h}$, podemos despejar el cateto opuesto $co = h\sin{\theta}$. Siendo el cateto opuesto la altura y la hipotenusa 2. $h = 2\sin{\theta}$.\\
-- Base menor (b): Siguiendo con el triángulo anteriormente descrito, la base menor equivaldra al doble de lo que valga el cateto adyacente de nuestro triángulo rectangulo. El cateto adyacente se da fácilmente en términos del coseno ya que $\cos{\theta} = \frac{ca}{h}$ así que se puede despejar el cateto como $ca = h\cos{\theta}$. Siendo que h es 2 $ca = 2\cos{\theta}$. Y como habiamos mencionado, la base menor será el doble de este valor, por lo que $b = 4\cos{\theta}$.\\
-Con estas sustituciones encontramos la función a máximizar, $A(\theta) = \frac{4+4\cos{\theta}}{2}\cdot( 2\sin{\theta}) $, en un intervalo donde $0 \leq \theta \leq \frac{\pi}{2}$ ya que en $\pi/2$ la base menor es 0 pero despues negativa, y no tenemos longitudes de este tipo.
-Para encontrar el máximo en el intérvalo $[0,\pi /2 ]$sabemos que se puede encontrar en los extremos o en puntos críticos de esta función. Así que encontremos estos puntos derivando.
+La cantidad a maximizar es el área del trapecio, cuya fórmula general es $A= \frac{B+b}{2}h$. Entonces las variables cuyos valores necesitamos expresar con la información que tenemos son:\\
+- Base mayor (B): La base mayor del trapecio siempre será el diámetro del semicírculo que es $D=2r$, es decir $D=2(2) = 4$. Así  que (B = 4).\\
+- Altura (h) : Hay que notar que se puede construir un triángulo rectángulo con el ángulo donde la hipotenusa es el radio, el cateto adyacente parte de la Base mayor y el cateto opuesto la altura del trapecio. Así que la altura la podemos entender en términos del seno. Considerando que $\sin{\theta}\frac{co}{h}$, podemos despejar el cateto opuesto $co = h\sin{\theta}$. Siendo el cateto opuesto la altura y la hipotenusa 2. $h = 2\sin{\theta}$.\\
+- Base menor (b): Siguiendo con el triángulo anteriormente descrito, la base menor equivaldrá al doble de lo que valga el cateto adyacente de nuestro triángulo rectángulo. El cateto adyacente se da fácilmente en términos del coseno ya que $\cos{\theta} = \frac{ca}{h}$ así que se puede despejar el cateto como $ca = h\cos{\theta}$. Siendo que h es 2 $ca = 2\cos{\theta}$. Y como habíamos mencionado, la base menor será el doble de este valor, por lo que $b = 4\cos{\theta}$.\\
+Con estas sustituciones encontramos la función a maximizar, $A(\theta) = \frac{4+4\cos{\theta}}{2}\cdot( 2\sin{\theta}) $, en un intervalo donde $0 \leq \theta \leq \frac{\pi}{2}$ ya que en $\pi/2$ la base menor es 0 pero después negativa, y no tenemos longitudes de este tipo.
+Para encontrar el máximo en el intervalo $[0,\pi /2 ]$sabemos que se puede encontrar en los extremos o en puntos críticos de esta función. Así que encontremos estos puntos derivando.
 \begin{align*}
   A''(\theta)
   &= \frac{d}{d\theta} \left[  \frac{1}{2}(4+4\cos{\theta})( 2\sin{\theta}) \right]\\
@@ -246,13 +246,56 @@ $\therefore$ El máximo $(\frac{\pi}{3}, 3 \sqrt{3} )$ y el área máxima es $3 
 \end{figure}
 
 % 64 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 64} name \\
+\subsection{Ejercicio 64} Zarco Romero José Antonio \\
 
 \textit{\textbf{El principio de Fermat}} en óptica establece que la luz que viaja de un punto a otro sigue aquel camino cuyo tiempo total de viaje es mínimo. En un medio uniforme, los caminos de ``tiempo mínimo'' y ``distancia más corta'' resultan ser los mismos, de modo que la luz, si no hay obstáculos, viaja en línea recta. Supongamos que tenemos una fuente de luz, un espejo plano y un observador en un medio uniforme. Si un rayo de luz sale de la fuente, rebota en el espejo y viaja hasta el observador, entonces su trayectoria constará de dos segmentos de línea, como se muestra en la Figura Ex-64. Según el principio de Fermat, el camino será tal que el tiempo total de viaje $t$ sea mínimo o, dado que el medio es uniforme, el camino será tal que la distancia total recorrida de $A$ a $P$ y a $B$ sea lo más pequeña posible. Suponiendo que el mínimo ocurre cuando $dt/dx = 0$, demuestre que el rayo de luz incidirá en el espejo en el punto $P$ donde el ``ángulo de incidencia'' $\theta_1$ es igual al ``ángulo de reflexión'' $\theta_2$.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{../img/img_Lista3/3_64.png}
 \end{figure}
+
+Sea
+\begin{itemize}
+\item $t= $ tiempo total de viaje
+\item $d= $ distancia total de $\overleftrightarrow{AP}+\overleftrightarrow{PB}$
+\item $v= $ velocidad de la luz en el medio uniforme
+\end{itemize}
+
+La fórmula para calcular el tiempo es 
+\[
+t=\frac{d}{v}
+\]
+
+donde $d=\overleftrightarrow{AP}+\overleftrightarrow{PB}=\sqrt{x^2+b^2}+\sqrt{(c-x)^2+a^2}$. Entonces,
+\[
+t=\frac{1}{v}\left( \sqrt{x^2+b^2}+\sqrt{(c-x)^2+a^2} \right)
+\]
+
+Diferenciando $t$ respecto a $x$, tenemos
+\begin{align*}
+  \frac{dt}{dx}
+  &=\frac{1}{v}\left[ \frac{x}{\sqrt{x^2+b^2}}-\frac{c-x}{\sqrt{(c-x)^2+a^2}} \right]
+\end{align*}
+
+Calculando $dt/dx = 0$ obtenemos
+\begin{align*}
+  \frac{1}{v}\left[ \frac{x}{\sqrt{x^2+b^2}}-\frac{c-x}{\sqrt{(c-x)^2+a^2}} \right]
+  &= 0 \\
+  \frac{x}{\sqrt{x^2+b^2}}-\frac{c-x}{\sqrt{(c-x)^2+a^2}}
+  &= 0 \\
+  \frac{x}{\sqrt{x^2+b^2}}
+  &=\frac{c-x}{\sqrt{(c-x)^2+a^2}}
+\end{align*}
+
+Observando la Figura Ex-64, nótese que $\sin{\theta_2}=\frac{x}{\sqrt{x^2+b^2}}$ y $\sin{\theta_1}=\frac{c-x}{\sqrt{(c-x)^2+a^2}}$
+
+Por tanto, $dt/dx = 0$ cuando $\sin{\theta_2}=\sin{\theta_1}$, entonces $\theta_2 = \theta_1$. \\
+
+$\therefore $ El ``ángulo de incidencia'' $\theta_1$ es igual al ``ángulo de reflexión'' $\theta_2$ cuando el rayo de luz incida en el espejo en el punto $P$.
+
+\begin{flushright}
+  $\blacksquare$
+\end{flushright}
 
 % 65 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 65} Flores Morán Julieta Melina \\
@@ -268,8 +311,8 @@ donde $v_1$ es la velocidad de la luz en el primer medio, $v_2$ es la velocidad 
 \end{figure}
 La fórmula a minimizar es la del tiempo, y sabemos que el tiempo total debe ser la suma del tiempo que tarda en viajar por un medio y el tiempo que tarda en el otro. \\
 $T_t$ = Tiempo de A-P + Tiempo de P-B\\
-Sabemos que en genertal $t = \frac{d}{v}$.
-Así que para el primer tramo AP que transcurre en un medio en el que la luz tiene una velocidad $v_1$. Necesitamos conocer la distancia recorrida. Por la imgane podemos notar que la distancia recorrida es la hipotenusa de un triángulo rectangulo donde el cateto adyacente a $\theta_1$ es a y el opuesto x. Por lo tanto el valor de $AP= \sqrt{a^2+x^2}$. 
+Sabemos que en general $t = \frac{d}{v}$.
+Así que para el primer tramo AP que transcurre en un medio en el que la luz tiene una velocidad $v_1$. Necesitamos conocer la distancia recorrida. Por la imagen podemos notar que la distancia recorrida es la hipotenusa de un triángulo rectángulo donde el cateto adyacente a $\theta_1$ es a y el opuesto x. Por lo tanto el valor de $AP= \sqrt{a^2+x^2}$. 
 \[
 t_{AP}= \frac{\sqrt{a^2+x^2}}{v_1}
 \]
@@ -308,7 +351,7 @@ Por lo tanto, $\frac{dt}{dx}=0 \iff$
 \[
  \frac{1}{v_1}\sen\theta_1  =  \frac{1}{v_2}\sen\theta_2
  \]
- Que es precisamente lo que queriamos demostrar, esta ley se deriva de hacer este analisis sobre la función, dando como resultado que la derivada es cero si se da esta condición:
+ Que es precisamente lo que queríamos demostrar, esta ley se deriva de hacer este análisis sobre la función, dando como resultado que la derivada es cero si se da esta condición:
  \[
  \frac{\sen\theta_1}{v_1}  =  \frac{\sen\theta_2}{v_2}
  \]
@@ -348,30 +391,108 @@ Sea $s(t) = t /e^t$ la función de posición de una partícula que se mueve a lo
   
 \item Utilice las gráficas apropiadas para hacer una estimación aproximada de los intervalos de tiempo en los que la partícula se acelera y en los que se desacelera; y luego encuentre esos intervalos de tiempo exactamente.
 
-  A partir de las gráficas de velociad $v(t)$ y aceleración $a(t)$, podemos observar que durante el intervalo de tiempo $0<t<1$, la velocidad es positiva y la aceleración es negativa, por lo que la partícula se \textbf{desacelera}. Durante el intervalo de tiempo $1<t<2$ la valocidad y la aceleración son negativas, por lo que la partícula se \textbf{acelera}. Por último, durante el intervalo de tiempo $2<t$ la velocidad es negativa y la aceleración es positiva, por lo que la partícula se \textbf{desacelera}.
+  A partir de las gráficas de velocidad $v(t)$ y aceleración $a(t)$, podemos observar que durante el intervalo de tiempo $0<t<1$, la velocidad es positiva y la aceleración es negativa, por lo que la partícula se \textbf{desacelera}. Durante el intervalo de tiempo $1<t<2$ la velocidad y la aceleración son negativas, por lo que la partícula se \textbf{acelera}. Por último, durante el intervalo de tiempo $2<t$ la velocidad es negativa y la aceleración es positiva, por lo que la partícula se \textbf{desacelera}.
   
 \end{enumerate}
     
 % 40 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 40} name \\
+\subsection{Ejercicio 40} Flores Morán Julieta Melina \\
 
 Sean $s_A = 15t^2 + 10t + 20$ y $s_B = 5t^2 + 40t, t \geq 0$, las funciones de posición de los automóviles $A$ y $B$ que se mueven a lo largo de carriles rectos paralelos de una carretera.
 
 \begin{enumerate}[label=(\alph*)]
 \item ¿A qué distancia está el automóvil $A$ por delante del automóvil $B$ cuando $t = 0$?
+
+  $s_A(0)-s_B(0)=20-0=20$
+  
 \item ¿En qué instantes de tiempo están los autos uno al lado del otro?
+  \begin{align*}
+    s_A(t)
+    &=s_B(t)\\
+    15t^2 + 10t + 20
+    &= 5t^2 + 40t \\
+    10t^2 -30t + 20
+    &=0\\
+    t^2 -3t + 2
+    &=0\\
+    (t-1)(t-2)
+    &=0
+  \end{align*}
+  En el instante cuando $t=1$ o $t=2$.
+  
 \item ¿En qué instante de tiempo tienen la misma velocidad? ¿Qué coche va delante en este instante?
+  \[
+  v_A(t)=s_A'(t)=30t+10 \qquad v_B(t)=s_B'(t)=10t+40
+  \]
+  \begin{align*}
+    v_A(t)
+    &=v_B(t)\\
+    30t+10
+    &=10t+40\\
+    20t
+    &=30\\
+    t
+    &= \frac{3}{2} \\
+    s_A(t)\vline_{t=\frac{3}{2}}
+    &=15\left(\frac{3}{2}\right)^2 + 10\left(\frac{3}{2}\right) + 20 \\
+    &= \frac{135}{4}+35 \\
+    &= \frac{275}{4}\\
+    s_B(t)\vline_{t=\frac{3}{2}}
+    &= 5\left(\frac{3}{2}\right)^2 + 40\left(\frac{3}{2}\right) \\
+    &= \frac{135}{4}+60 \\
+    &= \frac{275}{4}\\
+    &= \frac{45}{4}+60 \\
+    &= \frac{285}{4}
+  \end{align*}
+  $\therefore $ Cuando $t=3/2$ tienen la misma velocidad y el automóvil $B$ está más adelante que el $A$.
 \end{enumerate}
 
 %%  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 4.7 \\ Método De Newton}
 % 18 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 18} name \\
+\subsection{Ejercicio 18} Zarco Romero José Antonio \\
 
-Utilice una utilidad gráfica para determinar el número de veces que se cruzan las curvas; y luego aplique el método de Newton, cuando sea necesario, para aproximar las coordenadas x de todas las intersecciones.
+Utilice una utilidad gráfica para determinar el número de veces que se cruzan las curvas; y luego aplique el método de Newton, cuando sea necesario, para aproximar las coordenadas $x$ de todas las intersecciones.
 \[
 y=\frac{1}{8}x^3-1 \qquad \text{ y } \qquad y=\cos{x}-2
 \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{../img/img_Lista3/newton18.png}
+\end{figure}
+
+Gracias a la gráfica de arriba podemos observar que $y=\frac{1}{8}x^3-1$ y $y=\cos{x}-2$ se intersectan  dos veces; en $x = 0$ y cerca de $x =-2$. \\
+
+Primero, hay que reescribir la ecuación $\frac{1}{8}x^3-1=\cos{x}-2$ como
+\begin{align*}
+  \frac{1}{8}x^3-1-(\cos{x}-2)=0 \\
+  \frac{1}{8}x^3-\cos{x}+1=0 
+\end{align*}
+
+De este modo, $f'(x)=\frac{3}{8}x^2+\sin{x}$. Juntando ambas ecuaciones, el método de Newton queda como
+\[
+x_{n+1} = x_n-\frac{\frac{1}{8}x_n^3-\cos{x_n}+1}{\frac{3}{8}x_n^2+\sin{x_n}}
+\]
+
+Usaremos $x_1=-2$ como nuestra primera aproximación. Así, sustituyendo el valor de $x_1$ y dejando $n = 1$, se obtiene
+\[
+x_2 = (-2)-\frac{\frac{1}{8}(-2)^3-\cos{(-2)}+1}{\frac{3}{8}(-2)^2+\sin{(-2)}} \approx -2.70449471
+\]
+A continuación, dejamos $n = 2$ y sustituimos $x_2$ para obtener
+\[
+x_3 = (x_2)-\frac{\frac{1}{8}(x_2)^3-\cos{(x_2)}+1}{\frac{3}{8}(x_2)^2+\sin{(x_2)}} \approx -2.46018026
+\]
+
+Si continuamos este proceso hasta que se generen dos aproximaciones idénticas en sucesión, obtenemos
+\begin{align*}
+  & x_1 = -2 \\
+  & x_2 \approx -2.70449471 \\
+  & x_3 \approx -2.46018026 \\
+  & x_4 \approx -2.40859306 \\
+  & x_5 \approx -2.40629828 \\
+  & x_6 \approx -2.40629382 \\
+  & x_7 \approx -2.40629382 \\
+\end{align*}
 
 % 34 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 34} Flores Morán Julieta Melina \\
@@ -418,5 +539,5 @@ En este caso hay que igualar las cantidades que queremos, el área de segmento y
  $\theta_5 =  2.309881467 - \frac{2.309881467 - \sin{2.310063197} - \frac{\pi}{2}}{ 1 - \cos{2.309881467} } = 2.30988146$ \\
  $\theta_6 =  2.30988146 - \frac{2.30988146 - \sin{2.30988146} - \frac{\pi}{2}}{ 1 - \cos{2.30988146} } = 2.30988146$ \\
 
- Despues de este valor se aproximan a más de 10 décimales.
+ Después de este valor se aproximan a más de 10 decimales.
 \end{document}

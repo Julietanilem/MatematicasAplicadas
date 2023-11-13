@@ -529,7 +529,7 @@ En cada parte, encuentre $k$ de modo que $f$ tenga un extremo relativo en el pun
   \begin{align*}
     f'(x)
     &= 2x-\frac{k}{x^2} \\
-    &= \frac{2x^3-k}{x^2}
+    & = \frac{2x^3-k}{x^2}
   \end{align*}
   Cuando $f'(x)=0$, tenemos que
   \begin{align*}
@@ -753,15 +753,20 @@ Nos ayudará en nuestro análisis escribir
   \end{align*}
 \item \textbf{Conclusiones y gráfico}:
   \begin{itemize}
-  \item Hay un punto crítico en $x = 0$ ya que $f$ no es diferenciable allí. Vimos arriba que en este punto se produce una cúspide.
+  \item Hay un punto crítico en $x = 0$ ya que $f$ no es diferenciable allí. Vimos arriba que en este punto se produce una cúspide; dicha cúspide tiene límites de $+\infty$ y $-\infty$ por la derecha e izquierda respectivamente, es decir, en dicho punto se encuentra un mínimo relativo.
   \item El análisis de signos de $f''(x)$ muestra que hay un punto de inflexión en $x = 1$, en el punto $(1,6)$, en el cual la gráfica cambia de cóncava hacia abajo a cóncava hacia arriba.
+  \item De la fórmula para $dy /dx$ vemos que hay un punto crítico en $x =-2$, pues es cuando $f'(x)=0$. El análisis de signos de $d^2y/dx^2$ y la prueba de la segunda derivada muestran que hay un máximo relativo en $x=-2$. Es decir, en el punto $(-2,3\sqrt[3]{4})$.
   \end{itemize}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{../img/img_Lista3/p2_36.png}
+\end{figure}
 \end{itemize}
 
 Comparando con utilidad gráfica:
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{../img/img_Lista3/p3_36.png}
+\includegraphics[width=0.85\textwidth]{../img/img_Lista3/p3_36.png}
 \end{figure}
 
 
@@ -899,6 +904,57 @@ La figura adjunta muestra una gráfica generada por computadora del polinomio $y
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\textwidth]{../img/img_Lista3/2_70.png}
+\end{figure}
+Primero reescribiremos $f(x)$ como
+\begin{align*}
+  f(x)
+  &=0.1x^5 (x + 1)^2 \\
+  &= 0.1x^5(x^2+2x+1)\\
+  &= 0.1(x^7+2x^6+x^5)
+\end{align*}
+Ahora, calculamos $f'(x)$
+\begin{align*}
+  f'(x)
+  &= 0.1(7x^6+12x^5+5x^4)\\
+  &= 0.1x^4(7x^2+12x+5)\\
+  &=0.1x^4(x+1)(7x+5)
+\end{align*}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|c|c}
+    \hline
+    Intervalo & $f'(x) = 0.1x^4(x+1)(7x+5)$ & Conclusión \\
+    \hline
+    $(-\infty,-1)$ & + & $f$ es creciente \\
+    $(-1,-\frac{5}{7})$ & - & $f$ es decreciente \\
+    $(-\frac{5}{7},0)$ & + & $f$ es creciente\\
+    $(0,+\infty)$ & + & $f$ es creciente\\
+    \hline
+  \end{tabular}
+\end{table}
+Dado que el signo de $f'$ cambia de - a + en $x=-\frac{5}{7}$, hay un mínimo relativo allí, y
+dado que el signo de $f'$ cambia de + a - en $x=-1$, hay un máximo relativo allí.
+
+Evaluamos
+\begin{align*}
+  f(x)\vline_{x=-1}
+  &=0.1(-1)^5 ((-1) + 1)^2
+  =-0.1 (0)^2
+  =-0.1\cdot 0
+  = 0\\
+  f(x)\vline_{x=-\frac{5}{7}}
+  &=0.1\left(-\frac{5}{7}\right)^5 \left(\left(-\frac{5}{7}\right) + 1\right)^2
+  =-0.1\left(\frac{5}{7}\right)^5 \left(\frac{2}{7}\right)^2\\
+  &=-\frac{1}{10} \cdot \frac{3125}{16807} \cdot \frac{4}{49} \\
+  &= -\frac{1250}{823543}\\
+  & \approx 1.15178 \times 10^{-3}
+\end{align*}
+
+$\therefore $ Los puntos críticos son -1, 0 y $-\frac{5}{7}$; en $(-1,0)$ ocurre un máximo relativo y en $\left(-\frac{5}{7}, 1.15178 \times 10^{-3} \right)$ un mínimo relativo.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{../img/img_Lista3/2_70_last.png}
 \end{figure}
 
 \end{document}

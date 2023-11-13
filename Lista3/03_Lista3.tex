@@ -211,11 +211,33 @@ donde $v_1$ es la velocidad de la luz en el primer medio, $v_2$ es la velocidad 
 %%  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 4.6 \\ Movimiento Rectilíneo}
 % 24 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 24} name \\
+\subsection{Ejercicio 24} Zarco Romero José Antonio \\
 
 Sea $s(t) = t /e^t$ la función de posición de una partícula que se mueve a lo largo de una línea de coordenadas, donde $s$ está en metros y $t$ está en segundos. Utilice una utilidad gráfica para generar las gráficas de $s(t)$, $v(t)$ y $a(t)$ para $t \geq 0$, y utilice esas gráficas cuando sea necesario.
+
+\[s(t) = \frac{t}{e^t}\]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{../img/img_Lista3/3_s.png}
+\end{figure}
+\[v(t)=s'(t)= \frac{e^t-te^t}{e^{2t}}=\frac{e^t(1-t)}{e^{2t}}=\frac{1-t}{e^t}=(1-t)e^{-t}\]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{../img/img_Lista3/3_v.png}
+\end{figure}
+\[a(t)=v'(t)= -(1-t)e^{-t}-e^{-t}=e^{-t}(-1+t-1)=(t-2)e^{-t}\]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{../img/img_Lista3/3_a.png}
+\end{figure}
+
 \begin{enumerate}[label=(\alph*)]
 \item Utilice la gráfica apropiada para hacer una estimación aproximada del momento en que la partícula invierte por primera vez la dirección de su movimiento; y luego encuentre la hora exacta.
+
+  El análisis de signos de la función de velocidad en $v(t)$ muestra que la partícula se mueve en dirección positiva durante el intervalo de tiempo $0 \leq t < 1$, se detiene momentáneamente en el tiempo $t = 1$ y luego se mueve en la dirección negativa después de eso.
+  
+  $\therefore $ Cuando $v=0$ la partícula invierte por primera vez la dirección de su movimiento, en $t=1$.
+  
 \item Encuentre la posición exacta de la partícula cuando invierte por primera vez la dirección de su movimiento.
 \item Utilice las gráficas apropiadas para hacer una estimación aproximada de los intervalos de tiempo en los que la partícula se acelera y en los que se desacelera; y luego encuentre esos intervalos de tiempo exactamente.
 \end{enumerate}

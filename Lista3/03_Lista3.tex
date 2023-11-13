@@ -199,8 +199,44 @@ Sea
 \begin{itemize}
 \item $t= $ tiempo total de viaje
 \item $d= $ distancia total de $\overleftrightarrow{AP}+\overleftrightarrow{PB}$
-\item $= $ 
+\item $v= $ velocidad de la luz en el medio uniforme
 \end{itemize}
+
+La fórmula para calcular el tiempo es 
+\[
+t=\frac{d}{v}
+\]
+
+donde $d=\overleftrightarrow{AP}+\overleftrightarrow{PB}=\sqrt{x^2+b^2}+\sqrt{(c-x)^2+a^2}$. Entonces,
+\[
+t=\frac{1}{v}\left( \sqrt{x^2+b^2}+\sqrt{(c-x)^2+a^2} \right)
+\]
+
+Diferenciando $t$ respecto a $x$, tenemos
+\begin{align*}
+  \frac{dt}{dx}
+  &=\frac{1}{v}\left[ \frac{x}{\sqrt{x^2+b^2}}-\frac{c-x}{\sqrt{(c-x)^2+a^2}} \right]
+\end{align*}
+
+Calculando $dt/dx = 0$ obtenemos
+\begin{align*}
+  \frac{1}{v}\left[ \frac{x}{\sqrt{x^2+b^2}}-\frac{c-x}{\sqrt{(c-x)^2+a^2}} \right]
+  &= 0 \\
+  \frac{x}{\sqrt{x^2+b^2}}-\frac{c-x}{\sqrt{(c-x)^2+a^2}}
+  &= 0 \\
+  \frac{x}{\sqrt{x^2+b^2}}
+  &=\frac{c-x}{\sqrt{(c-x)^2+a^2}}
+\end{align*}
+
+Observando la Figura Ex-64, nótese que $\sin{\theta_2}=\frac{x}{\sqrt{x^2+b^2}}$ y $\sin{\theta_1}=\frac{c-x}{\sqrt{(c-x)^2+a^2}}$
+
+Por tanto, $dt/dx = 0$ cuando $\sin{\theta_2}=\sin{\theta_1}$, entonces $\theta_2 = \theta_1$. \\
+
+$\therefore $ El ``ángulo de incidencia'' $\theta_1$ es igual al ``ángulo de reflexión'' $\theta_2$ cuando el rayo de luz incida en el espejo en el punto $P$.
+
+\begin{flushright}
+  $\blacksquare$
+\end{flushright}
 
 % 65 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 65} name \\
@@ -269,11 +305,33 @@ Sean $s_A = 15t^2 + 10t + 20$ y $s_B = 5t^2 + 40t, t \geq 0$, las funciones de p
 %%  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 4.7 \\ Método De Newton}
 % 18 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 18} name \\
+\subsection{Ejercicio 18} Zarco Romero José Antonio \\
 
-Utilice una utilidad gráfica para determinar el número de veces que se cruzan las curvas; y luego aplique el método de Newton, cuando sea necesario, para aproximar las coordenadas x de todas las intersecciones.
+Utilice una utilidad gráfica para determinar el número de veces que se cruzan las curvas; y luego aplique el método de Newton, cuando sea necesario, para aproximar las coordenadas $x$ de todas las intersecciones.
 \[
 y=\frac{1}{8}x^3-1 \qquad \text{ y } \qquad y=\cos{x}-2
+\]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{../img/img_Lista3/newton18.png}
+\end{figure}
+
+Gracias a la gráfica de arriba podemos observar que $y=\frac{1}{8}x^3-1$ y $y=\cos{x}-2$ se intersectan  dos veces; en $x = 0$ y cerca de $x =-2$. \\
+
+Primero, hay que reescribir la ecuación $\frac{1}{8}x^3-1=\cos{x}-2$ como
+\begin{align*}
+  \frac{1}{8}x^3-1-(\cos{x}-2)=0 \\
+  \frac{1}{8}x^3-\cos{x}+1=0 
+\end{align*}
+
+De este modo, $f'(x)=\frac{3}{8}x^2+\sin{x}$. Juntando ambas ecuaciones, el método de Newton queda como
+\[
+x_{n+1} = x_n-\frac{\frac{1}{8}x_n^3-\cos{x_n}+1}{\frac{3}{8}x_n^2+\sin{x_n}}
+\]
+
+Usaremos $x_1=-2$ como nuestra primera aproximación. Así, sustituyendo el valor de $x_1$ y dejando $n = 1$, se obtiene
+\[
+x_2 = (-2)-\frac{\frac{1}{8}(-2)^3-\cos{(-2)}+1}{\frac{3}{8}(-2)^2+\sin{(-2)}} \approx 
 \]
 
 % 34 -------------------------------------------------------------------------------------------------------------

@@ -40,7 +40,7 @@
 %% 5.3 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 5.3 \\ Integración Por Sustitución}
 % 44 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 44} name \\
+\subsection{Ejercicio 44} Flores Morán Julieta Melina \\
 
 Evaluar las integrales utilizando sustituciones apropiadas.
 \[
@@ -77,7 +77,7 @@ y regresamos a u a su valor original.
 %% 5.5 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 5.5 \\ La Integral Definida}
 % 28 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 28} name \\
+\subsection{Ejercicio 28} Flores Morán Julieta Melina \\
 
 Utilice el Teorema 5.5.4 y fórmulas apropiadas de geometría para evaluar las integrales. \\
 
@@ -115,7 +115,7 @@ Evaluar las integrales completando el cuadrado y aplicando fórmulas apropiadas 
 %% 5.6 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 5.6 \\ El Teorema Fundamental Del Cálculo}
 % 58 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 58} name \\
+\subsection{Ejercicio 58} Flores Morán Julieta Melina \\
 
 Defina $F (x)$ por
 \[
@@ -127,13 +127,12 @@ F(x)=\int_{\pi/4}^{x} \cos{2t} dt
 \item Verifique el resultado del inciso (a) integrando primero y luego diferenciando. \\
 Podemos resolver la integral mediante un cambio de variable. $u= 2t \rightarrow du = 2dt  \rightarrow dt = \frac{du}{2}$\\
 \begin{align*}
-  F(x)=
+  F(x)
   & = \int_{\pi/4}^{x} \cos{2t} dt \\
-  & = \int_{\pi/4}^{x} \cos{u} \frac{du}{2}\\
-  & = \frac{1}{2} \int_{\pi/4}^{x} \cos{u} du \\
-  & = \frac{1}{2} \sen u \Bigg|_{\pi/4}^{x} \\
-  & = \frac{1}{2} \sen 2t \Bigg|_{\pi/4}^{x} \\
-  & = \frac{1}{2} \left[  \sen 2x - \sen 2\frac{\pi}{4} \right] \\
+  & = \int_{u(\pi/4)}^{u(x)} \cos{u} \frac{du}{2}\\
+  & = \frac{1}{2} \int_{\pi/2}^{2x} \cos{u} du \\
+  & = \frac{1}{2} \sen u \Bigg|_{\pi/2}^{2x} \\
+  & = \frac{1}{2} \left[  \sen 2x - \sen \frac{\pi}{2} \right] \\
   & = \frac{1}{2} \left[  \sen 2x - 1 \right]\\
   & = \frac{1}{2}  \sen 2x - \frac{1}{2}  
 \end{align*}
@@ -160,7 +159,7 @@ Sea $F(x)=\int_{4}^{x} \sqrt{t^2+9}dt$. Encuentre
 \end{enumerate}
 
 % 70 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 70} name \\
+\subsection{Ejercicio 70} Flores Morán Julieta Melina \\
 
 Un ingeniero de tránsito monitorea la velocidad a la que los automóviles ingresan a la carretera principal durante la hora pico de la tarde. De sus datos estima que entre las 16:30 horas. y 17:30 p.m. la tasa  $R(t)$ a la que los automóviles ingresan a la carretera está dada por la fórmula $R(t) = 100 (1$ - $0.0001t^2 )$ automóviles por minuto, donde $t$ es el tiempo (en minutos) desde las 4:30 p.m.
 \begin{enumerate}[label=(\alph*)]
@@ -192,7 +191,7 @@ Un ingeniero de tránsito monitorea la velocidad a la que los automóviles ingre
 %% 5.9 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 5.9 \\ Evaluación De Integrales Definidas Por Sustitución}
 % 52 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 52} name \\
+\subsection{Ejercicio 52} Flores Morán Julieta Melina \\
 
 \begin{enumerate}[label=(\alph*)]
 \item Utilice un CAS para encontrar el valor exacto de la integral
@@ -212,25 +211,28 @@ Un ingeniero de tránsito monitorea la velocidad a la que los automóviles ingre
 Podemos usar sustitución para la primera integral, donde $u= tanx \rightarrow du=sec^{2}x dx$.\\
   \begin{align*}
     \int_{-\pi/4}^{\pi/4} \tan^2{x} \cdot \sec^2{x} dx
-    & = \int_{-\pi/4}^{\pi/4} u^2 \cdot du \\
-    & = \frac{u^{3}}{3} \Bigg|_{-\pi/4}^{\pi/4} \\
-    & = \frac{tan^{3}x}{3} \Bigg|_{-\pi/4}^{\pi/4} \\
+    & = \int_{u(-\pi/4)}^{u(\pi/4)} u^2 \cdot du \\
+    & = \frac{u^{3}}{3} \Bigg|_{-1}^{1} \\
+    & = \frac{1^{3}}{3} - \frac{-1^{3}}{3}  \\
+    & = \frac{1}{3} + \frac{1}{3}  \\
+    & = \frac{2}{3}   \\
   \end{align*}
   Y la fórmula dada en el formulario para la segunda.
     \begin{align*}
       \int_{-\pi/4}^{\pi/4}   \tan^2{x}  dx
-      & = tanx - x  \Bigg|_{-\pi/4}^{\pi/4}
+      & = tanx - x  \Bigg|_{-\pi/4}^{\pi/4}\\
+      & = tan\left(\frac{\pi}{4}\right) - \frac{\pi}{4} - \left[ tan\left(\frac{-\pi}{4}\right) - \frac{-\pi}{4} \right] \\
+      & = 1 - \frac{\pi}{4} - \left[ -1 + \frac{\pi}{4} \right] \\
+      & = 1 - \frac{\pi}{4} + 1 - \frac{\pi}{4} \\
+      & = 2 - \frac{\pi}{2}  \\
     \end{align*}
     Así podemos reescribir:
       \begin{align*}
         \int_{-\pi/4}^{\pi/4} \tan^2{x} \cdot \sec^2{x} dx - \int_{-\pi/4}^{\pi/4}   \tan^2{x}  dx 
-        & = \left( \frac{tan^{3}x}{3} -[ tanx - x] \right)  \Bigg|_{-\pi/4}^{\pi/4}\\
-        & =  \left( \frac{tan^{3}x}{3} - tanx + x \right) \Bigg|_{-\pi/4}^{\pi/4}\\
-        & =  \frac{tan^{3}(\frac{\pi}{4})}{3} - tan(\frac{\pi}{4}) + \frac{\pi}{4}  - \left[  \frac{tan^{3}(\frac{-\pi}{4})}{3} - tan(\frac{-\pi}{4}) + \frac{-\pi}{4} \right] \\
-        & =  \frac{tan^{3}(\frac{\pi}{4})}{3} - tan(\frac{\pi}{4}) + \frac{\pi}{4}  -   \frac{tan^{3}(\frac{-\pi}{4})}{3} + tan(\frac{-\pi}{4}) + \frac{\pi}{4}  \\
-        & =  \frac{1}{3} - 1 + \frac{\pi}{4}  +   \frac{1} {3} - 1 + \frac{\pi}{4}  \\
-        & =  \frac{2}{3} - 2 + \frac{\pi}{2}   \\
-        & =  -\frac{4}{3} + \frac{\pi}{2}   \\
+       & = \frac{2}{3} - \left[ 2 - \frac{\pi}{2} \right]\\
+       & = \frac{2}{3} - \left[ 2 - \frac{\pi}{2} \right]\\
+       & = \frac{2}{3} - 2 + \frac{\pi}{2} \\
+       & = -\frac{4}{3}  + \frac{\pi}{2} \\
       \end{align*}
 Por lo tanto el valor exacto es $-\frac{4}{3} + \frac{\pi}{2} \approx 0.2374629935 $.
 % 64 -------------------------------------------------------------------------------------------------------------
@@ -255,4 +257,268 @@ V = V_p \sin{(2\pi ft)}
   
 \item En Estados Unidos, los enchufes eléctricos suministran corriente alterna con un voltaje $rms$ de $120 V$ a una frecuencia de $60 Hz$. ¿Cuál es el voltaje máximo en tal toma corriente?
 
+
+%Segunda parte de la lista de problemas
+\subsection*{\centering \textbf{ \LARGE Segunda Parte} }
+%% Sección 5.10: ejercicios 25, 26 y 27.
+%% Sección 7.2: ejercicios 53, 54, 60 y 62.
+  %% Sección 7.7: ejercicios 31, 32 y 34.
+%% 5.10 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Sección 5.10 \\Logaritmos y otras funciones definidas por integrales} 
+% 25  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 25} Flores Morán Julieta Melina   \\
+Usa los resultados del ejercicio 24 para encontrar la derivada:\\
+\[
+\frac{d}{dx} \int_x^{\pi} cos(t^{3}}) dt
+\]
+Cabe poner a consideración que el ejercicio 24 pide demostrar las siguiente propiedades:
+\[
+\frac{d}{dx} \left[ \int_x^{a} f(t) dt \right] = -f(x)
+\]
+ \[
+\frac{d}{dx} \left[ \int_{g(x)}^{a} f(t) dt \right] = -f(g(x))g'(x)
+\]
+De las cuales usaremos la primera, donde  $f(t) = cos(t^3) \rightarrow f(x) = cos(x^3)$.De aquí que:
+\[
+\frac{d}{dx} \int_x^{\pi} cos(t^{3}}) dt = -cos(x^3)
+  \]
+  %% 26 --------------------------------------------------------------------------------------------------------------
+  %% 27 ---------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 27} Flores Morán Julieta Melina \\
+Encuentra
+\[
+\frac{d}{dx} \left[ \int_{3x}^{x^2} \frac{t-1}{t^2+1} dt \right]
+\]
+escribiendo
+\[
+\int_{3x}^{x^2} \frac{t-1}{t^2+1} dt = \int_{3x}^{0} \frac{t-1}{t^2+1} + \int_{0}^{x^2} \frac{t-1}{t^2+1} dt
+\]
+Entonces, podemos reescribir el problema de la siguiente manera:
+\[
+\frac{d}{dx} \left[ \int_{3x}^{x^2} \frac{t-1}{t^2+1} dt \right] = \frac{d}{dx} \left[\int_{3x}^{0} \frac{t-1}{t^2+1} dt\right]  + \frac{d}{dx} \left[ \int_{0}^{x^2} \frac{t-1}{t^2+1} dt \right]
+\]
+Podemos usar la propiedad
+ \[
+\frac{d}{dx} \left[ \int_{g(x)}^{a} f(t) dt \right] = -f(g(x))g'(x)
+\]
+Y para $\frac{d}{dx} \left[\int_{3x}^{0} \frac{t-1}{t^2+1} dt\right]$ podemos considerar $g(x) = 3x$, $f(t) = \frac{t-1}{t^2+1}$.
+
+\begin{align*}
+  \frac{d}{dx} \left[\int_{3x}^{0} \frac{t-1}{t^2+1} dt\right]
+  & = - f(g(x))g'(x) \\
+  & = - f(3x) \frac{d}{dx} 3x \\
+  & = -  \frac{3x-1}{(3x)^2+1} \cdot 3 \\
+  & = -  3 \cdot \frac{3x-1}{9x^2+1}
+\end{end*}
+
+
+Para $\frac{d}{dx} \left[ \int_{0}^{x^2} \frac{t-1}{t^2+1} dt \right]$, necesitamos que cumpla con las características para aplicar la propiedad de arriba. Esto lo logramos intercambiando los límites y cambiando el signo, así.
+\[
+ \int_{0}^{x^2} \frac{t-1}{t^2+1} dt = -  \int_{x^2}^{0} \frac{t-1}{t^2+1} dt
+\]
+Y
+\[
+\frac{d}{dx} \left[ \int_{0}^{x^2} \frac{t-1}{t^2+1} dt \right] = -\frac{d}{dx} \left[ \int_{x^2}^{0} \frac{t-1}{t^2+1} dt  \right]
+\]
+podemos considerar $g(x) = x^2$, $f(t) = \frac{t-1}{t^2+1}$.
+
+\begin{align*}
+  -\frac{d}{dx} \left[ \int_{x^2}^{0} \frac{t-1}{t^2+1} dt  \right]
+  & = - (- f(g(x))g'(x)) \\
+  & = f(x^2) \frac{d}{dx} x^2 \\
+  & =   \frac{x^2-1}{(x^2)^2+1} \cdot 2x \\
+  & = 2x \cdot \frac{x^2-1}{x^4+1}
+\end{align*}
+
+Así con estos resultados obtenemos que:
+\begin{align*}
+  \frac{d}{dx} \left[ \int_{3x}^{x^2} \frac{t-1}{t^2+1} dt \right]
+  & =\frac{d}{dx} \left[\int_{3x}^{0} \frac{t-1}{t^2+1} dt\right]  + \frac{d}{dx} \left[ \int_{0}^{x^2} \frac{t-1}{t^2+1} dt \right] \\
+  & = -  3 \cdot \frac{3x-1}{9x^2+1} + 2x \cdot \frac{x^2-1}{x^4+1}
+\end{align*}
+%% 7.2 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Sección 7.2 \\Integración por partes} 
+% 54  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 54} Flores Morán Julieta Melina  \\
+Evaluá por partes la integral
+\[
+\int_0^{1} \frac{x^3}{\sqrt{x^2+1}}dx
+\]
+Usando:
+\begin{enumerate}
+\item Integración por partes\\
+  Para usar la fórmula de integración por partes para esta integral definida
+  \[
+  \int_a^b u dv = uv \Bigg|_a^b - \int_a^b vdu
+  \]
+  Hay que elegir una u y una v. En este caso si $v=\sqrt{x^2+1} \rightarrow dv = \frac{x}{\sqrt{x^2+1}}dx$ y $u=x^2 \rightarrow du = 2xdx$ completa la integral que buscábamos. Usando la fórmula.
+   \[
+   \int_0^1 x^2  \frac{x}{\sqrt{x^2+1}} dx = x^2 \cdot \sqrt{x^2+1}  \Bigg|_0^1 - \int_0^1 \sqrt{x^2+1} \cdot 2xdx  \]
+
+   La integral $\int_0^1 \sqrt{x^2+1} 2xdx $ es fácil obtenerla por sustitución. Si $u = x^2+1 \rightarrow du = 2x dx$. Así
+   \begin{align*}
+     \int_0^1 2x\sqrt{x^2+1} dx
+     & = \int_{u(0)}^{u(1)} \sqrt{u} du\\
+     & = \int_{1}^{2} u^{1/2} du\\
+     & = \frac{2u^{3/2}}{3} \Bigg|_1^2\\
+     & = \frac{2\cdot 2^{3/2}}{3} - \frac{2\cdot1^{3/2}}{3} \\
+     & = \frac{4 \cdot \sqrt{2}}{3} - \frac{2}{3} \\
+     & = \frac{4}{3}  \sqrt{2} - \frac{2}{3} \\
+   \end{align}
+   Entonces tenemos
+   \begin{align*}
+     x^2 \cdot \sqrt{x^2+1}  \Bigg|_0^1 - \int_0^1 \sqrt{x^2+1} \cdot 2xdx
+     & =1^2 \cdot \sqrt{1^2+1} -[0^2 \cdot \sqrt{0^2+1} ] - [\frac{4}{3}  \sqrt{2} - \frac{2}{3}] \\
+     & = 1 \cdot \sqrt{2}  - \frac{4}{3}  \sqrt{2} + \frac{2}{3} \\
+     & =  -  \frac{1}{3} \sqrt{2}    + \frac{2}{3}
+   \end{align*}
+  
+ \item Sustitución de $u= \sqrt{x^2+1}$ \\
+   En este caso cabe tener en cuenta que $du = \frac{x}{\sqrt{x^2+1}}dx $
+     \begin{align*}
+       \int_0^{1} \frac{x^3}{\sqrt{x^2+1}}dx
+       & = \int_{u(0)}^{u(1)} (u^2-1)du \\
+       & = \int_{1}^{\sqrt{2}} (u^2-1)du \\
+       & = \int_{1}^{\sqrt{2}} u^2 du - \int_{1}^{\sqrt{2}}  du \\
+       & = \left (\frac{u^3}{3}  -  u \right) \Bigg|_1^{\sqrt{2}}\\
+       & = \frac{\sqrt{2}^3}{3}  -  \sqrt{2} - \left[\frac{1^3}{3}  -  1 \right]\\
+       & = \frac{2}{3}\sqrt{2}  -  \sqrt{2} - \frac{1}{3}  +  1\\
+       & = -\frac{1}{3}\sqrt{2} + \frac{2}{3}  \\
+   \end{align*}
+\end{enumerate}
+% 62  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 62} Flores Morán Julieta Melina  \\
+Usa la formula (9)
+\[
+\int \cos^n dx = \frac{1}{n}\cos^{n-1}x \sin x+\frac{n-1}{n} \int cos^{n-2}x dx
+\]
+de reducción para evaluar
+\begin{enumerate}
+\item
+\[
+  \int cos^5x dx
+  \]
+
+  Para esto necesitamos el valor de $\int cos^{3}x dx$.
+  \begin{align*}
+   \int  cos^3x dx
+   & = \frac{1}{3}\cos^{2}x \sin x+\frac{2}{3} \int cos^{1}x dx \\
+   & = \frac{1}{3}\cos^{2}x \sin x+\frac{2}{3} senx + C
+  \end{align*}
+  Así que volviendo al problema original
+   \begin{align*}
+    \int cos^5x dx
+    & = \frac{1}{5}\cos^{4}x \sin x+\frac{4}{5} \int cos^{3}x dx\\
+    & = \frac{1}{5}\cos^{4}x \sin x+\frac{4}{5} \left[\frac{1}{3}\cos^{2}x \sin x+\frac{2}{3} \sen x \right]\\
+     & = \frac{1}{5}\cos^{4}x \sin x+ \frac{4}{15}\cos^{2}x \sin x+\frac{8}{15} \sen x + C
+  \end{align*}
+\item
+ \[
+  \int_0^{\frac{\pi}{2}} cos^6x dx
+  \]
+  Evaluaremos primero $ \int cos^6x dx$, para lo cual necesitamos conocer
+  \begin{align*}
+   \int  cos^2x dx
+   & = \frac{1}{2}\cos^{1}x \sin x+\frac{1}{2} \int cos^{0}x dx \\
+   & = \frac{1}{2}\cos^{1}x \sin x+\frac{1}{2} \int dx \\
+   & = \frac{1}{2}\cos x \sin x+\frac{1}{2} x + C \\
+  \end{align*}
+  
+  \begin{align*}
+   \int  cos^4x dx
+   & = \frac{1}{4}\cos^{3}x \sin x+\frac{3}{4} \int cos^{2}x dx \\
+   & = \frac{1}{4}\cos^{3}x \sin x+\frac{3}{4} \left[ \frac{1}{2}\cos x \sin x+\frac{1}{2} x \right]\\
+    & = \frac{1}{4}\cos^{3}x \sin x+ \frac{3}8\cos x \sin x+\frac{3}{8} x + C\\
+  \end{align*}
+  Y ya podemos resolver fácilmente para n=6.
+  \begin{align*}
+   \int  cos^6x dx
+   & = \frac{1}{6}\cos^{5}x \sin x+\frac{5}{6} \int cos^{4}x dx \\
+   & = \frac{1}{6}\cos^{5}x \sin x+\frac{5}{6} \left[ \frac{1}{4}\cos^{3}x \sin x+ \frac{3}8\cos x \sin x+\frac{3}{8} x  \right]\\
+   & = \frac{1}{6}\cos^{5}x \sin x+ \frac{5}{24}\cos^{3}x \sin x+ \frac{15}{48}\cos x \sin x+\frac{15}{48} x \\
+   & = \frac{1}{6}\cos^{5}x \sin x+ \frac{5}{24}\cos^{3}x \sin x+ \frac{5}{16}\cos x \sin x+\frac{5}{16} x + C \\
+   \end{align*}
+    Ahora hay que evaluarlo en los límites dados
+    \begin{align*}
+   \int_0^{\frac{\pi}{2}}cos^6x dx
+   & = \left [\frac{1}{6}\cos^{5}x \sin x+ \frac{5}{24}\cos^{3}x \sin x+ \frac{5}{16}\cos x \sin x+\frac{5}{16} x \right] \Bigg|_0^{\frac{\pi}{2}}\\
+   & =  \frac{1}{6}\cos^{5}  \left( \frac{\pi}{2} \right) \sin \left( \frac{\pi}{2} \right)+ \frac{5}{24}\cos^{3}\left( \frac{\pi}{2} \right) \sin \left( \frac{\pi}{2} \right)  \\
+     & + \frac{5}{16}\cos \left( \frac{\pi}{2} \right) \sin \left( \frac{\pi}{2} \right)+\frac{5}{16} \left( \frac{\pi}{2} \right)\\
+   &  - \left [\frac{1}{6}\cos^{5} 0 \sin 0+ \frac{5}{24}\cos^{3}0 \sin 0+ \frac{5}{16}\cos 0 \sin 0+\frac{5}{16} 0 \right] \\
+   & = \frac{5}{16} \left( \frac{\pi}{2} \right) \\
+   & = \fra\frac{5}{16}c{5 \pi}{32}
+   \end{align*}
+\end{enumerate}
+%% 7.7 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Sección 7.7 \\Integración numérica: Regla de Simpson} 
+% 32  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 32} Flores Morán Julieta Melina  \\
+El valor exacto de la integral dada es $\pi$ (verificar). Aproximar la integral usando (a) la aproximación del punto medio$ M_{10}$, (b) la aproximación trapezoidal $T_{10}$, y (c) Aproximación de la regla de Simpson $ S_{20}$ usando la Fórmula (7). Aproximar el error absoluto y expresa tus respuestas con al menos cuatro decimales.
+\[
+\int_0^3 \frac{4}{9} \sqrt{9-x^2} dx
+\]
+\begin{enumerate}
+\item Verificar el valor de la integral dada, esta es una integral del formulario, entonces usamos la formula.
+   \begin{align*}
+     \int_0^3 \frac{4}{9} \sqrt{9-x^2} dx
+     & = \frac{4}{9}  \int_0^3 \sqrt{9-x^2} dx \\
+     & = \frac{4}{9}  \left[ \frac{x}{2} \sqrt{9-x^2} + \frac{9}{2} \sin ^{-1} {\frac{x}{3}} \right] \Bigg|_0^3  \\
+     & = \left[ \frac{4x}{18} \sqrt{9-x^2} + \frac{36}{18} \sin^{-1} {\frac{x}{3}}\right]  \Bigg|_0^3   \\
+     & = \left[ \frac{2x}{9} \sqrt{9-x^2} + 2 \sin^{-1} {\frac{x}{3}} \right] \Bigg|_0^3  \\
+     & = \left[ \frac{2 \cdot 3}{9} \sqrt{9-3^2} + 2 \sin^{-1} {\frac{3}{3}} \right] - \left[ \frac{2 \cdot 0}{9} \sqrt{9-0^2} + 2 \sin^{-1} {\frac{0}{3}} \right] \\
+     & = \left[ \frac{2}{3} \sqrt{9-9} + 2 \sin^{-1} {1} \right] - \left[  2 \sin^{-1} {0} \right] \\
+     & = \left[ 2 \cdot \frac{\pi}{2} \right] - \left[  2 \cdot 0 \right] \\
+     & = \pi
+   \end{align*}
+ \item Aproximar la integral
+   \begin{enumerate}
+   \item $M_{10}$ \\
+     Este método se describe de la siguiente forma:
+     \[
+     M_n = \left( \frac{b-a}{n} \right) \sum_{k=1}^{n}f(x_k^*)
+     \]
+     \[
+     x_k^* = \frac{1}{2}(x_{k-1} + x_k)
+     \]
+     \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.7\textwidth]{../img/img_Lista4/MP.png}
+     \end{figure}
+     \[
+      M_{10} =  (0.30)(10.0803811)= 3.152411433
+     \]
+   \item $T_{10}$ \\
+     Usaremos la definición que dice que
+     \[
+     T_n = \left( \frac{b-a}{2n}\right)[y_0 + 2y_1 + \ldots +2 y_{n-1} + y_n]
+     \]
+     \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.7\textwidth]{../img/img_Lista4/TN1.png}
+     \end{figure}
+      \[
+      T_{10} =  (0.15)(20.69678884)= 3.104518326
+      \]
+      
+   \item $S_{20}$ \\
+     Este método se basa en los anteriores y se describe como sigue
+     \[
+     S_n = S_{2k} = \frac{1}{3} (2M_k + T_k)
+     \]
+     En este caso tenemos que con lo ya calculado:
+     \[
+     S_{20} = S_{2 ~10} = \frac{1}{3} (2M_{10} + T_{10})
+     \]
+      \[
+     S_{20} = 3.136447064
+     \]
+    \end{enumerate}
+ \item Error absoluto
+    \begin{enumerate}
+   \item $|M_{10}| = |\pi - M_{10}| \approx |-0.010807| = 0.010807$
+   \item $|T_{10}|  = |\pi - T_{10}| \approx |0.0370926| = 0.0370926 $
+    \item $|S_{20}|  = |\pi - S_{20}| \approx |0.0051455| = 0.0051455 $
+   \end{enumerate}
+\end{enumerate}
 \end{document}
+

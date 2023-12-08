@@ -230,18 +230,31 @@ Sea $F(x)=\int_{4}^{x} \sqrt{t^2+9}dt$. Encuentre
 
 Un ingeniero de tránsito monitorea la velocidad a la que los automóviles ingresan a la carretera principal durante la hora pico de la tarde. De sus datos estima que entre las $16:30$ horas. y $17:30$ p.m. la tasa  $R(t)$ a la que los automóviles ingresan a la carretera está dada por la fórmula $R(t) = 100 (1$ - $0.0001t^2 )$ automóviles por minuto, donde $t$ es el tiempo (en minutos) desde las 4:30 p.m.
 \begin{enumerate}[label=(\alph*)]
-\item ¿Cuándo ocurre el flujo máximo de tráfico hacia la carretera?\\
-El flujo máximo de autos ocurre cuando R(t) alcanza su valor máximo. Esto es cuando $t=0$ ya que el factor  $(1 - 0.0001t^2 ) $ sería 1 y el flujo de autos es 100, esto ocurre a las 16:30.
+\item ¿Cuándo ocurre el flujo máximo de tráfico hacia la carretera?\\\\
+  El flujo máximo de autos ocurre cuando R(t) alcanza su valor máximo. Esto es cuando $t=0$ ya que el factor  $(1 - 0.0001t^2 ) $ sería 1, mientras que conforme avanza el tiempo se múltiplica por números más pequeños, y así el flujo de autos es 100 en t=0 que ocurre a las 16:30. \\
+Lo podemos justificar buscando extremos relativos de la función.\\
+  \begin{align*}
+    R'(t)
+    & = \frac{d}{dx} [100 (1 - 0.0001t^2 )] \\
+    &= 100 *- 0.0001 * 2t\\
+    & = -0.02t
+  \end{align*}
+  Que tiene un único extremo relativo en 0.
+  \[ -0.02t = 0 \rightarrow t = 0 \]
+  Y por lo explicado anteriormente es entonces el valor máximo de la función.
+  
 \item Estime el número de automóviles que entran a la carretera durante la hora pico.\\
-  Para evaluar el número de autos que entran, debemos evaluar la suma de las tasas de entrada en cada momento de esa hora transcurrida entre $16:30$ y $17:30$, es decir, en un periodo de 0 a 60 minutos ya que $t=0$ equivale a $16:30$ y $t=60$ a $17:30$. Entonces evaluemos:\\
+  Para evaluar el número de autos que entran, debemos evaluar la suma de las tasas de entrada en cada momento de esa hora transcurrida entre las $16:30 h$ y $17:30 h$, donde  $t=0$ equivale a $16:30$ y $t=60$ a $17:30$. Considerando además la proposición:
+  \[ \int_a^{b} F'(x)dx = F(b)-F(a)\]
+Podemos evaluar con F'(x) = R(x), ya que esta última es una tasa de cambio.
 \begin{align*}
-  \int_0^{60} \rigth[ 100 (1- 0.0001t^2) dt \left]
-  & = 100 \rigth[ \int_0^{60}  (1- 0.0001t^2) dt \left]\\
-  & =  100 \rigth[ \int_0^{60}dt - 0.0001 \int_0^{60} t^2 dt \left]\\
-  & =  100 \rigth[ \int_0^{60}dt - 0.0001 \int_0^{60} t^2 dt \left]\\
-  & =  100 \rigth[ t \Bigg|_0 ^{60} - 0.0001 \frac {t^3}{3} \Bigg|_0 ^{60} \left]\\
-  & =  100 \rigth[ (60-0) - 0.0001 ( \frac {60^3}{3}  -  \frac {0^3}{3}) \left]\\
-  & =  100 \rigth[ 60 - 0.0001 ( 72000 ) \left]\\
+  \int_0^{60} \left[ 100 (1- 0.0001t^2) \right] dt
+  & = 100 \left[ \int_0^{60}  (1- 0.0001t^2) dt \right]\\
+  & =  100 \left[ \int_0^{60}dt - 0.0001 \int_0^{60} t^2 dt \right]\\
+  & =  100 \left[ \int_0^{60}dt - 0.0001 \int_0^{60} t^2 dt \right]\\
+  & =  100 \left[ t \Bigg|_0 ^{60} - 0.0001 \frac {t^3}{3} \Bigg|_0 ^{60} \right]\\
+  & =  100 \left[ (60-0) - 0.0001 \left( \frac {60^3}{3}  -  \frac {0^3}{3} \right) \right]\\
+  & =  100 \left[ 60 - 0.0001 ( 72000 ) \right]\\
   & =  100 \cdot 52.8\\
   & =   5280
 \end{align*}
@@ -280,11 +293,16 @@ $\therefore $ La velocidad promedio, en automóviles por minuto, a la que los au
   \[
   \int_{-\pi/4}^{\pi/4} \tan^4{x} dx
   \]
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../img/img_Lista4/cas2.png}
+\end{figure}
+Esta figura muestra el resultado $\frac{\pi}{2} - \frac{4}{3}$ obtenido en MATLAB.
 \item Confirme el valor exacto mediante cálculo manual. [\textit{Sugerencia}: Utilice la identidad $1 + \tan^2{x}=\sec^2{x}$.]\\
   Utilizando la identidad reescrita como $\tan^2{x}=\sec^2{x}-1$  podemos reescribir la integral de la siguiente forma:
   \begin{align*}
     \int_{-\pi/4}^{\pi/4} \tan^4{x} dx
-    & = \int_{-\pi/4}^{\pi/4} \rigth[ \tan^2{x} \cdot (\sec^2{x}-1) \left]dx \\
+    & = \int_{-\pi/4}^{\pi/4} \left[ \tan^2{x} \cdot (\sec^2{x}-1) \right]dx \\
     & = \int_{-\pi/4}^{\pi/4} [\tan^2{x} \cdot \sec^2{x} -  \tan^2{x} ] dx \\
     & = \int_{-\pi/4}^{\pi/4} [\tan^2{x} \cdot \sec^2{x} -  \tan^2{x} ] dx \\
     & = \int_{-\pi/4}^{\pi/4} \tan^2{x} \cdot \sec^2{x} dx - \int_{-\pi/4}^{\pi/4}   \tan^2{x}  dx \\

@@ -46,7 +46,7 @@ Evaluar las integrales utilizando sustituciones apropiadas.
 \[
 \int \tan^3{5x}\sec^2{5x}dx
 \]
-Tomemos $u = \tan5x \rightarrow du = 5 \sec^{2}5xdx \rightarrow \frac{du}{5} = \sec^{2}5xdx $. \\
+Tomemos $u=\tan{5x} \rightarrow du = 5 \sec^{2}5xdx \rightarrow \frac{du}{5} = \sec^{2}5xdx $. \\
 Sustituimos en la integral:
 \[
 \int u^3 \frac{du}{5}
@@ -65,12 +65,35 @@ y regresamos a u a su valor original.
   & = \frac{\tan^45x}{20} + C
 \end{align*}
 % 73 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 73} name \\
+\subsection{Ejercicio 73} Zarco Romero José Antonio \\
 
 \begin{enumerate}[label=(\alph*)]
-\item Evalúe $\int \rigth[ \frac {x}{\sqrt{x^2+1}}  \left] dx$
+  
+\item Evalúe $\int \left[ \frac {x}{\sqrt{x^2+1}}  \right] dx$
 
-\item Utilice una herramienta gráfica para generar algunas curvas integrales típicas de $f(x) = x / \sqrt{x^2 + 1|1}$ en el intervalo $(-5, 5)$.
+  Si hacemos que $u = x^2+1$, entonces
+  
+  \[
+  \frac{du}{dx}=2x \qquad \text{ así, } \qquad \frac{du}{2}=xdx
+  \]
+
+  De este modo,
+
+  \begin{align*}
+    \int \left[ \frac {x}{\sqrt{x^2+1}}  \right] dx
+    &= \int \left[ \frac {1}{2} u^{-\frac{1}{2}}  \right] du \\
+    &= \frac {1}{2} \int u^{-\frac{1}{2}} du \\
+    &=  \frac {1}{2} \left[ 2u^{\frac{1}{2}} \right] + C \\
+    &= u^{\frac{1}{2}} +C \\
+    &= \sqrt{x^2+1} +C
+  \end{align*}
+
+\item Utilice una herramienta gráfica para generar algunas curvas integrales típicas de $f(x) = x / \sqrt{x^2 + 1}$ en el intervalo $(-5, 5)$.
+
+  \begin{figure}[H]
+       \centering
+       \includegraphics[width=1\textwidth]{../img/img_Lista4/1_73_b.png}
+  \end{figure}
   
 \end{enumerate}
 
@@ -105,12 +128,29 @@ Lo que resuelve la integral dada.
 \int_{-3}^{0} \left(2+\sqrt{9-x^2}\right)dx  = 6 + \frac{9\pi}{4} 
 \]
 % 37 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 37} name \\
+\subsection{Ejercicio 37} Zarco Romero José Antonio \\
 
 Evaluar las integrales completando el cuadrado y aplicando fórmulas apropiadas de geometría.
+
 \[
 \int_{0}^{10} \sqrt{10x-x^2}dx
 \]
+
+\begin{align*}
+  \int_{0}^{10} \sqrt{10x-x^2}dx
+  &= \int_{0}^{10} \sqrt{-(x^2-10x)}dx \\
+  &= \int_{0}^{10} \sqrt{25-(x^2-10x+25)}dx \\
+  &= \int_{0}^{10} \sqrt{25-(x-5)^2}dx 
+\end{align*}
+
+La gráfica de $y=\sqrt{25-(x-5)^2}$ es el semicírculo superior de radio 5, centrado 5 unidades a la derecha del origen, por lo que la región es la mitad del semicírculo superior que se extiende desde $x = 0$ hasta $x = 10$. De este modo,
+
+\begin{align*}
+  \int_{0}^{10} \sqrt{25-(x-5)^2}dx = (\text{área de la mitad del círculo}) = \frac{1}{2}5^2\pi
+\end{align*}
+
+$\therefore \int_{0}^{10} \sqrt{10x-x^2}dx = \frac{25}{2}\pi$
+    
 
 %% 5.6 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 5.6 \\ El Teorema Fundamental Del Cálculo}
@@ -146,27 +186,54 @@ Y ahora podemos derivar $F(x)$.
 \end{enumerate}
 
 % 63 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 63} name \\
+\subsection{Ejercicio 63} Zarco Romero José Antonio \\
 
 Sea $F(x)=\int_{4}^{x} \sqrt{t^2+9}dt$. Encuentre
+
 \begin{enumerate}[label=(\alph*)]
+  
 \item $F(4)$.
   
+\begin{align*}
+  F(4)
+  & = \int_{4}^{4} \sqrt{t^2+9}dt  \\
+  & = 0
+\end{align*}
+  
 \item $F'(4)$.
+
+  Sabemos que $F'(x)=\sqrt{x^2+9}$. Por lo que
+  
+\begin{align*}
+  F'(4)
+  & = \sqrt{4^2+9}  \\
+  & = \sqrt{16+9} \\
+  &= \sqrt{25} \\
+  &= 5
+\end{align*}
   
 \item $F''(4)$.
+
+  Sabemos que $F''(x)=\frac{d}{dx}\sqrt{x^2+9}=\frac{1}{2}(x^2+9)^{-\frac{1}{2}}(2x)=\frac{x}{\sqrt{x^2+9}}$. Por lo que
+  
+\begin{align*}
+  F''(4)
+  & = \frac{4}{\sqrt{4^2+9}} \\
+  &= \frac{4}{\sqrt{25}} \\
+  &=\frac{4}{5}\\
+\end{align*}
   
 \end{enumerate}
 
 % 70 -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 70} Flores Morán Julieta Melina \\
 
-Un ingeniero de tránsito monitorea la velocidad a la que los automóviles ingresan a la carretera principal durante la hora pico de la tarde. De sus datos estima que entre las 16:30 horas. y 17:30 p.m. la tasa  $R(t)$ a la que los automóviles ingresan a la carretera está dada por la fórmula $R(t) = 100 (1$ - $0.0001t^2 )$ automóviles por minuto, donde $t$ es el tiempo (en minutos) desde las 4:30 p.m.
+Un ingeniero de tránsito monitorea la velocidad a la que los automóviles ingresan a la carretera principal durante la hora pico de la tarde. De sus datos estima que entre las $16:30$ horas. y $17:30$ p.m. la tasa  $R(t)$ a la que los automóviles ingresan a la carretera está dada por la fórmula $R(t) = 100 (1$ - $0.0001t^2 )$ automóviles por minuto, donde $t$ es el tiempo (en minutos) desde las 4:30 p.m.
 \begin{enumerate}[label=(\alph*)]
 \item ¿Cuándo ocurre el flujo máximo de tráfico hacia la carretera?\\
 El flujo máximo de autos ocurre cuando R(t) alcanza su valor máximo. Esto es cuando $t=0$ ya que el factor  $(1 - 0.0001t^2 ) $ sería 1 y el flujo de autos es 100, esto ocurre a las 16:30.
 \item Estime el número de automóviles que entran a la carretera durante la hora pico.\\
-  Para avaluar el número de autos que entran, debemos evaluar la suma de las tasas de entrada en cada momento de esa hora transcurrida entre $16:30$ y $17:30$, es decir, en un periodo de 0 a 60 minutos ya que $t=0$ equivale a $16:30$ y $t=60$ a $17:30$.Entonces evaluemos:\\
+  Para evaluar el número de autos que entran, debemos evaluar la suma de las tasas de entrada en cada momento de esa hora transcurrida entre $16:30$ y $17:30$, es decir, en un periodo de 0 a 60 minutos ya que $t=0$ equivale a $16:30$ y $t=60$ a $17:30$. Entonces evaluemos:\\
 \begin{align*}
   \int_0^{60} \rigth[ 100 (1- 0.0001t^2) dt \left]
   & = 100 \rigth[ \int_0^{60}  (1- 0.0001t^2) dt \left]\\
@@ -184,9 +251,24 @@ Así que el número de coches entrados a la carretera en la hora pico fue de 528
 %% 5.8 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 5.8 \\ Valor Promedio De Una Función Y Sus Aplicaciones}
 % 27 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 27} name \\
+\subsection{Ejercicio 27} Zarco Romero José Antonio \\
 
-Un ingeniero de tránsito monitorea la velocidad a la que los automóviles ingresan a la carretera principal durante la hora pico de la tarde. De sus datos estima que entre las 16.30 horas. y 5:30 p.m. la velocidad $R(t)$ a la que los automóviles ingresan a la carretera está dada por la fórmula $R(t) = 100(1 − 0.0001t^2)$ automóviles por minuto, donde $t$ es el tiempo (en minutos) desde las 4:30 p.m. Encuentre la velocidad promedio, en automóviles por minuto, a la que los automóviles ingresan a la carretera durante la primera media hora de la hora pico.
+Un ingeniero de tránsito monitorea la velocidad a la que los automóviles ingresan a la carretera principal durante la hora pico de la tarde. De sus datos estima que entre las $4:30$ horas. y $5:30$ p.m. la velocidad $R(t)$ a la que los automóviles ingresan a la carretera está dada por la fórmula $R(t) = 100(1-0.0001t^2)$ automóviles por minuto, donde $t$ es el tiempo (en minutos) desde las $4:30$ p.m. Encuentre la velocidad promedio, en automóviles por minuto, a la que los automóviles ingresan a la carretera durante la primera media hora de la hora pico. \\
+
+Análogamente al ejercicio anterior, para evaluar el número de autos que ingresan a la carretera, debemos evaluar la integral en un periodo de 0 a 30 minutos ya que $t=0$ equivale a $4:30 p.m.$ y $t=30$ a $5:00 p.m.$ Entonces evaluemos:
+
+\begin{align*}
+  \frac{1}{30-0} \int_0^{30} \left[ 100 (1- 0.0001t^2) dt \right]
+  & = \frac{1}{30} \int_0^{30} \left[ 100-\frac{t^2}{100} \right] dt \\
+  & =  \frac{1}{30} \left[ 100t-\frac{t^3}{300} \right]_{0}^{30} \\
+  & =  \frac{1}{30} \left[ 3000-\frac{27000}{300} \right] \\
+  & =  \frac{1}{30} \left[ 3000-90 \right] \\
+  & =  \frac{1}{30} \left[ 2910 \right] \\
+  &= 97
+\end{align*}
+
+$\therefore $ La velocidad promedio, en automóviles por minuto, a la que los automóviles ingresan a la carretera durante la primera media hora de la hora pico fue de $97 $ carros/minuto.
+
 
 %% 5.9 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 5.9 \\ Evaluación De Integrales Definidas Por Sustitución}
@@ -236,7 +318,7 @@ Podemos usar sustitución para la primera integral, donde $u= tanx \rightarrow d
       \end{align*}
 Por lo tanto el valor exacto es $-\frac{4}{3} + \frac{\pi}{2} \approx 0.2374629935 $.
 % 64 -------------------------------------------------------------------------------------------------------------
-\subsection{Ejercicio 64} name \\
+\subsection{Ejercicio 64} Zarco Romero José Antonio \\
 
 \begin{figure}[H]
 \centering
@@ -254,8 +336,42 @@ V = V_p \sin{(2\pi ft)}
   V_{rms}=\frac{V_p}{\sqrt{2}}
   \]
     [\textit{Sugerencia}: Calcule el promedio durante el ciclo de $t= 0$ a $t = 1/f$ y use la identidad $\sin^2{\theta}= \frac{1}{2}(1-\cos{2\theta})$ para ayudar a evaluar la integral.]
+
+    Siguiendo la definición de los rms, tenemos que:
+
+    \begin{align*}
+      V_{rms}^2
+      &= \frac{1}{\frac{1}{f}-0} \int_0^{\frac{1}{f}} \left[V_p^2 \sin^2{(2\pi ft)} \right] dt \\
+      &= fV_p^2 \int_0^{\frac{1}{f}} \left[\sin^2{(2\pi ft)} \right] dt \\
+      &= \frac{fV_p^2}{2} \int_0^{\frac{1}{f}} \left[ 1-\cos{(4\pi ft)} \right] dt 
+    \end{align*}
+
+  Si hacemos que $u = 4\pi ft$, entonces $u(\frac{1}{f})=4\pi$, $u(0)=0$ y
+  
+  \[
+  \frac{du}{dt}=4\pi f \qquad \text{ así, } \qquad \frac{du}{4\pi f}=dt
+  \]
+
+  De este modo,
+
+  \begin{align*}
+    \frac{fV_p^2}{2} \int_0^{\frac{1}{f}} \left[ 1-\cos{(4\pi ft)} \right] dt 
+    & =    \frac{fV_p^2}{2} \int_0^{4\pi} \left[ 1-\cos{u} \right] \frac{du}{4\pi f} \\
+    & =    \frac{V_p^2}{8\pi} \int_0^{4\pi} \left[ 1-\cos{u} \right] du \\
+    &= \frac{V_p^2}{8\pi} \left[ u-\sin{u} \right]_0^{4\pi}\\
+    &= \frac{V_p^2}{8\pi} (4\pi-0)\\
+    &=\frac{V_p^2}{2}
+  \end{align*}
+
+  Por lo que tenemos que $V_{rms}=\frac{V_p}{\sqrt{2}}$.
   
 \item En Estados Unidos, los enchufes eléctricos suministran corriente alterna con un voltaje $rms$ de $120 V$ a una frecuencia de $60 Hz$. ¿Cuál es el voltaje máximo en tal toma corriente?
+
+  \begin{align*}
+    120V
+    &= \frac{V_p}{\sqrt{2}} \\ \\
+    \therefore V_p &= 120\sqrt{2}V \approx 169.705627 V
+  \end{align*}
 
 
 %Segunda parte de la lista de problemas

@@ -293,11 +293,22 @@ $\therefore $ La velocidad promedio, en automóviles por minuto, a la que los au
   \[
   \int_{-\pi/4}^{\pi/4} \tan^4{x} dx
   \]
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\textwidth]{../img/img_Lista4/cas2.png}
 \end{figure}
 Esta figura muestra el resultado $\frac{\pi}{2} - \frac{4}{3}$ obtenido en MATLAB.
+
+  \begin{figure}[H]
+       \centering
+       \includegraphics[width=1\textwidth]{../img/img_Lista4/CAS_g.png}
+  \end{figure}
+  \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.7\textwidth]{../img/img_Lista4/CAS.png}
+  \end{figure}
+  
 \item Confirme el valor exacto mediante cálculo manual. [\textit{Sugerencia}: Utilice la identidad $1 + \tan^2{x}=\sec^2{x}$.]\\
   Utilizando la identidad reescrita como $\tan^2{x}=\sec^2{x}-1$  podemos reescribir la integral de la siguiente forma:
   \begin{align*}
@@ -1256,6 +1267,28 @@ Para encontrar el valor exacto del trabajo tomamos el límite como $max ~ \Delta
 
 $\therefore W=261~600 $ joules.
 % 22  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 22} Zarco Romero José Antonio  \\
+
+Un balde de 3 lb que contiene 20 lb de agua cuelga del extremo de una cuerda de 20 ft que pesa 4 oz/ft. El otro extremo de la cuerda está sujeto a una polea. ¿Cuánto trabajo se requiere para enrollar el trozo de cuerda en la polea, suponiendo que la cuerda se enrolla en la polea a una velocidad de 2 ft/s y que a medida que se levanta el balde, el agua se escapa del balde a una velocidad de 0.5 lb/s? \\
+
+Sabemos que el tiempo total para enrollar la cuerda es de $\frac{20ft}{2ft/s}=10s$. Por lo que el trabajo requerido para enrollar el trozo de cuerda en la polea esta dado por la ecuación $$ W_k \approx F_k(2\Delta t)$$
+
+donde $2\Delta t$ es la distancia y $F_k$ es el peso del balde, la cuerda y el agua, el cual puede expresarse en terminos de $t$ donde:
+\begin{itemize}
+\item Masa del balde y el agua: $(3+20) - \frac{t}{2} = 23- \frac{t}{2}$
+\item Longitud de la cuerda: $20-2t$
+\item Masa de la cuerda: $4(20-2t)=5-\frac{t}{2}$
+\end{itemize}
+Así, tenemos que el peso de los 3 objetos juntos es $w(t)=(23- \frac{t}{2})+(5-\frac{t}{2})=28-t$. Y, por tanto, el trabajo $W$ requerido tiene la aproximación $$ W = \sum_{k=1}^n W_k \approx (28-t) 2\Delta t$$
+
+Procedemos a integrar para encontrar el valor exacto del trabajo
+\begin{align*}
+  W
+  &= \int_0^{10} (28-t)2dt = \int_0^{10} (56-2t) dt = [56t-t^2]_0^{10}=560-100=460
+\end{align*}
+
+$\therefore W=460 ~ (ft\cdot lb)$.
+
 %% 7.8 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 7.8 \\Integrales impropias}
 % 7  -------------------------------------------------------------------------------------------------------------
@@ -1285,7 +1318,24 @@ Primero encontramos la integral mediante sustitución donde $u=lnx \rightarrow d
     & = \frac{1}{2} -0 = \frac{1}{2}
   \end{align*}
  % 28  -------------------------------------------------------------------------------------------------------------
+  \subsection{Ejercicio 28} Zarco Romero José Antonio  \\
 
+  Evalúa las integrales que convergen: $$ \int_0^1 \frac{dx}{(x-1)^{\frac{2}{3}}} $$
+
+  La integral es impropia porque el integrando tiende a $+\infty$ cuando $x$ se acerca al límite superior 1 por la izquierda
+  
+  \begin{align*}
+    \int_0^1 \frac{dx}{(x-1)^{\frac{2}{3}}}
+    &=  \lim_{k \to 1^-} \int_0^k \frac{dx}{(x-1)^{\frac{2}{3}}}  \\
+    & \text{Sea $u=x-1$, entonces $du=dx$} \\
+    & \text{$u(k)=k-1$ y u(0)=-1} \\
+    &=  \lim_{k \to 1^-} \int_0^k u^{-\frac{2}{3}} du
+    = \lim_{k \to 1^-} 3u^{\frac{1}{3}} \Bigg|_{-1}^{k-1} \\
+    &= \lim_{k \to 1^-} 3 \left[ (k-1)^{\frac{1}{3}} - (-1)^{\frac{1}{3}} \right]\\
+    &= 3(0+1) = 3
+  \end{align*}
+
+  $$ \therefore \int_0^1 \frac{dx}{(x-1)^{\frac{2}{3}}}=3 $$
 % 39  -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 39} Flores Morán Julieta Melina  \\
 Usa sustitución y evaluá la integral resultante indefinida

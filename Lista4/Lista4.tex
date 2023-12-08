@@ -231,7 +231,7 @@ Sea $F(x)=\int_{4}^{x} \sqrt{t^2+9}dt$. Encuentre
 Un ingeniero de tránsito monitorea la velocidad a la que los automóviles ingresan a la carretera principal durante la hora pico de la tarde. De sus datos estima que entre las $16:30$ horas. y $17:30$ p.m. la tasa  $R(t)$ a la que los automóviles ingresan a la carretera está dada por la fórmula $R(t) = 100 (1$ - $0.0001t^2 )$ automóviles por minuto, donde $t$ es el tiempo (en minutos) desde las 4:30 p.m.
 \begin{enumerate}[label=(\alph*)]
 \item ¿Cuándo ocurre el flujo máximo de tráfico hacia la carretera?\\\\
-  El flujo máximo de autos ocurre cuando R(t) alcanza su valor máximo. Esto es cuando $t=0$ ya que el factor  $(1 - 0.0001t^2 ) $ sería 1, mientras que conforme avanza el tiempo se múltiplica por números más pequeños, y así el flujo de autos es 100 en t=0 que ocurre a las 16:30. \\
+  El flujo máximo de autos ocurre cuando R(t) alcanza su valor máximo. Esto es cuando $t=0$ ya que el factor  $(1 - 0.0001t^2 ) $ sería 1, mientras que conforme avanza el tiempo se multiplica por números más pequeños, y así el flujo de autos es 100 en t=0 que ocurre a las 16:30. \\
 Lo podemos justificar buscando extremos relativos de la función.\\
   \begin{align*}
     R'(t)
@@ -304,10 +304,12 @@ Esta figura muestra el resultado $\frac{\pi}{2} - \frac{4}{3}$ obtenido en MATLA
        \centering
        \includegraphics[width=1\textwidth]{../img/img_Lista4/CAS_g.png}
   \end{figure}
+  Esta figura muestra la representación gráfica de la integral.
   \begin{figure}[H]
        \centering
        \includegraphics[width=0.7\textwidth]{../img/img_Lista4/CAS.png}
   \end{figure}
+  Esta figura muestra una solución dada por un CAS. 
   
 \item Confirme el valor exacto mediante cálculo manual. [\textit{Sugerencia}: Utilice la identidad $1 + \tan^2{x}=\sec^2{x}$.]\\
   Utilizando la identidad reescrita como $\tan^2{x}=\sec^2{x}-1$  podemos reescribir la integral de la siguiente forma:
@@ -964,7 +966,7 @@ Para evaluar la aproximación trapezoidal, consideraremos la gráfica de la func
 
 \item $$\int_{\frac{3}{2}}^2 \cos{(x^2)} dx$$
 
-    Basándonos en el teorema 7.7.1 y, dado que $f(x)=\cos{(x^2)}$ es cóncava hacia arriba en el intervalo de $(\frac{3}{2},2)$, la aproximación trapezoidal \textbf{sobreestima} el valor de la integral definida.
+    Basándonos en el teorema 7.7.1 y, dado que $f(x)=\cos{(x^2)}$ es cóncava hacia arriba en el intervalo de $(\frac{3}{2},2)$, la aproximación trapezoidal \textbf{sobre estima} el valor de la integral definida.
   
 \end{enumerate}
 
@@ -1108,7 +1110,11 @@ Ahora, ya que la función $ y=senx \geq y= \frac{3}{5\pi} x $, usamos la fórmul
   & = \frac{2+ \sqrt{3}}{2} - \frac{\frac{75 \pi  ^2}{36}}{10\pi} \\
   & = \frac{2+ \sqrt{3}}{2} - \frac{75 \pi  ^2}{360\pi} \\
   & = \frac{2+ \sqrt{3}}{2} - \frac{5 \pi}{24} \\
- \end{align*}
+\end{align*}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../img/img_Lista4/sen.png}
+\end{figure}
 % 42  -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 42} Zarco Romero José Antonio  \\
 
@@ -1273,7 +1279,7 @@ Un balde de 3 lb que contiene 20 lb de agua cuelga del extremo de una cuerda de 
 
 Sabemos que el tiempo total para enrollar la cuerda es de $\frac{20ft}{2ft/s}=10s$. Por lo que el trabajo requerido para enrollar el trozo de cuerda en la polea esta dado por la ecuación $$ W_k \approx F_k(2\Delta t)$$
 
-donde $2\Delta t$ es la distancia y $F_k$ es el peso del balde, la cuerda y el agua, el cual puede expresarse en terminos de $t$ donde:
+donde $2\Delta t$ es la distancia y $F_k$ es el peso del balde, la cuerda y el agua, el cual puede expresarse en términos de $t$ donde:
 \begin{itemize}
 \item Masa del balde y el agua: $(3+20) - \frac{t}{2} = 23- \frac{t}{2}$
 \item Longitud de la cuerda: $20-2t$

@@ -415,7 +415,40 @@ Usaremos la segunda propiedad, donde  $f(t) =  \frac{t^2}{1+t^2} \rightarrow f(x
   &=  - tan^2x \\
 \end{align*}
 \end{enumerate}
-  %% 26 --------------------------------------------------------------------------------------------------------------
+%% 26 --------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 26} Zarco Romero José Antonio  \\
+
+  Usa los resultados del ejercicio 24 para encontrar la derivada:
+  
+  Cabe poner a consideración que el ejercicio 24 pide demostrar las siguiente propiedades:
+  
+  \begin{align}
+    \frac{d}{dx} \left[ \int_x^{a} f(t) dt \right] = -f(x) \\
+    \frac{d}{dx} \left[ \int_{g(x)}^{a} f(t) dt \right] = -f(g(x))g'(x)
+  \end{align}
+
+  \begin{enumerate}[label=\alph*), format=\textbf]
+    
+  \item $$\frac{d}{dx} \left[ \int_x^0 \frac{1}{(t^2+1)^2} dt \right]$$
+
+    Aplicando la fórmula $(1)$, tenemos que
+    
+    \begin{align*}
+      \frac{d}{dx} \left[ \int_x^0 \frac{1}{(t^2+1)^2} dt \right]
+      &= -\frac{1}{(x^2+1)^2}
+    \end{align*}
+    
+  \item $$\frac{d}{dx} \left[ \int_{\frac{1}{x}}^{\pi} \cos^3{t} dt \right]$$
+
+    Aplicando la fórmula $(2)$, tenemos que
+    
+    \begin{align*}
+      \frac{d}{dx} \left[ \int_{\frac{1}{x}}^{\pi} (\cos^3{t}) dt \right]
+      &= -\cos^3{(\frac{1}{x})}\cdot\frac{-1}{x^2} \\
+      &= \frac{\cos^3{(\frac{1}{x})}}{x^2}
+    \end{align*}
+    
+  \end{enumerate}
   %% 27 ---------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 27} Flores Morán Julieta Melina \\
 Encuentra
@@ -470,7 +503,75 @@ Así con estos resultados obtenemos que:
   & = -  3 \cdot \frac{3x-1}{9x^2+1} + 2x \cdot \frac{x^2-1}{x^4+1}
 \end{align*}
 %% 7.2 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\section{Sección 7.2 \\Integración por partes} 
+\section{Sección 7.2 \\Integración por partes}
+% 53  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 53} Zarco Romero José Antonio  \\
+
+Considere la integral $$\int \sin{x}\cos{x}dx$$
+
+\begin{enumerate}[label=\alph*), format=\textbf]
+  
+\item Evalúe la integral de dos maneras: primero usando la integración por partes y luego usando la sustitución $u = \sin{x}$.
+  
+  \begin{enumerate}[format=\textbf]
+    
+  \item Integración por partes:
+
+    Sea
+    
+    \[
+    u=\cos{x}, \qquad dv=\sin{x}dx, \qquad du=-\sin{x}dx, \qquad v=-\cos{x}
+    \]
+    
+    Entonces
+
+    \begin{align*}
+      \int \sin{x}\cos{x}dx
+      &= (\cos{x}\cdot -\cos{x}) - \int (-\cos{x}\cdot -\sin{x})dx \\
+      &= -\cos^2{x} - \int \sin{x}\cos{x}dx
+    \end{align*}
+
+    Que es una ecuación que podemos resolver para la integral desconocida. Obtenemos
+    
+    \[
+    2 \int \sin{x}\cos{x}dx = -\cos^2{x}
+    \]
+
+    Y así
+    
+    \[
+    \therefore \int \sin{x}\cos{x}dx = -\frac{1}{2} \cos^2{x} + C
+    \]
+
+  \item Integración por sustitución:
+
+    Si hacemos que $u = \sin{x}$, entonces 
+  
+    \[
+    \frac{du}{dx}=\cos{x} \qquad \text{ así, } \qquad du=\cos{x}dx
+    \]
+
+    De este modo,
+
+    \begin{align*}
+      \int \sin{x}\cos{x}dx
+      &= \int u du \\
+      &= \frac{1}{2}u^2 + C \\
+      &= \frac{1}{2}\sin^2{x} + C
+    \end{align*}
+    
+  \end{enumerate}
+  
+\item Demuestre que los resultados del inciso $(a)$ son equivalentes.
+
+  El resultado obtenido al integrar por partes fue $-\frac{1}{2} \cos^2{x} + C$, mientras que al integrar por sustitución obtuvimos $\frac{1}{2}\sin^2{x} + C$. Ambos resultados son válidos y equivalentes pues sólo difieren por una constante, lo cual se puede comprobar utilizando la identidad trigonométrica $\sin^2{x}+\cos^2{x}=1$; por ejemplo, podemos expresar $-\frac{1}{2} \cos^2{x} + C$ como $-\frac{1}{2} (1-\sin^2{x}) + C = \frac{1}{2}\sin^2{x}-\frac{1}{2}+C = \frac{1}{2}\sin^2{x}+C_2$.
+  $\blacksquare$
+  
+\item ¿Cuál de los dos métodos prefieres? Discuta las razones de su preferencia.
+
+  A nuestro parecer, por mayor tiempo trabajando con el método de integración por sustitución, el mismo nos parece más sencillo y directo, pues utilizas menos sustituciones y variables extra, simplemente reescribes la integral a una de tablas.
+  
+\end{enumerate}
 % 54  -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 54} Flores Morán Julieta Melina  \\
 Evaluá por partes la integral
@@ -519,6 +620,73 @@ Usando:
        & = -\frac{1}{3}\sqrt{2} + \frac{2}{3}  \\
    \end{align*}
 \end{enumerate}
+% 60  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 60} Zarco Romero José Antonio  \\
+
+El estudio de las ondas en dientes de sierra en ingeniería eléctrica conduce a integrales de la forma
+
+\[
+\int_{-\frac{\pi}{\omega}}^{\frac{\pi}{\omega}} t\sin{(k\omega t)} dt
+\]
+
+donde $k$ es un número entero y $\omega$ es una constante distinta de cero. Evaluar la integral.
+
+Primero evaluaremos si la función es par o impar. Por lo que consideramos $f(t)=t\sin{(k\omega t)$ y $f(-t)=-t\sin{(-k\omega t)$, dado que $\sin{x}$ es una función impar, entonces $f(-t)=-t\cdot -\sin{(k\omega t) = t\sin{(k\omega t)$. Así, tenemos que la función es par, pues $f(t)=f(-t)$. Entonces podremos reescribir la integral como
+
+\begin{align*}
+  \int_{-\frac{\pi}{\omega}}^{\frac{\pi}{\omega}} t\sin{(k\omega t)} dt
+  &= 2\int_0^{\frac{\pi}{\omega}} t\sin{(k\omega t)} dt 
+\end{align*}
+
+Sea
+    
+\[
+u=t, \qquad dv=\sin{(k\omega t)} dt, \qquad du=dt, \qquad v=\int \sin{(k\omega t)} dt
+\]
+
+para resolver $v$ consideramos $u=k\omega t$, así $du=k\omega dt$ que conlleva que $\frac{du}{k\omega}=dt$. Por lo que
+\[
+v=\int \sin{u} \frac{du}{k\omega}=\frac{1}{k\omega}\int \sin{u} du=\frac{1}{k\omega}\cdot -\cos{u} = -\frac{1}{k\omega} \cos{(k\omega t)}
+\]
+   
+    Entonces
+
+    \begin{align*}
+      2\int_0^{\frac{\pi}{\omega}} t\sin{(k\omega t)} dt
+      &= 2 \left\{ \left[ -\frac{1}{k\omega} t\cos{(k\omega t)} \right]_0^{\frac{\pi}{\omega}}
+      - \int_0^{\frac{\pi}{\omega}} -\frac{1}{k\omega} \cos{(k\omega t)} dt \right\} \\
+      &= 2 \left\{ \left[ -\frac{\pi}{k\omega^2} \cos{(k\pi)} \right]
+      + \frac{1}{k\omega} \int_0^{\frac{\pi}{\omega}} \cos{(k\omega t)} dt \right\} \\
+    \end{align*}
+
+    Sea $u=k\omega t$, entonces $du=k\omega dt$, por lo que $dt=\frac{du}{k\omega}$. Además, $u(0)=0$ y $u(\frac{\pi}{\omega})=k\pi$. De este modo, tenemos que
+
+    \begin{align*}
+      \frac{1}{k\omega} \int_0^{\frac{\pi}{\omega}} \cos{(k\omega t)} dt \right\}
+      &= \frac{1}{k\omega} \int_0^{k\pi} \cos{u} \frac{du}{k\omega} \\
+      &= \frac{1}{k^2\omega^2} \int_0^{k\pi} \cos{u} du \\
+      &= \frac{1}{k^2\omega^2} \sin{u} ~ \vline ~ _0^{k\pi} \\
+      &= \frac{1}{k^2\omega^2} \sin{(k\pi)} \\
+      &\text{Dado que $\sin{(k\pi)}=0$ siempre, al multiplicarlo}\\
+      &\text{por una constante dicho valor se mantiene} \\
+      &= 0
+    \end{align*}
+
+    Así
+    
+    \begin{align*}
+      2 \left\{ \left[ -\frac{\pi}{k\omega^2} \cos{(k\pi)} \right]
+      + \frac{1}{k\omega} \int_0^{\frac{\pi}{\omega}} \cos{(k\omega t)} dt \right\}
+      &= 2 \left\{ \left[ -\frac{\pi}{k\omega^2} \cos{(k\pi)} \right]
+      + 0 \right\} \\
+      &= -\frac{2\pi}{k\omega^2} \cos{(k\pi)} \\
+      \text{Dado que $\cos{(k\pi)}$ vale -1 si $k$ es impar y 1 si $k$ es par.}\\
+      \text{Entonces, podemos expresar la fórmula como}\\
+      &= (-1)^{k+1} \frac{2\pi}{k\omega^2}
+    \end{align*}
+
+    $\therefore \int_{-\frac{\pi}{\omega}}^{\frac{\pi}{\omega}} t\sin{(k\omega t)} dt = (-1)^{k+1} \frac{2\pi}{k\omega^2}$
+
 % 62  -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 62} Flores Morán Julieta Melina  \\
 Usa la formula (9)
@@ -583,7 +751,95 @@ de reducción para evaluar
    \end{align*}
 \end{enumerate}
 %% 7.7 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\section{Sección 7.7 \\Integración numérica: Regla de Simpson} 
+\section{Sección 7.7 \\Integración numérica: Regla de Simpson}
+% 31  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 31} Zarco Romero José Antonio  \\
+
+El valor exacto de la integral dada es $\pi$ (verificar). Aproximar la integral usando (a) la aproximación del punto medio $M_{10}$, (b) la aproximación trapezoidal $T_{10}$, y (c) Aproximación de la regla de Simpson $ S_{20}$ usando la Fórmula (7). Aproximar el error absoluto y expresa tus respuestas con al menos cuatro decimales.
+
+\[
+\int_0^2 \frac{8}{x^2+4} dx
+\]
+
+\begin{enumerate}[format=\textbf]
+
+\item Verificar el valor de la integral dada, esta es una integral del formulario, entonces usamos la formula.
+  
+   \begin{align*}
+     \int_0^2 \frac{8}{x^2+4} dx
+     &= a \\
+     & = \pi
+   \end{align*}
+   
+ \item Aproximar la integral
+
+   \begin{enumerate}[format=\textbf]
+
+   \item $M_{10}$ \\ Este método se describe de la siguiente forma:
+     
+     \[
+     M_n = \left( \frac{b-a}{n} \right) \sum_{k=1}^{n}f(x_k^*)
+     \]
+     
+     \[
+     x_k^* = \frac{1}{2}(x_{k-1} + x_k)
+     \]
+     
+     %% \begin{figure}[H]
+%%        \centering
+%%        \includegraphics[width=0.7\textwidth]{../img/img_Lista4/MP.png}
+%%      \end{figure}
+     
+     \[
+     M_{10} =  ()()= 
+     \]
+     
+   \item $T_{10}$ \\ Usaremos la definición que dice que
+     
+     \[
+     T_n = \left( \frac{b-a}{2n}\right)[y_0 + 2y_1 + \ldots +2 y_{n-1} + y_n]
+     \]
+     
+     %% \begin{figure}[H]
+%%        \centering
+%%        \includegraphics[width=0.7\textwidth]{../img/img_Lista4/TN1.png}
+%%      \end{figure}
+     
+     \[
+     T_{10} =  ()()= 
+     \]
+      
+   \item $S_{20}$ \\ Este método se basa en los anteriores y se describe como sigue
+     
+     \[
+     S_n = S_{2k} = \frac{1}{3} (2M_k + T_k)
+     \]
+     
+     En este caso tenemos que con lo ya calculado:
+     
+     \[
+     S_{20} = S_{2 ~10} = \frac{1}{3} (2M_{10} + T_{10})
+     \]
+     
+      \[
+     S_{20} = 
+     \]
+     
+   \end{enumerate}
+  
+   \item Error absoluto
+  
+     \begin{enumerate}[format=\textbf]
+    
+     \item $|M_{10}| = |\pi - M_{10}| \approx || = $
+    
+     \item $|T_{10}|  = |\pi - T_{10}| \approx || = $
+       
+     \item $|S_{20}|  = |\pi - S_{20}| \approx || = $
+    
+     \end{enumerate}
+
+\end{enumerate}
 % 32  -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 32} Flores Morán Julieta Melina  \\
 El valor exacto de la integral dada es $\pi$ (verificar). Aproximar la integral usando (a) la aproximación del punto medio$ M_{10}$, (b) la aproximación trapezoidal $T_{10}$, y (c) Aproximación de la regla de Simpson $ S_{20}$ usando la Fórmula (7). Aproximar el error absoluto y expresa tus respuestas con al menos cuatro decimales.
@@ -652,6 +908,38 @@ El valor exacto de la integral dada es $\pi$ (verificar). Aproximar la integral 
    \item $|T_{10}|  = |\pi - T_{10}| \approx |0.0370926| = 0.0370926 $
     \item $|S_{20}|  = |\pi - S_{20}| \approx |0.0051455| = 0.0051455 $
    \end{enumerate}
+\end{enumerate}
+
+% 34  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 34} Zarco Romero José Antonio  \\
+
+En cada parte, determine si una aproximación trapezoidal sería una subestimación o una sobreestimación de la integral definida.
+
+Para evaluar la aproximación trapezoidal, consideraremos la gráfica de la función $f(x)=\cos{(x^2)}$ y el teorema 7.7.1 que nos dice que si $f$ es continua en $[a,b]$, entonces:
+
+\begin{itemize}
+
+\item Si la gráfica de $f$ es cóncava hacia abajo en $(a,b)$, entonces $$ T_n < \int_a^b f(x) dx $$
+
+\item Si la gráfica de $f$ es cóncava hacia arriba en $(a,b)$, entonces $$ T_n > \int_a^b f(x) dx $$
+  
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{../img/img_Lista4/2_77_34.png}
+\end{figure}
+
+\begin{enumerate}[format=\textbf]
+
+\item $$\int_0^1 \cos{(x^2)} dx$$
+
+  Basándonos en el teorema 7.7.1 y, dado que $f(x)=\cos{(x^2)}$ es cóncava hacia abajo en el intervalo de $(0,1)$, la aproximación trapezoidal \textbf{subestima} el valor de la integral definida.
+
+\item $$\int_{\frac{3}{2}}^2 \cos{(x^2)} dx$$
+
+    Basándonos en el teorema 7.7.1 y, dado que $f(x)=\cos{(x^2)}$ es cóncava hacia arriba en el intervalo de $(\frac{3}{2},2)$, la aproximación trapezoidal \textbf{sobreestima} el valor de la integral definida.
+  
 \end{enumerate}
 
 %Tercera parte de la lista de problemas
@@ -747,6 +1035,32 @@ A = \int_{-5}^1 [f(x)-g(x)] dx + \int_{1}^5 [f(x)-g(x)]
   & =  -\frac{240}{10}  +  48 = 24\\
 \end{align*}
 % 31  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 31} Zarco Romero José Antonio  \\
+
+Estima el valor de $k ~ (0 < k < 1)$ de manera que la región encerrada por $y=\frac{1}{\sqrt{1-x^2}}$ , $y = x$, $x = 0$ y $x = k$ tenga un área de 1 unidad cuadrada. \\
+
+Considerando a $f(x)=\frac{1}{\sqrt{1-x^2}}$ y $g(x)=x$, tenemos que $f(x) \geq g(x)$ para toda $x$ en $[0,1]$. Entonces el área de la región limitada arriba por $y = f(x)$, abajo por $y = g(x)$, a la izquierda por la recta $x = 0$, y a la derecha por la recta $x = k$ es
+$$A=\int_0^k \left[\frac{1}{\sqrt{1-x^2}} - x\right] dx $$
+
+\begin{align*}
+  \int_0^k \left[\frac{1}{\sqrt{1-x^2}} - x\right] dx
+  &= \int_0^k \frac{1}{\sqrt{1-x^2}} dx - \int_0^k x dx \\
+  &= \left[\sin^{-1}{x} \right]_0^k - \left[\frac{x^2}{2} \right]_0^k \\
+  &= \sin^{-1}{k} - \frac{k^2}{2}
+\end{align*}
+
+Si queremos que la región tenga un área de 1 unidad cuadrada tenemos que igualar $A=1$, es decir:
+
+$$ \sin^{-1}{k} - \frac{k^2}{2} = 1$$
+
+Para calcular el valor de $k$ nos apoyaremos de un software de álgebra computacional como lo es Wolfram Alpha, pues resolver de manera analítica la ecuación anterior resulta un poco complejo
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{../img/img_Lista4/3_61_31.png}
+\end{figure}
+
+$\therefore k\approx 0.997301$
 % 38  -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 38} Flores Morán Julieta Melina  \\
 Encuentra el área entre las curvas y = sen x y el segmento de línea uniendo los puntos (0,0) y (5$\pi$/6, 1/2) de la curva. \\
@@ -770,6 +1084,11 @@ Ahora, ya que la función $ y=senx \geq y= \frac{3}{5\pi} x $, usamos la fórmul
   & = \frac{2+ \sqrt{3}}{2} - \frac{5 \pi}{24} \\
  \end{align*}
 % 42  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 42} Zarco Romero José Antonio  \\
+
+Utilice el método de Newton (Sección 4.7), cuando sea necesario, para aproximar las coordenadas $x$ de las intersecciones de las curvas con al menos cuatro decimales y luego utilice esas aproximaciones para aproximar el área de la región.
+
+La región encerrada por las gráficas de $y = 3-2\cos{x}$ y $y =\frac{2}{(1 + x^2 )}$.
 %% 6.6 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 6.6 \\Trabajo}
 % 8  -------------------------------------------------------------------------------------------------------------
@@ -808,6 +1127,42 @@ Sabemos que $F(x) = k*x$ y por el enunciado inicial deducimos que la fuerza util
 \end{enumerate}
 
 % 17  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 17} Zarco Romero José Antonio  \\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../img/img_Lista4/3_66_17.png}
+\end{figure}
+
+La tina que se muestra en la figura adjunta contiene agua hasta una profundidad de $2 m$. Encuentre el trabajo requerido para bombear toda el agua a la parte superior de la tina. [Utilice $9810 N/m^3$ como densidad de peso del agua.] \\
+
+Nuestra estrategia será dividir el agua en capas delgadas, aproximar el trabajo requerido para mover cada capa a la parte superior del recipiente, sumar las aproximaciones de las capas para obtener una suma de Riemann que se aproxime al trabajo total y luego tomar el límite de las sumas de Riemann para producir una integral para el trabajo total.
+
+Para implementar esta idea, se introducirá un eje $x$ y se dividirá el agua en $n$ capas, donde $\Delta x_k$ indica el espesor de la k-ésima capa. Esta división induce una partición del intervalo $[0, 2]$ en $n$ subintervalos. Aunque las superficies superior e inferior de la k-ésima capa están a diferentes distancias de la parte superior, la diferencia será pequeña si la capa es delgada, y podemos suponer razonablemente que toda la capa está concentrada en un solo punto $x_k^*$. Por lo tanto, el trabajo $W_k$ requerido para mover la k-ésima capa a la parte superior del contenedor es aproximadamente $$ W_k \approx F_k (3-x_k^*) $$
+
+donde $3-x_k^*$ es la distancia restante para salir y $F_k$ es la fuerza requerida para levantar la k-ésima capa. Pero la fuerza necesaria para levantar la k-ésima capa es la fuerza necesaria para vencer la gravedad, y ésta es la misma que el peso de la capa. Si la capa es muy delgada, podemos aproximar el volumen de la k-ésima capa con el volumen de un prisma de altura $\Delta x_k$ y base $b_k$, donde (mediante triángulos semejantes) $$ \frac{b_k}{x_k^*} = \frac{4}{3} $$
+
+o, equivalentemente, $b_k = \frac{4}{3} x_k^*$. Por lo tanto, el volumen de la k-ésima capa de agua es aproximadamente $$ (6)\left(\frac{4}{3} x_k^*\right)\Delta x_k = 8x_k^* \Delta x_k $$
+
+Dado que la densidad de peso del agua es $9810 N/m^3$, se deduce que $$ F_k \approx 78480x_k^* \Delta x_k $$
+
+Así, de $W_k \approx F_k (3-x_k^*)$ se tiene que $$ W_k \approx 78480x_k^* \Delta x_k (3-x_k^*) $$ $$ W_k \approx 78480 (3x_k^*-(x_k^*)^2) \Delta x_k $$
+
+y por tanto el trabajo $W$ requerido para mover las $n$ capas tiene la aproximación $$ W = \sum_{k=1}^n W_k \approx \sum_{k=1}^n 78480 (3x_k^*-(x_k^*)^2) \Delta x_k$$
+
+Para encontrar el valor exacto del trabajo tomamos el límite como $max ~ \Delta x_k \to 0$. Esto produce
+
+\begin{align*}
+  W
+  &= \lim_{max ~ \Delta x_k \to 0} \sum_{k=1}^n 78480 (3x_k^*-(x_k^*)^2) \Delta x_k
+  = \int_0^2 78480 (3x-x^2) dx \\
+  &= 78480 \left[ \frac{3x^2}{2}-\frac{x^3}{3} \right]_0^2
+  = 78480 \left(6-\frac{8}{3}\right)
+  = 78480 \left(\frac{10}{3}\right)
+  = 261600
+\end{align*}
+
+$\therefore W=261~600 $ joules.
 % 22  -------------------------------------------------------------------------------------------------------------
 %% 7.8 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 7.8 \\Integrales impropias}

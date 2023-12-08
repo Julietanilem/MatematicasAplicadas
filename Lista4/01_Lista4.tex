@@ -247,7 +247,7 @@ La electricidad se suministra a los hogares en forma de \textbf{\textit{corrient
 \[
 V = V_p \sin{(2\pi ft)}
 \]
-(ver la figura adjunta). En esta ecuación, $V_p$ se llama \textbf{\textit{voltaje máximo}} o \textbf{\textit{amplitud}} de la corriente, $f$ se llama \textbf{\textitfrecuencia}} y $1/f$ se llama \textbf{\textit{período}}. Los voltajes $V$ y $V_p$ se miden en voltios ($V$), el tiempo $t$ se mide en segundos ($s$) y la frecuencia se mide en hercios ($Hz$). ($1 Hz = 1$ ciclo por segundo; un \textbf{\textit{ciclo}} es el término eléctrico para un período de la forma de onda). La mayoría de los voltímetros de corriente alterna leen lo que se llama \textbf{\textit{rms}} o \textbf{\textit{valor cuadrático medio}} de $V$. Por definición, ésta es la raíz cuadrada del valor promedio de $V^2$ durante un período.
+(ver la figura adjunta). En esta ecuación, $V_p$ se llama \textbf{\textit{voltaje máximo}} o \textbf{\textit{amplitud}} de la corriente, $f$ se llama \textbf{\textit{frecuencia}} y $1/f$ se llama \textbf{\textit{período}}. Los voltajes $V$ y $V_p$ se miden en voltios ($V$), el tiempo $t$ se mide en segundos ($s$) y la frecuencia se mide en hercios ($Hz$). ($1 Hz = 1$ ciclo por segundo; un \textbf{\textit{ciclo}} es el término eléctrico para un período de la forma de onda). La mayoría de los voltímetros de corriente alterna leen lo que se llama \textbf{\textit{rms}} o \textbf{\textit{valor cuadrático medio}} de $V$. Por definición, ésta es la raíz cuadrada del valor promedio de $V^2$ durante un período.
 \begin{enumerate}[label=(\alph*)]
 \item Demuestre que
   \[
@@ -267,10 +267,7 @@ V = V_p \sin{(2\pi ft)}
 \section{Sección 5.10 \\Logaritmos y otras funciones definidas por integrales} 
 % 25  -------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 25} Flores Morán Julieta Melina   \\
-Usa los resultados del ejercicio 24 para encontrar la derivada:\\
-\[
-\frac{d}{dx} \int_x^{\pi} cos(t^{3}}) dt
-\]
+Usa los resultados del ejercicio 24 para encontrar la derivada: \\
 Cabe poner a consideración que el ejercicio 24 pide demostrar las siguiente propiedades:
 \[
 \frac{d}{dx} \left[ \int_x^{a} f(t) dt \right] = -f(x)
@@ -278,10 +275,30 @@ Cabe poner a consideración que el ejercicio 24 pide demostrar las siguiente pro
  \[
 \frac{d}{dx} \left[ \int_{g(x)}^{a} f(t) dt \right] = -f(g(x))g'(x)
 \]
-De las cuales usaremos la primera, donde  $f(t) = cos(t^3) \rightarrow f(x) = cos(x^3)$.De aquí que:
+
+\begin{enumerate}
+\item
+\[
+\frac{d}{dx} \int_x^{\pi} cos(t^{3}}) dt
+\]
+Usaremos la primera propiedad, donde  $f(t) = cos(t^3) \rightarrow f(x) = cos(x^3)$.De aquí que:
 \[
 \frac{d}{dx} \int_x^{\pi} cos(t^{3}}) dt = -cos(x^3)
-  \]
+ \]
+\item
+\[
+\frac{d}{dx} \int_{tanx}^{3} \frac{t^2}{1+t^2} dt
+\]
+Usaremos la segunda propiedad, donde  $f(t) =  \frac{t^2}{1+t^2} \rightarrow f(x) = \frac{x^2}{1+x^2} $ y $g(x) = \tan x$.De aquí que:
+\begin{align*}
+  \frac{d}{dx} \int_{tanx}^{3} \frac{t^2}{1+t^2} dt
+  &=  -f(tanx) \frac{d}{dx} tanx \\
+  &=  - \frac{tan^2x}{1+tan^2x} sec ^2 x \\
+  &=  - \frac{tan^2x \cdot sec ^2 x }{1+tan^2x}  \\
+  &=  - \frac{tan^2x \cdot sec ^2 x }{sec^2x}  \\
+  &=  - tan^2x \\
+\end{align*}
+\end{enumerate}
   %% 26 --------------------------------------------------------------------------------------------------------------
   %% 27 ---------------------------------------------------------------------------------------------------------------
 \subsection{Ejercicio 27} Flores Morán Julieta Melina \\
@@ -446,7 +463,7 @@ de reducción para evaluar
      & + \frac{5}{16}\cos \left( \frac{\pi}{2} \right) \sin \left( \frac{\pi}{2} \right)+\frac{5}{16} \left( \frac{\pi}{2} \right)\\
    &  - \left [\frac{1}{6}\cos^{5} 0 \sin 0+ \frac{5}{24}\cos^{3}0 \sin 0+ \frac{5}{16}\cos 0 \sin 0+\frac{5}{16} 0 \right] \\
    & = \frac{5}{16} \left( \frac{\pi}{2} \right) \\
-   & = \fra\frac{5}{16}c{5 \pi}{32}
+   & = \frac{5 \pi}{32}
    \end{align*}
 \end{enumerate}
 %% 7.7 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -520,5 +537,216 @@ El valor exacto de la integral dada es $\pi$ (verificar). Aproximar la integral 
     \item $|S_{20}|  = |\pi - S_{20}| \approx |0.0051455| = 0.0051455 $
    \end{enumerate}
 \end{enumerate}
+
+%Tercera parte de la lista de problemas
+\subsection*{\centering \textbf{ \LARGE Tercera Parte} }
+%% Sección 6.1: ejercicios 17, 31, 38 y 42.
+%% Sección 6.6: ejercicios 8, 17 y 22.
+%% Sección 7.8: ejercicios 7, 28 y 39.
+
+%% 6.1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Sección 6.1 \\Área entre dos curvas}
+% 17  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 17} Flores Morán Julieta Melina  \\
+Dibuja la región entre las curvas y encuentra su área.
+\[
+y = 2 + |x-1|, y=-\frac{1}{5}x + 7
+\]
+$y = 2 + |x-1|$ : Esta es la función del valor absoluto desplazada dos unidades hacia arriba y una a la derecha.\\
+$y=-\frac{1}{5}x + 7 $: Esta es una línea recta que intersecta al eje y en 7 y al eje x en 35.\\
+Para conocer el intervalo de integración debemos encontrar los puntos de intersección.
+Por $y=-\frac{1}{5}x + 7$, $x = 35-5y$ \\
+Entonces sustituimos en y = 2 + |x-1|\\
+\begin{align*}
+  y 
+  & = 2 + |x-1|\\
+  & = 2 + | 35-5y-1| \\
+  & = 2 + |34-5y|
+\end{align*}
+Como nos encontramos con el valor absoluto hay dos puntos de intersección donde se satisface la ecuación.
+\begin{align*}
+  y_1 = 
+  & = 2 + 34-5y_1 \\
+  & = 36-5y_1
+\end{align*}
+\begin{align*}
+  6y_1= 36
+\end{align*}
+\begin{align*}
+  y_1= 6
+\end{align*}
+Para este valor, remplazamos en $x = 35-5y$
+\begin{align*}
+  x =
+  & = 35-5(6) \\
+  & = 35-30 \\
+  & = 5
+\end{align*}
+Así que hay un punto de intersección en $(5,6)$\\
+Ahora usamos el otro valor que puede tomar y.\\
+\begin{align*}
+  y_2 = 
+  & = 2  - 34 + 5y_2 \\
+  & = -32 + 5y_2
+\end{align*}
+\begin{align*}
+  4y_2= 32
+\end{align*}
+\begin{align*}
+  y_2= 8
+\end{align*}
+Para este valor, remplazamos en $x = 35-5y$
+\begin{align*}
+  x =
+  & = 35-5(8) \\
+  & = 35-40 \\
+  & = -5
+\end{align*}
+Así que hay un punto de intersección en $(-5,8)$\\
+Con esta información podemos dibujar estas gráficas.
+\begin{figure}[H]
+       \centering
+       \includegraphics[width=0.7\textwidth]{../img/img_Lista4/gra17.png}
+\end{figure}
+Estamos buscando el área en morado. Para facilitar esto, podemos entender $y = 2 + |x-1|$ como  $g(x)= \left\{ \begin{array}{lcc} 1+x & si & x>1 \\ \\ 3-x & si & x<1 \\ \end{array} \right. $. \\\\
+El área entre estas rectas, donde $f(x) \geq g(x)$ en $[-5,5]$ esta dada por la fórmula:
+\[
+A = \int_{-5}^5 [f(x)-g(x)] dx
+\]
+Si separamos el área en dos partes desde -5 a 1 y de 1 a 5 podremos calcularlas con las rectas que le corresponden según la definición anterior de g(x)
+Así que tenemos que:
+\[
+A = \int_{-5}^1 [f(x)-g(x)] dx + \int_{1}^5 [f(x)-g(x)]
+\]
+\begin{align*}
+  A
+  & =  \int_{-5}^1 \left[ \left( \frac{-x}{5} + 7 \right) - \left( 3-x \right) \right] dx + \int_{1}^5 \left[ \left( \frac{-x}{5} + 7 \right)- \left( x+1 \right) \right] dx\\
+  & =  \int_{-5}^1 \left[  \frac{-x}{5} + 7  - 3 + x  \right] dx + \int_{1}^5 \left[  \frac{-x}{5} + 7 - x - 1  \right] dx\\
+  & =  \int_{-5}^1 \left[  \frac{-4x}{5} + 4   \right] dx + \int_{1}^5 \left[  \frac{-6x}{5} + 6   \right] dx\\
+  & = \frac{4}{5} \int_{-5}^1 x dx  + \int_{-5}^1 4   dx - \frac{6}{5}  \int_{1}^5 x dx  +  \int_{1}^5 6  dx\\
+  & = \frac{4}{5} \left[ \frac{x^2}{2} \Big|_{-5}^1 \right]  +  4x\Big|_{-5}^1    - \frac{6}{5}  \left[ \frac{x^2}{2} \Big|_{1}^5 \right]  +   6x \Big|_{1}^5\\
+  & = \frac{4}{5} \left[ \frac{1}{2} - \frac{25}{2}  \right]  +  4(1+5)   - \frac{6}{5}  \left[ \frac{25}{2} - \frac{1}{2}  \right]  +   6 (5-1)\\
+  & = \frac{4}{5} \left[ -\frac{24}{2}  \right]  +  4(6)   - \frac{6}{5}  \left[ \frac{24}{2} \right]  +   6 (4)\\
+  & =  -\frac{96}{10}  +  24   -  \frac{144}{10}   +   24\\
+  & =  -\frac{240}{10}  +  48 = 24\\
+\end{align*}
+% 31  -------------------------------------------------------------------------------------------------------------
+% 38  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 38} Flores Morán Julieta Melina  \\
+Encuentra el área entre las curvas y = sen x y el segmento de línea uniendo los puntos (0,0) y (5$\pi$/6, 1/2) de la curva. \\
+
+Para encontrar la fórmula de la recta que une a los puntos dados, podemos usar la ecuación de la recta $y - y_1 = m (x-x_1)$, donde $m=\frac{\frac{1}{2} - 0}{ \frac{5\pi}{6} - 0}$.\\
+Así que tenemos que $ y- 0 = m (x-0)$ resulta en la formula deseada.
+\[
+y = \frac{6}{10\pi} x = \frac{3}{5\pi} x
+\]
+Ahora, ya que la función $ y=senx \geq y= \frac{3}{5\pi} x $, usamos la fórmula para el área de la siguiente manera:
+\begin{align*}
+  A =
+  & = \int_{0}^{\frac{5\pi}{6}} \left[  senx -  \frac{3}{5\pi} x \right]dx\\
+  & = \int_{0}^{\frac{5\pi}{6}}   senx dx -  \int_{0}^{\frac{5\pi}{6}} \frac{3}{5\pi} x dx \\
+  & = -cosx \Big|_{0}^{\frac{5\pi}{6}} -   \frac{3}{5\pi}  \int_{0}^{\frac{5\pi}{6}} x dx\\
+  & = -(cos \frac{5\pi}{6} - cos0 ) -   \frac{3}{5\pi} (\frac{x^2}{2}\Big|_{0}^{\frac{5\pi}{6}} )\\
+  & = -(cos \frac{5\pi}{6} - cos0 ) -   \frac{3}{5\pi} (\frac{x^2}{2}\Big|_{0}^{\frac{5\pi}{6}} )\\
+  & = -( - \frac{\sqrt{3}}{2} - 1) - \frac{3}{5\pi} (\frac{ (\frac{5\pi}{6})^2 }{2} )  \\
+  & = \frac{2+ \sqrt{3}}{2} - \frac{\frac{75 \pi  ^2}{36}}{10\pi} \\
+  & = \frac{2+ \sqrt{3}}{2} - \frac{75 \pi  ^2}{360\pi} \\
+  & = \frac{2+ \sqrt{3}}{2} - \frac{5 \pi}{24} \\
+ \end{align*}
+% 42  -------------------------------------------------------------------------------------------------------------
+%% 6.6 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Sección 6.6 \\Trabajo}
+% 8  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 8} Flores Morán Julieta Melina  \\}
+Un resorte cuya longitud natural es de 15 cm ejerce una fuerza de
+45 N cuando se estira hasta una longitud de 20 cm.
+\begin{enumerate}
+\item Encuentre la constante del resorte (en newtons/metro). \\
+Sabemos que $F(x) = k*x$ y por el enunciado inicial deducimos que la fuerza utilizada para estirar el resorte 5 cm es de 45 N. $F(0.05) = 45 N = k(0.05)$. Por esto $k = \frac{45 N}{0.05 m} = 900 N/m$
+\item  Encuentre el trabajo que se realiza al estirar el resorte 3 cm.
+  más allá de su longitud natural.\\
+  Considerando que $W = \int_a^b F(x)dx$. Basta con especificar que los limites de integración será de 0 m de estiramiento a 0.03 m de estiramiento.
+
+  \begin{align*}
+    W
+    & = \int_0^{0.03} 900x dx \\
+    & = 900 \int_0^{0.03} x dx \\
+    & = 900 \left[ \frac{x^2}{2} \Big|_0^{0.03} \right] \\
+    & = 900 \left[ \frac{(0.03)^2}{2} - 0  \right]\\
+    & = 900 \left[ 0.00045  \right] \\
+    & = 0.405 J \\
+  \end{align*}
+\item Encuentre el trabajo realizado al estirar el resorte desde una longitud de 20 cm hasta una longitud de 25 cm. \\
+  Aplicaremos la misma lógica del inciso b), excepto que esta vez nuestros límites de integración van desde 0.05 m de estiramiento hasta 0.1 m de estiramiento.
+  \begin{align*}
+    W
+    & = \int_{0.05}^{0.1} 900x dx \\
+     & = 900 \int_{0.05}^{0.1} x dx \\
+    & = 900 \left[ \frac{x^2}{2} \Big|_{0.05}^{0.1} \right] \\
+    & = 900 \left[ \frac{(0.1)^2}{2} -  \frac{(0.05)^2}{2}  \right]\\
+    & = 900 \left[ 0.005 - 0.00125  \right]\\
+    & = 900 \left[ 0.00375  \right] \\
+    & = 3.37 J \\
+  \end{align*}
+  
+\end{enumerate}
+
+% 17  -------------------------------------------------------------------------------------------------------------
+% 22  -------------------------------------------------------------------------------------------------------------
+%% 7.8 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Sección 7.8 \\Integrales impropias}
+% 7  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 7} Flores Morán Julieta Melina  \\
+Evaluá las integrales que convergen:
+\[
+\int_{e}^{+\infty} \frac{1}{xln^3 x} dx
+\]
+Usando la fórmula general para una integral impropia en el intervalo [a, $+ \infty$].
+\[
+\int_{e}^{+\infty} \frac{1}{xln^3 x} dx = \lim_{b \to \infty} \int_{e}^{b} \frac{1}{xln^3 x} dx 
+\]
+Primero encontramos la integral mediante sustitución donde $u=lnx \rightarrow du = \frac{1}{x}dx$
+  \begin{align*}
+    \int_{e}^{b} \frac{1}{xln^3 x} dx 
+    & = \int_{u(e)}^{u(b)} \frac{1}{ u^3} du  \\
+     & = \int_{1}^{lnb} u^{-3} du  \\
+      & = \frac{u^{-2}}{-2} \Big|_{1}^{lnb}\\
+      & =- \frac{1}{2 u ^2} \Big|_{1}^{lnb} \\
+    & = \left[ -\frac{1}{2  (lnb)^2}] - [-\frac{1}{2 \cdot 1 ^2} \right]  \\
+     & =\left[ \frac{1}{2} -\frac{1}{2  (lnb)^2} \right]   \\
+  \end{align*}
+  Ahora evaluemos:
+  \begin{align*}
+    \lim_{b \to \infty} \int_{e}^{b} \frac{1}{xln^3 x} dx 
+    & =  \lim_{b \to \infty}   \left[ \frac{1}{2} -\frac{1}{2  (lnb)^2} \right]  \\
+    & = \frac{1}{2} -0 = \frac{1}{2}
+  \end{align*}
+ % 28  -------------------------------------------------------------------------------------------------------------
+
+% 39  -------------------------------------------------------------------------------------------------------------
+\subsection{Ejercicio 39} Flores Morán Julieta Melina  \\
+Usa sustitución y evaluá la integral resultante indefinida
+\[
+\int_{0}^{+\infty} \frac{e^{-x}}{\sqrt{1-e^{-x}}}dx
+\]
+\[
+u = 1-e^{-x}
+\]
+Nota: $u \rightarrow 1$ mientras que $x \rightarrow + \infty$\\ \\
+Evaluemos primero la integral con límite superior b donde $du = e^{-x}dx$
+  \begin{align*}
+    \int_{0}^{+\infty} \frac{e^{-x}}{\sqrt{1-e^{-x}}}dx
+    & = \lim_{b \to + \infty} \int_{0}^{b} \frac{e^{-x}}{\sqrt{1-e^{-x}}}dx   \\
+    & = \lim_{b \to + \infty} \int_{u(0)}^{u(b)} \frac{du}{\sqrt{u}}   \\
+    & = \lim_{b \to + \infty} \int_{0}^{1-e^{-b}} u^{\frac{-1}{2}} du\\
+    & = \lim_{b \to + \infty} \left[ \frac{u^{\frac{1}{2}}}{\frac{1}{2}} \Big|_0^{1-e^{-b}} \right]\\
+    & = \lim_{b \to + \infty} \left[ 2u^{\frac{1}{2}}\Big|_0^{1-e^{-b}} \right]\\
+    & = 2\lim_{b \to + \infty} \left[u^{\frac{1}{2}}\Big|_0^{1-e^{-b}} \right]\\
+    & = 2\lim_{b \to + \infty} \left[ \sqrt{1-e^{-b}} - \sqrt{0}  \right]\\
+    & = 2\lim_{b \to + \infty} \left[ \sqrt{1-e^{-b}} \right]\\
+    & = 2  \left[ \sqrt{1-0} \right]\\
+    & = 2 \\
+  \end{align*}
 \end{document}
 
+                              

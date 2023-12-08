@@ -785,46 +785,36 @@ El valor exacto de la integral dada es $\pi$ (verificar). Aproximar la integral 
   
    \begin{align*}
      \int_0^2 \frac{8}{x^2+4} dx
-     &= a \\
-     & = \pi
+     &= 8 \int_0^2 \frac{dx}{2^2+x^2} 
+     = 8 \left[ \frac{1}{2}\tan^{-1}{\frac{x}{2}} \right]_0^2 \\
+     &= 8 \left[ \frac{1}{2}\tan^{-1}{(1)} - 0 \right] 
+     = 4\cdot \frac{\pi}{4} = \pi
    \end{align*}
    
  \item Aproximar la integral
 
    \begin{enumerate}[format=\textbf]
 
-   \item $M_{10}$ \\ Este método se describe de la siguiente forma:
+   \item $M_{10}$ \\ Este método se describe de la siguiente forma: $$ M_n = \left( \frac{b-a}{n} \right) \sum_{k=1}^{n}f(x_k^*); \qquad x_k^* = \frac{1}{2}(x_{k-1} + x_k) $$
+     
+     \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.65\textwidth]{../img/img_Lista4/mp_z.png}
+     \end{figure}
+     
+   \begin{align*}
+     \therefore M_{10} =  \left(\frac{2-0}{10}\right)(15.71212993) =  (0.2)(15.71212993)= 3.142425985
+   \end{align*}
+     
+   \item $T_{10}$ \\ Usaremos la definición que dice que $$ T_n = \left( \frac{b-a}{2n}\right)[y_0 + 2y_1 + \ldots +2 y_{n-1} + y_n] $$     
+
+     \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.85\textwidth]{../img/img_Lista4/tn_z.png}
+     \end{figure}
      
      \[
-     M_n = \left( \frac{b-a}{n} \right) \sum_{k=1}^{n}f(x_k^*)
-     \]
-     
-     \[
-     x_k^* = \frac{1}{2}(x_{k-1} + x_k)
-     \]
-     
-     %% \begin{figure}[H]
-%%        \centering
-%%        \includegraphics[width=0.7\textwidth]{../img/img_Lista4/MP.png}
-%%      \end{figure}
-     
-     \[
-     M_{10} =  ()()= 
-     \]
-     
-   \item $T_{10}$ \\ Usaremos la definición que dice que
-     
-     \[
-     T_n = \left( \frac{b-a}{2n}\right)[y_0 + 2y_1 + \ldots +2 y_{n-1} + y_n]
-     \]
-     
-     %% \begin{figure}[H]
-%%        \centering
-%%        \includegraphics[width=0.7\textwidth]{../img/img_Lista4/TN1.png}
-%%      \end{figure}
-     
-     \[
-     T_{10} =  ()()= 
+     \therefore T_{10} =  \left( \frac{2-0}{2\cdot 10}\right)(31.39925989)=  (0.1)(31.39925989) = 3.139925989
      \]
       
    \item $S_{20}$ \\ Este método se basa en los anteriores y se describe como sigue
@@ -838,9 +828,16 @@ El valor exacto de la integral dada es $\pi$ (verificar). Aproximar la integral 
      \[
      S_{20} = S_{2 ~10} = \frac{1}{3} (2M_{10} + T_{10})
      \]
+
+     \begin{align*}
+       \frac{1}{3} (2M_{10} + T_{10})
+       &= \frac{1}{3} (6.28485197 + 3.139925989) \\
+       &= \frac{1}{3} \cdot 9.424777959\\
+       &= 3.141592653
+     \end{align*}
      
       \[
-     S_{20} = 
+     \therefore S_{20} = 3.141592653
      \]
      
    \end{enumerate}
@@ -849,11 +846,11 @@ El valor exacto de la integral dada es $\pi$ (verificar). Aproximar la integral 
   
      \begin{enumerate}[format=\textbf]
     
-     \item $|M_{10}| = |\pi - M_{10}| \approx || = $
+     \item $|M_{10}| = |\pi - M_{10}| \approx |-0.010818779410| = 0.010818779410$
     
-     \item $|T_{10}|  = |\pi - T_{10}| \approx || = $
+     \item $|T_{10}|  = |\pi - T_{10}| \approx |0.0370743275897| = 0.0370743275897$
        
-     \item $|S_{20}|  = |\pi - S_{20}| \approx || = $
+     \item $|S_{20}|  = |\pi - S_{20}| \approx |0.0051455895897| = 0.0051455895897$
     
      \end{enumerate}
 
@@ -1106,7 +1103,84 @@ Ahora, ya que la función $ y=senx \geq y= \frac{3}{5\pi} x $, usamos la fórmul
 
 Utilice el método de Newton (Sección 4.7), cuando sea necesario, para aproximar las coordenadas $x$ de las intersecciones de las curvas con al menos cuatro decimales y luego utilice esas aproximaciones para aproximar el área de la región.
 
-La región encerrada por las gráficas de $y = 3-2\cos{x}$ y $y =\frac{2}{(1 + x^2 )}$.
+La región encerrada por las gráficas de $y = 3-2\cos{x}$ y $y =\frac{2}{(1 + x^2 )}$. \\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../img/img_Lista4/42_newton.png}
+\end{figure}
+
+Gracias a la gráfica de arriba podemos observar que $y=3-2\cos{x}$ y $y=\frac{2}{(1 + x^2 )}$ se intersectan  dos veces reflejadas en el eje $y$, tal parece que cerca de $x = 0.6$. \\
+
+Primero, hay que reescribir la ecuación $3-2\cos{x}=\frac{2}{(1 + x^2 )}$ como
+\begin{align*}
+  (3-2\cos{x})(1 + x^2)-2=0 \\
+  3x^2-2x^2\cos{x}-2\cos{x}+1=0
+\end{align*}
+
+De este modo, $$f'(x)=6x-[4x\cos{x}+(-2x^2\sin{x})]+2\sin{x}$$ $$ f'(x)=6x+2\sin{x}-2x(x\sin{x}-2\cos{x}) $$ Juntando ambas ecuaciones, el método de Newton queda como
+\[
+x_{n+1} = x_n-\frac{3x_n^2-2x_n^2\cos{x_n}-2\cos{x_n}+1}{6x_n+2\sin{x_n}-2x_n(x_n\sin{x_n}-2\cos{x_n})}
+\]
+
+Usaremos $x_1=0.6$ como nuestra primera aproximación. Así, sustituyendo el valor de $x_1$ y dejando $n = 1$, se obtiene
+\begin{align*}
+x_2
+&= (0.6)-\frac{3(0.6)^2-2(0.6)^2\cos{(0.6)}-2\cos{(0.6)}+1}{6(0.6)+2\sin{(0.6)}-2(0.6)((0.6)\sin{(0.6)}-2\cos{(0.6)})} \\
+&\approx 0.6261619134
+\end{align*}
+A continuación, dejamos $n = 2$ y sustituimos $x_2$ para obtener
+\begin{align*}
+x_3
+&= (x_n)-\frac{3(x_n)^2-2(x_n)^2\cos{(x_n)}-2\cos{(x_n)}+1}{6(x_n)+2\sin{(x_n)}-2(x_n)((x_n)\sin{(x_n)}-2\cos{(x_n)})} \\
+&\approx 0.6384282357
+\end{align*}
+
+Si continuamos este proceso hasta que se generen dos aproximaciones idénticas en sucesión, obtenemos
+\begin{align*}
+  & x_1 = 0.6 \\
+  & x_2 \approx  0.6261619134\\
+  & x_3 \approx  0.6384282357\\
+  & x_4 \approx  0.644183616\\
+  & x_5 \approx  0.6468810769\\
+  & x_6 \approx  0.6481442959\\
+  & x_7 \approx  0.6487355929\\
+  & x_8 \approx  0.6490123089\\
+  & x_9 \approx  0.6491417928\\
+  & x_{10} \approx  0.6492023791\\
+  & x_{11} \approx  0.6492307271\\
+  & x_{12} \approx  0.6492439909\\
+  & x_{13} \approx  0.6492501968\\
+  & x_{14} \approx  0.6492531005\\
+  & x_{15} \approx  0.6492544591\\
+  & x_{16} \approx 0.6492550948 \\
+  & x_{17} \approx  0.6492553922\\
+  & x_{18} \approx  0.6492555313\\
+  & x_{19} \approx  0.6492555964\\
+  & x_{20} \approx  0.6492556269\\
+  & x_{21} \approx  0.6492556412\\
+  & x_{22} \approx  0.6492556478\\
+  & x_{23} \approx  0.6492556509\\
+  & x_{24} \approx  0.6492556524\\
+  & x_{25} \approx 0.6492556531 \\
+  & x_{26} \approx  0.6492556534\\
+  & x_{27} \approx  0.6492556536\\
+  & x_{28} \approx  0.6492556536
+\end{align*}
+
+Así, según el método de Newton, los puntos de intersección son $x\approx \pm  0.6492556536$, por lo tanto, al ser la integral de una función par, la podemos expresar como:
+
+\begin{align*}
+A
+&= 2\int_0^{0.6492556536}\left[ \frac{2}{(1 + x^2 )} - (3-2\cos{x}) \right] dx \\
+&= 2\int_0^{0.6492556536}\left[ \frac{2}{(1 + x^2 )} + 2\cos{x}-3 \right] dx \\
+&= 2 \left\{ \left[2\int_0^{0.6492556536} \frac{dx}{1+x^2}\right]+\left[2\int_0^{0.6492556536}\cos{x}dx\right]-3x \Bigg|_0^{0.6492556536} \right\} \\
+&= 2 \left\{ 2\left[ \tan^{-1}{x} \right]_0^{0.6492556536}+2\left[ \sin{x} \right]_0^{0.6492556536}-1.9477669608 \right\} \\
+&= 0.8262478874815
+\end{align*}
+
+$\therefore $ La región encerrada por las gráficas es de aproximadamente 0.8262478874815 unidades cuadradas.
+
 %% 6.6 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Sección 6.6 \\Trabajo}
 % 8  -------------------------------------------------------------------------------------------------------------

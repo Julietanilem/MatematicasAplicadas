@@ -1,0 +1,246 @@
+\documentclass[12pt]{article}
+
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{here}
+\usepackage{dsfont}
+\usepackage{tipa}
+\usepackage{float}
+\spanishdecimal{.}
+
+\title{Matemáticas para las Ciencias Aplicadas II}
+\title{
+	\textbf{Tarea 01} \\
+	\vspace{1ex}
+	\large Matemáticas para las Ciencias Aplicadas II \\
+	Facultad de Ciencias, UNAM}
+\date{\today}
+\author{Flores Morán Julieta Melina \\ Zarco Romero José Antonio}
+
+\begin{document}
+\maketitle
+
+% 1 -------------------------------------------------------------------------------------------------------------
+\section{}
+
+¿Cuáles son las proyecciones del \textbf{punto} $A(2,3,5)$ en los planos \textbf{xy} \textbf{yz} y \textbf{xz}. Para calcular, trace una caja rectangular con vértices en el origen y el punto A como vértices opuestos y con sus caras paralelas a los planos coordenados. Etiquete todos los vertices de la caja. Asimismo calcule la longitud de la diagonal de la caja.
+
+% 2 -------------------------------------------------------------------------------------------------------------
+\section{}
+
+Determine una ecuación de la esfera que pasa por el origen y cuyo centro es el punto $A(1,2,3)$. Describa su intersección con cada uno de los planos coordenados.
+
+% 3 -------------------------------------------------------------------------------------------------------------
+\section{}
+
+La siguiente ecuación corresponde a una esfera. Determine las coordenadas del centro y el radio.
+\[ x^2 + y^2 + z^2 + 8x - 6y + 2z + 17 = 0 \]
+
+Se puede reescribir la ecuación dada en la forma de la ecuación de una esfera si se completan los cuadrados:
+
+\begin{equation*}
+  \begin{split}
+    x^2 + y^2 + z^2 + 8x - 6y + 2z + 17 &= 0 \\
+    x^2 + 8x + y^2 - 6y + z^2 + 2z + 17 &= 0 \\
+    (x^2 + 8x) + (y^2 - 6y) + (z^2 + 2z) &= - 17 \\
+    (x^2 + 8x + 16) + (y^2 - 6y + 9) + (z^2 + 2z + 1) &= - 17 + 16 + 9 + 1\\
+    (x + 4)^2 + (y - 3)^2 + (z + 1)^2 &= 9 \\
+  \end{split}
+\end{equation*}
+
+$\therefore $ Se ve que es la ecuación de una esfera con centro $(-4, 3, -1)$ y radio $\sqrt{9} = 3$.
+
+% 4 -------------------------------------------------------------------------------------------------------------
+\section{}
+
+Escriba desigualdades para describir las siguientes regiones.
+
+\begin{itemize}
+    
+\item La región entre el plano \textbf{xz} y el plano vertical \textbf{y=4}.
+    
+\item La región que consta de todos los puntos entre (pero no sobre) las esferas de radio \textit{r} y \textit{R} centradas en el origen, donde $r < R$.
+    
+\end{itemize}
+  
+% 5 -------------------------------------------------------------------------------------------------------------
+\section{}
+
+Sean $\vec{a} , \vec{b} , \vec{c}$ vectores en $\mathbb{R}^n$ y sean $c,d$ escalares. Escriba las 8 propiedades de los vectores y proporcione una breve explicación de cada una de ellas.
+
+\begin{enumerate}
+
+\item $$\vec{a}+\vec{b} = \vec{b}+\vec{a}$$
+
+\item $$\vec{a}+\vec{0} = \vec{a}$$
+
+\item $$c(\vec{a}+\vec{b}) = c\vec{a}+c\vec{b}$$
+
+\item $$(cd)\vec{a} = c(d\vec{a})$$
+
+\item $$\vec{a}+(\vec{b}+\vec{c}) = (\vec{a}+\vec{b})+\vec{c}$$
+
+\item $$\vec{a}+(\vec{-a}) = \vec{0}$$
+
+\item $$(c+d)\vec{a} = c\vec{a}+d\vec{a}$$
+
+\item $$1\vec{a} = \vec{a}$$
+
+\end{enumerate}
+
+% 6 -------------------------------------------------------------------------------------------------------------
+\section{}
+Obtenga un vector $\vec{a}$, como el segmento de recta dirigida de $\vec{AB}$ , donde \textit{A} y \textit{B} son los puntos:
+
+\begin{itemize}
+  
+\item $A(-5,-1) , B(-3,3)$.
+  
+\item $A(0,6,1), B(3,4,4)$
+  
+\end{itemize}
+
+Haga un esbozo (en cada caso) del vector $\vec{AB}$ y la representación \textbf{equivalente} comenzando en el origen.
+
+% 7 -------------------------------------------------------------------------------------------------------------
+\section{}
+
+Determine:
+
+\begin{enumerate}
+  
+\item $\vec{a} + \vec{b}$
+  
+\item $4 \vec{a} + 2\vec{b}$
+
+\item $|\vec{a} - \vec{b}|$
+
+\item $|\vec{a}|$
+
+\end{enumerate}
+
+dónde $\vec{a}=8\hat{i} + \hat{j} - 4\hat{k}; \vec{b}= 5\hat{i} - 2\hat{j} +\hat{k}$
+
+% 8 -------------------------------------------------------------------------------------------------------------
+\section{}
+
+Sea $\vec{a}$ un vector tal que se ubica en el primer cuadrante, hace un ángulo de $\frac{\pi}{6}$ con el eje $x$ positivo  y $|\vec{a}|=2$. Determine $\vec{a}$ en términos de sus componentes.
+
+% 9 -------------------------------------------------------------------------------------------------------------
+\section{}
+
+Un vendedor ambulante vende $a$ hamburguesas, $b$ hot dogs y $c$ refrescos en un día dado. Cobra 4 pesos por hamburguesas, 2.5 pesos por hot dog y 1 peso pro refresco. Sea $\vec{a}=(a,b,c)$ y $\vec{P}=(4,2.5,1)$. ¿Qué representa el producto punto $\vec{a} \cdot \vec{P}$.
+
+% 10 ------------------------------------------------------------------------------------------------------------
+\section{}
+
+Encuentre las proyecciones escalar y vectorial de $\vec{b}$ sobre $\vec{a}$
+
+\begin{itemize}
+  
+\item $\vec{a}= (5,12), \vec{b}=(4,6)$
+  
+\item $\vec{a}= (1,4), \vec{b}=(2,3)$
+  
+\end{itemize}
+
+% 11 ------------------------------------------------------------------------------------------------------------
+\section{}
+
+Dado los vectores $\vec{a} = \hat{i} + 2\hat{j}-2\hat{k}, \vec{b} = 4\hat{i} -3\hat{k}$ \\
+Calcule el ángulo entre los vectores:
+
+\begin{itemize}
+
+\item En grados
+
+\item En radianes
+
+\end{itemize}
+
+% 12 ------------------------------------------------------------------------------------------------------------
+\section{}
+
+Dados los vectores \\
+
+\[\vec{a} = \hat{j}+ 7\hat{k}\]
+
+\[\vec{b} = 2\hat{i} - \hat{j}+ 4\hat{k}\]
+
+obtenga:
+
+\begin{itemize}
+
+\item $\vec{c}=\vec{a} \times \vec{b}$
+
+\item Compruebe que $\vec{c}$ es ortogonal a $\vec{a}$ y $\vec{b}$ simultáneamente.
+
+\end{itemize}
+
+% 13 ------------------------------------------------------------------------------------------------------------
+\section{}
+
+Proporcione:
+
+\begin{enumerate}
+
+\item La ecuación vectorial
+
+\item Las ecuaciones paramétricas
+
+\item Las ecuaciones simétricas para las siguientes rectas:
+
+  \begin{itemize}
+
+  \item La recta que pasa por $P(6,5,2)$ y que esperalela al vector $\vec{u}=(1,3,\frac{-2}{3})$
+
+  \item La recta que pasa por $A(0,0,0)$ y $B(4,3,-1)$
+
+  \end{itemize}
+
+\end{enumerate}
+
+% 14 ------------------------------------------------------------------------------------------------------------
+\section{}
+
+Utilice el \textbf{triple punto escalar} (producto mixto) para determinar si los puntos $A(1,3,2) , B(3,-1,6), C(5,2,0), D(3,6,-4)$ son coplanares.
+
+% 15 ------------------------------------------------------------------------------------------------------------
+\section{}
+
+Proporcione la ecuación del plano que pasa por $A(5,3,5)$y cuyo vector normal es $\vec{n}=2\hat{i} + \hat{j} - \hat{k}$. Adjunte una imágen de geogebra en la situación.
+
+% 16 ------------------------------------------------------------------------------------------------------------
+\section{}
+
+Proporcione la ecuación del plano que contiene a los puntos $A(0,0,0) , B(2,-4,6), C(5,1,3)$. Adjunte una imágen de geogebra en la situación.
+
+% 17 ------------------------------------------------------------------------------------------------------------
+\section{}
+
+Proporcione las coordenadas del punto $A(a_x,a_y,a_x)$ del punto donde se intersecan:\\
+
+\textbf{el plano} \\
+
+\[ x + 2y -z+1 =0 \]
+
+y \textbf{la recta dada por las ecuaciones paramétricas}
+
+\begin{align*}
+  x &= 1 + 2t,\\
+  y &=4t,\\
+  z &= 2 - 3t
+\end{align*}
+
+Adjunte una imágen de geogebrea de la situación.
+
+\end{document}

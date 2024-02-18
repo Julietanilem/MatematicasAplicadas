@@ -203,7 +203,7 @@ Escriba desigualdades para describir las siguientes regiones.
 
 Sean $\vec{a} , \vec{b} , \vec{c}$ vectores en $\mathbb{R}^n$ y sean $c,d$ escalares. Escriba las 8 propiedades de los vectores y proporcione una breve explicación de cada una de ellas.
 
-\begin{enumerate}
+\begin{enumerate}[format=\textbf]
 
 \item $$\vec{a}+\vec{b} = \vec{b}+\vec{a}$$
   
@@ -302,7 +302,7 @@ Haga un esbozo (en cada caso) del vector $\vec{AB}$ y la representación \textbf
 
 Determine:
 
-\begin{enumerate}
+\begin{enumerate}[format=\textbf]
   
 \item $\vec{a} + \vec{b}$
   
@@ -349,7 +349,7 @@ En este caso, podemos reescribir los vectores dados en su forma unitario de la s
 \vec{b} = 5\hat{i} - 2\hat{j} +\hat{k} = 5(1, 0, 0) + (-2) (0,1,0) + (0,0,1) = (5, -2, 1)
 \]
 
-\begin{enumerate}
+\begin{enumerate}[format=\textbf]
   
 \item $\vec{a} + \vec{b}$
   
@@ -410,14 +410,16 @@ Sea $\vec{a}$ un vector tal que se ubica en el primer cuadrante, hace un ángulo
 Podemos expresar sus componentes en términos de las funciones trigonométricas, donde
 
 \begin{align*}
-  a_x​ &= |\vec{a}| \cdot \cos{\theta} \\
-  &= 2 \cdot \cos{\frac{\pi}{6}} \\
-  &= 2 \cdot \left( \frac{\sqrt{3}}{2} \right) \\
-  &= \sqrt{3} \\ \\
-  a_y &= |\vec{a}| \cdot \sin{\theta} \\
-  &= 2 \cdot \sin{\frac{\pi}{6}} \\
-  &= 2 \cdot \left( \frac{1}{2} \right) \\
-  &= 1 
+  a_x​
+  &= |\vec{a}| \cdot \cos{\theta} 
+  = 2 \cdot \cos{\frac{\pi}{6}} 
+  = 2 \cdot \left( \frac{\sqrt{3}}{2} \right) 
+  = \sqrt{3} \\
+  a_y
+  &= |\vec{a}| \cdot \sin{\theta} 
+  = 2 \cdot \sin{\frac{\pi}{6}} 
+  = 2 \cdot \left( \frac{1}{2} \right) 
+  = 1 
 \end{align*}
 
 $\therefore \vec{a} = \langle \sqrt{3}, 1 \rangle$
@@ -443,15 +445,80 @@ Encuentre las proyecciones escalar y vectorial de $\vec{b}$ sobre $\vec{a}$
 \begin{itemize}
   
 \item $\vec{a}= (5,12), \vec{b}=(4,6)$
+
+  \begin{enumerate}[format=\textbf]
+
+  \item \textbf{Proyección escalar}
+
+    Puesto que $||\vec{a}|| = \sqrt{(5)^2 + (12)^2} = \sqrt{25 + 144} = \sqrt{169} = 13$, las proyección escalar de $\vec{b}$ sobre $\vec{a}$ es
+
+    \begin{align*}
+      comp_{\vec{a}}\vec{b}
+      = \frac{\vec{a} \cdot \vec{b}}{||\vec{a}||}
+      = \frac{(5 \cdot 4) + (12 \cdot 6)}{13}
+      = \frac{20 + 72}{13}
+      = \frac{92}{13}
+      = 4
+    \end{align*}
+
+    $\therefore comp_{\vec{a}}\vec{b} = 4$
+
+  \item \textbf{Proyección vectorial}
+
+    La proyección vectorial es esta proyección escalar multiplicada por el vector unitario en la dirección de $\vec{a}$
+
+    \begin{align*}
+      proj_{\vec{a}}\vec{b}
+      = \left( comp_{\vec{a}}\vec{b} \right) \frac{\vec{a}}{||\vec{a}||}
+      = 4 \cdot \frac{\langle 5, 12 \rangle}{13}
+      = \left\langle \frac{20}{13}, \frac{48}{13} \right\rangle
+    \end{align*}
+
+    $\therefore proj_{\vec{a}}\vec{b} = \left\langle \frac{20}{13}, \frac{48}{13} \right\rangle$
+    
+  \end{enumerate}
   
 \item $\vec{a}= (1,4), \vec{b}=(2,3)$
+
+  \begin{enumerate}[format=\textbf]
+
+  \item \textbf{Proyección escalar}
+
+    Puesto que $||\vec{a}|| = \sqrt{(1)^2 + (4)^2} = \sqrt{1 + 16} = \sqrt{17}$, las proyección escalar de $\vec{b}$ sobre $\vec{a}$ es
+
+    \begin{align*}
+      comp_{\vec{a}}\vec{b}
+      = \frac{\vec{a} \cdot \vec{b}}{||\vec{a}||}
+      = \frac{(1 \cdot 2) + (4 \cdot 3)}{\sqrt{17}}
+      = \frac{2 + 12}{\sqrt{17}}
+      = \frac{14}{\sqrt{17}}
+    \end{align*}
+
+    $\therefore comp_{\vec{a}}\vec{b} = \frac{14}{\sqrt{17}}$
+
+  \item \textbf{Proyección vectorial}
+
+    La proyección vectorial es esta proyección escalar multiplicada por el vector unitario en la dirección de $\vec{a}$
+
+    \begin{align*}
+      proj_{\vec{a}}\vec{b}
+      = \left( comp_{\vec{a}}\vec{b} \right) \frac{\vec{a}}{||\vec{a}||}
+      = \left( \frac{14}{\sqrt{17}} \right) \frac{\langle 1, 4 \rangle}{\sqrt{17}}
+      = \left( \frac{14}{17} \right) \langle 1, 4 \rangle
+      = \left\langle \frac{14}{17}, \frac{56}{17} \right\rangle
+    \end{align*}
+
+    $\therefore proj_{\vec{a}}\vec{b} = \left\langle  \frac{14}{17}, \frac{56}{17} \right\rangle$
+    
+  \end{enumerate}
   
 \end{itemize}
 
 % 11 ------------------------------------------------------------------------------------------------------------
 \section{}
 
-Dado los vectores $\vec{a} = \hat{i} + 2\hat{j}-2\hat{k}, \vec{b} = 4\hat{i} -3\hat{k}$ \\
+Dado los vectores $\vec{a} = \hat{i} + 2\hat{j}-2\hat{k}, \vec{b} = 4\hat{i} -3\hat{k}$
+
 Calcule el ángulo entre los vectores:
 
 \begin{itemize}
@@ -465,7 +532,7 @@ Calcule el ángulo entre los vectores:
 Primero hay que recordar que la definición geométrica del producto punto entre dos vectores $\vec{u} = (u_1, u_2, u_3)$ y  $\vec{v} = (v_1, v_2, v_3)$ se define como  $\vec{u} \cdot \vec{v} = ||\vec{u} || \vec{v}|| \cos{\theta}$, donde $\theta$ es el ángulo formado entre $\vec{u}$ y $\vec{v}$  por lo que se sigue que:
 
 \[
-\theta = cos^{-1 }\left(\frac{u \cdot v}{||\vec{u}|| ||\vec{v}||}\right)
+\theta = cos^{-1 }\left(\frac{\vec{u} \cdot \vec{v}}{||\vec{u}|| ||\vec{v}||}\right)
 \]
 
 Primero reescribiremos $\vec{a}$ y $\vec{b}$
@@ -514,7 +581,7 @@ Sustituimos en la fórmula
 
 \begin{equation*}
   \begin{split}
-    \theta &= cos^{-1 }\left(\frac{a \cdot b}{||\vec{a}|| ||\vec{b}||}\right) \\
+    \theta &= cos^{-1 }\left(\frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| ||\vec{b}||}\right) \\
     &=  cos^{-1 }\left(\frac{10}{3 \cdot 5} \right) \\
     &= cos^{-1 }\left(\frac{10}{15} \right) \\
     &= cos^{-1 }\left(\frac{2}{3} \right) \\
@@ -546,7 +613,98 @@ obtenga:
 
 \item $\vec{c}=\vec{a} \times \vec{b}$
 
+  Si $\vec{a} = \langle 0, 1, 7 \rangle$ y $\vec{b} = \langle 2, -1, 4 \rangle$, entonces
+  
+  \begin{equation*}
+    \begin{split}
+      \vec{c} 
+      &=
+      \vec{a} \times \vec{b} \\
+      &=
+      \begin{vmatrix}
+        \hat{i} & \hat{j} & \hat{k} \\
+        0 & 1 & 7 \\
+        2 & -1 & 4
+      \end{vmatrix} \\
+      &=
+      \begin{vmatrix}
+        1 & 7 \\
+        -1 & 4
+      \end{vmatrix}
+      \hat{i}
+      -
+      \begin{vmatrix}
+        0 & 7 \\
+        2 & 4
+      \end{vmatrix}
+      \hat{j}
+      +
+      \begin{vmatrix}
+        0 & 1 \\
+        2 & -1
+      \end{vmatrix}
+      \hat{k}\\
+      &=
+      \{(1 \cdot 4) - [7 \cdot (-1)]\}
+      \hat{i}
+      -
+      [(0 \cdot 4) - (7 \cdot 2)]
+      \hat{j}
+      +
+      \{[0 \cdot (-1)] - (1 \cdot 2)\}
+      \hat{k} \\
+      &=
+          [4-(-7)]
+          \hat{i}
+          -
+          (0-14)
+          \hat{j}
+          +
+          (0-2)
+          \hat{k} \\
+      &=
+          (4 + 7)
+          \hat{i}
+          -
+          (-14)
+          \hat{j}
+          +
+          (-2)
+          \hat{k} \\
+      &=
+          11 \hat{i} + 14 \hat{j} - 2 \hat{k} 
+    \end{split}
+  \end{equation*}
+
+  $\therefore \vec{c} = 11 \hat{i} + 14 \hat{j} - 2 \hat{k} $
+
 \item Compruebe que $\vec{c}$ es ortogonal a $\vec{a}$ y $\vec{b}$ simultáneamente.
+
+  A fin de demostrar que $\vec{c} = \vec{a} \times \vec{b}$ es ortogonal a $\vec{a}$, calculamos su producto punto como sigue:
+  
+  \begin{equation*}
+    \begin{split}
+      \vec{c} \cdot \vec{a}
+      &= (11 \cdot 0) + (14 \cdot 1) +[(-2) \cdot 7] \\
+      &= 0 + 14 + (-14) \\
+      &= 14 - 14 \\
+      &= 0
+    \end{split}
+  \end{equation*}
+
+  A fin de demostrar que $\vec{c} = \vec{a} \times \vec{b}$ es ortogonal a $\vec{b}$, calculamos su producto punto como sigue:
+  
+  \begin{equation*}
+    \begin{split}
+      \vec{c} \cdot \vec{b}
+      &= (11 \cdot 2) + [14 \cdot (-1)] + [(-2) \cdot 4] \\
+      &= 22 + (-14) + (-8) \\
+      &= 22-14-8 \\
+      &= 0
+    \end{split}
+  \end{equation*}
+
+  $\therefore \vec{c}$ es ortogonal a $\vec{a}$ y $\vec{b}$ simultáneamente.
 
 \end{itemize}
 
@@ -609,7 +767,8 @@ Con estas definiciones podemos resolver los solicitado:
   
 \item La recta que pasa por $P(6,-5,2)$ y que es paralela al vector $\vec{u}=(1,3,\frac{-2}{3})$
   
-  \begin{enumerate}
+  \begin{enumerate}[format=\textbf]
+    
   \item Ecuación vectorial:
     
     En este caso, sea el origen O(0,0,0) $\vec{r_0} = \vec{OP} = (6, -5, 2)$  y  $\vec{v} = \vec{u} = (1,3,\frac{-2}{3})  $ y $t \in \mathds{R} $
@@ -647,7 +806,7 @@ Con estas definiciones podemos resolver los solicitado:
   
 \item La recta que pasa por $A(0,0,0)$ y $B(4,3,-1)$
   
-  \begin{enumerate}
+  \begin{enumerate}[format=\textbf]
     
   \item Ecuación vectorial :
     
@@ -683,7 +842,87 @@ Con estas definiciones podemos resolver los solicitado:
 % 14 ------------------------------------------------------------------------------------------------------------
 \section{}
 
-Utilice el \textbf{triple punto escalar} (producto mixto) para determinar si los puntos $A(1,3,2) , B(3,-1,6), C(5,2,0), D(3,6,-4)$ son coplanares.
+Utilice el \textbf{triple producto escalar} (producto mixto) para determinar si los puntos $A(1,3,2) , B(3,-1,6), C(5,2,0), D(3,6,-4)$ son coplanares. \\
+
+Consideremos a los siguientes vectores
+
+\begin{itemize}
+
+\item $\vec{a} = \vec{AB} = \langle (3-1), (-1-3), (6-2) \rangle = \langle 2, -4, 4 \rangle$
+
+\item $\vec{b} = \vec{AC} = \langle (5-1), (2-3), (0-2) \rangle = \langle 4, -1, -2 \rangle$
+
+\item $\vec{c} = \vec{AD} = \langle (3-1), (6-3), (-4-2) \rangle = \langle 2, 3, -6 \rangle$
+  
+\end{itemize}
+
+Para determinar si son coplanares utilizamos el triple producto escalar $\vec{a} \cdot (\vec{b} \times \vec{c})$ y verificamos que sea igual a cero. Calculamos
+   
+\begin{equation*}
+  \begin{split}
+    \vec{a} \cdot (\vec{b} \times \vec{c})
+    &=
+    \begin{vmatrix}
+      2 & -4 & 4 \\
+      4 & -1 & -2 \\
+      2 & 3 & -6
+    \end{vmatrix} \\
+    &=
+    2
+    \begin{vmatrix}
+      -1 & -2 \\
+      3 & -6 
+    \end{vmatrix}
+    -
+    (-4)
+    \begin{vmatrix}
+      4 & -2 \\
+      2 & -6 
+    \end{vmatrix}
+    +
+    4
+    \begin{vmatrix}
+      4 & -1 \\
+      2 & 3 
+    \end{vmatrix}\\
+    &=
+    2
+    \begin{vmatrix}
+      -1 & -2 \\
+      3 & -6 
+    \end{vmatrix}
+    +
+    4
+    \begin{vmatrix}
+      4 & -2 \\
+      2 & -6 
+    \end{vmatrix}
+    +
+    4
+    \begin{vmatrix}
+      4 & -1 \\
+      2 & 3 
+    \end{vmatrix}\\
+    &=
+    2[(-1)(-6)-(-2)(3)]
+    +
+    4[(4)(-6)-(-2)(2)]
+    +
+    4[(4)(3)-(-1)(2)]\\
+    &=
+    2(6+6)
+    +
+    4(-24+4)
+    +
+    4(12+2) \\
+    &=
+    24 - 80 + 56 \\
+    &=
+    0
+  \end{split}
+\end{equation*}
+
+$\therefore$ Los puntos $A(1,3,2) , B(3,-1,6), C(5,2,0), D(3,6,-4)$ son coplanares.
 
 % 15 ------------------------------------------------------------------------------------------------------------
 \section{}

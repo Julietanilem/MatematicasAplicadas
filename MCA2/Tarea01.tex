@@ -39,6 +39,79 @@
 
 Determine una ecuación de la esfera que pasa por el origen y cuyo centro es el punto $A(1,2,3)$. Describa su intersección con cada uno de los planos coordenados.
 
+El radio será la distancia entre los puntos $O(0,0,0)$ (origen) y $A(1,2,3)$ (centro de la esfera), i.e.
+
+\begin{align*}
+  r = |OA|
+  &= \sqrt{(1-0)^2 + (2-0)^2 + (3-0)^2} \\
+  &= \sqrt{1^2 + 2^2 + 3^2} \\
+  &= \sqrt{1 + 4 + 9} \\
+  &= \sqrt{14}
+\end{align*}
+
+Por lo tanto, la ecuación de la esfera es: $$ (x-1)^2 + (y-2)^2 + (z-3)^2 = 14 $$
+
+\begin{enumerate}[format=\textbf]
+  
+\item Intersección con el plano $xy$.
+  
+  Sustituimos $z = 0$ en la ecuación de la esfera.
+  
+  \begin{align*}
+    (x-1)^2 + (y-2)^2 + (0-3)^2
+    &= 14 \\
+    (x-1)^2 + (y-2)^2 + (-3)^2
+    &= 14 \\
+    (x-1)^2 + (y-2)^2 + 9
+    &= 14 \\
+    (x-1)^2 + (y-2)^2
+    &= 14 - 9 \\
+    (x-1)^2 + (y-2)^2
+    &= 5 \\
+  \end{align*}
+  
+  Como $z = 0$, los puntos que se encuentran en el plano $xy$ se hallan sobre la circunferencia $(x-1)^2 + (y-2)^2 = 5$.
+  
+\item Intersección con el plano $xz$.
+  
+  Sustituimos $y = 0$ en la ecuación de la esfera.
+  
+  \begin{align*}
+    (x-1)^2 + (0-2)^2 + (z-3)^2
+    &= 14 \\
+    (x-1)^2 + (-2)^2 + (z-3)^2
+    &= 14 \\
+    (x-1)^2 + 4 + (z-3)^2
+    &= 14 \\
+    (x-1)^2 + (z-3)^2
+    &= 14 - 4 \\
+    (x-1)^2 + (z-3)^2
+    &= 10 \\
+  \end{align*}
+  
+  Como $y = 0$, los puntos que se encuentran en el plano $xz$ se hallan sobre la circunferencia $(x-1)^2 + (z-3)^2 = 10$.
+  
+\item Intersección con el plano $yz$.
+  
+  Sustituimos $x = 0$ en la ecuación de la esfera.
+  
+  \begin{align*}
+    (0-1)^2 + (y-2)^2 + (z-3)^2
+    &= 14 \\
+    (-1)^2 + (y-2)^2 + (z-3)^2
+    &= 14 \\
+    1 + (y-2)^2 + (z-3)^2
+    &= 14 \\
+    (y-2)^2 + (z-3)^2
+    &= 14 - 1 \\
+    (y-2)^2 + (z-3)^2
+    &= 13 \\
+  \end{align*}
+  
+  Como $x = 0$, los puntos que se encuentran en el plano $yz$ se hallan sobre la circunferencia $(y-2)^2 + (z-3)^2 = 13$.
+  
+\end{enumerate}
+
 % 3 -------------------------------------------------------------------------------------------------------------
 \section{}
 
@@ -67,8 +140,16 @@ Escriba desigualdades para describir las siguientes regiones.
 \begin{itemize}
     
 \item La región entre el plano \textbf{xz} y el plano vertical \textbf{y=4}.
+
+  Dado que la ecuación del plano $xz$ es $y=0$  y la del plano vertical es $y=4$. La región que delimitan incluye a todos los puntos $(x,y,x)$ donde
+  $$0 \leq y \leq 4$$
     
 \item La región que consta de todos los puntos entre (pero no sobre) las esferas de radio \textit{r} y \textit{R} centradas en el origen, donde $r < R$.
+
+  Para representar a los puntos $(x,y,z)$ cuya distancia desde el origen es por lo menos $r$, y a lo más, $R$, podemos delimitar a la región como
+  $$r < \sqrt{x^2 + y^2 + z^2} < R$$
+  o bien,
+  $$r^2 < x^2 + y^2 + z^2 < R^2$$
     
 \end{itemize}
   
@@ -103,9 +184,52 @@ Obtenga un vector $\vec{a}$, como el segmento de recta dirigida de $\vec{AB}$ , 
 
 \begin{itemize}
   
-\item $A(-5,-1) , B(-3,3)$.
+\item $A(-5,-1) , B(-3,3)$
+
+  El vector correspondiente a $\vec{AB}$ es
+
+  \begin{align*}
+    \vec{a}
+    &=
+    \langle
+    [(-3)-(-5)],
+    [3-(-1)]
+    \rangle \\
+    &=
+    \langle
+    (-3+5),
+    (3+1)
+    \rangle \\
+    &=
+    \langle
+    2,
+    4
+    \rangle \\
+  \end{align*}
+
+  $\therefore \vec{a} = \langle 2, 4 \rangle$
   
 \item $A(0,6,1), B(3,4,4)$
+
+  El vector correspondiente a $\vec{AB}$ es
+
+  \begin{align*}
+    \vec{a}
+    &=
+    \langle
+    (3-0),
+    (4-6),
+    (4-1)
+    \rangle \\
+    &=
+    \langle
+    3,
+    -2,
+    3
+    \rangle \\
+  \end{align*}
+
+  $\therefore \vec{a} = \langle 3, -2, 3 \rangle$
   
 \end{itemize}
 
@@ -114,21 +238,44 @@ Haga un esbozo (en cada caso) del vector $\vec{AB}$ y la representación \textbf
 % 7 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-Determine:
+Determine (donde $\vec{a}=8\hat{i} + \hat{j} - 4\hat{k}$; $\vec{b}= 5\hat{i} - 2\hat{j} +\hat{k}$)
 
-\begin{enumerate}
+\begin{enumerate}[label=\alph*), format=\textbf]
   
 \item $\vec{a} + \vec{b}$
+  \begin{equation*}
+    \begin{split}
+      \vec{a} + \vec{b}
+      &= (8\hat{i} + \hat{j} - 4\hat{k}) + (5\hat{i} - 2\hat{j} +\hat{k}) \\
+      &= 13\hat{i} - 1\hat{j} - 3\hat{k} \\
+    \end{split}
+  \end{equation*}
   
 \item $4 \vec{a} + 2\vec{b}$
+  \begin{equation*}
+    \begin{split}
+      4 \vec{a} + 2\vec{b}
+      &= 4 (8\hat{i} + \hat{j} - 4\hat{k}) + 2 (5\hat{i} - 2\hat{j} +\hat{k}) \\
+      &= (32\hat{i} + 4\hat{j} - 16\hat{k}) + (10\hat{i} - 4\hat{j} + 2\hat{k}) \\
+      &= 42\hat{i} + 0\hat{j} - 14\hat{k} \\
+      &= 42\hat{i} - 14\hat{k}
+    \end{split}
+  \end{equation*}
 
 \item $|\vec{a} - \vec{b}|$
 
 \item $|\vec{a}|$
+  \begin{equation*}
+    \begin{split}
+      |\vec{a}|
+      &= | 8\hat{i} + \hat{j} - 4\hat{k} | \\
+      &= \sqrt{(8)^2 + (1)^2 + (-4)^2} \\
+      &= \sqrt{64 + 1 + 16} \\
+      &= \sqrt{81}
+    \end{split}
+  \end{equation*}
 
 \end{enumerate}
-
-dónde $\vec{a}=8\hat{i} + \hat{j} - 4\hat{k}; \vec{b}= 5\hat{i} - 2\hat{j} +\hat{k}$
 
 % 8 -------------------------------------------------------------------------------------------------------------
 \section{}

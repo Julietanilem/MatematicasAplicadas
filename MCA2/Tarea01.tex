@@ -15,6 +15,7 @@
 \usepackage{dsfont}
 \usepackage{tipa}
 \usepackage{float}
+\usepackage{dsfont} 
 \spanishdecimal{.}
 
 \title{Matemáticas para las Ciencias Aplicadas II}
@@ -32,7 +33,51 @@
 % 1 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-¿Cuáles son las proyecciones del \textbf{punto} $A(2,3,5)$ en los planos \textbf{xy} \textbf{yz} y \textbf{xz}. Para calcular, trace una caja rectangular con vértices en el origen y el punto A como vértices opuestos y con sus caras paralelas a los planos coordenados. Etiquete todos los vertices de la caja. Asimismo calcule la longitud de la diagonal de la caja.
+¿Cuáles son las proyecciones del \textbf{punto} $A(2,3,5)$ en los planos \textbf{xy} \textbf{yz} y \textbf{xz}? Para calcular, trace una caja rectangular con vértices en el origen y el punto A como vértices opuestos y con sus caras paralelas a los planos coordenados. Etiquete todos los vértices de la caja. Asimismo calcule la longitud de la diagonal de la caja.
+
+\begin{itemize}
+  
+\item Trazo de la caja:
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./img/caja.jpeg}
+  \end{figure}
+  
+\item Proyecciones del punto:
+  \begin{itemize}
+    
+  \item \textbf{Plano xy:}
+    
+    En este plano, la coordenada $z=0$. Por lo que el punto sería $A_{xy}(2, 3, 0)$.
+    
+  \item \textbf{Plano yz:}
+    
+    En este plano, la coordenada $x=0$. Por lo que el punto sería $A_{yz}(0, 3, 5)$.
+    
+  \item \textbf{Plano xz:}
+    
+    En este plano, la coordenada $y=0$. Por lo que el punto sería $A_{xz}(2, 0, 5)$.
+    
+  \end{itemize}
+  
+\item Longitud de la diagonal de la caja:
+  
+  La longitud de la diagonal equivale a la norma del vector que va del origen al punto A. Este vector sería $\vec{a} = \vec{OA} = A-O = (2, 3, 5) - (0, 0, 0) = (2,3,5)$.Entonces usamos la fórmula de la norma $||\vec{a}|| = \sqrt{a_x^2 +  a_y^2 + a_z^2}$ y sustituimos $a_x = 2$, $a_y = 3$, $a_z = 5$.
+  
+  \begin{equation*}
+    \begin{split}
+      ||\vec{a}|| &= \sqrt{2^2 +  3^2 + 5^2} \\
+      &= \sqrt{4 +  9 + 25} \\
+      &= \sqrt{38}
+    \end{split}
+  \end{equation*}
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./img/diagonal.jpeg}
+  \end{figure}
+\end{itemize}
 
 % 2 -------------------------------------------------------------------------------------------------------------
 \section{}
@@ -161,25 +206,42 @@ Sean $\vec{a} , \vec{b} , \vec{c}$ vectores en $\mathbb{R}^n$ y sean $c,d$ escal
 \begin{enumerate}
 
 \item $$\vec{a}+\vec{b} = \vec{b}+\vec{a}$$
+  
+  \textbf{Conmutatividad:} El resultado de sumar dos vectores no depende del orden en el que se toman.
 
 \item $$\vec{a}+\vec{0} = \vec{a}$$
+  
+  \textbf{Identidad:} El $\vec{0}$ es el elemento neutro de la suma de vectores. Cualquier vector sumado con $\vec{0}$ mantiene su identidad. 
 
 \item $$c(\vec{a}+\vec{b}) = c\vec{a}+c\vec{b}$$
+  
+   \textbf{Distributividad:} El producto por un escalar se distribuye sobre la suma de vectores, es decir,  multiplicar la suma de dos vectores por un escalar es lo mismo que multiplicar cada vector por el escalar y luego sumar los resultados.
 
-\item $$(cd)\vec{a} = c(d\vec{a})$$
+ \item $$(cd)\vec{a} = c(d\vec{a})$$
+   
+   \textbf{Asociatividad:} El producto entre un vector y escalares es asociativo. Multiplicar un vector por un escalar y luego por otro escalar es lo mismo que multiplicar el vector por el producto de los dos escalares.  
 
-\item $$\vec{a}+(\vec{b}+\vec{c}) = (\vec{a}+\vec{b})+\vec{c}$$
+ \item $$\vec{a}+(\vec{b}+\vec{c}) = (\vec{a}+\vec{b})+\vec{c}$$
+   
+   \textbf{Asociatividad:} La suma de tres o más vectores es asociativa, es decir, la forma en la que se agrupan los sumandos  y el orden en que se hacen las operaciones no afecta el resultado.
 
-\item $$\vec{a}+(\vec{-a}) = \vec{0}$$
-
+ \item $$\vec{a}+(\vec{-a}) = \vec{0}$$
+   
+   \textbf{Inverso:} Cualquier vector $\vec{a}$ tiene un inverso aditivo, tal que la suma del vector y su inverso resulta en el neutro aditivo $\vec{0}$, este inverso es $\vec{-a}$ y tiene la misma magnitud que el vector original $\vec{a}$ pero dirección contraria.
+   
 \item $$(c+d)\vec{a} = c\vec{a}+d\vec{a}$$
-
+  
+  \textbf{Distributividad:} El producto por un vector se distribuye sobre la suma de escalares. Multiplicar un vector por la suma de dos escalares es lo mismo que multiplicar el vector por cada escalar y luego sumar los resultados.
+  
 \item $$1\vec{a} = \vec{a}$$
-
+  
+  \textbf{Identidad:} El 1 es neutro en el producto entre un escalar y un vector, por lo tanto, multiplicar cualquier vector por 1 mantiene al vector original.
+  
 \end{enumerate}
 
 % 6 -------------------------------------------------------------------------------------------------------------
 \section{}
+
 Obtenga un vector $\vec{a}$, como el segmento de recta dirigida de $\vec{AB}$ , donde \textit{A} y \textit{B} son los puntos:
 
 \begin{itemize}
@@ -238,54 +300,140 @@ Haga un esbozo (en cada caso) del vector $\vec{AB}$ y la representación \textbf
 % 7 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-Determine (donde $\vec{a}=8\hat{i} + \hat{j} - 4\hat{k}$; $\vec{b}= 5\hat{i} - 2\hat{j} +\hat{k}$)
+Determine:
 
-\begin{enumerate}[label=\alph*), format=\textbf]
+\begin{enumerate}
   
 \item $\vec{a} + \vec{b}$
+  
+\item $4 \vec{a} + 2\vec{b}$
+
+\item $||\vec{a} - \vec{b}||$
+
+\item $||\vec{a}||$
+
+\end{enumerate}
+
+donde $\vec{a}=8\hat{i} + \hat{j} - 4\hat{k}; \vec{b}= 5\hat{i} - 2\hat{j} +\hat{k}$ \\
+
+Las definiciones que usaremos en este ejercicio serán las siguientes
+
+Dados dos vectores:
+
+\[ \vec{a} = (a_1, a_2, a_3) \]
+\[ \vec{b} = (b_1,b_2, b_3) \]
+
+y sea $c \in \mathds{R}$
+
+\begin{itemize}
+  
+\item \textbf{Suma:} $\vec{a} + \vec{b}  = (a_1 + b_1, a_2+b_2, a_3+b_3)$
+  
+\item \textbf{Multiplicación por un escalar:} $c\vec{a} = (ca_1, ca_2, ca_3)$
+  
+\item \textbf{Norma:} $||\vec{a}|| = \sqrt{a_1^2 + a_2^2 + a_3^2}$
+  
+\item \textbf{Resta:}  $\vec{a} - \vec{b} = \vec{a} + (-\vec{b})$
+  
+\item \textbf{Vectores unitarios:} $\hat{i} = (1, 0, 0),  \hat{j} = (0, 1, 0),  \hat{k} = (0, 0, 1)$
+
+\end{itemize}
+
+En este caso, podemos reescribir los vectores dados en su forma unitario de la siguiente forma:
+
+\[
+\vec{a} = 8\hat{i} + \hat{j} - 4\hat{k} = 8(1, 0, 0) + (0,1,0) + (-4) (0,0,1) = (8, 1, -4)
+\]
+
+\[
+\vec{b} = 5\hat{i} - 2\hat{j} +\hat{k} = 5(1, 0, 0) + (-2) (0,1,0) + (0,0,1) = (5, -2, 1)
+\]
+
+\begin{enumerate}
+  
+\item $\vec{a} + \vec{b}$
+  
   \begin{equation*}
     \begin{split}
-      \vec{a} + \vec{b}
-      &= (8\hat{i} + \hat{j} - 4\hat{k}) + (5\hat{i} - 2\hat{j} +\hat{k}) \\
-      &= 13\hat{i} - 1\hat{j} - 3\hat{k} \\
+      \vec{a} + \vec{b} &= (8, 1, -4) + (5, -2, 1)\\
+      &= (8+5,1+ (-2), -4+1) \\
+      &=(13, 1-2, -3)\\
+      &= (13, -1, -3) \\
+      &= 13\hat{i} - \hat{j} -3\hat{k}
     \end{split}
   \end{equation*}
   
 \item $4 \vec{a} + 2\vec{b}$
+  
   \begin{equation*}
     \begin{split}
-      4 \vec{a} + 2\vec{b}
-      &= 4 (8\hat{i} + \hat{j} - 4\hat{k}) + 2 (5\hat{i} - 2\hat{j} +\hat{k}) \\
-      &= (32\hat{i} + 4\hat{j} - 16\hat{k}) + (10\hat{i} - 4\hat{j} + 2\hat{k}) \\
-      &= 42\hat{i} + 0\hat{j} - 14\hat{k} \\
-      &= 42\hat{i} - 14\hat{k}
+      4 \vec{a} + 2\vec{b} &= 4(8, 1, -4) + 2(5, -2, 1)\\
+      &=  (32, 4, -16) + (10, -4, 2)\\
+      &=  (32+10, 4-4, -16+2) \\
+      &= (42, 0, -14)\\
+      &= 42\hat{i}  - 14\hat{k} \\
     \end{split}
   \end{equation*}
 
 \item $|\vec{a} - \vec{b}|$
-
-\item $|\vec{a}|$
+  
   \begin{equation*}
     \begin{split}
-      |\vec{a}|
-      &= | 8\hat{i} + \hat{j} - 4\hat{k} | \\
-      &= \sqrt{(8)^2 + (1)^2 + (-4)^2} \\
-      &= \sqrt{64 + 1 + 16} \\
-      &= \sqrt{81}
+      ||\vec{a} - \vec{b}|| &= ||(8, 1, -4) - (5, -2, 1)|| \\
+      &= ||(8-5, 1-(-2), -4-1) || \\
+      &= ||(3, 3, -5)|| \\
+      &= \sqrt{3^2 + 3^2 + (-5)^2} \\
+      &= \sqrt{9 + 9 + 25} \\
+      &= \sqrt{43} \\
     \end{split}
   \end{equation*}
 
+\item $||\vec{a}||$
+  
+  \begin{equation*}
+    \begin{split}
+      ||\vec{a}|| &= ||(8, 1, -4)|| \\
+      &= \sqrt{8^2 + 1^2 + (-4)^2} \\
+      &= \sqrt{64 + 1 + 16} \\
+      &= \sqrt{81} \\
+      &= 9
+    \end{split}
+  \end{equation*}
+  
 \end{enumerate}
 
 % 8 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-Sea $\vec{a}$ un vector tal que se ubica en el primer cuadrante, hace un ángulo de $\frac{\pi}{6}$ con el eje $x$ positivo  y $|\vec{a}|=2$. Determine $\vec{a}$ en términos de sus componentes.
+Sea $\vec{a}$ un vector tal que se ubica en el primer cuadrante, hace un ángulo de $\frac{\pi}{6}$ con el eje $x$ positivo  y $|\vec{a}|=2$. Determine $\vec{a}$ en términos de sus componentes. \\
+
+Podemos expresar sus componentes en términos de las funciones trigonométricas, donde
+
+\begin{align*}
+  a_x​ &= |\vec{a}| \cdot \cos{\theta} \\
+  &= 2 \cdot \cos{\frac{\pi}{6}} \\
+  &= 2 \cdot \left( \frac{\sqrt{3}}{2} \right) \\
+  &= \sqrt{3} \\ \\
+  a_y &= |\vec{a}| \cdot \sin{\theta} \\
+  &= 2 \cdot \sin{\frac{\pi}{6}} \\
+  &= 2 \cdot \left( \frac{1}{2} \right) \\
+  &= 1 
+\end{align*}
+
+$\therefore \vec{a} = \langle \sqrt{3}, 1 \rangle$
 
 % 9 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-Un vendedor ambulante vende $a$ hamburguesas, $b$ hot dogs y $c$ refrescos en un día dado. Cobra 4 pesos por hamburguesas, 2.5 pesos por hot dog y 1 peso pro refresco. Sea $\vec{a}=(a,b,c)$ y $\vec{P}=(4,2.5,1)$. ¿Qué representa el producto punto $\vec{a} \cdot \vec{P}$.
+Un vendedor ambulante vende $a$ hamburguesas, $b$ hot dogs y $c$ refrescos en un día dado. Cobra 4 pesos por hamburguesas, 2.5 pesos por hot dog y 1 peso por refresco. Sea $\vec{a}=(a,b,c)$ y $\vec{P}=(4,2.5,1)$. ¿Qué representa el producto punto $\vec{a} \cdot \vec{P}$. \\
+
+Considerando que el producto punto entre dos vectores $\vec{u} = (u_1, u_2, u_3)$ y  $\vec{v} = (v_1, v_2, v_3)$ se define como $\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2+u_3v_3$. El producto punto  $\vec{a} \cdot \vec{P} = 4a+ 2.5b+1c$.
+
+Sustituyendo las variables a, b, c, y los costos se interpreta como:
+$\vec{a} \cdot \vec{P}$ = (Precio de una hamburguesa)(Hamburguesas vendidas)+ (Precio de un hot dog)(Hot dogs vendidos)+ (Precio de un refresco)(Refrescos vendidos).
+
+Por lo que es fácil reconocer que $\vec{a} \cdot \vec{P}$ representa la ganancia del vendedor ambulante en un día dado.
+
 
 % 10 ------------------------------------------------------------------------------------------------------------
 \section{}
@@ -314,10 +462,79 @@ Calcule el ángulo entre los vectores:
 
 \end{itemize}
 
+Primero hay que recordar que la definición geométrica del producto punto entre dos vectores $\vec{u} = (u_1, u_2, u_3)$ y  $\vec{v} = (v_1, v_2, v_3)$ se define como  $\vec{u} \cdot \vec{v} = ||\vec{u} || \vec{v}|| \cos{\theta}$, donde $\theta$ es el ángulo formado entre $\vec{u}$ y $\vec{v}$  por lo que se sigue que:
+
+\[
+\theta = cos^{-1 }\left(\frac{u \cdot v}{||\vec{u}|| ||\vec{v}||}\right)
+\]
+
+Primero reescribiremos $\vec{a}$ y $\vec{b}$
+
+\[
+\vec{a} =  \hat{i} + 2\hat{j}-2\hat{k} = (1, 2, -2)
+\]
+\[
+\vec{b} =4\hat{i} -3\hat{k}= (4, 0, -3)
+\]
+
+Calculamos el producto punto con la definición  $\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2+u_3v_3$.
+
+\begin{equation*}
+  \begin{split}
+    \vec{a} \cdot \vec{b}  &= (1, 2, -2) \cdot  (4, 0, -3)  \\
+    &= 4 \cdot 1 + 2 \cdot 0 + (-2) \cdot (-3) \\
+    &= 4 + 0 +6 \\
+    &= 10 
+  \end{split}
+\end{equation*}
+
+Calculamos la norma de ambos vectores con la definición $ ||\vec{u}|| = \sqrt{u_1^2 + u_2^2 + u_3^2} $
+
+\begin{equation*}
+  \begin{split}
+    ||\vec{a}||  &= ||(1, 2, -2)||  \\
+    &= \sqrt{1^2 + 2^2 + (-2)^2} \\
+    &= \sqrt{1 + 4 + 4} \\
+    &= \sqrt{9} \\
+    &=3
+  \end{split}
+\end{equation*}
+
+\begin{equation*}
+  \begin{split}
+    ||\vec{b}||  &= ||(4, 0, -3))||  \\
+    &= \sqrt{4^2 + 0^2 + (-3)^2} \\
+    &= \sqrt{16 + 0 + 9} \\
+    &= \sqrt{25} \\
+    &= 5
+  \end{split}
+\end{equation*}
+
+Sustituimos en la fórmula
+
+\begin{equation*}
+  \begin{split}
+    \theta &= cos^{-1 }\left(\frac{a \cdot b}{||\vec{a}|| ||\vec{b}||}\right) \\
+    &=  cos^{-1 }\left(\frac{10}{3 \cdot 5} \right) \\
+    &= cos^{-1 }\left(\frac{10}{15} \right) \\
+    &= cos^{-1 }\left(\frac{2}{3} \right) \\
+  \end{split}
+\end{equation*}
+
+Y  calculamos $\theta$ :
+
+\begin{itemize}
+  
+\item En grados : 48.1896851
+  
+\item En radianes: 0.8410686706
+  
+\end{itemize}
+
 % 12 ------------------------------------------------------------------------------------------------------------
 \section{}
 
-Dados los vectores \\
+Dados los vectores
 
 \[\vec{a} = \hat{j}+ 7\hat{k}\]
 
@@ -344,17 +561,124 @@ Proporcione:
 
 \item Las ecuaciones paramétricas
 
-\item Las ecuaciones simétricas para las siguientes rectas:
-
-  \begin{itemize}
-
-  \item La recta que pasa por $P(6,5,2)$ y que esperalela al vector $\vec{u}=(1,3,\frac{-2}{3})$
-
-  \item La recta que pasa por $A(0,0,0)$ y $B(4,3,-1)$
-
-  \end{itemize}
-
+\item Las ecuaciones simétricas
+  
 \end{enumerate}
+
+Para las siguientes rectas:
+
+\begin{itemize}
+  
+\item La recta que pasa por $P(6,-5,2)$ y que es paralela al vector $\vec{u}=(1,3,\frac{-2}{3})$
+  
+\item La recta que pasa por $A(0,0,0)$ y $B(4,3,-1)$
+  
+\end{itemize}
+
+Usaremos las siguientes definiciones:
+
+\begin{itemize}
+  
+\item \textbf{Ecuación vectorial:} Una recta L en el espacio tridimensional se puede determinar cuando se conoce un punto $P_0(x_0, y_0, z_0)$ sobre L y la dirección de L(dada por un vector $\vec{v}$ paralelo a L).
+  
+  Entonces, sea $P(x, y, z)$ un punto arbitrario sobre L, sean $r_0$ y $r$ los vectores de posición de $P_0$ y $P$ y sea t un escalar.
+  
+  $$\vec{r} = \vec{r_0} + t\vec{v}$$
+  
+  es una ecuación vectorial de L, donde cada valor del parámetro t da el vector de posición r de un punto sobre L.
+  Esta ecuación también se puede escribir como
+  
+  $$ (x, y, z) = (x_0+ta, y_0+tb, z_0+tc)$$
+  
+\item \textbf{Ecuación paramétrica:} La ecuaciones paramétricas de la recta L se tienen a partir de las componentes de la ecuación vectorial del inciso pasado que serían:
+  $$x = x_0 + at$$
+  $$y = y_0 + bt$$
+  $$z = z_0 + ct$$
+  
+\item \textbf{Ecuación simétrica:}Esta es otra forma de describir a la recta L al eliminar el parámetro t de las ecuaciones paramétricas resolviendo para t en caso de que a, b y c sean diferentes de 0.
+  
+  \[
+  \frac{x-x_0}{a} = \frac{y-y_0}{b} = \frac{z-z_0}{c}
+  \]
+  
+\end{itemize}
+
+Con estas definiciones podemos resolver los solicitado:
+
+\begin {itemize}
+  
+\item La recta que pasa por $P(6,-5,2)$ y que es paralela al vector $\vec{u}=(1,3,\frac{-2}{3})$
+  
+  \begin{enumerate}
+  \item Ecuación vectorial:
+    
+    En este caso, sea el origen O(0,0,0) $\vec{r_0} = \vec{OP} = (6, -5, 2)$  y  $\vec{v} = \vec{u} = (1,3,\frac{-2}{3})  $ y $t \in \mathds{R} $
+    
+    \begin{equation*}
+      \begin{split}
+        r &= r_0 + tv \\
+        &= (6, -5, 2)  + t(1,3,\frac{-2}{3}) \\
+        &= (6, -5, 2)  + (t,3t,\frac{-2}{3}t)\\
+        &= (6+t, -5+3t, 2 + \frac{-2}{3}t)
+      \end{split}
+    \end{equation*}
+    
+  \item Ecuaciones paramétricas:
+    
+    $$x = 6+t $$
+    $$y = -5+3t$$
+    $$z =  2 + \frac{-2}{3}t $$
+    
+  \item Ecuaciones simétricas:
+    
+    \begin{equation*}
+      \begin{split}
+        \frac{x-x_0}{a} = \frac{y-y_0}{b} = \frac{z-z_0}{c} \\
+        \frac{x-6}{1} = \frac{y+5}{3} = \frac{z-2}{\frac{-2}{3}} \\
+        x-6 = \frac{y+5}{3} = -\frac{3}{2}(z-2) \\
+      \end{split}
+    \end{equation*}
+    
+  \end{enumerate}
+  
+\end{itemize}
+
+\begin {itemize}
+  
+\item La recta que pasa por $A(0,0,0)$ y $B(4,3,-1)$
+  
+  \begin{enumerate}
+    
+  \item Ecuación vectorial :
+    
+    En este caso, sea O(0,0,0) el origen,  $\vec{r_0} = \vec{OA} = (0, 0, 0)$  y  $\vec{v} = \vec{AB}= (4,3,-1)$ y $t \in \mathds{R} $
+    
+    \begin{equation*}
+      \begin{split}
+        r &= r_0 + tv \\
+        &= (0, 0, 0)  + t(4,3,-1) \\
+        &= (0, 0, 0)  + (4t,3t,-t)\\
+        &= (4t,3t,-t)
+      \end{split}
+    \end{equation*}
+    
+  \item Ecuaciones paramétricas:
+    
+    $$x = 4t $$
+    $$y = 3t$$
+    $$z =  -t $$
+    
+  \item Ecuaciones simétricas:
+    
+    \begin{equation*}
+      \begin{split}
+        t = \frac{x}{4} = \frac{y}{3} = -z
+      \end{split}
+    \end{equation*}
+    
+  \end{enumerate}
+  
+\end{itemize}
 
 % 14 ------------------------------------------------------------------------------------------------------------
 \section{}
@@ -364,17 +688,64 @@ Utilice el \textbf{triple punto escalar} (producto mixto) para determinar si los
 % 15 ------------------------------------------------------------------------------------------------------------
 \section{}
 
-Proporcione la ecuación del plano que pasa por $A(5,3,5)$y cuyo vector normal es $\vec{n}=2\hat{i} + \hat{j} - \hat{k}$. Adjunte una imágen de geogebra en la situación.
+Proporcione la ecuación del plano que pasa por $A(5,3,5)$y cuyo vector normal es $\vec{n}=2\hat{i} + \hat{j} - \hat{k}$. Adjunte una imagen de geogebra en la situación. \\
+
+Usaremos la definición de \textbf{ecuación del plano}:
+
+Un plano en el espacio se determina por un punto $P_0(x_0, y_0, z_0)$ en el plano y un vector $\vec{n}=(a,b,c)$ llamado vector normal que es ortogonal al plano. Sea P(x, y, z) un punto arbitrario en el plano y sean $r_0 = (x_0, y_0, z_0)$ y $r = (x, y,z)$ los vectores de posición de $P_0$ y $P$. Considerando que n es ortogonal a todo vector en el plano, en particular n es ortogonal a $r-r_0$.Por lo tanto se tiene:
+
+La ecuación vectorial del plano:
+
+\[
+\vec{n} \cdot (\vec{r} - \vec{r_0}) = 0
+\]
+
+o
+
+\[
+\vec{n} \cdot \vec{r} = \vec{n} \cdot \vec{r_0}
+\]
+
+y la ecuación escalar del plano:
+
+\[
+a(x-x_0) + b(y-y_0)+c(z-z_0) = 0
+\]
+
+Entonces, la ecuación en este caso donde $\vec{n} = \vec{n}=2\hat{i} + \hat{j} - \hat{k} = (2, 1, -1)$ y $\vec{r_0}= \vec{OA} = (5,3,5)$. Entonces podemos sustituir en la ecuación escalar $a=2$, $b=1$, $c=-1$ y $x_0=5$, $y_0=3$ y $z_0=5$.
+
+\[
+2(x-5) + 1(y-3)+(-1)(z-5) = 0
+\]
+
+\[
+2(x-5) +(y-3)-(z-5) = 0
+\]
+
+\[
+2x-10 +y-3-z+5 = 0
+\]
+
+\[
+\therefore \text{La ecuación del plano es: } 2x+y-z-8 = 0
+\]
+
+En geogebra se ve de la siguiente manera:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{./img/planoEc.png}
+\end{figure}
 
 % 16 ------------------------------------------------------------------------------------------------------------
 \section{}
 
-Proporcione la ecuación del plano que contiene a los puntos $A(0,0,0) , B(2,-4,6), C(5,1,3)$. Adjunte una imágen de geogebra en la situación.
+Proporcione la ecuación del plano que contiene a los puntos $A(0,0,0) , B(2,-4,6), C(5,1,3)$. Adjunte una imagen de geogebra en la situación.
 
 % 17 ------------------------------------------------------------------------------------------------------------
 \section{}
 
-Proporcione las coordenadas del punto $A(a_x,a_y,a_x)$ del punto donde se intersecan:\\
+Proporcione las coordenadas del punto $A(a_x,a_y,a_x)$ del punto donde se intersecan: \\
 
 \textbf{el plano} \\
 
@@ -388,6 +759,31 @@ y \textbf{la recta dada por las ecuaciones paramétricas}
   z &= 2 - 3t
 \end{align*}
 
-Adjunte una imágen de geogebrea de la situación.
+Adjunte una imagen de geogebrea de la situación. \\
+
+Sustituiremos x, y, z de las ecuaciones paramétricas dadas en la ecuación del plano dada.
+
+\[ 1 + 2t + 2(4t) - (2-3t)+1 =0 \]
+\[ 1 + 2t + 8t - 2+3t +1 =0 \]
+\[  13t =0 \]
+\[ t = 0\]
+
+Por lo tanto, el punto de intersección ocurre cuando el valor del parámetro es t =0.
+Entonces para cada componente:
+
+\begin{align*}
+  x &= 1 + 2t = 1\\
+  y &=4t = 0,\\
+  z &= 2 - 3t = 2 
+\end{align*}
+
+Y por consiguiente el punto de intersección es (1, 0, 2).
+
+En geogebra se ve de la siguiente manera:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{./img/interPlano.png}
+\end{figure}
 
 \end{document}

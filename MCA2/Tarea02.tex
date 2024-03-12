@@ -33,70 +33,111 @@
 % 1 -------------------------------------------------------------------------------------------------------------
 \section{}
 Proporcione el dominio de la función vectorial.
-$$
-⃗\vec{r(t)}
+\[
+\vec{r(t)}
 =
 \frac{t-2}{t+2}\hat{i}
 +
 \sin{t}\hat{j}
 +
-\ln{9-t^2}\hat{k}
-$$
+\ln{(9-t^2)}\hat{k}
+\]
+
+El dominio de cada \textit{función componente} es como sigue:
+\begin{itemize}[format=\textbf]
+
+\item $f(t)=\frac{t-2}{t+2}$
+  $$\left\{t \in \mathbb{R} ~|~ t \neq -2 \right\}$$
+
+\item $g(t)=\sin{t}$
+  $$\left\{t\in \mathbb{R} \right\}$$
+
+\item $h(t)=\ln{(9-t^2)}$
+  $$\left\{t\in \mathbb{R} ~|~ -3 < t < 3 \right\}$$
+
+\end{itemize}
+La intersección de los 3 conjuntos es $\left\{t\in \mathbb{R} ~|~ (-3<t<-2) ~ \land ~ (-2<t<3) \right\}$.
+
+$\therefore$ El dominio de la función vectorial $\vec{r(t)}$ es $(-3,-2)$ y $(-2,3)$.
+
 
 % 2 -------------------------------------------------------------------------------------------------------------
 \section{}
 Sea
-$$
-⃗\vec{r(t)}
+\[
+\vec{r(t)}
 =
 \frac{t^2-t}{t-1}\hat{i}
 +
 \sqrt{t+8}\hat{j}
 +
 \frac{\sin{\pi t}}{\ln{t}}\hat{k}
-$$
-Calcule $$ \lim{t \to 0} ⃗\vec{r(t)} $$
+\]
+Calcule $ \lim_{t \to 0} \vec{r(t)} $.
+
+Recordemos que el límite de una función vectorial se define obteniendo los límites de sus \textit{funciones componentes}:
+\begin{itemize}[format=\textbf]
+
+\item $f(t)=\frac{t^2-t}{t-1}$
+  \begin{align*}
+    \lim_{t \to 0} f(t) = \lim_{t \to 0} \frac{t^2-t}{t-1} = 0
+  \end{align*}
+
+\item $g(t)=\sqrt{t+8}$
+  \begin{align*}
+    \lim_{t \to 0} g(t) = \lim_{t \to 0} \sqrt{t+8} = \sqrt{8} = 2\sqrt{2}
+  \end{align*}
+
+\item $h(t)=\frac{\sin{\pi t}}{\ln{t}}$
+  \begin{align*}
+    \lim_{t \to 0} h(t) = \lim_{t \to 0} \frac{\sin{\pi t}}{\ln{t}}
+  \end{align*}
+
+\end{itemize}
 
 % 3 -------------------------------------------------------------------------------------------------------------
 \section{}
 Realice a mano la gráfica de las siguientes funciones vectoriales, indicando el sentido en que se traza la curva:
 \begin{itemize}[format=\textbf]
 
-\item 
+\item $\vec{r(t)} = t^2\hat{i}+t\hat{j}+2\hat{k}$
+
+\item $\vec{r(t)} = \cos{t}\hat{i}-\cos{t}\hat{j}+\sin{t}\hat{k}$
 
 \end{itemize}
 
 % 4 -------------------------------------------------------------------------------------------------------------
 \section{}
-Proporcione las coordenadas del punto donde se intersecta la \textbf{hélice} $$, y la \textbf{esfera} $$.
+Proporcione las coordenadas del punto donde se intersecta la \textbf{hélice} $\vec{r(t)}=\sin{t}\hat{i}+\cos{t}\hat{j}+t\hat{k}$, y la \textbf{esfera} $x^2+y^2+z^2=5$.
 
 % 5 -------------------------------------------------------------------------------------------------------------
 \section{}
-Dibuje las proyecciones de la curva
-⃗$$
-$$
-sobre los planos $XY , XZ, YZ$. Utilice dichas proyecciones para hacer un esbozo de la curva.
+Dibuje las proyecciones de la curva $\vec{r(t})=t\hat{i}+t\hat{j}+t^2\hat{k}$ sobre los planos $XY , XZ, YZ$. Utilice dichas proyecciones para hacer un esbozo de la curva.
 
 % 6 -------------------------------------------------------------------------------------------------------------
 \section{}
 Las trayectorias de dos partículas están dadas por las siguientes funciones vectoriales:
 \begin{itemize}[format=\textbf]
 
-\item 
+\item $\vec{r_1(t)}=t\hat{i}+t^2\hat{j}+t^3\hat{k}$
+
+\item $\vec{r_2(t)}=(1+2t,1+6t,1+14t)$
 
 \end{itemize}
 ¿Chocarán las partículas? ¿En qué punto? ¿Se cortarán las trayectorias?
 
 % 7 -------------------------------------------------------------------------------------------------------------
 \section{}
-Proporcione las coordenadas del punto sobre la curva
+Proporcione las coordenadas del punto sobre la curva $\vec{r(t)}=(2\cos{t},2\sin{t},\mathrm{e}^t)$, con $t \in [0,\pi]$, donde la \textbf{recta tangente} a la curva es paralela al plano $\sqrt{3}x+y=1$.
 
 % 8 -------------------------------------------------------------------------------------------------------------
 \section{}
 Proporcione las coordenadas del punto donde se intersectan las curvas:
 \begin{itemize}[format=\textbf]
 
-\item 
+\item $\vec{r_1(t)}=(t,1-t,3+t^2)$
+
+\item $\vec{r_2(s)}=(3-s,s-2,s^2)$
 
 \end{itemize}
 
@@ -105,14 +146,16 @@ Proporcione las coordenadas del punto donde se intersectan las curvas:
 Determine la \textbf{longitud de curva} para las siguientes curvas:
 \begin{itemize}[format=\textbf]
 
-\item 
+\item $\vec{r(t)}=\left(2t,t^2,\frac{t^3}{3}\right)$, para $t \in [0,1]$
+
+\item $\vec{r(t)}=\left(\cos{t},\sin{t},\ln{\cos{t}}\right)$, para $t \in \left[0,\frac{\pi}{4}\right]$
 
 \end{itemize}
 
 % 10 -------------------------------------------------------------------------------------------------------------
 \section{}
 Reparametrice la siguiente curva (respecto a la longitud de arco medida desde el punto donde $t = 0$), en la dirección en que $t$ se incrementa.
-$$ = $$
+$$ \vec{r(t)}=(2t)\hat{i}+(1-3t)\hat{j}+(5+4t)\hat{k}$$
 
 \end{document}
 

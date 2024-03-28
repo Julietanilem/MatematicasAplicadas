@@ -90,13 +90,18 @@ Recordemos que el límite de una función vectorial se define obteniendo los lí
 
 \item $h(t)=\frac{\sin{\pi t}}{\ln{t}}$
   \begin{align*}
-    \lim_{t \to 0} h(t) &= \lim_{t \to 0} \frac{\sin{\pi t}}{\ln{t}}
-    = \frac{\lim_{t \to 0} \sin{\pi t} }{\lim_{t \to 0}\ln{t} } \\
-    &= \frac{\sin {\pi \cdot 0}}{-\infty}  = \frac{\sin{0}}{-\infty}\\
-    &= \frac{0}{-\infty} = 0 
+    \lim_{t \to 0} h(t)
+    &= \lim_{t \to 0} \frac{\sin{(\pi t)}}{\ln{t}} \\
+    &= \lim_{t \to 0} \frac{\frac{d}{dt} \sin{(\pi t)}}{ \frac{d}{dt} \ln{t}} \\
+    &= \lim_{t \to 0} \frac{\cos{(\pi t)} \frac{d}{dt}(\pi t) }{ \frac{1}{t} } \\
+    &= \lim_{t \to 0} \frac{\pi \cos{(\pi t)}}{ \frac{1}{t} } \\
+    &= \lim_{t \to 0} \pi t \cos{(\pi t)} \\
+    &= \pi 0 \cos{(\pi 0)} \\
+    &= 0 \cdot 1 \\
+    &= 0
   \end{align*}
 
-  Según la definición el límite de $\vec{r(t)}$ es el vector cuyas componentes son los límites de las funciones componentes de r. Entonces:
+  Según la definición, el límite de $\vec{r(t)}$ es el vector cuyas componentes son los límites de las funciones componentes de $r$, siempre y cuando existan. Entonces:
   \[
  \lim_{t \to 0} \vec{r(t)} = \left[ \lim_{t \to 0} \frac{t^2-t}{t-1} \right] \hat{i}+ \left[ \lim_{t \to 0} \sqrt{t+8} \right]\hat{j}+ \left[ \lim_{t \to 0} \frac{\sin{\pi t}}{\ln{t}} \right]\hat{k} = (0, 2\sqrt{2}, 0)
   \]
@@ -108,21 +113,30 @@ Realice a mano la gráfica de las siguientes funciones vectoriales, indicando el
 \begin{itemize}[format=\textbf]
 
 \item $\vec{r(t)} = t^2\hat{i}+t\hat{j}+2\hat{k}$
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{./img/t2_ej3_1.jpeg}
+  \end{figure}
 
 \item $\vec{r(t)} = \cos{t}\hat{i}-\cos{t}\hat{j}+\sin{t}\hat{k}$
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{./img/t2_ej3_2.jpeg}
+  \end{figure}
 
 \end{itemize}
 
 % 4 -------------------------------------------------------------------------------------------------------------
 \section{}
 Proporcione las coordenadas del punto donde se intersectan la \textbf{hélice} $\vec{r(t)}=\sin{t}\hat{i}+\cos{t}\hat{j}+t\hat{k}$, y la \textbf{esfera} $x^2+y^2+z^2=5$.\\
+
 Podemos observar que la ecuación de la función $\vec{r(t)}$ es la siguiente :
 \[
 \vec{r(t)}=\sin{t}\hat{i}+\cos{t}\hat{j}+t\hat{k} = (\sin{t},\cos{t}, t )\]
 Y podemos obtener las ecuaciones paramétricas de $\vec{r(t)}$:
-\[ x =  \sin{t} \]
-\[ y =  \cos{t} \]
-\[ z =  t \]
+\[ x(t) =  \sin{t} \]
+\[ y(t) =  \cos{t} \]
+\[ z(t) =  t \]
 
 Podemos usarlas para sustituirlas en la ecuación de la esfera:
  \begin{align*}
@@ -130,8 +144,7 @@ Podemos usarlas para sustituirlas en la ecuación de la esfera:
    (\sin^2{t}) + (\cos^2{t}) + t ^2 = 5 \\
    1+ t ^2 = 5 \\
    t ^2 = 4 \\
-   t_1 = 2 \\
-   t_2 = -2
+   \therefore t_1 = 2, ~ ~  t_2 = -2
  \end{align*}
 
  Y ya que tenemos el valor de t encontrar los puntos en que intersectan usando la función $\vec{r(t)}$ y estos serán los puntos de intersección:
@@ -139,11 +152,27 @@ Podemos usarlas para sustituirlas en la ecuación de la esfera:
 \vec{r(2)} = (\sin{2},\cos{2}, 2 )
 \]
 \[
-\vec{r(-2)}= (\sin{-2},\cos{-2}, 2 )
+\vec{r(-2)}= (\sin{-2},\cos{-2}, -2 )
 \]
 % 5 -------------------------------------------------------------------------------------------------------------
 \section{}
 Dibuje las proyecciones de la curva $\vec{r(t})=t\hat{i}+t\hat{j}+t^2\hat{k}$ sobre los planos $XY , XZ, YZ$. Utilice dichas proyecciones para hacer un esbozo de la curva.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{./img/t2_ej5_xy.jpeg}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{./img/t2_ej5_zx.jpeg}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{./img/t2_ej5_yz.jpeg}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{./img/t2_ej5_curva.jpeg}
+  \end{figure}
 
 % 6 -------------------------------------------------------------------------------------------------------------
 \section{}

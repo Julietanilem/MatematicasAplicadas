@@ -294,7 +294,34 @@ Punto 1: $t=1 , s=0$ :
 $ \therefore $ Las trayectorias \textbf{sí se cortan} en dos puntos.
 % 7 -------------------------------------------------------------------------------------------------------------
 \section{}
-Proporcione las coordenadas del punto sobre la curva $\vec{r(t)}=(2\cos{t},2\sin{t},\mathrm{e}^t)$, con $t \in [0,\pi]$, donde la \textbf{recta tangente} a la curva es paralela al plano $\sqrt{3}x+y=1$.
+Proporcione las coordenadas del punto sobre la curva $\vec{r(t)}=(2\cos{t},2\sin{t},\mathrm{e}^t)$, con $t \in [0,\pi]$, donde la \textbf{recta tangente} a la curva es paralela al plano $\sqrt{3}x+y=1$. \\
+
+Sea $P_0=(x_0,y_0,z_0)$ el punto sobre la curva $\vec{r(t)}=(2\cos{t},2\sin{t},\mathrm{e}^t)$ cuya recta tangente es paralela al plano $\sqrt{3}x+y=1$ para alguna $t_0 \in [0,\pi]$, i.e., $r(t_0)=P_0$.
+
+Nótese que el vector director de la recta tangente a la curva $\vec{r(t)}$ en $P_0$, está dado por $\vec{r'(t_0)}=(-2\sin{t_0},2\cos{t_0},\mathrm{e}^{ t_0})$. Además, el vector normal del plano es $\vec{n}=(\sqrt{3},1,0)$.
+
+Dado que la recta debe ser paralela al plano $\sqrt{3}x+y=1$, se tiene que $\vec{n}$ y $\vec{r'(t_0)}$ son ortogonales, es decir, su producto punto es cero
+
+\begin{align*}
+   \vec{n} \cdot \vec{r'(t_0)} &= 0 \\
+  (\sqrt{3},1,0) \cdot (-2\sin{t_0},2\cos{t_0},\mathrm{e}^{ t_0}) &=0 \\
+  -2\sqrt{3}\sin{t_0} + 2\cos{t_0} + 0 &= 0 \\
+  -\sqrt{3}\sin{t_0} + \cos{t_0} &= 0 \\
+  \sqrt{3}\sin{t_0} &= \cos{t_0} \\
+  \tan{t_0} &= \frac{1}{\sqrt{3}} \\
+  \arctan{t_0} &= \frac{\sqrt{3}}{3}\\
+  t_0 &= \frac{\pi}{6}
+\end{align*}
+
+Así, se tiene que
+
+\begin{align*}
+  P_0 = r(t_0) = r\left(\frac{\pi}{6}\right) &= \left(2\cos{\frac{\pi}{6}},2\sin{\frac{\pi}{6}},\mathrm{e}^{\frac{\pi}{6}}\right) \\
+  &= \left(2\cdot \frac{\sqrt{3}}{2},2\cdot \frac{1}{2},\mathrm{e}^{\frac{\pi}{6}}\right) \\
+  &= \left(\sqrt{3},1,e^{\frac{\pi}{6}}\right)
+\end{align*}
+
+$\therefore \left(\sqrt{3},1,e^{\frac{\pi}{6}}\right)$ son las coordenadas del punto sobre la curva $\vec{r(t)}=(2\cos{t},2\sin{t},\mathrm{e}^t)$, con $t \in [0,\pi]$, donde la \textbf{recta tangente} a la curva es paralela al plano $\sqrt{3}x+y=1$.
 
 % 8 -------------------------------------------------------------------------------------------------------------
 \section{}
@@ -306,8 +333,9 @@ Proporcione las coordenadas del punto donde se intersectan las curvas:
 \item $\vec{r_2(s)}=(3-s,s-2,s^2)$
 
 \end{itemize}
-%Copia bien, amor :p 
-Ademas proporcione el  ́angulo de intersección de ambas trayectorias.\\
+
+Ademas proporcione el  ́angulo de intersección de ambas trayectorias. \\
+
 Primero, para encontrar el punto donde se intersectan las curvas, daremos las ecuaciones paramétricas de $\vec{r_1(t)}$:
 \[ x_1 = t\]
 \[ y_1 = 1-t\]
@@ -356,8 +384,10 @@ Por lo tanto veremos que el punto de intersección será donde $t=1, s=2$: \\
 \item $\vec{r_1(1)}=(1,1-1,3+1^2) = (1, 0, 4)$
 
 \item $\vec{r_2(2)}=(3-2,2-2,2^2) = (1, 0, 4)$ \\
+  
   $\therefore$ El punto donde se intersectan las curvas es \textbf{(1, 0, 4)}
   \\
+  
   Ahora, el ángulo entre dos curvas que se intersectan se define como el ángulo entre las dos tangentes de las dos curvas en el punto de intersección.\\
   Para esto necesitamos calcular los  vector tangente a las curvas mediante sus derivadas evaluadas en el punto de intersección.
 \begin{align*}
@@ -401,6 +431,57 @@ Determine la \textbf{longitud de curva} para las siguientes curvas:
 \item $\vec{r(t)}=\left(\cos{t},\sin{t},\ln{\cos{t}}\right)$, para $t \in \left[0,\frac{\pi}{4}\right]$
 
 \end{itemize}
+
+Sabemos que la fórmula para encontrar la longitud de arco es $$ L = \int_a^b ||r'(t)||dt $$
+
+Por lo que, en $\vec{r(t)}=\left(2t,t^2,\frac{t^3}{3}\right)$, para $t \in [0,1]$; tenemos que,
+\begin{align*}
+  \vec{r'(t)} = \left( 2,2t,t^2 \right)
+\end{align*}
+Entonces,
+\begin{align*}
+  ||\vec{r'(t)}|| &= \sqrt{(2)^2+(2t)^2+(t^2)^2}\\
+  &=  \sqrt{4+4t^2+t^4}\\
+  &= \sqrt{(t^2+2)^2}\\
+  &= t^2+2
+\end{align*}
+Así
+\begin{align*}
+  \int_0^1 (t^2+2)~ dt &= \frac{t^3}{3}+2t \Bigg|_0^1 \\
+  &= \left(\frac{1}{3}+2 \right) - \left(\frac{0}{3}+0\right) \\
+  &= \frac{7}{3}
+\end{align*}
+$\therefore L=\frac{7}{3}$ es la \textbf{longitud de curva} en $\vec{r(t)}=\left(2t,t^2,\frac{t^3}{3}\right)$, para $t \in [0,1]$. \\
+
+Ahora, en $\vec{r(t)}=\left(\cos{t},\sin{t},\ln{\cos{t}}\right)$, para $t \in \left[0,\frac{\pi}{4}\right]$; tenemos que,
+\begin{align*}
+  \frac{d}{dt} \ln{\cos{t}} &= \frac{1}{\cos{t}} \cdot \frac{d}{dt} \cos{t}\\
+  &=  \frac{1}{\cos{t}} \cdot -\sin{t}\\
+  &= -\tan{t} \\
+  \therefore \vec{r'(t)} = \left( -\sin{t},\cos{t}, -\tan{t}\right) \\
+\end{align*}
+Entonces, 
+\begin{align*}
+  ||\vec{r'(t)}|| &= \sqrt{(-\sin{t})^2+(\cos{t})^2+(-\tan{t})^2} \\
+  &= \sqrt{(\sin^2{t}+\cos^2{t})+\tan^2{t}} \\
+  &= \sqrt{1+\tan^2{t}} \\
+  &= \sqrt{\sec^2{t}} \\
+  &= \sec{t}
+\end{align*}
+Así,
+\begin{align*}
+  \int_0^{\frac{\pi}{4}} \sec{t}~dt &= \ln{|\sec{t}+\tan{t}|} \Bigg|_0^{\frac{\pi}{4}} \\
+  &= \left[ \ln{\Bigg|\sec{\frac{\pi}{4}}+\tan{\frac{\pi}{4}}\Bigg|} \right]
+  -\left[ \ln{\Bigg|\sec{0}+\tan{0}\Bigg|} \right] \\
+  &= \left[ \ln{|\sqrt{2}+1|} \right]
+  -\left[ \ln{|1+0|} \right] \\
+  &= \ln{|\sqrt{2}+1|}
+  - \ln{1} \\
+  &= \ln{|\sqrt{2}+1|}
+  - 0 \\
+  &= \ln{|\sqrt{2}+1|}\\
+\end{align*}
+$\therefore L=\ln{|\sqrt{2}+1|}$ es la \textbf{longitud de curva} en  $\vec{r(t)}=\left(\cos{t},\sin{t},\ln{\cos{t}}\right)$, para $t \in \left[0,\frac{\pi}{4}\right]$.\\
 
 % 10 -------------------------------------------------------------------------------------------------------------
 \section{}

@@ -32,13 +32,80 @@
 
 % 1 -------------------------------------------------------------------------------------------------------------
 \section{}
-Verifique que la función $z = \ln{[e^x + e^y]}$ es una solución de las ecuaciónes diferenciales:
+Verifique que la función $z = \ln{[e^x + e^y]}$ es una solución de las ecuaciones diferenciales:
 
 \begin{itemize}[format=\textbf]
 
 \item $\frac{\partial z}{\partial x} + \frac{\partial z}{\partial y} = 1$
 
-\item $\frac{\partial^2 z}{\partial x^2} \frac{\partial^2 z}{\partial y^2} - \left(\frac{\partial^2 z}{\partial x \partial y} \right)^2
+  Primero calculamos las derivadas parciales de primer orden necesarias:
+
+  Para $\frac{\partial z}{\partial x}$
+  \begin{align*}
+    \frac{\partial z}{\partial x}
+    &= \frac{1}{e^x+e^y} \cdot \frac{\partial}{\partial x} (e^x+e^y) \\
+    &= \frac{1}{e^x+e^y} \cdot e^x \\
+    &= \frac{e^x}{e^x+e^y}
+  \end{align*}
+
+  Para $\frac{\partial z}{\partial y}$
+  \begin{align*}
+    \frac{\partial z}{\partial x}
+    &= \frac{1}{e^x+e^y} \cdot \frac{\partial}{\partial y} (e^x+e^y) \\
+    &= \frac{1}{e^x+e^y} \cdot e^y \\
+    &= \frac{e^y}{e^x+e^y}
+  \end{align*}
+
+  Así, $\frac{\partial z}{\partial x} + \frac{\partial z}{\partial y}$
+  \begin{align*}
+    \frac{\partial z}{\partial x} + \frac{\partial z}{\partial y} 
+    &= \frac{e^x}{e^x+e^y} + \frac{e^y}{e^x+e^y} \\
+    &= \frac{e^x + e^y}{e^x+e^y} \\
+    &= 1
+  \end{align*}
+
+  $\therefore z = \ln{[e^x + e^y]}$ satisface la ecuación $\frac{\partial z}{\partial x} + \frac{\partial z}{\partial y} = 1$.
+
+\item $\frac{\partial^2 z}{\partial x^2} \frac{\partial^2 z}{\partial y^2} - \left( \frac{\partial^2 z}{\partial x \partial y} \right)^2=0$
+
+  Primero, a partir de $\frac{\partial z}{\partial x}=\frac{e^x}{e^x+e^y}$ y $\frac{\partial z}{\partial y}=\frac{e^y}{e^x+e^y}$, calculamos las derivadas parciales de segundo orden necesarias:
+
+  Para $\frac{\partial^2 z}{\partial^2 x}$
+  \begin{align*}
+    \frac{\partial^2 z}{\partial^2 x}
+    &= \frac{\partial}{\partial x} \left( \frac{e^x}{e^x+e^y} \right)\\
+    &= \frac{[(e^x+e^y)\cdot e^x]-[e^x \cdot e^x]}{(e^x+e^y)^2} \\
+    &= \frac{e^{2x}+e^{x+y}-e^{2x}}{(e^x+e^y)^2}\\
+    &= \frac{e^{x+y}}{(e^x+e^y)^2}\\
+  \end{align*}
+
+  Para $\frac{\partial^2 z}{\partial^2 y}$
+  \begin{align*}
+    \frac{\partial^2 z}{\partial^2 y}
+    &= \frac{\partial}{\partial y} \left( \frac{e^y}{e^x+e^y} \right)\\
+    &= \frac{[(e^x+e^y)\cdot e^y]-[e^y \cdot e^y]}{(e^x+e^y)^2} \\
+    &= \frac{e^{x+y}+e^{2y}-e^{2y}}{(e^x+e^y)^2}\\
+    &= \frac{e^{x+y}}{(e^x+e^y)^2}\\
+  \end{align*}
+
+  Para $\frac{\partial^2 z}{\partial x \partial y}$
+  \begin{align*}
+    \frac{\partial^2 z}{\partial x \partial y}
+    &= \frac{\partial}{\partial x} \left( \frac{\partial z}{\partial y} \right) \\
+    &= \frac{\partial}{\partial x} \left( \frac{e^y}{e^x+e^y} \right) \\
+    &= \frac{[(e^x+e^y)\cdot 0] - (e^y \cdot e^x)}{(e^x+e^y)^2} \\
+    &= - \frac{e^{x+y}}{(e^x+e^y)^2}\\
+  \end{align*}
+
+  Así, $\frac{\partial^2 z}{\partial x^2} \frac{\partial^2 z}{\partial y^2} - \left( \frac{\partial^2 z}{\partial x \partial y} \right)^2$
+  \begin{align*}
+    \frac{\partial^2 z}{\partial x^2} \frac{\partial^2 z}{\partial y^2} - \left( \frac{\partial^2 z}{\partial x \partial y} \right)^2
+    &= \left[ \frac{e^{x+y}}{(e^x+e^y)^2}\cdot \frac{e^{x+y}}{(e^x+e^y)^2} \right] - \left[- \frac{e^{x+y}}{(e^x+e^y)^2}\right]^2 \\
+    &= \frac{(e^{x+y})^2}{(e^{x+y})^4} - \frac{(e^{x+y})^2}{(e^{x+y})^4} \\
+    &= 0
+  \end{align*}
+
+  $\therefore z = \ln{[e^x + e^y]}$ satisface la ecuación $\frac{\partial^2 z}{\partial x^2} \frac{\partial^2 z}{\partial y^2} - \left( \frac{\partial^2 z}{\partial x \partial y} \right)^2=0$.
 
 \end{itemize}
 

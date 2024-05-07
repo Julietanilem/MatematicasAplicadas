@@ -150,6 +150,10 @@ Así, $\frac{\partial K}{\partial m} \frac{\partial ^2 K}{\partial v^2}$
 
 $\therefore K=\frac{1}{2} mv^2$ satisface la ecuación $K=\frac{\partial K}{\partial m} \frac{\partial ^2 K}{\partial v^2}$.
 
+\begin{flushright}
+  $\blacksquare$
+\end{flushright}
+
 % 3 -------------------------------------------------------------------------------------------------------------
 \section{}
 
@@ -190,13 +194,90 @@ $$z=x+25y$$
 \section{}
 
 Compruebe que la \textbf{aproximación lineal} en (0, 0).
-$$\frac{2x+3}{4y +1} \approx 2x - 12y + 3$$
+$$\frac{2x+3}{4y +1} \approx 2x - 12y + 3$$ \\
+
+Sea $f(x,y)=\frac{2x+3}{4y +1}$. Tenemos que las derivadas parciales son
+
+\begin{align*}
+  f_x(x,y)
+  &= \frac{\left[(4y +1)\cdot \frac{\partial}{\partial x} (2x+3)\right] - \left[(2x+3)\frac{\partial}{\partial x}(4y+1)\right]}{(4y +1)^2} \\
+  &= \frac{2(4y+1)-0}{(4y +1)^2} \\
+  &= \frac{2(4y+1)}{(4y +1)(4y+1)} \\
+  &= \frac{2}{4y +1} \\
+  f_x(0,0) &= 2 \\
+  f_y(x,y)
+  &= \frac{\left[(4y +1)\cdot \frac{\partial}{\partial y} (2x+3)\right] - \left[(2x+3)\frac{\partial}{\partial y}(4y+1)\right]}{(4y +1)^2} \\
+  &= \frac{0-4(2x+3)}{(4y +1)^2} \\
+  &= \frac{-8x-12}{(4y +1)^2} \\
+  f_y(0,0)&=-12
+\end{align*}
+
+Tanto $f_x$ como $f_y$ son continuas y existen cerca de $(0,0)$, de modo que $f$ es diferenciable en $(0,0)$. La linealización es
+
+\begin{align*}
+  L(x,y)
+  &= f(0,0) + 2(x-0) + (-12)(y-0) \\
+  &= 2x -12y + 3
+\end{align*}
 
 % 5 -------------------------------------------------------------------------------------------------------------
 \section{}
 
 Utilice la \textbf{regla de la cadena} para calcular $\frac{\partial z}{\partial s}$ y$\frac{\partial z}{\partial t}$. Dado que
-$$z = \sin{\theta}\cos{\phi}, ~ \theta = t^2, ~ \phi = s^2t$$
+$$z = \sin{\theta}\cos{\phi}, ~ \theta = st^2, ~ \phi = s^2t$$ 
+
+Primero calculamos las derivadas parciales de primer orden necesarias:
+
+\begin{align*}
+  \frac{\partial z}{\partial \theta}
+  &= \frac{\partial}{\partial \theta} (\sin{\theta}\cos{\phi}) \\
+  &= \left(\sin{\theta}\cdot\frac{\partial}{\partial \theta}\cos{\phi}\right) + \left(\cos{\phi}\cdot\frac{\partial}{\partial \theta}\sin{\theta}\right)\\
+  &= 0 + \cos{\phi}\cos{\theta} \\
+  &= \cos{\theta}\cos{\phi} \\
+  \frac{\partial z}{\partial \phi}
+  &= \frac{\partial}{\partial \phi} \sin{\theta}\cos{\phi} \\
+  &= \left(\sin{\theta}\cdot\frac{\partial}{\partial \phi}\cos{\phi}\right) + \left(\cos{\phi}\cdot\frac{\partial}{\partial \phi}\sin{\theta}\right)\\
+  &= (\sin{\theta} \cdot -\sin{\phi}) + 0 \\
+  &= -\sin{\theta}\sin{\phi}
+\end{align*}
+
+\begin{align*}
+  \frac{\partial \theta}{\partial s}
+  &= \frac{\partial}{\partial s} st^2 \\
+  &= \left(s\cdot\frac{\partial}{\partial s} t^2\right) + \left(t^2\cdot\frac{\partial}{\partial s}s\right) \\
+  &= 0 + t^2 \\
+  &= t^2 \\
+  \frac{\partial \phi}{\partial s}
+  &= \frac{\partial}{\partial s} s^2t \\
+  &= \left(s^2\cdot\frac{\partial}{\partial s}t\right)+\left(t\cdot\frac{\partial}{\partial s}s^2\right) \\
+  &= 0 + 2st \\
+  &= 2st
+\end{align*}
+
+\begin{align*}
+  \frac{\partial \theta}{\partial t}
+  &= \frac{\partial}{\partial t} st^2 \\
+  &= \left(s\cdot\frac{\partial}{\partial t}t^2\right) +\left(t^2\cdot\frac{\partial}{\partial t}s\right) \\
+  &= 2ts + 0 \\
+  &= 2st\\
+  \frac{\partial \phi}{\partial t}
+  &= \frac{\partial}{\partial t} s^2t \\
+  &= \left(s^2\cdot\frac{\partial}{\partial t}t\right) + \left(t\cdot\frac{\partial}{\partial t}s^2\right) \\
+  &= s^2 + 0 \\
+  &= s^2
+\end{align*}
+
+Al aplicar el caso 2 de la regla de la cadena, obtenemos
+\begin{align*}
+  \frac{\partial z}{\partial s}
+  &= \frac{\partial z}{\partial \theta}\frac{\partial \theta}{\partial s} + \frac{\partial z}{\partial \phi}\frac{\partial \phi}{\partial s} \\
+  &=  (\cos{\theta}\cos{\phi} \cdot t^2) + (-\sin{\theta}\sin{\phi} \cdot 2st) \\
+  &= t^2\cos{\theta}\cos{\phi} - 2st\sin{\theta}\sin{\phi} \\
+  \frac{\partial z}{\partial t}
+  &= \frac{\partial z}{\partial \theta}\frac{\partial \theta}{\partial t} + \frac{\partial z}{\partial \phi}\frac{\partial \phi}{\partial t} \\
+  &=  (\cos{\theta}\cos{\phi} \cdot 2st) + (-\sin{\theta}\sin{\phi} \cdot s^2) \\
+  &= 2st\cos{\theta}\cos{\phi} - s^2\sin{\theta}\sin{\phi}
+\end{align*}
 
 % 6 -------------------------------------------------------------------------------------------------------------
 \section{}

@@ -204,7 +204,7 @@ Sea $f(x,y)=\frac{2x+3}{4y +1}$. Tenemos que las derivadas parciales son
   &= \frac{2(4y+1)-0}{(4y +1)^2} \\
   &= \frac{2(4y+1)}{(4y +1)(4y+1)} \\
   &= \frac{2}{4y +1} \\
-  f_x(0,0) &= 2 \\
+  f_x(0,0) &= 2 \\ \\
   f_y(x,y)
   &= \frac{\left[(4y +1)\cdot \frac{\partial}{\partial y} (2x+3)\right] - \left[(2x+3)\frac{\partial}{\partial y}(4y+1)\right]}{(4y +1)^2} \\
   &= \frac{0-4(2x+3)}{(4y +1)^2} \\
@@ -235,7 +235,7 @@ Primero calculamos las derivadas parciales de primer orden necesarias:
   &= 0 + \cos{\phi}\cos{\theta} \\
   &= \cos{\theta}\cos{\phi} \\
   \frac{\partial z}{\partial \phi}
-  &= \frac{\partial}{\partial \phi} \sin{\theta}\cos{\phi} \\
+  &= \frac{\partial}{\partial \phi}( \sin{\theta}\cos{\phi}) \\
   &= \left(\sin{\theta}\cdot\frac{\partial}{\partial \phi}\cos{\phi}\right) + \left(\cos{\phi}\cdot\frac{\partial}{\partial \phi}\sin{\theta}\right)\\
   &= (\sin{\theta} \cdot -\sin{\phi}) + 0 \\
   &= -\sin{\theta}\sin{\phi}
@@ -243,12 +243,12 @@ Primero calculamos las derivadas parciales de primer orden necesarias:
 
 \begin{align*}
   \frac{\partial \theta}{\partial s}
-  &= \frac{\partial}{\partial s} st^2 \\
+  &= \frac{\partial}{\partial s}( st^2) \\
   &= \left(s\cdot\frac{\partial}{\partial s} t^2\right) + \left(t^2\cdot\frac{\partial}{\partial s}s\right) \\
   &= 0 + t^2 \\
   &= t^2 \\
   \frac{\partial \phi}{\partial s}
-  &= \frac{\partial}{\partial s} s^2t \\
+  &= \frac{\partial}{\partial s} (s^2t) \\
   &= \left(s^2\cdot\frac{\partial}{\partial s}t\right)+\left(t\cdot\frac{\partial}{\partial s}s^2\right) \\
   &= 0 + 2st \\
   &= 2st
@@ -256,12 +256,12 @@ Primero calculamos las derivadas parciales de primer orden necesarias:
 
 \begin{align*}
   \frac{\partial \theta}{\partial t}
-  &= \frac{\partial}{\partial t} st^2 \\
+  &= \frac{\partial}{\partial t}( st^2) \\
   &= \left(s\cdot\frac{\partial}{\partial t}t^2\right) +\left(t^2\cdot\frac{\partial}{\partial t}s\right) \\
   &= 2ts + 0 \\
   &= 2st\\
   \frac{\partial \phi}{\partial t}
-  &= \frac{\partial}{\partial t} s^2t \\
+  &= \frac{\partial}{\partial t}( s^2t )\\
   &= \left(s^2\cdot\frac{\partial}{\partial t}t\right) + \left(t\cdot\frac{\partial}{\partial t}s^2\right) \\
   &= s^2 + 0 \\
   &= s^2
@@ -273,16 +273,83 @@ Al aplicar el caso 2 de la regla de la cadena, obtenemos
   &= \frac{\partial z}{\partial \theta}\frac{\partial \theta}{\partial s} + \frac{\partial z}{\partial \phi}\frac{\partial \phi}{\partial s} \\
   &=  (\cos{\theta}\cos{\phi} \cdot t^2) + (-\sin{\theta}\sin{\phi} \cdot 2st) \\
   &= t^2\cos{\theta}\cos{\phi} - 2st\sin{\theta}\sin{\phi} \\
+  \therefore \frac{\partial z}{\partial s}
+  &= t^2\cos{\theta}\cos{\phi} - 2st\sin{\theta}\sin{\phi} \\ \\
   \frac{\partial z}{\partial t}
   &= \frac{\partial z}{\partial \theta}\frac{\partial \theta}{\partial t} + \frac{\partial z}{\partial \phi}\frac{\partial \phi}{\partial t} \\
   &=  (\cos{\theta}\cos{\phi} \cdot 2st) + (-\sin{\theta}\sin{\phi} \cdot s^2) \\
-  &= 2st\cos{\theta}\cos{\phi} - s^2\sin{\theta}\sin{\phi}
+  &= 2st\cos{\theta}\cos{\phi} - s^2\sin{\theta}\sin{\phi} \\
+  \therefore \frac{\partial z}{\partial t}
+  &= 2st\cos{\theta}\cos{\phi} - s^2\sin{\theta}\sin{\phi} 
 \end{align*}
 
 % 6 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-Sea $z = x^4 + x^2y$, con $x = s + 2t − u$, $y = stu^2$, utilice la \textbf{regla de la cadena} para calcular: $\frac{\partial z}{\partial s}$ $\frac{\partial z}{\partial t}$ $\frac{\partial z}{\partial u}$, donde $s=4$ $t=2$, $u=1$.
+Sea $z = x^4 + x^2y$, con $x = s + 2t - u$, $y = stu^2$, utilice la \textbf{regla de la cadena} para calcular: $\frac{\partial z}{\partial s}$ $\frac{\partial z}{\partial t}$ $\frac{\partial z}{\partial u}$, donde $s=4$ $t=2$, $u=1$.
+
+Primero calculamos las derivadas parciales de primer orden necesarias:
+
+\begin{align*}
+  \frac{\partial z}{\partial x}
+  &= \frac{\partial}{\partial x}(x^4 + x^2y) \\
+  &= 4x^3+2xy \\ \\
+  \frac{\partial z}{\partial y}
+  &= \frac{\partial}{\partial y}(x^4 + x^2y) \\
+  &= x^2 
+\end{align*}
+
+Así, al aplicar el caso 2 de la regla de la cadena, obtenemos
+\begin{align*}
+  \frac{\partial z}{\partial s}
+  &= \frac{\partial z}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial s} \\
+  &= \left[(4x^3+2xy)\cdot \frac{\partial}{\partial s}(s + 2t - u)\right] +
+  \left[x^2 \cdot \frac{\partial}{\partial s}(stu^2)\right] \\
+  &= 4x^3+2xy + x^2tu^2
+\end{align*}
+
+\begin{align*}
+  \frac{\partial z}{\partial t}
+  &= \frac{\partial z}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial t} \\
+  &= \left[(4x^3+2xy)\cdot \frac{\partial}{\partial t}(s + 2t - u)\right] +
+  \left[x^2 \cdot \frac{\partial}{\partial t}(stu^2)\right] \\
+  &= 2(4x^3+2xy) + x^2su^2 \\
+  &= 8x^3 + 4xy + x^2su^2
+\end{align*}
+
+\begin{align*}
+  \frac{\partial z}{\partial u}
+  &= \frac{\partial z}{\partial x}\frac{\partial x}{\partial u} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial u} \\
+  &= \left[(4x^3+2xy)\cdot \frac{\partial}{\partial u}(s + 2t - u)\right] +
+  \left[x^2 \cdot \frac{\partial}{\partial u}(stu^2)\right] \\
+  &= -(4x^3+2xy) + 2x^2stu \\
+  &= -4x^3 - 2xy + 2x^2stu
+\end{align*}
+
+Cuando $s=4$, $t=2$, y $u=1$, tenemos $x=4+2(2)-1=7$ y $y=(4)(2)(1^2)=8$, de modo que
+\begin{align*}
+  \frac{\partial z}{\partial s}
+  &= 4x^3+2xy + x^2tu^2 \\
+  &= 4(7^3)+2(7)(8)+(7^2)(2)(1^2) \\
+  &= 1372 + 112 + 98 \\
+  &= 1582 
+\end{align*}
+\begin{align*}
+  \frac{\partial z}{\partial t}
+  &= 8x^3 + 4xy + x^2su^2 \\
+  &= 8(7^3) + 4(7)(8) + (7^2)(4)(1^2) \\
+  &= 2744 + 224 + 196 \\
+  &=3164
+\end{align*}
+\begin{align*}
+  \frac{\partial z}{\partial u}
+  &= -4x^3 - 2xy + 2x^2stu \\
+  &= -4(7^3) - 2(7)(8) + 2(7^2)(4)(2)(1) \\
+  &= -1372 - 112 + 784 \\
+  &= -700
+\end{align*}
+
+$\therefore \frac{\partial z}{\partial s}=1582$, $\frac{\partial z}{\partial t} = 3164$ y $ \frac{\partial z}{\partial u} = -700$
 
 % 7 -------------------------------------------------------------------------------------------------------------
 \section{}

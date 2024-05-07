@@ -112,7 +112,43 @@ Verifique que la función $z = \ln{[e^x + e^y]}$ es una solución de las ecuacio
 % 2 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-La \textit{energía cinética} de un cuerpo de masa $m$ y velocidad $v$ es $K = \frac{1}{2}mv^2$. Demuestre que $K=\frac{\partial K}{\partial m} \frac{\partial ^2 K}{\partial v^2}$
+La \textit{energía cinética} de un cuerpo de masa $m$ y velocidad $v$ es $K = \frac{1}{2}mv^2$. Demuestre que $K=\frac{\partial K}{\partial m} \frac{\partial ^2 K}{\partial v^2}$. \\
+
+Primero calculamos las derivadas parciales de primer orden necesarias:
+
+Para $\frac{\partial K}{\partial m}$
+\begin{align*}
+  \frac{\partial K}{\partial m}
+  &= \frac{1}{2} \left(\frac{\partial}{\partial m}mv^2 \right) \\
+  &= \frac{1}{2} v^2
+\end{align*}
+
+Para $\frac{\partial K}{\partial v}$
+\begin{align*}
+  \frac{\partial K}{\partial v}
+  &= \frac{1}{2} \left(\frac{\partial}{\partial v}mv^2 \right) \\
+  &= \frac{1}{2} \cdot 2vm \\
+  &= vm
+\end{align*}
+
+Ahora, calculamos la derivada parcial de segundo orden necesaria:
+
+Para $\frac{\partial K}{\partial v^2}$
+\begin{align*}
+  \frac{\partial K}{\partial v^2}
+  &= \frac{\partial K}{\partial v} \left( vm \right) \\
+  &= m
+\end{align*}
+
+Así, $\frac{\partial K}{\partial m} \frac{\partial ^2 K}{\partial v^2}$
+\begin{align*}
+  \frac{\partial K}{\partial m} \frac{\partial ^2 K}{\partial v^2}
+  &= \frac{1}{2} v^2 \cdot m \\
+  &= \frac{1}{2} mv^2 \\
+  &= K
+\end{align*}
+
+$\therefore K=\frac{1}{2} mv^2$ satisface la ecuación $K=\frac{\partial K}{\partial m} \frac{\partial ^2 K}{\partial v^2}$.
 
 % 3 -------------------------------------------------------------------------------------------------------------
 \section{}

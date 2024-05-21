@@ -20,10 +20,10 @@
 
 \title{Matemáticas para las Ciencias Aplicadas II}
 \title{
-        \textbf{Tarea 04} \\
-        \vspace{1ex}
-        \large Matemáticas para las Ciencias Aplicadas II \\
-        Facultad de Ciencias, UNAM}
+  \textbf{Tarea 04} \\
+  \vspace{1ex}
+  \large Matemáticas para las Ciencias Aplicadas II \\
+  Facultad de Ciencias, UNAM}
 \date{\today}
 \author{Flores Morán Julieta Melina \\ Zarco Romero José Antonio}
 
@@ -360,15 +360,139 @@ Sea $f(x, y, z) = x^2yz - xyz^3$, $P(2, -1, 1)$, $\hat{u} = \left (0,\frac{4}{5}
   
 \item Determine el \textbf{gradiente} de la función escalar $f(x, y, z)$.
 
+  El gradiente es la función vectorial definida por:
+  \[
+  \nabla f(x,y) = <f_x(x,y), f_y(x,y), f_z(x,y)> = \frac{\partial f}{\partial x}\hat{i} + \frac{\partial f}{\partial y}\hat{j} + \frac{\partial f}{\partial z}\hat{k}
+  \]
+  
+  Por lo que primero calcularemos las derivadas parciales:
+
+  \begin{itemize}
+    
+  \item $\frac{\partial f}{\partial x}$ \\
+    
+    \begin{align*}
+      \frac{\partial f}{\partial x} &= \frac{\partial}{\partial x}
+      \left(  x^2yz - xyz^3
+      \right) \\
+      &= \frac{\partial}{\partial x}( x^2yz) - \frac{\partial}{\partial x} ( xyz^3) \\
+      &= 2xyz - yz^3
+    \end{align*}
+    
+  \item $\frac{\partial f}{\partial y}$ \\
+    
+    \begin{align*}
+      \frac{\partial f}{\partial y} &= \frac{\partial }{\partial y}
+      \left(  x^2yz - xyz^3
+      \right)\\
+      &= \frac{\partial }{\partial y}(x^2yz)-\frac{\partial }{\partial y}(xyz^3)\\
+      &= x^2z - xz^3
+    \end{align*}
+    
+  \item $\frac{\partial f}{\partial z}$ \\
+    
+    \begin{align*}
+      \frac{\partial f}{\partial z} &= \frac{\partial }{\partial z}
+      \left(  x^2yz - xyz^3
+      \right)\\
+      &=\frac{\partial }{\partial z}(x^2yz) - \frac{\partial }{\partial z}(xyz^3) \\
+      &= x^2y - 3xyz^2
+    \end{align*}
+    
+  \end{itemize}
+  
+  De esta manera, concluimos que:
+  \begin{align*}
+    \nabla f(x,y,z) &= <2xyz - yz^3, x^2z - xz^3, x^2y - 3xyz^2> \\
+    &= (2xyz - yz^3)\hat{i} + (x^2z - xz^3)\hat{j} + (x^2y - 3xyz^2)\hat{k}
+  \end{align*}
+
 \item Evalúe el \textbf{gradiente} en el punto $P$.
 
+  Evaluando $\nabla f(x,y,z)$ en el punto $P(2, -1, 1)$ obtenemos que:
+  
+  \begin{align*}
+    \nabla f(2,-1,1) 
+    &= <2(2)(-1)(1) - (-1)(1)^3, (2)^2(1) - (2)(1)^3, (2)^2(-1) - 3(2)(-1)(1)^2> \\
+    &= <-4-(-1), 4-2, -4-(-6)> \\
+    &= <-3, 2, 2> \\
+    &= -3\hat{i} + 2\hat{j} + 2\hat{k}
+  \end{align*}
+
 \item Encuentre la \textit{razón de cambio} de $f(x, y, z)$ en el punto $P$ en la dirección del vector $\hat{u}$.
+
+  Lo que estamos buscando es la derivada direccional en la dirección $\vec{u}=\left(0,\frac{4}{5},\frac{-3}{5} \right)$ evaluada en $P(2, -1, 1)$.\\
+  
+  Sabemos que se puede representar a la derivada direccional con el vector gradiente de la siguiente manera:
+  
+  \[
+  D_uf(x,y,z) = \nabla f(x,y,z) \cdot \vec{u}
+  \]
+
+  Así que buscamos $ D_uf(2,-1,1)$:
+  \[
+  D_uf(2,-1,1) = \nabla f(2,-1,1) \cdot \vec{u}
+  \]
+
+  Sabemos que $\nabla f(2,-1,1) = (-3,2,2)$ como calculamos en el inciso anterior.
+
+  \begin{align*}
+    D_uf(2,-1,1)
+    &= (-3,2,2) \cdot \left(
+    0,\frac{4}{5},\frac{-3}{5}
+    \right) \\
+    &= (-3)(0) + (2)\left(\frac{4}{5}\right) + (2)\left(\frac{-3}{5}\right) \\
+    &= \frac{8}{5} - \frac{6}{5} \\
+    &= \frac{2}{5}
+  \end{align*}
+
+  De esta manera, la razón de cambio de $f(x, y, z)$ en $P$ en la dirección del vector $\vec{u}$ es $\frac{2}{5}$.
+  
 \end{itemize}
 
 % 8 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-Determine la máxima \textbf{razón de cambio} de $f(x, y) = 4y\sqrt{x}$ en el punto $P(4, 1)$ y la dirección en la cuál se presenta.
+Determine la máxima \textbf{razón de cambio} de $f(x, y) = 4y\sqrt{x}$ en el punto $P(4, 1)$ y la dirección en la cuál se presenta. \\
+
+Primero calculamos el vector gradiente:
+
+Por lo que primero calcularemos las derivadas parciales:
+
+\begin{itemize}
+  
+\item $\frac{\partial f}{\partial x}$
+
+  \begin{align*}
+    \frac{\partial f}{\partial x}
+    &= \frac{\partial}{\partial x}( 4y\sqrt{x})\\
+    &= \frac{\partial}{\partial x}( 4x^{\frac{1}{2}}y)\\
+    &= 2x^{-\frac{1}{2}}y \\
+    &= \frac{2y}{\sqrt{x}}
+  \end{align*}
+  
+\item $\frac{\partial f}{\partial y}$
+
+  \begin{align*}
+    \frac{\partial f}{\partial y}
+    &= \frac{\partial}{\partial y}(4y\sqrt{x})\\
+    &= \frac{\partial}{\partial y}( 4x^{\frac{1}{2}}y)\\
+    &= 4x^{\frac{1}{2}} \\
+    &= 4\sqrt{x}
+  \end{align*}
+  
+\end{itemize}
+
+Así, $$\nabla f(x,y) = \langle f_x, f_y \rangle = \left\langle  \frac{2y}{\sqrt{x}}, 4\sqrt{x} \right\rangle$$
+
+De acuerdo con el teorema ``El valor máximo de la derivada direccional $D_u f (\vec{x})$ es $|\nabla f (\vec{x})|$ y se presenta cuando $\vec{u}$ tiene la misma dirección que el vector gradiente $\nabla f (\vec{x})$''. \\
+
+$f$ se incrementa más rápido en la dirección del vector gradiente $\nabla f(4,1) = \left\langle  \frac{2(1)}{\sqrt{(4)}}, 4\sqrt{(4)} \right\rangle = \left\langle  1,8 \right\rangle$. La razón de cambio máxima es
+
+\begin{align*}
+  |\nabla f (4,1)| = \left\langle  1,8 \right\rangle = \sqrt{(1)^2+(8)^2} = \sqrt{65}
+\end{align*}
+
 
 % 9 -------------------------------------------------------------------------------------------------------------
 \section{}

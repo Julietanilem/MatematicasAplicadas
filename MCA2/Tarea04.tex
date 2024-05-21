@@ -497,14 +497,107 @@ $f$ se incrementa más rápido en la dirección del vector gradiente $\nabla f(4
 % 9 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-Sea $f(x, y) = x^2 + xy + y^2 + y$. Calcule los valores \textbf{máximo} y \textbf{mínimo} \textit{locales}, y \textit{punto(s)} silla de la función.
+Sea $f(x, y) = x^2 + xy + y^2 + y$. Calcule los valores \textbf{máximo} y \textbf{mínimo} \textit{locales}, y \textit{punto(s)} silla de la función. \\
+
+Primero localizamos los puntos críticos:
+
+\begin{align*}
+  f_x
+  &= \frac{\partial}{\partial x} (x^2 + xy + y^2 + y) \\
+  &= 2x + y 
+\end{align*}
+
+\begin{align*}
+  f_y
+  &= \frac{\partial}{\partial y} (x^2 + xy + y^2 + y) \\
+  &= x + 2y + 1
+\end{align*}
+
+Al igualar a estas derivadas parciales con 0, se obtienen las ecuaciones
+
+\begin{align*}
+  2x + y = 0 && \text{ y } && x + 2y + 1=0
+\end{align*}
+
+Para resolver estas ecuaciones, sustituimos $y=-2x$ de la primera ecuación en la segunda,
+y obtenemos
+
+\begin{align*}
+  0 = x + 2(-2x) + 1 = -3x+1
+\end{align*}
+
+De modo que hay únicamente una raíz real: $x=\frac{1}{3}$. El punto crítico es $\left(\frac{1}{3}, -\frac{2}{3}\right)$. \\
+
+Luego calculamos la segunda derivada parcial y $D(x, y)$:
+
+$$  f_{xx} = 2 ~~~~~~~ f_{xy} = 1 ~~~~~~~ f_{yy} = 2$$
+ $$ D(x,y) = f_{xx}f_{yy} - (f_{xy})^2= 4 - 1 = 3$$
+
+Puesto que $D\left( \frac{1}{3}, -\frac{2}{3} \right) = 3 > 0$ y $f_{xx}\left( \frac{1}{3}, -\frac{2}{3} \right) = 2 > 0$ , se ve que según el caso a) de la \textbf{prueba de la segunda derivada} que
+
+\begin{align*}
+  f\left( \frac{1}{3}, -\frac{2}{3} \right)
+  &= \left(\frac{1}{3}\right)^2 + \left(\frac{1}{3}\right)\left(-\frac{2}{3}\right) + \left(-\frac{2}{3}\right)^2 + \left(-\frac{2}{3}\right) \\
+  &= \frac{1}{9} - \frac{2}{9} + \frac{4}{9} - \frac{2}{3}\\
+  &= \frac{3}{9} - \frac{2}{3} \\
+  &= -\frac{1}{3}
+\end{align*}
+
+es un mínimo local.\\
+
+$\therefore $ $f(x, y) = x^2 + xy + y^2 + y$ tiene un \textbf{mínimo local} en $f\left( \frac{1}{3}, -\frac{2}{3} \right)$, y no presenta \textit{máximo local} ni \textit{punto(s)} silla.
 
 % 10 -------------------------------------------------------------------------------------------------------------
 \section{}
 
-Sea $f(x, y) = x^2 + y^2 − 2x$, donde $D$ es la región triángular cerrada con vértices $A(2, O)$, $B(O, 2)$, $C(0, -2)$.
+Sea $f(x, y) = x^2 + y^2 - 2x$, donde $D$ es la región triángular cerrada con vértices $A(2, 0)$, $B(0, 2)$, $C(0, -2)$.
 
-Determine los \textbf{valores máximos absolutos}, \textbf{valores mínimos absolutos} de $f(x, y)$ sobre el conjunto $D$.
+Determine los \textbf{valores máximos absolutos}, \textbf{valores mínimos absolutos} de $f(x, y)$ sobre el conjunto $D$. \\
+
+Puesto que $f$ es una polinomial, es continua sobre la región cerrada y acotada $D$, de modo que el \textbf{teorema del valor extremo para funciones de dos variables} establece que hay tanto un máximo absoluto como un mínimo absoluto. Primero calculamos los puntos críticos, estos puntos ocurren cuando
+
+$$f_x = 2x - 2 = 0 \qquad f_y= 2y=0$$
+
+de modo que el único punto crítico es $(1,0)$, y el valor de $f$ ahí es $f(1,0) = -1$.
+
+Luego, observamos los valores de $f$ en la frontera de $D$, que consisten en los tres segmentos rectilíneos $L_1=\overline{AB}$, $L_2=\overline{BC}$ y $L_3=\overline{AC}$. \\
+
+\begin{itemize}
+
+\item Sobre $L_1=\overline{AB}$, tenemos que $y=2-x$ y
+\begin{align*}
+  f(x,2-x)
+  &=x^2+(2-x)^2-2x && 0 \leq x \leq 2 \\
+  &=x^2 + 4 -4x + x^2 -2x \\
+  &= 2x^2-6x+4 \\
+  &= 2(x^2-3x+2) \\
+  &= 2\left(x-\frac{3}{2}\right)^2 - \frac{1}{2}
+\end{align*}
+
+Vemos que el valor mínimo de esta función es $f\left(\frac{3}{2}, \frac{1}{2} \right) =  \left(\frac{3}{2}\right)^2 + \left(\frac{1}{2}\right)^2 - 2\left(\frac{3}{2}\right) = \frac{9}{4}+\frac{1}{4}-\frac{6}{2}=-\frac{1}{2}$ y que el valor máximo es $f(0,2)=4$. \\
+
+\item Sobre $L_2=\overline{BC}$, tenemos que $x=0$ y
+
+$$f(0,y)=y^2 \qquad -2 \leq y \leq 2$$
+
+Ésta es una función creciente de $y$, de modo que su valor mínimo es $f(0,0)=0$ y su
+valor máximo es $f(0,\pm 2)=4$. \\
+
+\item Sobre $L_3=\overline{AC}$, tenemos que $y=x-2$ y
+\begin{align*}
+  f(x,x-2)
+  &= x^2+(x-2)^2-2x && 0 \leq x \leq 2 \\
+  &= x^2+x^2 -4x + 4 -2x \\
+  &= 2x^2-6x+4\\
+  &= 2(x^2-3x+2) \\
+  &= 2\left(x-\frac{3}{2}\right)^2 - \frac{1}{2}
+\end{align*}
+
+Vemos que el valor mínimo de esta función es $f\left(\frac{3}{2}, -\frac{1}{2} \right) =  \left(\frac{3}{2}\right)^2 + \left(-\frac{1}{2}\right)^2 - 2\left(\frac{3}{2}\right) = \frac{9}{4}+\frac{1}{4}-\frac{6}{2}=-\frac{1}{2}$ y que el valor máximo es $f(0,-2)=4$. \\
+
+\end{itemize}
+
+$\therefore $ Comparando estos valores con el valor $f(1,0) = -1$ en el punto crítico, concluimos que los \textbf{valores máximos absolutos} de $f$ en $D$ son $f(0,\pm 2)=4$ y el \textbf{valor mínimo absoluto} es $f(1,0)=-1$.
 
 % 11 -------------------------------------------------------------------------------------------------------------
 \section{}

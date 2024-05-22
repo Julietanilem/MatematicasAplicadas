@@ -749,9 +749,98 @@ Utilizando \textbf{multiplicadores de Lagrange}, encuentre los valores \textbf{m
 
 \begin{itemize}[format=\textbf]
 
-\item $f(x, y) = x^2 + y^2$, sujeto a la restricción $xy = 1$.
+\item $f(x, y) = x^2 + y^2$, sujeto a la restricción $xy = 1$. \\
 
-\item $f(x, y) = xyz$, sujeto a la restricción $x^2 + 2y^2 + 3z^2 = 6$.
+  Sea $f(x,y)=x^2+y^2$ y sea $g(x,y)=xy$, sujeto a la restricción $g(x,y)=k$ con $k=1$.
+  
+  Siguiendo el \textbf{método de los multiplicadores de Lagrange}: Para determinar los valores máximos y mínimos de $f (x, y)$ sujeta a la restricción $g(x,y)=k$ [suponiendo que estos valores existan y que $\nabla g \neq \vec{0}$ se encuentre en la superficie $g(x,y)=k$:
+
+    Comenzamos determinando todos los valores de $x$, $y$ y $\lambda$ tales que
+    $$ \nabla f(x,y) = \lambda \nabla g(x,y) \qquad \text{ y } \qquad g(x,y)=k$$
+
+    Si escribimos la ecuación vectorial $\nabla f = \lambda \nabla g$ en términos de sus componentes, se obtiene el sistema de tres ecuaciones con tres incógnitas $x$, $y$ y $\lambda$ (no es necesario determinar los valores de $\lambda$):
+    $$f_x= \lambda g_x \qquad f_y=\lambda g_y \qquad g(x,y)=k$$
+
+    Esto se transforma en
+    \begin{align}
+      2x &= \lambda y \label{eq1} \\
+      2y &= \lambda x \label{eq2} \\
+      xy &= 1 \label{eq3}
+    \end{align}
+
+    Nótese que $x \neq 0$ y $y \neq 0$, por que $x=0$ o $y=0$ implicaría $xy=0$, contradiciendo (\ref{eq3}).
+
+    Despejando $\lambda$ de (\ref{eq1}) y (\ref{eq2}) e igualando, obtenemos
+    \begin{align*}
+      \frac{2x}{y} &= \frac{2y}{x} \\
+      2x^2 &= 2y^2 \\
+      x^2 &= y^2
+    \end{align*}
+
+    De modo que $y=\pm x$. De acuerdo con (\ref{eq3}) tenemos que $x=y=\pm 1$.
+
+    Por lo tanto, $f$ tiene posibles valores extremos en los puntos $(1,1)$ y $(-1,-1)$. Al evaluar $f$ en estos dos puntos encontramos que
+    $$f(1,1) = 2 \qquad f(-1,-1)=2$$
+
+    Observemos que la restricción (\ref{eq3}), permite que $x$ o $y$ se vielvan arbitrariamente grandes y $f$ también. Por lo que no hay un valor máximo.
+    
+    $\therefore $ El valor mínimo de $f$ en la hipérbola $xy=1$ es $f(1,1)=f(-1,-1)=2$ y $f$ no tiene valor máximo.
+
+\item $f(x, y, z) = xyz$, sujeto a la restricción $x^2 + 2y^2 + 3z^2 = 6$. \\
+
+  Sea $f(x,y,z)=xyz$ y sea $g(x,y,z)=x^2 + 2y^2 + 3z^2 $, sujeto a la restricción $g(x,y,z)=k$ con $k=6$.
+  
+  Siguiendo el \textbf{método de los multiplicadores de Lagrange}: Para determinar los valores máximos y mínimos de $f (x, y,z)$ sujeta a la restricción $g(x,y,z)=k$ [suponiendo que estos valores existan y que $\nabla g \neq \vec{0}$ se encuentre en la superficie $g(x,y,z)=k$:
+
+    Comenzamos determinando todos los valores de $x$, $y$, $z$ y $\lambda$ tales que
+    $$ \nabla f(x,y,z) = \lambda \nabla g(x,y,z) \qquad \text{ y } \qquad g(x,y,z)=k$$
+
+    Si escribimos la ecuación vectorial $\nabla f = \lambda \nabla g$ en términos de sus componentes, se obtiene el sistema de cuatro ecuaciones con cuatro incógnitas $x$, $y$, $z$ y $\lambda$ (no es necesario determinar los valores de $\lambda$):
+    $$f_x= \lambda g_x \qquad f_y=\lambda g_y \qquad f_z=\lambda g_z\qquad g(x,y,z)=k$$
+
+    Esto se transforma en
+    %% Reinicia el contador 
+    \setcounter{equation}{0}
+    \begin{align}
+      yz &= \lambda 2x \label{eq1} \\
+      xz &= \lambda 4y \label{eq2} \\
+      xy &= \lambda 6z \label{eq3} \\
+      x^2 + 2y^2 + 3z^2 &= 6 \label{eq4}
+    \end{align}
+
+    Nótese que $x \neq 0$, $y \neq 0$ y $z \neq 0$, por que si $x$, $y$ o $z$ es 0, implicaría que $x=y=z=0$, lo que contradice (\ref{eq4}).
+
+    Despejando $\lambda$ de (\ref{eq1}), (\ref{eq2}) y (\ref{eq3}) e igualando, obtenemos
+    $$\frac{yz}{2x} = \frac{xz}{4y} \qquad \text{ y } \qquad \frac{xz}{4y} = \frac{xy}{6z}$$
+    $$4y^2z=2x^2z \qquad \text{ y } \qquad 6xz^2=4xy^2$$
+    $$2y^2=x^2 \qquad \text{ y } \qquad 3z^2=2y^2$$
+    Así,
+    \begin{align}
+      x^2 &= 2y^2 \label{eq5} \\
+      z^2 &= \frac{2}{3}y^2 \label{eq6}
+    \end{align}
+
+    Sustituyendo (\ref{eq5}) y (\ref{eq6}) en (\ref{eq4}):
+    $$
+      2y^2 + 2y^2 + 3\left(\frac{2}{3}y^2\right)
+      = 6y^2
+      = 6
+      $$
+      De modo que $y=\pm 1$. De acuerdo con (\ref{eq5}) $x=\pm \sqrt{2}$ y, de acuerdo con (\ref{eq6}) $z=\pm \sqrt{\frac{2}{3}}$.
+
+      Por lo tanto, $f$ tiene posibles valores extremos en los puntos
+      $\left(\pm \sqrt{2},\pm 1, \pm \sqrt{\frac{2}{3}}\right)$. Al evaluar $f$ en estos ocho puntos encontramos que
+      $$
+      f\left(\pm \sqrt{2},\pm 1, \pm \sqrt{\frac{2}{3}}\right)
+      = \pm \sqrt{2} \cdot \pm 1 \cdot \pm \sqrt{\frac{2}{3}}
+      = \pm \frac{2}{\sqrt{3}}
+      $$
+    
+      $\therefore $ El valor mínimo de $f$ en el elipsoide $x^2 + 2y^2 + 3z^2 = 6$ es $-\frac{2}{\sqrt{3}}$
+      cuando todas las componentes son negativas o exactamente una componente es negativa.
+      
+      $\therefore $ El valor máximo de $f$ es $\frac{2}{\sqrt{3}}$
+      cuando todas las componentes son positivas o exactamente dos componentes son negativas.
   
 \end{itemize}
 

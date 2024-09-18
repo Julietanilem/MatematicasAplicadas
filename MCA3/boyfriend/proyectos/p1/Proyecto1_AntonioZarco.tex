@@ -1,0 +1,251 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}		% Caracteres latinos
+\usepackage[spanish]{babel}		% Idioma español
+\usepackage{geometry}			% Organizar el documento
+\usepackage{graphicx}			% Incluir gráficos
+\usepackage{makecell}			% Para personalizar las celdas de una tabla
+\usepackage[nohdr]{mathexam}	% Añadimos el paquete mathexam (sin header)
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usepgfplotslibrary{fillbetween}
+%\usetikzlibrary{positioning}    % yo
+\usepgfplotslibrary{polar}
+\usepackage[shortlabels]{enumitem}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{esvect}
+\usepackage[fleqn]{mathtools}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[document]{ragged2e}
+\usepackage{textpos}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{enumerate}
+%% \usepackage{wrapfig} % wrapfigure
+%% \usepackage{float}
+%% \usepackage{graphicx}
+\usepackage{here} % [H]
+\usepackage{soul}
+\spanishdecimal{.}
+
+
+\geometry{
+  a4paper,                    % Tamaño del documento
+  hmargin = {1.7cm, 1.7cm}, 	% Margen horizontal izquierdo, derecho
+  vmargin = {1cm, 1cm},	    % Margen vertical superior, inferior
+  headsep = 4mm,				% Separación entre el encabezado y el texto
+  head = .2cm,				% Tamaño del encabezado
+  % marginparsep = 5mm, 		% Seperación entre las notas y el texto
+  % marginpar = 1.5cm,		% Tamaño de las notas
+  includeall,                 % incluye el encabezado, footer y notas dentro del tamaño del documento
+  nomarginpar,	            % Elimina las notas
+  foot = 1cm,                 % Tamaño del footer
+  twoside,                	% Habilita el modo de impresión a doble cara
+}
+
+\selectlanguage{spanish}       
+\spanishdecimal{.}
+
+\newcommand{\iuni}{\pmb{\hat{\imath}}}
+\newcommand{\juni}{\pmb{\hat{\jmath}}}
+\newcommand{\kuni}{\pmb{\hat{k}}}
+% DOCUMENTO
+
+
+\begin{document}
+
+\centering
+
+\Large 
+\textbf{Proyecto 1}\\
+\large 
+Unidad 1: Integral de Riemann. Integrales dobles. \\
+Alumno: Zarco Romero José Antonio\\
+Valor: 4 puntos\\
+\normalsize
+Fecha de entrega: 
+Viernes 6/09/2024
+
+\vskip10pt
+
+\normalsize
+
+\pointpoints{punto}{puntos}
+\pointformat{\bfseries\boldmath(\thepoints)}
+\vskip10pt
+
+\begin{tcolorbox}
+  \textbf{Instrucciones:}
+
+  Resuelve con detalle el siguiente problema, describiendo cada uno de los pasos de tu análisis. Puedes entregarlo en físico el viernes durante el examen o subir tu archivo al aula virtual a mas tardar a las 23:59 hrs.
+\end{tcolorbox}
+
+\begin{questions}
+
+  \question{Cuando se estudia la propagación de una epidemia asumimos que la \hl{probabilidad de que un individuo infectado propagara la enfermedad a un individuo no infectado} es una función de la distancia entre ellos. Considera una ciudad circular con radio de \underline{10 km}, cuya población está \underline{uniformemente distribuida}. Para un individuo no infectado en un punto fijo $A(x_0,y_0)$, asume que la función de probabilidad está dada por}
+  
+  \begin{equation}
+    f(P)=\frac{1}{20}\left[20-d\left(P,A\right)\right]
+  \end{equation}
+  
+  donde $d\left(P,A\right)$ denota la distancia entre $P$ y $A$.
+
+  \begin{enumerate}[a)]
+  \item Suponga que la \hl{exposicion de una persona a la enfermedad} es la suma de las probabilidades de contraer la enfermedad de todos los miembros de la población. Asuma que la gente infectada está distribuida uniformemente por toda la ciudad, con $k$ individuos infectados por $km$ cuadrado. Encuentra una integral doble que represente la exposición de una persona que reside en $A$.
+
+    \vspace{0.5cm}
+
+    Sea $D$ una ciudad circular de radio $r=10$ km, es decir, cuya descripción está dada por la ecuación $x^2+y^2=100$. Por lo que, la región de integración $D$ se puede escribir como
+
+    \[
+    D=\left\{(x,y)~|~ -10 \leq x \leq 10, ~ -\sqrt{100-x^2} \leq y \leq \sqrt{100-x^2} \right\}
+    \]
+
+    \begin{figure}[H]
+      \centering
+
+      \begin{tikzpicture}[scale=0.3]
+        % Dibujar el área interior del círculo iluminada
+        \fill[blue!20] (0,0) circle [radius=10];
+
+        % Dibujar el círculo
+        \draw[thick] (0,0) circle [radius=10];
+
+        % Dibujar los ejes
+        \draw[->] (-11,0) -- (11,0) node[right] {$x$};
+        \draw[->] (0,-11) -- (0,11) node[above] {$y$};
+
+        % Dibujar la escala
+        \foreach \x in {-10,-8,-6,-4,-2,2,4,6,8,10}
+        \draw (\x,-0.3) -- (\x,0.3) node[below=4pt] {\x};
+        \foreach \y in {-10,-8,-6,-4,-2,2,4,6,8,10}
+        \draw (-0.3,\y) -- (0.3,\y) node[left=4pt] {\y};
+      \end{tikzpicture}
+      \caption{Región $D$ de integración}
+    \end{figure}
+
+    O bien, en coordenadas polares
+
+    \begin{align*}
+      (r\cos{\theta})^2+(r\sin{\theta})^2 &=100 \\
+      r^2\cos^2{\theta}+r^2\sin^2{\theta} &=100 \\
+      r^2(\cos^2{\theta}+\sin^2{\theta}) &=100 \\
+      r^2(1) &=100 \\
+      r^2 & =100 \\
+      r&=10
+    \end{align*}
+
+    Entonces, la región se puede escribir como
+
+    \[
+    D=\left\{(r,\theta)~|~0 \leq r\leq 10, ~0\leq \theta \leq 2\pi \right\}
+    \]
+
+    Luego, la probabilidad de que un individuo infectado $P(x,y)$ propagará la enfermedad a un individuo no infectado $A(x_0,y_0)$ fijo, está dada por
+
+    \begin{equation*}
+      g(P,A)=\frac{1}{20}\left[2 0 -d \left(P,A\right)\right]
+    \end{equation*}
+
+    donde $d(P,A)$ es la distancia entre los puntos $P,A \in \mathbb{R}^2$, es decir,
+
+    \begin{align*}
+      d(P,A) = \sqrt{(x-x_0)^2+(y-y_0)^2}
+    \end{align*}
+
+    % De modo que $g(P,A)$ se puede escribir en coordenadas polares como
+
+    % \begin{align*}
+    %   &g(P,A) \\
+    %   &= \frac{1}{20}\left[20-\sqrt{(x-x_0)^2+(y-y_0)^2}\right] \\
+    %   &= \frac{1}{20}\left[20-\sqrt{(r\cos{\theta}-r_0\cos{\theta_0})^2+(r\sin{\theta}-r_0\sin{\theta_0})^2}\right] \\
+    %   &= \frac{1}{20}\left[20-\sqrt{r^2\cos^2{\theta}-2r r_0 \cos{\theta}\cos{\theta_0}+r_0^2\cos^2{\theta_0}+r^2\sin^2{\theta}-2r r_0 \sin{\theta}\sin{\theta_0}+r_0^2\sin^2{\theta_0}}\right] \\
+    %   &= \frac{1}{20}\left[20-\sqrt{r^2(\cos^2{\theta}+\sin^2{\theta})-2r r_0 (\cos{\theta}\cos{\theta_0}+\sin{\theta}\sin{\theta_0})+r_0^2(\cos^2{\theta_0}+\sin^2{\theta_0})}\right] \\
+    %   &= \frac{1}{20}\left[20-\sqrt{r^2-2r r_0 \cos{(\theta-\theta_0)}+r_0^2}\right]
+    % \end{align*}
+
+    Luego, ya que la población infectada está distribuida uniformemente por toda la ciudad, con $k$ individuos infectados por $km^2$, 
+    la exposición $\mathbf{E}$ de una persona que reside en $A$ está dada por la suma de las probabilidades de contraer la enfermedad de todos los miembros de la población, es decir, 
+    la integral doble de la función $g(P,A)$ sobre la región $D$ de integración multiplicada por la densidad de la población infectada, $k\,dA$
+
+    \begin{align*}
+      \mathbf{E}
+      &=\int\int_D g(P,A)k\,dA \\
+      % &=\int_0^{2\pi}\int_0^{10} \frac{1}{20}\left[20-\sqrt{r^2-2r r_0 \cos{(\theta-\theta_0)}+r_0^2}\right]k\,r\,dr\,d\theta \\
+      % &=\frac{k}{20}\int_0^{2\pi}\int_0^{10} 20r-r\sqrt{r^2-2r r_0 \cos{(\theta-\theta_0)}+r_0^2}\,dr\,d\theta
+      &=k \int\int_D \frac{1}{20}\left[2 0 -d \left(P,A\right)\right] \,dA \\
+      &=k \int\int_D \frac{1}{20}\left[2 0 -\sqrt{(x-x_0)^2+(y-y_0)^2}\right] \,dA \\
+      &= \frac{k}{20} \int\int_D\left[2 0 -\sqrt{(x-x_0)^2+(y-y_0)^2}\right] \,dA \\
+      &= \int\limits_{-10}^{10}\int\limits_{-\sqrt{100-x^2}}^{\sqrt{100-x^2}} \frac{1}{20}\left[20-\sqrt{(x-x_0)^2+(y-y_0)^2}\right]k\,dy\,dx \\
+      &= \frac{k}{20}\int\limits_{-10}^{10}\int\limits_{-\sqrt{100-x^2}}^{\sqrt{100-x^2}} 20-\sqrt{(x-x_0)^2+(y-y_0)^2}\,dy\,dx
+    \end{align*}
+
+    $\therefore$ La integral doble que representa la exposición de una persona que reside en $A$ es $\mathbf{E}=\frac{k}{20}\int\limits_{-10}^{10}\int\limits_{-\sqrt{100-x^2}}^{\sqrt{100-x^2}} 20-\sqrt{(x-x_0)^2+(y-y_0)^2}\,dy\,dx$.
+
+  \item Evalúa la integral para el caso en el que A es el centro de la ciudad y para el caso en el que $A$ se ubica en el extremo de la ciudad. ¿Dónde preferirías vivir?
+    
+    \vspace{0.5cm}
+
+  Si $A$ es el centro de la ciudad, entonces $x_0=y_0=0$. Por lo que, la exposición de una persona que reside en $A$ está dada por
+
+  \begin{align*}
+    \mathbf{E}
+    &=\frac{k}{20}\int\limits_{-10}^{10}\int\limits_{-\sqrt{100-x^2}}^{\sqrt{100-x^2}} 20-\sqrt{(x-x_0)^2+(y-y_0)^2}\,dy\,dx\\
+    &=\frac{k}{20}\int\limits_{-10}^{10}\int\limits_{-\sqrt{100-x^2}}^{\sqrt{100-x^2}} 20-\sqrt{x^2+y^2}\,dy\,dx \\
+    &=\frac{k}{20}\int\limits_{0}^{2\pi}\int\limits_{0}^{10} [20-\sqrt{(r\cos{\theta})^2+(r\sin{\theta})^2}]\,r\,dr\,d\theta && \text{En coordenadas polares} \\
+    &=\frac{k}{20}\int\limits_{0}^{2\pi}\int\limits_{0}^{10} [20-\sqrt{r^2\cos^2{\theta}+r^2\sin^2{\theta}}]\,r\,dr\,d\theta \\
+    &=\frac{k}{20}\int\limits_{0}^{2\pi}\int\limits_{0}^{10} [20-\sqrt{r^2(\cos^2{\theta}+\sin^2{\theta})}]\,r\,dr\,d\theta \\
+    &= \frac{k}{20}\int\limits_{0}^{2\pi}\int\limits_{0}^{10} [20-\sqrt{r^2}]\,r\,dr\,d\theta \\
+    &= \frac{k}{20}\int\limits_{0}^{2\pi}\int\limits_{0}^{10} [20-|r|]\,r\,dr\,d\theta \\
+    &=\mathbf{\frac{k}{20}\int_0^{2\pi}\int_0^{10} 20r-r^2\,dr\,d\theta} \\
+    &=\frac{k}{20}\int_0^{2\pi}\left[10r^2-\frac{r^3}{3}\right]_{r=0}^{r=10}\,d\theta \\
+    &=\frac{k}{20}\int_0^{2\pi}\left[10(10)^2-\frac{(10)^3}{3}\right]\,d\theta \\
+    &=\frac{k}{20}\int_0^{2\pi}\left[1000-\frac{1000}{3}\right]\,d\theta \\
+    &=\frac{k}{20}\int_0^{2\pi}\frac{2000}{3}\,d\theta \\
+    &=\frac{k}{20}\cdot \frac{2000}{3}\int_0^{2\pi}\,d\theta \\
+    &=\frac{100k}{3}(2\pi) \\
+    &= \frac{200\pi}{3}k \\
+    & \mathbf{\approx 209.4395 k}
+  \end{align*}
+
+  Por otro lado, si $A$ se ubica en el extremo de la ciudad. 
+  Nótese que es más conveniente trabajar con coordenadas polares centradas en $A$ y con $r$ la distancia entre $A$ y $P$. 
+  Entonces, la ecuación polar de la cifcunferencia de la ciudad es $r=20\cos{\theta}$, donde $-\frac{\pi}{2}\leq \theta \leq \frac{\pi}{2}$, 
+  y la exposición de una persona que reside en $A$ está dada por
+
+  \begin{align*}
+    &\mathbf{E}\\
+    &= \frac{k}{20}\int\limits_{-\pi/2}^{\pi/2}\int\limits_{0}^{20\cos{\theta}} 20r-r^2,dr\,d\theta \\
+    &= \frac{k}{20}\int\limits_{-\pi/2}^{\pi/2}\left[10r^2-\frac{r^3}{3}\right]_{r=0}^{r=20\cos{\theta}}\,d\theta \\
+    &= \frac{k}{20}\int\limits_{-\pi/2}^{\pi/2}\left[10(20\cos{\theta})^2-\frac{(20\cos{\theta})^3}{3}\right]\,d\theta \\
+    &= \frac{k}{20}\int\limits_{-\pi/2}^{\pi/2}\left[10(400\cos^2{\theta})-\frac{8000\cos^3{\theta}}{3}\right]\,d\theta \\
+    &= \frac{k}{20}\int\limits_{-\pi/2}^{\pi/2}\left[4000\cos^2{\theta}-\frac{8000\cos^3{\theta}}{3}\right]\,d\theta \\
+    &= \frac{k}{20}\left[4000\int\limits_{-\pi/2}^{\pi/2}\cos^2{\theta}\,d\theta-\frac{8000}{3}\int\limits_{-\pi/2}^{\pi/2}\cos^3{\theta}\,d\theta\right] \\
+    &= \frac{k}{20}\left[4000\int\limits_{-\pi/2}^{\pi/2}\frac{1+\cos{2\theta}}{2}\,d\theta-\frac{8000}{3}\int\limits_{-\pi/2}^{\pi/2}\cos{\theta}(1-\sin^2{\theta})\,d\theta\right] \\
+    &= \frac{k}{20}\left[4000\int\limits_{-\pi/2}^{\pi/2}\frac{1}{2}+\frac{\cos{2\theta}}{2}\,d\theta-\frac{8000}{3}\int\limits_{-\pi/2}^{\pi/2}\cos{\theta}-\cos{\theta}\sin^2{\theta}\,d\theta\right] \\
+    &= \frac{k}{20}\left[4000\left[\frac{\theta}{2}+\frac{\sin{2\theta}}{4}\right]_{-\pi/2}^{\pi/2}-\frac{8000}{3}\left[\sin{\theta}-\frac{\sin^3{\theta}}{3}\right]_{-\pi/2}^{\pi/2}\right] \\
+    &= \frac{k}{20}\left[4000\left[\frac{\pi}{4}+\frac{\sin{\pi}}{4}-\left(-\frac{\pi}{4}+\frac{\sin{(-\pi)}}{4}\right)\right]-\frac{8000}{3}\left[\sin{\frac{\pi}{2}}-\frac{\sin^3{\frac{\pi}{2}}}{3}-\left(\sin{\left[\frac{-\pi}{2}\right]}-\frac{\sin^3{\frac{-\pi}{2}}}{3}\right)\right]\right] \\
+    &= \frac{k}{20}\left[4000\left[\frac{\pi}{4}+\frac{0}{4}-\left(-\frac{\pi}{4}+\frac{0}{4}\right)\right]-\frac{8000}{3}\left[1-\frac{1}{3}-\left(-1-\frac{-1}{3}\right)\right]\right] \\
+    &= \frac{k}{20}\left[4000\left[\frac{\pi}{4}+\frac{\pi}{4}\right]-\frac{8000}{3}\left[1-\frac{1}{3}+1-\frac{1}{3}\right]\right] \\
+    &= \frac{k}{20}\left[4000\left[\frac{\pi}{2}\right]-\frac{8000}{3}\left[\frac{4}{3}\right]\right] \\
+    &= \frac{4000}{20}k\left[\frac{\pi}{2}-\frac{2}{3}\left(\frac{4}{3}\right)\right] \\
+    &= 200k \left(\frac{\pi}{2}-\frac{8}{9}\right) \\
+    &\mathbf{\approx 136.3014 k}
+  \end{align*}
+
+  Por lo que, si $A$ es el centro de la ciudad, la exposición de una persona que reside en $A$ es $\approx 209.4395 k$, mientras que si $A$ se ubica en el extremo de la ciudad, la exposición de una persona que reside en $A$ es $\approx 136.3014 k$. Por lo que, preferiría vivir en el extremo de la ciudad.
+
+
+  \end{enumerate}
+  
+\end{questions}
+
+\end{document} 

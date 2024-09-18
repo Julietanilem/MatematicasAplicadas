@@ -1,0 +1,1094 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}		% Caracteres latinos
+\usepackage[spanish]{babel}		% Idioma español
+\usepackage{geometry}			% Organizar el documento
+\usepackage{graphicx}			% Incluir gráficos
+\usepackage{makecell}			% Para personalizar las celdas de una tabla
+\usepackage[nohdr]{mathexam}	% Añadimos el paquete mathexam (sin header)
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usepgfplotslibrary{fillbetween}
+%\usetikzlibrary{positioning}    % yo
+\usepgfplotslibrary{polar}
+\usepackage[shortlabels]{enumitem}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{esvect}
+\usepackage[fleqn]{mathtools}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[document]{ragged2e}
+\usepackage{textpos}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{enumerate}
+%% \usepackage{wrapfig} % wrapfigure
+%% \usepackage{float}
+%% \usepackage{graphicx}
+\usepackage{here} % [H]
+\spanishdecimal{.}
+
+
+\geometry{
+  a4paper,                    % Tamaño del documento
+  hmargin = {1.7cm, 1.7cm}, 	% Margen horizontal izquierdo, derecho
+  vmargin = {1cm, 1cm},	    % Margen vertical superior, inferior
+  headsep = 4mm,				% Separación entre el encabezado y el texto
+  head = .2cm,				% Tamaño del encabezado
+  % marginparsep = 5mm, 		% Seperación entre las notas y el texto
+  % marginpar = 1.5cm,		% Tamaño de las notas
+  includeall,                 % incluye el encabezado, footer y notas dentro del tamaño del documento
+  nomarginpar,	            % Elimina las notas
+  foot = 1cm,                 % Tamaño del footer
+  twoside,                	% Habilita el modo de impresión a doble cara
+}
+
+\selectlanguage{spanish}       
+\spanishdecimal{.}
+
+\newcommand{\iuni}{\pmb{\hat{\imath}}}
+\newcommand{\juni}{\pmb{\hat{\jmath}}}
+\newcommand{\kuni}{\pmb{\hat{k}}}
+% DOCUMENTO
+
+
+\begin{document}
+
+\centering
+
+\Large 
+\textbf{Tarea B}\\
+\large 
+Unidad 1: Aplicaciones de integrales dobles e integrales en coordenadas polares\\
+Alumno: Zarco Romero José Antonio\\
+Valor: 6 puntos\\
+\normalsize
+Fecha de entrega: 
+
+Lunes 02/09/2024 durante la clase
+
+\vskip10pt
+
+\normalsize
+
+\pointpoints{punto}{puntos}
+\pointformat{\bfseries\boldmath(\thepoints)}
+\vskip10pt
+
+\begin{questions}
+
+  % ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  \question{Evalúa las siguientes integrales usando un cambio a coordenadas polares.}
+
+  \begin{enumerate}[a)]
+  \item $\iint_R \cos{(x^2+y^2)} \, dA$, donde $R$ es la región que se encuentra arriba del eje $x$ y dentro del círculo $x^2+y^2=9$
+
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        
+        % Colorea la parte del círculo por encima del eje x
+        \fill[cyan!35] (3,0) arc[start angle=0, end angle=180, radius=3];
+        % Dibuja el eje x en azul
+        \draw[blue, thick, ->] (-4,0) -- (4,0) node[right] {$x$};
+        
+        % Dibuja el eje y
+        \draw[->] (0,-4) -- (0,4) node[above] {$y$};
+        
+        % Dibuja líneas de escala en los ejes
+        \foreach \x in {-3,-2,-1,1,2,3}
+        \draw (\x,0) -- (\x,-0.2) node[below] {$\x$};
+        \foreach \y in {-3,-2,-1,1,2,3}
+        \draw (0,\y) -- (-0.2,\y) node[left] {$\y$};
+
+        % Dibuja el contorno del círculo con radio 3
+        \draw[blue, thick] (0,0) circle (3);
+        
+        % Añade una leyenda
+        \node at (3.5,3) [right] { $x^2 + y^2 = 9$};
+      \end{tikzpicture}
+      \label{fig:1_a}
+      \caption{Región $R$ de integración}
+    \end{figure}
+
+    La región $R$ se puede escribir como
+
+    \[
+    R= \left\{(x,y)~|~-3 \leq x \leq 3 ,~ 0 \leq y \leq \sqrt{9-x^2}\right\}
+    \]
+
+    Es el semicírculo superior de un círculo de radio $r=3$, tal como se muestra en la figura $(1)$, y en coordenadas polares está dada por $0 \leq r \leq 3$, $0 \leq \theta \leq \pi$. Por lo tanto, dado que
+
+    \begin{tcolorbox}[colback=white!0!white, colframe=blue!40!black, title=\textbf{Cambio a coordenadas polares en una integral doble}]
+      Si $f$ es continua en un rectángulo polar $R$ dado por $0 \leq a \leq r \leq b$, $\alpha \leq \theta \leq \beta$, donde $0 \leq \beta - \alpha \leq 2\pi$, entonces
+      
+      \begin{equation}
+        \iint_R f(x,y)\,dA= \int_{\alpha}^{\beta} \int_a^b f(r\cos{\theta}, r\sin{\theta})\,r\,dr\,d\theta
+        \label{eq:cambio1a}
+      \end{equation}
+      
+    \end{tcolorbox}
+
+    Entonces,
+
+    \begin{align*}
+      \iint_R \cos{(x^2+y^2)}\,dA
+      &= \int_0^{\pi} \int_0^3 \cos{[(r\cos{\theta})^2 + (r\sin{\theta})^2]} \,r\,dr\,d\theta \\
+      &= \int_0^{\pi} \int_0^3 \cos{[r^2\cos^2{\theta} + r^2\sin^2{\theta}]} \,r\,dr\,d\theta \\
+      &= \int_0^{\pi} \int_0^3 \cos{[r^2(\cos^2{\theta} + \sin^2{\theta})]} \,r\,dr\,d\theta \\
+      &= \int_0^{\pi} \int_0^3 \cos{[r^2(1)]} \,r\,dr\,d\theta \\
+      &= \int_0^{\pi} \int_0^3 r \cos{r^2} \,dr\,d\theta 
+    \end{align*}
+
+    Sea $u=r^2 \rightarrow \frac{du}{dr}=2r$, luego $\frac{du}{2}=rdr$. Además, $u(3)=3^2=9$ y $u(0)=0^2=0$. Así,
+
+    \begin{align*}
+      \int_0^{\pi} \int_0^3 r \cos{r^2} \,dr\,d\theta
+      &= \frac{1}{2}  \int_0^{\pi} \left[\int_0^9 \cos{u}\,du \right] \,d\theta \\
+      &= \frac{1}{2}  \int_0^{\pi} \left[\sin{u} \right]_{u=0}^{u=9} \,d\theta \\
+      &= \frac{1}{2}  \int_0^{\pi} \sin{9}-\sin{0} \,d\theta \\
+      &= \frac{1}{2}  \int_0^{\pi} \sin{9}-1 \,d\theta \\
+      &= \frac{1}{2} (\sin{9}-1) \int_0^{\pi} \,d\theta \\
+      &= \frac{1}{2} (\sin{9}-1)  \left[\theta\right]_{u=0}^{u=\pi} \\
+      &= \frac{1}{2} (\sin{9}-1)  \left[\pi - 0\right] \\
+      &= \frac{1}{2} (\sin{9}-1)  \cdot \pi \\
+      &= \frac{\pi}{2}(\sin{9}-1)
+    \end{align*}
+
+    $\therefore \iint_R \cos{(x^2+y^2)} \, dA = \frac{\pi}{2}(\sin{9}-1) \approx -0.9234$    
+
+  \item $\iint_D e^{-x^2-y^2}\,dA$, donde $D$ es la región acotada por el semicírculo $x=\sqrt{4-y^2}$ y el eje $y$.
+
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        
+        % Colorea la parte del círculo por encima del eje x
+        \fill[cyan!35] (0,-2) arc[start angle=270, end angle=450, radius=2];
+        % Dibuja el eje x en azul
+        \draw[thick, ->] (-3,0) -- (3,0) node[right] {$x$};
+        
+        % Dibuja el eje y
+        \draw[blue, thick, ->] (0,-3) -- (0,3) node[above] {$y$};
+        
+        % Dibuja líneas de escala en los ejes
+        \foreach \x in {-2,-1,1,2}
+        \draw (\x,0) -- (\x,-0.2) node[below] {$\x$};
+        \foreach \y in {-3,-2,-1,1,2,3}
+        \draw (0,\y) -- (-0.2,\y) node[left] {$\y$};
+
+        % Dibuja el contorno del círculo con radio 3
+        \draw[blue, thick] (0,0) circle (2);
+        
+        % Añade una leyenda
+        \node at (3.5,3) [right] { $x^2 + y^2 = 4$};
+      \end{tikzpicture}
+      \label{fig:1_b}
+      \caption{Región $D$ de integración}
+    \end{figure}
+
+    La región $D$ se puede escribir como
+
+    \[
+    D= \left\{(x,y)~|~-0 \leq x \leq \sqrt{4-y^2} ,~ -2 \leq y \leq 2 \right\}
+    \]
+
+    Es el semicírculo derecho de un círculo de radio $r=4$ , tal como se muestra en la figura $(2)$, y en coordenadas polares está dada por $0\leq r\leq 2$, $-\frac{\pi}{2}\leq \theta \leq \frac{\pi}{2}$. Por la ecuación $(1)$, tenemos que
+
+    \begin{align*}
+      \iint_D e^{-x^2-y^2}\,dA
+      &= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\int_0^2
+      e^{-(r\cos{\theta})^2-(r\sin{\theta})^2}\,r\,dr\,d\theta \\
+      &= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\int_0^2
+      e^{-r^2\cos^2{\theta}-r^2\sin^2{\theta}}\,r\,dr\,d\theta \\
+      &= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\int_0^2
+      e^{-r^2(\cos^2{\theta}+\sin^2{\theta})}\,r\,dr\,d\theta \\
+      &= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\int_0^2
+      e^{-r^2(1)}\,r\,dr\,d\theta \\
+      &= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\int_0^2
+      e^{-r^2}\,r\,dr\,d\theta
+    \end{align*}
+
+    
+    Sea $u=-r^2 \rightarrow \frac{du}{dr}=-2r$, luego $-\frac{du}{2}=rdr$. Además, $u(2)=-2^2=-4$ y $u(0)=-0^2=0$. Así,
+
+    \begin{align*}
+      \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\int_0^2
+      e^{-r^2}\,r\,dr\,d\theta
+      &= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\left[\int_{0}^{-4} e^{u}\cdot -\frac{du}{2}\right]d\theta \\
+      &= \frac{1}{2}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \left[\int_{-4}^0 e^u \, du\right] \,d\theta \\
+      &= \frac{1}{2}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \left[ e^u \right]_{u=-4}^{u=0} \,d\theta \\
+      &= \frac{1}{2}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} e^0-e^{-4} \,d\theta \\
+      &= \frac{1}{2}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} 1-\frac{1}{e^4} \,d\theta \\
+      &= \frac{1}{2}\left[ \theta -\frac{\theta}{e^4} \right]_{\theta=-\frac{\pi}{2}}^{\theta=\frac{\pi}{2}} \\
+      &= \frac{1}{2} \left\{\left[ \left(\frac{\pi}{2}\right) -\frac{\left(\frac{\pi}{2}\right)}{e^4} \right] - \left[ \left(-\frac{\pi}{2}\right) -\frac{\left(-\frac{\pi}{2}\right)}{e^4} \right] \right\}\\
+      &= \frac{1}{2} \left( \frac{\pi}{2} - \frac{\frac{\pi}{2}}{e^4} + \frac{\pi}{2} + \frac{\frac{\pi}{2}}{e^4}\right) \\
+      &= \frac{1}{2} \cdot \pi \\
+      &= \frac{\pi}{2}
+    \end{align*}
+
+    $\therefore \iint_D e^{-x^2-y^2}\,dA = \frac{\pi}{2} \approx 1.5707$   
+    
+  \end{enumerate}
+
+  \question{Usa una doble integral para encontrar el área de la región entre los círculos $r = \cos{\theta}$ y $r = \sin{\theta}$.}
+
+  En la figura $(3)$ y $(4)$ se encuentran los valores de $r$ para algunos valores convenientes de $\theta$
+  
+  \begin{figure}[H]
+    \centering
+    \begin{minipage}{0.4\textwidth}
+      \centering
+      \begin{tabular}{c c}
+        \hline
+        $\boldsymbol{\theta}$ & $\boldsymbol{r = \cos(\theta)}$ \\
+        \hline
+        $0$ & $1$ \\
+        $\frac{\pi}{6}$ & $\frac{\sqrt{3}}{2}$ \\
+        $\frac{\pi}{4}$ & $\frac{\sqrt{2}}{2}$ \\
+        $\frac{\pi}{3}$ & $\frac{1}{2}$ \\
+        $\frac{\pi}{2}$ & $0$ \\
+        $\frac{2\pi}{3}$ & $-\frac{1}{2}$ \\
+        $\frac{3\pi}{4}$ & $-\frac{\sqrt{2}}{2}$ \\
+        $\frac{5\pi}{6}$ & $-\frac{\sqrt{3}}{2}$ \\
+        $\pi$ & $-1$ \\
+        \hline
+      \end{tabular}
+      \caption{Valores de $r = \cos(\theta)$}
+      \label{tab:cos_theta}
+    \end{minipage}%
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.4\textwidth}
+      \centering
+      \begin{tabular}{c c}
+        \hline
+        $\boldsymbol{\theta}$ & $\boldsymbol{r = \sin(\theta)}$ \\
+        \hline
+        $0$ & $0$ \\
+        $\frac{\pi}{6}$ & $\frac{1}{2}$ \\
+        $\frac{\pi}{4}$ & $\frac{\sqrt{2}}{2}$ \\
+        $\frac{\pi}{3}$ & $\frac{\sqrt{3}}{2}$ \\
+        $\frac{\pi}{2}$ & $1$ \\
+        $\frac{2\pi}{3}$ & $\frac{\sqrt{3}}{2}$ \\
+        $\frac{3\pi}{4}$ & $\frac{\sqrt{2}}{2}$ \\
+        $\frac{5\pi}{6}$ & $\frac{1}{2}$ \\
+        $\pi$ & $0$ \\
+        \hline
+      \end{tabular}
+      \caption{Valores de $r = \sin(\theta)$}
+      \label{tab:sin_theta}
+    \end{minipage}
+  \end{figure}
+
+  y se grafican los puntos correspondientes $(r,\theta)$ en la figura $(5)$. Después se unen estos puntos para bosquejar las curvas, que aparentan ser dos circunferencias (Hemos usado sólo valores de $\theta$ entre 0 y $\pi$, porque si hacemos que $\theta$ se incremente más allá de $\pi$, obtenemos de nuevo los mismos puntos).
+
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \begin{polaraxis}[
+          grid=both,
+          %axis lines=m,
+          xlabel={$x$},
+          ylabel={$y$},
+          samples=200,
+          domain=0:180,
+        ]
+        % Plot r = cos(theta)
+        \addplot[name path=cos, blue, thick] {cos(x)};
+        \addlegendentry{$r = \cos(\theta)$}
+
+        % Plot r = sin(theta)
+        \addplot[name path=sin, red, thick] {sin(x)};
+        \addlegendentry{$r = \sin(\theta)$}
+
+        % Línea en theta = 45 grados
+        \addplot[name path=cruce, black, thick, dashed, samples=2, domain=0:1] ({45}, {x});
+        \addlegendentry{$\theta = \frac{\pi}{4}$}
+        
+        \node at (3,55) [right] { $\boldsymbol{D_1}$};
+        \node at (45,30) [right] { $\boldsymbol{D_2}$};
+      \end{polaraxis}
+    \end{tikzpicture}
+    \label{fig:2}
+    \caption{Región $D$ de integración}
+  \end{figure}
+
+  Posteriormente calculamos el ángulo de intersección de las dos funciones
+  
+  \begin{align*}
+    r &= r \\
+    \cos{\theta} &= \sin{\theta} \\
+    1 &= \frac{\sin{\theta}}{\cos{\theta}} \\
+    1 &= \tan{\theta} \\
+    \therefore \quad \theta &= \tan^{-1}{(1)} = \frac{\pi}{4}
+  \end{align*}
+
+  Del bosquejo de la región $D$ de integración en la figura $(5)$, podemos observar que
+
+  \begin{align*}
+    D &= D_1 \cup D_2
+  \end{align*}
+
+  Donde
+
+  \begin{align*}
+    D_1 = \left\{(r,\theta)~\big|~0\leq r\leq \cos{\theta},~ \frac{\pi}{4} \leq \theta \leq \frac{\pi}{2} \right\} 
+    && D_2 = \left\{(r,\theta)~\big|~0\leq r\leq \sin{\theta},~ 0 \leq \theta \leq \frac{\pi}{4} \right\} 
+  \end{align*}
+
+  Luego, recordemos que
+
+  \begin{tcolorbox}[colback=white, colframe=blue!40!black, title=\textbf{Aréa de integración}]
+    Si se integra la función constante $f(x,y) = 1$ sobre una región $D$, se obtiene el área de $D$.
+
+    \begin{equation}
+      \iint_D 1 \, dA &= A(D)
+    \end{equation}
+    
+  \end{tcolorbox}
+
+  Dado que ambas regiones son simétricas respecto a la recta $\theta = \frac{\pi}{4}$, se tiene que
+
+  \begin{align*}
+    \iint_D 1\,dA
+    = 2 \iint_{D_1} 1 \, dA
+    = 2 \iint_{D_2}1\,dA
+  \end{align*}
+
+  Por simplicidad, realizamos la doble integral sobre $D_2$. Recordando
+
+  \begin{tcolorbox}[colback=white, colframe=blue!40!black]
+    Si $f$ es continua sobre una región polar de la forma
+    $$D=\{(r,\theta)~|~\alpha\leq\theta\leq\beta,~h_1(\theta)\leq r\leqh_2(\theta)\}$$
+    entonces
+    
+    \begin{equation}
+      \iint_D f(x,y)\,dA = \int_{\alpha}^{\beta} \int_{h_1(\theta)}^{h_2(\theta)} f(r\cos{\theta},~r\sin{\theta})r\,dr\,\theta
+    \end{equation}
+  \end{tcolorbox}
+
+  De modo que,
+
+  \begin{align*}
+    2 \iint_{D_2}1\,dA
+    &= 2 \int_{0}^{\frac{\pi}{4}} \int_{0}^{\sen{\theta}} 1 \cdot r \,dr\,d\theta\\
+    &= 2 \int_{0}^{\frac{\pi}{4}} \left[\int_{0}^{\sen{\theta}} r \,dr\right]\,d\theta\\
+    &= 2 \int_{0}^{\frac{\pi}{4}} \left[\frac{r^2}{2}\right]_{r=0}^{r=\sen{\theta}}  \,d\theta\\
+    &= 2\cdot \frac{1}{2} \int_{0}^{\frac{\pi}{4}} \left[r^2\right]_{r=0}^{r=\sen{\theta}}  \,d\theta\\
+    &= \int_{0}^{\frac{\pi}{4}} \left[(\sen{\theta})^2 - (0)^2\right]  \,d\theta\\
+    &= \int_{0}^{\frac{\pi}{4}} \sen^2{\theta}  \,d\theta\\
+    &= \frac{1}{2} \int_{0}^{\frac{\pi}{4}} 1-\cos{2\theta} \, d\theta
+    && \text{Por la \textbf{fórmula del medio ángulo}: } \sin^2{x} = \frac{1-\cos{2x}}{2}
+  \end{align*}
+
+  Sea $u=2\theta \rightarrow \frac{du}{d\theta} = 2$, así $\frac{du}{2}=d\theta$. Además, $u(0)=0$ y $u\left(\frac{\pi}{4}\right)=\frac{\pi}{2}$. Entonces,
+
+  \begin{align*}
+    \frac{1}{2} \int_{0}^{\frac{\pi}{4}} 1-\cos{2\theta} \, d\theta
+    &= \frac{1}{4} \int_0^{\frac{\pi}{2}} 1-\cos{u}\,du \\
+    &= \frac{1}{4}\left[u-\sin{u}\right]_{u=0}^{u=\frac{\pi}{2}} \\
+    &= \frac{1}{4}\left\{\left[\left(\frac{\pi}{2}\right)-\sin{\left(\frac{\pi}{2}\right)}\right] - [(0)-\sin{0}]\right\}\\
+    &= \frac{1}{4}\left[\frac{\pi}{2}-\sin{\left(\frac{\pi}{2}\right)}-0+\sin{0}\right]\\
+    &= \frac{1}{4}\left(\frac{\pi}{2}-1-0+0\right)\\
+    &= \frac{1}{4}\left(\frac{\pi}{2}-1\right) \\
+    &= \frac{\pi}{8} - \frac{1}{4}
+  \end{align*}
+
+  $\therefore$ El área de la región entre los círculos $r=\cos{\theta}$ y $r=\sin{\theta}$ es de $\frac{\pi}{8} - \frac{1}{4}$ unidades cuadradas.
+
+  \question{Usa coordenadas polares para encontrar el volumen del sólido que se encuentra dentro del cilindro $x^2+y^2=4$ y el elipsoide $4x^2+4y^2+z^2=64$.}
+  
+
+  \begin{minipage}{0.4\textwidth}
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \begin{axis}[
+            view={45}{30},
+            axis equal image, % Mantener las proporciones correctas
+            xlabel={$x$},
+            ylabel={$y$},
+            zlabel={$z$},
+            grid=major,
+            width=12cm, % Aumentar el tamaño del gráfico
+            height=12cm,
+            domain=-5:5, % Ajustar los dominios para que las superficies sean más grandes
+            y domain=-5:5,
+            zmin=-10, zmax=14, % Ampliar el rango del eje z para visualizar mejor
+            colormap/cool
+          ]
+
+          % Dibujar el elipsoide en color azul
+          \addplot3[
+            surf,
+            opacity=0.8,
+            samples=40,
+            domain=0:360,
+            y domain=0:180,
+          ]
+          ({4*cos(x)*sin(y)}, {4*sin(x)*sin(y)}, {8*cos(y)});
+          \addlegendentry{$4x^2+4y^2+z^2=64$}
+          
+          % Dibujar el cilindro en color rojo
+          \addplot3[
+            surf,
+            opacity=0.6,
+            samples=40,
+            samples y=40,
+            domain=0:360,
+            y domain=-8:8,
+          ]
+          ({2*cos(x)}, {2*sin(x)}, {y});
+          \addlegendentry{$x^2+y^2=4$}
+
+        \end{axis}
+      \end{tikzpicture}
+      \label{3_solido}
+      \caption{Volumen del sólido}
+    \end{figure}
+  \end{minipage}
+  \hspace{0.05\textwidth}
+  \begin{minipage}{0.4\textwidth}
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \fill[blue, opacity=0.1] (0,0) circle (2);
+        \draw[blue, thick] (0,0) circle (2);
+
+        
+        \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+        \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+        
+        \foreach \x in {-3,-2,-1,1,2,3}
+        \draw (\x,0) -- (\x,-0.2) node[below] {$\x$};
+        \foreach \y in {-3,-2,-1,1,2,3}
+        \draw (0,\y) -- (-0.2,\y) node[left] {$\y$};
+        \node at (1,2) [right] { $x^2 + y^2 = 4$};
+      \end{tikzpicture}
+      \label{fig:3}
+      \caption{Región $D$ de integración}
+    \end{figure}
+  \end{minipage}
+
+  \vspace{1cm}
+  
+  La región $D$ se puede escribir como
+  
+  \begin{align*}
+    D =\{(r,\theta)~|~0\leq r\leq 2,~ 0\leq \theta \leq 2\pi\}
+  \end{align*}
+
+  Luego, el elipsoide en coordenadas polares es
+  
+  \begin{align*}
+    4(r\cos{\theta})^2+4(r\sin{\theta})^2+z^2&=64 \\
+    4r^2\cos^2{\theta}+4r^2\sin^2{\theta}+z^2&=64 \\
+    4r^2(\cos^2{\theta}+\sin^2{\theta})+z^2&=64 \\
+    4r^2(1)+z^2&=64 \\
+    z^2&=64-4r^2 \\
+    z^2&=4(16-r^2)
+  \end{align*}
+  
+  Dado $z^2=4(16-r^2) \rightarrow z = \pm \sqrt{4(16-r^2)}=\pm 2\sqrt{16-r^2}$, se tiene que el sólido $V$ se encuentra entre las superficies $2\sqrt{16-r^2}$ y $-2\sqrt{16-r^2}$. 
+
+  
+  \begin{align*}
+    V
+    &=\int_0^{2\pi}\int_0^2 \left[(2\sqrt{16-r^2})-(-2\sqrt{16-r^2})\right]~r\,\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_0^2 \left[2\sqrt{16-r^2}+2\sqrt{16-r^2}\right]~r\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_0^2 4r\sqrt{16-r^2}\,dr\,d\theta \\
+    &=4 \int_0^{2\pi}\int_0^2 r(16-r^2)^{1/2} \,dr\,d\theta 
+  \end{align*}
+
+  Sea $u=r^2 \rightarrow \frac{du}{dr}=2r$, así $\frac{du}{2}=rdr$. Además, $u(0)=0$ y $u(2)=4$. Entonces
+
+  \begin{align*}    
+    4 \int_0^{2\pi}\int_0^2 r(16-r^2)^{1/2} \,dr\,d\theta
+    &= 4\cdot \frac{1}{2}\int_0^{2\pi}\int_0^4 (16-u)^{1/2}du\,d\theta
+  \end{align*}
+
+  Recordemos que
+
+  \begin{tcolorbox}[colback=white, colframe=blue!40!black]
+    \begin{equation}
+      \iint_R g(x)h(y)\,dA = \int_a^b g(x)\,dx \int_c^d h(y)\,dy \qquad \text{donde }R=[a,b]\times[c,d]
+    \end{equation}
+  \end{tcolorbox}
+
+  Entonces
+  
+  \begin{align*}
+    4\cdot \frac{1}{2}\int_0^{2\pi}\int_0^4 (16-u)^{1/2}du\,d\theta
+    &= 2 \int_0^{2\pi}d\theta\int_0^4 (16-u)^{1/2}du \\
+    &= 4\pi \left[-\frac{(16-u)^{3/2}}{3/2} \right]_{u=0}^{u=4} \\
+    &= 4\pi \cdot -\frac{2}{3}\left[(16-u)^{3/2} \right]_{u=0}^{u=4} \\
+    &= -\frac{8}{3}\pi \left[(16-4)^{3/2} - (16-0)^{3/2}\right] \\
+    &= -\frac{8}{3}\pi \left(12^{3/2} - 16^{3/2}\right) \\
+    &= -\frac{8}{3}\pi \left(12\sqrt{12} - 16\sqrt{16}\right) \\
+    &= -\frac{8}{3}\pi \left(24\sqrt{3} - 64\right) \\
+    &= \frac{64}{3}\pi \left(8-3\sqrt{3}\right) 
+  \end{align*}
+
+  $\therefore V = \frac{64}{3}\pi \left(8-3\sqrt{3}\right)  \approx 187.9156$
+
+  \question{Usa coordenadas polares para combinar la siguiente suma de integrales en una única integral doble. Evalúa la integral doble.}
+
+  \[
+  \int_{1/\sqrt{2}}^1\int_{\sqrt{1-x^2}}^x xy\,dy\,dx + \int_1^{\sqrt{2}}\int_0^x xy\,dy\,dx+\int_{\sqrt{2}}^2\int_0^{\sqrt{4-x^2}}xy\,dy\,dx
+  \]
+
+  \begin{enumerate}
+  \item De el primer término de la suma, tenemos
+    
+    \[
+    R_1 = \{(x,y)~|~1/\sqrt{2} \leq x \leq 1,~ \sqrt{1-x^2} \leq y \leq x \}
+    \]
+    
+    \begin{enumerate}
+    \item  $y$ está acotada inferiormente por el círculo $x^2+y^2=1$ y superiormente por la recta $y=x$
+    \end{enumerate}
+    
+  \item De el segundo término de la suma, tenemos
+    
+    \[
+    R_2 = \{(x,y)~|~1 \leq x \leq \sqrt{2},~ 0 \leq y \leq x \}
+    \]
+    
+    \begin{enumerate}
+    \item  $y$ está acotada inferiormente por el eje $x$ y superiormente por la recta $y=x$
+    \end{enumerate}
+    
+  \item De el tercer término de la suma, tenemos
+
+    \[
+    R_2 = \{(x,y)~|~\sqrt{2} \leq 2 \leq \sqrt{2},~ 0 \leq y \leq \sqrt{4-x^2} \}
+    \]
+    
+    \begin{enumerate}
+    \item  $y$ está acotada inferiormente por el eje $x$ y superiormente por el círculo $x^2+y^2=4$
+    \end{enumerate}
+    
+  \end{enumerate}
+  
+  Esto es
+
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+          width=10cm,
+          height=10cm,
+          axis lines=middle,
+          xlabel=$x$,
+          ylabel=$y$,
+          xmin=0, xmax=2.5,
+          ymin=0, ymax=2,
+          domain=0:2.5,
+          legend pos=outer north east,
+          fill=blue!20,
+          name=plot1
+        ]
+        
+        % Primera región
+        \addplot[
+          fill=red!20,
+          opacity=0.5,
+          domain=1/sqrt(2):1,
+          samples=100
+        ]
+                {- x + sqrt(1 - x^2)} \closedcycle;
+                
+                % Segunda región
+                \addplot[
+                  fill=green!20,
+                  opacity=0.5,
+                  domain=1:sqrt(2),
+                  samples=100
+                ]
+                        {x} \closedcycle;
+                        
+                        % Tercera región
+                        \addplot[
+                          fill=yellow!20,
+                          opacity=0.5,
+                          domain=sqrt(2):2,
+                          samples=100
+                        ]
+                                {sqrt(4 - x^2)} \closedcycle;
+                                
+                                % Líneas para la región 1
+                                \addplot[
+                                  domain=1/sqrt(2):1,
+                                  samples=100,
+                                  thick
+                                ]
+                                        {sqrt(1 - x^2)} 
+                                        \addlegendentry{$R_1$};
+                                        
+                                        % Líneas para la región 2
+                                        \addplot[
+                                          domain=1/sqrt(2):sqrt(2),
+                                          samples=100,
+                                          thick,
+                                        ]
+                                                {x} 
+                                                \addlegendentry{$R_2$};
+                                                
+                                                % Líneas para la región 3
+                                                \addplot[
+                                                  domain=sqrt(2):2,
+                                                  samples=100,
+                                                  thick
+                                                ]
+                                                        {sqrt(4 - x^2)} 
+                                                        \addlegendentry{$R_3$};
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Regiones de integración}
+  \end{figure}
+
+  Por tanto, en coordenadas polares, la región de integración mostrada en la figura $(8)$ está dada por
+
+  \[
+  D = \{(r,\theta)~|~1\leq r\leq 2,~0\leq \theta \leq \frac{\pi}{4}\}
+  \]
+
+  Entonces,
+
+  \begin{align*}
+    &\int_{1/\sqrt{2}}^1\int_{\sqrt{1-x^2}}^x xy\,dy\,dx + \int_1^{\sqrt{2}}\int_0^x xy\,dy\,dx+\int_{\sqrt{2}}^2\int_0^{\sqrt{4-x^2}}xy\,dy\,dx \\
+    &= \int_0^{\frac{\pi}{4}}\int_1^2 (r\cos{\theta})(r\sin{\theta})\,r\,dr\,d\theta\\
+    &= \int_0^{\frac{\pi}{4}}\cos{\theta}\sin{\theta} \left[\int_1^2 r^3\,dr\right]\,d\theta\\
+    &= \frac{1}{4}\int_0^{\frac{\pi}{4}}\cos{\theta}\sin{\theta} \left[r^4\right]_{r=1}^{r=2}\,d\theta\\
+    &= \frac{1}{4}\int_0^{\frac{\pi}{4}}\cos{\theta}\sin{\theta} \left(16-1\right)\,d\theta\\
+    &= \frac{15}{4}\int_0^{\frac{\pi}{4}}\cos{\theta}\sin{\theta}\,d\theta
+  \end{align*}
+
+  Sea $u=\sin{\theta} \rightarrow \frac{du}{d\theta}=\cos{\theta}$, así $du=\cos{\theta}\,d\theta$. Además, $u(0)=0$ y $u\left(\frac{\pi}{4}\right)=\frac{1}{\sqrt{2}}$. Entonces,
+
+  \begin{align*}
+    \frac{15}{4}\int_0^{\frac{\pi}{4}}\cos{\theta}\sin{\theta}\,d\theta
+    &= \frac{15}{4}\int_0^{\frac{1}{\sqrt{2}}}u\,du \\
+    &= \frac{15}{4}\cdot \frac{1}{2} \left[u^2\right]_{u=0}^{u=1/\sqrt{2}} \\
+    &= \frac{15}{8}\left(\frac{1}{2}-0\right)\\
+    &= \frac{15}{16}
+  \end{align*}
+
+  $\therefore \int_{1/\sqrt{2}}^1\int_{\sqrt{1-x^2}}^x xy\,dy\,dx + \int_1^{\sqrt{2}}\int_0^x xy\,dy\,dx+\int_{\sqrt{2}}^2\int_0^{\sqrt{4-x^2}}xy\,dy\,dx = \frac{15}{16} \approx 0.9375$
+
+  \question{Supón que $X$ y $Y$ son variables aleatorias con una función de densidad conjunta}
+  
+  \[
+  f(x,y) =
+  \begin{cases} 
+    0.1e^{-(0.5x+0.2y)} & \text{si } x \geq 0,~y \geq 0 \\
+    0 & \text{en otro caso}
+  \end{cases}
+  \]
+
+  \begin{enumerate}[a)]
+  \item Encuentra la probabilidad $P(Y \geq 1)$
+
+    Por definición
+    
+    \begin{tcolorbox}[colback=white, colframe=blue!40!black, title=\textbf{Función de densidad conjunta}]
+      La función de densidad conjunta de $X$ y $Y$ es una función $f$ de dos variables tal que la probabilidad de que $(X,Y)$ se encuentre en la región $D$
+      
+      \begin{equation}
+        P((X,Y)\in D) = \iint_D f(x,y)\,dA
+      \end{equation}
+
+      En particular, la integral doble sobre $\mathbb{R}^2$ es una integral impropia definida como el límite de integrales dobles sobre círculos o cuadrados que se expanden y se puede escribir
+
+      \begin{equation}
+        \iint_{\mathbb{R}^2} f(x,y)\,dA = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}f(x,y)\,dx\,dy=1
+      \end{equation}
+    \end{tcolorbox}
+
+    Debido a que $f(x,y)=0$ cuando $x<0$ y $y<0$, se tiene
+
+    \begin{align*}
+      \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}f(x,y)\,dx\,dy
+      &=\int_{1}^{\infty} \int_{0}^{\infty}0.1e^{-(0.5x+0.2y)}\,dx\,dy \\
+      &=0.1 \int_{1}^{\infty} \int_{0}^{\infty}e^{-0.5x}\cdot e^{-0.2y}\,dx\,dy \\
+      &=0.1 \int_{0}^{\infty} e^{-0.5x}\,dx \int_{1}^{\infty}e^{-0.2y}\,dy \\
+      &=0.1 \cdot \lim_{a\to \infty} \int_{0}^{a} e^{-0.5x}\,dx \cdot \lim_{b \to \infty} \int_{1}^{b}e^{-0.2y}\,dy \\
+      &=0.1
+      \left\{\lim_{a\to \infty} \left[\frac{1}{-0.5} e^{-0.5x}\right]_{x=0}^{x=a}\right\}
+      \left\{\lim_{b \to \infty} \left[\frac{1}{-0.2}e^{-0.2y}\right]_{y=1}^{y=b}\right\} \\
+      &=0.1
+      \left\{\lim_{a\to \infty} \left[\frac{1}{-1/2} e^{-0.5x}\right]_{x=0}^{x=a}\right\}
+      \left\{\lim_{b \to \infty} \left[\frac{1}{-1/5}e^{-0.2y}\right]_{y=1}^{y=b}\right\} \\
+      &=\frac{1}{10}
+      \left\{\lim_{a\to \infty} \left[-2e^{-0.5x}\right]_{x=0}^{x=a}\right\}
+      \left\{\lim_{b \to \infty} \left[-5e^{-0.2y}\right]_{y=1}^{y=b}\right\} \\
+      &=\left(\frac{1}{10}\right)(-2)( -5)
+      \left\{\lim_{a\to \infty} \left[e^{-0.5x}\right]_{x=0}^{x=a}\right\}
+      \left\{\lim_{b \to \infty} \left[e^{-0.2y}\right]_{y=1}^{y=b}\right\} \\
+      &=
+      \left\{\lim_{a\to \infty} \left[e^{-0.5x}\right]_{x=0}^{x=a}\right\}
+      \left\{\lim_{b \to \infty} \left[e^{-0.2y}\right]_{y=1}^{y=b}\right\} \\
+      &=
+      \left\{\lim_{a\to \infty} \left[e^{-0.5a}-e^0\right]\right\}
+      \left\{\lim_{b \to \infty} \left[e^{-0.2b}-e^{-0.2}\right]\right\} \\
+      &=
+      \left\{\lim_{a\to \infty} \left[\frac{1}{e^{0.5a}}-1\right]\right\}
+      \left\{\lim_{b \to \infty} \left[\frac{1}{e^{0.2b}}-\frac{1}{e^{0.2}}\right]\right\} \\
+      &= (0-1)\left(0-\frac{1}{e^{0.2}}\right)\\
+      &= \frac{1}{e^{0.2}}
+    \end{align*}
+
+    $\therefore P(Y \geq 1)= \frac{1}{e^{0.2}} \approx 0.8187$
+
+  \item Encuentra la probabilidad $P(X \leq 2,~Y \leq 4)$
+
+    Debido a que $f(x,y)=0$ cuando $x<0$ y $y<0$, se tiene
+
+    \begin{align*}
+      \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}f(x,y)\,dx\,dy
+      &=\int_{0}^{4} \int_{0}^{2}0.1e^{-(0.5x+0.2y)}\,dx\,dy \\
+      &=0.1 \int_{0}^{4} \int_{0}^{2}e^{-0.5x}\cdot e^{-0.2y}\,dx\,dy \\
+      &=0.1 \int_{0}^{2} e^{-0.5x}\,dx \int_{0}^{4}e^{-0.2y}\,dy \\
+      &= 0.1
+      \left[\frac{1}{-0.5}e^{-0.5x}\right]_{x=0}^{x=2}
+      \left[\frac{1}{-0.2}e^{-0.2y}\right]_{y=0}^{y=4} \\
+      &= 
+      \left[e^{-0.5x}\right]_{x=0}^{x=2}
+      \left[e^{-0.2y}\right]_{y=0}^{y=4} \\
+      &= 
+      \left[e^{-1}-e^0\right]
+      \left[e^{-0.8}-e^0\right] 
+    \end{align*}
+    \begin{align*}
+      &= 
+      \left[e^{-1}-1\right]
+      \left[e^{-0.8}-1\right] \\
+      &= e^{-1-0.8} - e^{-0.8} - e^{-1} + 1 \\
+      &= 1 + e^{-1.8} - e^{-0.8} - e^{-1}
+    \end{align*}
+
+    $\therefore P(X \leq 2,~Y \leq 4) = 1 + e^{-1.8} - e^{-0.8} - e^{-1} \approx 0.3480$
+
+  \item Encuentra los valores esperados de $X$ y $Y$
+
+    Por definición
+
+    \begin{tcolorbox}[colback=white, colframe=blue!40!black, title=\textbf{Valores Esperados}]
+      Si $X$ y $Y$ son variables aleatorias con función de densidad conjunta $f$, se define la \textbf{media de} $\boldsymbol{X}$ y la \textbf{media de} $\boldsymbol{Y}$, denominados también valores esperados de $X$ y $Y$, como
+      \begin{equation}
+        \mu_1 = \iint_{\mathbb{R}^2}x\,f(x,y)\,dA
+      \end{equation}
+      
+      \begin{equation}
+        \mu_2 = \iint_{\mathbb{R}^2}y\,f(x,y)\,dA
+      \end{equation}
+    \end{tcolorbox}
+
+    Entonces,
+
+    \begin{enumerate}[c.a)]
+    \item El valor esperado de $X$
+
+      \begin{align*}
+        \mu_1
+        &= \iint_{\mathbb{R}^2}x\,f(x,y)\,dA \\
+        &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x\,f(x,y)\,dx\,dy 
+      \end{align*}
+
+      Debido a que $f(x,y)=0$ cuando $x<0$ y $y<0$, se tiene
+
+      \begin{align*}
+        \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x\,f(x,y)\,dx\,dy 
+        &= \int_0^{\infty} \int_0^{\infty} x\,0.1e^{-(0.5x+0.2y)}\,dx\,dy \\
+        &= 0.1 \int_0^{\infty} x\,e^{-0.5x}\,dx \int_0^{\infty} e^{-0.2y}\,dy \\
+        &= 0.1 \cdot \lim_{a\to \infty}\int_0^a x\,e^{-0.5x}\,dx \cdot \lim_{b\to \infty}\int_0^b e^{-0.2y}\,dy 
+      \end{align*}
+
+      Procedemos a integrar por partes en la primera integral, sea $u=x,~dv=e^{-0.5x}dx$, entonces $\frac{du}{dx}=1 \rightarrow du=dx,~v=-2e^{-0.5x}$. Así,
+
+      \begin{align*}
+        &0.1 \cdot \lim_{a\to \infty}\int_0^a x\,e^{-0.5x}\,dx \cdot \lim_{b\to \infty}\int_0^b e^{-0.2y}\,dy \\
+        &=
+        0.1
+        \cdot
+        \lim_{a\to \infty}\left[\left[-2xe^{-0.5x}\right]_{x=0}^{x=a}-\int_0^a-2e^{-0.5x}dx\right]
+        \cdot
+        \lim_{b \to \infty} \left[ -5e^{-0.2y} \right]_{y=0}^{y=b} \\
+        &= -0.5
+        \cdot
+        \lim_{a\to \infty}\left[-2\left[xe^{-0.5x}\right]_{x=0}^{x=a}+2\int_0^a e^{-0.5x}dx\right]
+        \cdot
+        \lim_{b \to \infty} \left[ e^{-0.2y} \right]_{y=0}^{y=b} \\
+        &= -0.5 \cdot 2
+        \cdot
+        \lim_{a\to \infty}\left[\int_0^a e^{-0.5x}dx - \left[xe^{-0.5x}\right]_{x=0}^{x=a}\right]
+        \cdot
+        \lim_{b \to \infty} \left[ \frac{1}{e^{0.2b}}-e^0 \right] \\
+        &= -1
+        \cdot
+        \lim_{a\to \infty}\left\{\left[-2e^{-0.5x}\right]_{x=0}^{x=a}  - \left[ae^{-0.5a}-0e^0\right]\right\}
+        \cdot
+        (0-1) \\
+        &= 
+        \lim_{a\to \infty}\left\{-2\left[e^{-0.5x}\right]_{x=0}^{x=a}  - ae^{-0.5a}  \right\} \\
+        &= 
+        \lim_{a\to \infty}\left\{-2\left[e^{-0.5a}-e^0\right]  - ae^{-0.5a} \right\}\\
+        &= 
+        \lim_{a\to \infty} \left(\frac{-2}{e^{0.5a}} +2 - \frac{a}{e^{0.5a}}\right)\\
+        &= 
+        \lim_{a\to \infty} \left(\frac{-2-a}{e^{0.5a}}+2 \right) \\
+        &= 2+
+        \lim_{a\to \infty} \left(\frac{-2-a}{e^{0.5a}} \right) \\
+        &= 2+
+        \lim_{a\to \infty} \left(\frac{-1}{0.5e^{0.5a}} \right) \qquad \text{Por }\textbf{Regla de L'Hospital} \\
+        &= 2
+      \end{align*}
+
+      $\therefore$ El valor esperado de $X$ es 2.
+      
+    \item El valor esperado de $Y$
+
+      \begin{align*}
+        \mu_2
+        &= \iint_{\mathbb{R}^2}y\,f(x,y)\,dA \\
+        &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} y\,f(x,y)\,dx\,dy 
+      \end{align*}
+
+      Debido a que $f(x,y)=0$ cuando $x<0$ y $y<0$, se tiene
+
+      \begin{align*}
+        \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} y\,f(x,y)\,dx\,dy 
+        &= \int_0^{\infty} \int_0^{\infty} y\,0.1e^{-(0.5x+0.2y)}\,dx\,dy \\
+        &= 0.1 \int_0^{\infty} e^{-0.5x}\,dx \int_0^{\infty} y\,e^{-0.2y}\,dy \\
+        &= 0.1 \cdot \lim_{a\to \infty}\int_0^a e^{-0.5x}\,dx \cdot \lim_{b\to \infty}\int_0^b y\,e^{-0.2y}\,dy 
+      \end{align*}
+
+      Procedemos a integrar por partes en la segunda integral, sea $u=y,~dv=e^{-0.2y}$, entonces $\frac{du}{dy}=1 \rightarrow du=dy,~v=-5e^{-0.2y}$. Así,
+
+      \begin{align*}
+        & 0.1 \cdot \lim_{a\to \infty}\int_0^a e^{-0.5x}\,dx \cdot \lim_{b\to \infty}\int_0^b y\,e^{-0.2y}\,dy \\
+        &=0.1 \cdot \lim_{a\to \infty}\left[-2e^{-0.5x}\right]_{x=0}^{x=a}
+        \cdot \lim_{b\to \infty} \left\{[-5ye^{-0.2y}]_{y=0}^{y=b} - \int_0^b -5e^{-0.2y} \, dy\right\}\\
+        &= 0.1 \cdot \lim_{a\to \infty} \left[-2e^{-0.5a}+2e^0\right] \cdot \lim_{b\to \infty}
+        \left[-5be^{-0.2b}-0+5\int_0^b e^{-0.2y}\,dy\right]\\
+        &= 0.1\cdot \lim_{a\to \infty} \left[\frac{-2}{e^{0.5a}}+2\right] \cdot \lim_{b\to \infty}
+        \left\{-5be^{-0.2b}+5\left[-5e^{-0.2y}\right]_{y=0}^{y=b}\right\}\\
+        &= 0.1 \cdot (0+2)\cdot \lim_{b\to \infty}
+        \left[-5be^{-0.2b}+5(-5e^{-0.2b}+5e^0)\right]\\
+        &= 0.2 \cdot \lim_{b \to \infty} \left(\frac{-5b}{e^{0.2b}}-\frac{25}{e^{0.2b}}+25\right)\\
+        &= 0.2 \left[ \lim_{b \to \infty} \left(\frac{-5b}{e^{0.2b}}\right) + \lim_{b \to \infty} \left(-\frac{25}{e^{0.2b}}\right)+\lim_{b \to \infty} \left(25\right) \right]\\
+        &= 0.2 \left[ \lim_{b \to \infty} \left(\frac{-5b}{e^{0.2b}}\right) + 25 \right]\\
+        &= 0.2 \left[ \lim_{b \to \infty} \left(\frac{-5}{5e^{0.2b}}\right) + 25 \right]\qquad \text{Por }\textbf{Regla de L'Hospital} \\
+        &= 0.2 (0+25)\\
+        &=5
+      \end{align*}
+
+      $\therefore$ El valor esperado de $Y$ es 5.
+    \end{enumerate}
+
+    \question{Calcula el área de la superficie de:}
+
+    \begin{enumerate}
+    \item Un paraboloide hiperbólico $z=y^2-x^2$ que se encuentra entre los cilindros $x^2+y^2=1$ y $x^2+y^2=4$.
+
+      Por definición
+
+      \begin{tcolorbox}[colback=white,colframe=blue!40!black,title=\textbf{Área superficial}]
+        El área de la superficie con ecuación $z=f(x,y)$, $(x,y\in D)$, donde $f_x$ y $f_y$ son continuas, es
+
+        \begin{equation}
+          \begin{split}
+            A(S)&=\iint_D \sqrt{[f_x(x,y)]^2+[f_y(x,y)]^2+1}\,dA \\
+            A(S)&=\iint_D \sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2}\,dA
+          \end{split}
+        \end{equation}
+      \end{tcolorbox}
+
+      Usando la fórmula $(9)$, tenemos
+
+      \begin{align*}
+        A
+        &=\iint_D \sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2}\,dA \\
+        &= \iint_D \sqrt{1+\left(-2x\right)^2+\left(2y\right)^2}\,dA\\
+        &= \iint_D \sqrt{1+4x^2+4y^2} \,dA\\
+        &= \iint_D \sqrt{1+4(x^2+y^2)} \,dA
+      \end{align*}
+
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          
+          % Dibujar el círculo de radio 1
+          \draw[blue, thick, fill=white] (0,0) circle (1);
+          
+          % Dibujar el círculo de radio 2 y sombrear el área entre los círculos
+          \draw[blue, thick, fill=blue!20] (0,0) circle (2);
+          
+          % Repetir el círculo de radio 1 para que no se sombre el interior
+          \draw[blue, thick, fill=white] (0,0) circle (1);
+          
+          % Dibuja líneas de escala en los ejes
+          \foreach \x in {-3,-2,-1,1,2,3}
+          \draw (\x,0) -- (\x,-0.2) node[below] {$\x$};
+          \foreach \y in {-3,-2,-1,1,2,3}
+          \draw (0,\y) -- (-0.2,\y) node[left] {$\y$};
+          % Dibujar los ejes X e Y
+          \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+          \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+        \end{tikzpicture}
+        \caption{Región $D$ de integración}
+      \end{figure}
+
+      Por la figura $(9)$, tenemos que
+
+      \[
+      D=\{(r,\theta)~|~1\leq r\leq 2,~0\leq \theta \leq 2\pi\}
+      \]
+      
+      Convirtiendo a coordenadas polares, obtenemos
+
+      \begin{align*}
+        A &= \int_0^{2\pi}\int_1^2\sqrt{1+4r^2}\,r\,dr\,d\theta\\
+        &= \int_0^{2\pi}\,d\theta\int_1^2\frac{1}{8}\sqrt{1+4r^2}\,(8r)\,dr \\
+        &= 2\pi \cdot \frac{1}{8} \int_1^2\sqrt{1+4r^2}\,(8r)\,dr
+      \end{align*}
+
+      Sea $u=1+4r^2 \rightarrow \frac{du}{dr}=8r$, así $du=8r\,dr$. Además, $u(1)=5$ y $u(2)=17$. Entonces
+
+      \begin{align*}
+        A &= \frac{\pi}{4} \int_5^{17} u^{1/2} du\\
+        &= \frac{\pi}{4}\cdot \frac{2}{3} \left[ u^{3/2} \right]_{u=5}^{u=17} \\
+        &= \frac{\pi}{6} (17\sqrt{17}-5\sqrt{5})
+      \end{align*}
+
+      $\therefore A(S)= \frac{\pi}{6} (17\sqrt{17}-5\sqrt{5}) \approx 30.8464$
+      
+    \item La esfera $x^2+y^2+z^2=a^2$ que se encuentra dentro del cilindro $x^2+y^2=ax$ y por encima del plano $xy$.
+
+      El área de superficie es $z= \sqrt{a^2-x^2-y^2}$. Luego, usando la fórmula $(9)$, tenemos
+
+      \begin{align*}
+        A
+        &=\iint_D \sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2}\,dA \\
+        &= \iint_D \sqrt{1+\left(\frac{-x}{\sqrt{a^2-x^2-y^2}}\right)^2+\left(\frac{-y}{\sqrt{a^2-x^2-y^2}}\right)^2}\,dA \\
+        &= \iint_D \sqrt{1+\frac{x^2+y^2}{a^2-x^2-y^2}}\,dA\\
+        &= \iint_D \sqrt{1+\frac{x^2+y^2}{a^2-(x^2+y^2)}}\,dA
+      \end{align*}
+
+      Convirtiendo $x^2+y^2=ax$ a coordenadas polares, obtenemos
+
+      \begin{align*}
+        (r\cos{\theta})^2+(r\sin{\theta})^2 &= ar\cos{\theta} \\
+        r^2\cos^2{\theta}+r^2\sin^2{\theta} &= ar\cos{\theta} \\
+        r^2(\cos^2{\theta}+\sin^2{\theta}) &= ar\cos{\theta} \\
+        r^2&= ar\cos{\theta} \\
+        r&= a\cos{\theta} 
+      \end{align*}
+
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \begin{polaraxis}[
+              grid=both,
+              xlabel={$x$},
+              ylabel={$y$},
+              samples=200,
+              domain=0:180,
+              %ytick=\empty, % Elimina las marcas del eje x
+              yticklabels=\empty, % Elimina las etiquetas del eje x
+            ]
+            % Plot r = cos(theta)
+            \addplot[name path=cos, blue, thick] {cos(x)};
+            \addlegendentry{$r = a \cos(\theta)$}
+          \end{polaraxis}
+        \end{tikzpicture}
+        \label{fig:6b}
+        \caption{Región $D$ de integración}
+      \end{figure}
+
+      Por la figura $(10)$, tenemos que
+
+      \[
+      D=\{(r,\theta)~|~0 \leq r \leq a\cos\theta,~0\leq \theta \leq \pi\}
+      \]
+
+      Convirtiendo a coordenadas polares, obtenemos
+      
+      \begin{align*}
+        A
+        &= \int_{0}^{\pi}\int_0^{a\cos{\theta}} \sqrt{1+\frac{(r\cos{\theta})^2+(r\sin{\theta})^2}{a^2-[(r\cos{\theta})^2+(r\sin{\theta})^2]}}\,r\,dr\,d\theta\\
+        &= \int_{0}^{\pi}\int_0^{a\cos{\theta}} \sqrt{1+\frac{r^2\cos^2{\theta}+r^2\sin^2{\theta}}{a^2-(r^2\cos^2{\theta}+r^2\sin^2{\theta})}}\,r\,dr\,d\theta\\
+        &= \int_{0}^{\pi}\int_0^{a\cos{\theta}} \sqrt{1+\frac{r^2(\cos^2{\theta}+\sin^2{\theta})}{a^2-[r^2(\cos^2{\theta}+\sin^2{\theta})]}}\,r\,dr\,d\theta\\
+        &= \int_{0}^{\pi}\int_0^{a\cos{\theta}} \sqrt{1+\frac{r^2}{a^2-r^2}}\,r\,dr\,d\theta\\
+        &= \int_{0}^{\pi}\int_0^{a\cos{\theta}} \sqrt{\frac{a^2-r^2+r^2}{a^2-r^2}}\,r\,dr\,d\theta\\
+        &= \int_{0}^{\pi}\int_0^{a\cos{\theta}} \sqrt{\frac{a^2}{a^2-r^2}}\,r\,dr\,d\theta\\
+        &= \int_{0}^{\pi}\int_0^{a\cos{\theta}} \frac{ar}{\sqrt{a^2-r^2}}\,dr\,d\theta
+      \end{align*}
+
+      Sea $u=a^2-r^2 \rightarrow \frac{du}{dr}=-2r$, así $-\frac{du}{2}=rdr$. Entonces,
+
+      \begin{align*}
+        A
+        &= \int_{0}^{\pi} -\frac{a}{2}\int_0^{a\cos{\theta}} u^{-1/2}\,du\,d\theta \\
+        &= \int_{0}^{\pi} -a  [u^{1/2}]_{r=0}^{r=a\cos{\theta}} \,d\theta \\
+        &= \int_{0}^{\pi} -a  [(a^2-r^2)^{1/2}]_{r=0}^{r=a\cos{\theta}} \,d\theta \\
+        &= \int_{0}^{\pi} -a  [(a^2-a^2\cos^2{\theta})^{1/2} - (a^2)^{1/2}]\,d\theta \\
+        &= \int_{0}^{\pi} -a  \{[a^2(1-\cos^2{\theta})]^{1/2} - a\}\,d\theta \\
+        &= \int_{0}^{\pi} -a  [(a\sqrt{1-\cos^2{\theta}})^{1/2} - a]\,d\theta \\
+        &= \int_{0}^{\pi} -a^2 \sqrt{1-\cos^2{\theta}} + a^2 \,d\theta \\
+        &= a^2\int_{0}^{\pi} 1 - \sqrt{1-\cos^2{\theta}}  \,d\theta \\
+        &= a^2 \int_{0}^{\pi} 1 - \sqrt{\sin^2{\theta}}  \,d\theta \qquad \text{por }\sin^2{\theta}+\cos^2{\theta}=1\\
+        &= a^2 \int_{0}^{\pi} 1 - \sin{\theta}  \,d\theta \\
+        &= a^2 \left[ \theta + \cos{\theta}  \right]_{\theta=0}^{\theta=\pi} \\
+        &= a^2 \left[ \left(\pi + \cos{\pi}\right) -  \left(0 + \cos{\left(0\right)}\right) \right] \\
+        &= a^2 (\pi -1-0-1) \\
+        &= a^2(\pi-2)
+      \end{align*}
+
+      $\therefore A(S)=a^2(\pi-2)$
+      
+    \end{enumerate}
+    
+  \end{enumerate}
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+\end{questions}
+\vskip30pt
+\RaggedRight
+
+\newpage
+
+
+\newgeometry {
+  hmargin = {1.5cm, 1.5cm},
+  vmargin = {5cm, 1cm},
+  nohead,			% Elimina el encabezado
+  nomarginpar,	% Elimina las notas
+  includeall,
+}% \savegeometry{geometria_1}
+
+\pagestyle{foot}    % El estilo de ésta página sólo constará de pié de página
+\runningfooter{}{}{Página \thepage\ de \numpages}
+
+\end{document}

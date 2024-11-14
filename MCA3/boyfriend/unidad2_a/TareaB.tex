@@ -1,0 +1,430 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}		% Caracteres latinos
+\usepackage[spanish]{babel}		% Idioma español
+\usepackage{geometry}			% Organizar el documento
+\usepackage{graphicx}			% Incluir gráficos
+\usepackage{makecell}			% Para personalizar las celdas de una tabla
+\usepackage[nohdr]{mathexam}	% Añadimos el paquete mathexam (sin header)
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usepgfplotslibrary{fillbetween}
+%\usetikzlibrary{positioning}    % yo
+\usepgfplotslibrary{polar}
+\usepackage[shortlabels]{enumitem}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{esvect}
+\usepackage[fleqn]{mathtools}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[document]{ragged2e}
+\usepackage{textpos}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usetikzlibrary{3d}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.18}
+%% \usepackage{wrapfig} % wrapfigure
+%% \usepackage{float}
+%% \usepackage{graphicx}
+\usepackage{here} % [H]
+\spanishdecimal{.}
+
+
+\geometry{
+  a4paper,                    % Tamaño del documento
+  hmargin = {1.7cm, 1.7cm}, 	% Margen horizontal izquierdo, derecho
+  vmargin = {1cm, 1cm},	    % Margen vertical superior, inferior
+  headsep = 4mm,				% Separación entre el encabezado y el texto
+  head = .2cm,				% Tamaño del encabezado
+  % marginparsep = 5mm, 		% Seperación entre las notas y el texto
+  % marginpar = 1.5cm,		% Tamaño de las notas
+  includeall,                 % incluye el encabezado, footer y notas dentro del tamaño del documento
+  nomarginpar,	            % Elimina las notas
+  foot = 1cm,                 % Tamaño del footer
+  twoside,                	% Habilita el modo de impresión a doble cara
+}
+
+\selectlanguage{spanish}       
+\spanishdecimal{.}
+
+\newcommand{\iuni}{\pmb{\hat{\imath}}}
+\newcommand{\juni}{\pmb{\hat{\jmath}}}
+\newcommand{\kuni}{\pmb{\hat{k}}}
+% DOCUMENTO
+
+
+\begin{document}
+
+\centering
+
+\Large 
+\textbf{Tarea B}\\
+\large 
+Unidad 2: Integrales triples, Teorema de cambio de variable e Integrales de línea \\
+Alumno: Zarco Romero José Antonio\\
+Valor: 6 puntos\\
+\normalsize
+Fecha de entrega: 
+
+Viernes 04/10/2024 durante la clase
+
+\vskip10pt
+
+\normalsize
+
+\pointpoints{punto}{puntos}
+\pointformat{\bfseries\boldmath(\thepoints)}
+\vskip10pt
+
+\begin{questions}
+
+  \question{Encuentra el volumen del sólido que se encuentra por encima del cono $\phi = \pi/3$ y por debajo de la esfera $\rho = 4\cos{\phi}$.}
+
+  La descripción del sólido $E$ en coordenadas esféricas es
+
+  \[
+  E = \left\{(\rho, \phi, \theta)~|~0 \leq \rho \leq 4\cos{\phi},~0 \leq \phi \leq \frac{\pi}{3},~0 \leq \theta \leq 2\pi\right\}
+  \]
+
+  Luego, el volumen del sólido es
+
+  \begin{align*}
+    V(E) 
+    &= \int_{0}^{2\pi}\int_{0}^{\pi/3}\int_{0}^{4\cos{\phi}}\rho^2\sin{\phi}~d\rho~d\phi~d\theta\\
+    &= 2 \pi \int_{0}^{\pi/3}\left[\frac{\rho^3}{3}\right]_{0}^{4\cos{\phi}}\sin{\phi}~d\phi\\
+    &= \frac{2}{3} \pi \int_{0}^{\pi/3}(64\cos^3{\phi})\sin{\phi}~d\phi\\
+    &= \frac{128}{3} \pi \int_{0}^{\pi/3}\cos^3{\phi}\sin{\phi}~d\phi
+  \end{align*}
+
+  Sea $u = \cos{\phi}$, entonces $du = -\sin{\phi}~d\phi$ y $\sin{\phi}~d\phi = -du$. Además, u(0) = 1 y u($\pi/3$) = 1/2. Por lo tanto, la integral se convierte en
+
+  \begin{align*}
+    V(E)
+    &= -\frac{128}{3} \pi \int_{1}^{1/2}u^3~du\\
+    &= \frac{128}{3} \pi \int_{1/2}^{1}u^3~du\\
+    &= \frac{128}{3} \pi \left[\frac{u^4}{4}\right]_{1/2}^{1}\\
+    &= \frac{128}{3} \pi \left(\frac{1}{4} - \frac{1}{64}\right)\\
+    &= \frac{128}{3} \pi \left(\frac{15}{64}\right)\\
+    &= 2 \cdot 5 \pi\\
+    &= 10 \pi
+  \end{align*}
+
+  $\therefore$ El volumen del sólido es 10$\pi$.
+
+  \question{Evalúa la integral.}
+  \[
+  \int_{-3}^{3}\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}\int_{0}^{\sqrt{9-x^2-y^2}}z\sqrt{x^2+y^2+z^2}~dz~dy~dx
+  \]
+  haciendo un cambio a coordenadas esféricas.
+
+  La descripción del sólido $E$ en coordenadas cartesianas es
+
+  \[
+  E = \left\{(x, y, z)~|~-3 \leq x \leq 3,~-\sqrt{9-x^2} \leq y \leq \sqrt{9-x^2},~0 \leq z \leq \sqrt{9-x^2-y^2}\right\}
+  \]
+
+  Tenemos que 
+  \begin{itemize}
+    \item De $-\sqrt{9-x^2} \leq y \leq \sqrt{9-x^2}$, tenemos que la región es un círculo de radio 3.
+    \item De $0 \leq z \leq \sqrt{9-x^2-y^2}$, tenemos que la región es un semiesfera de radio 3.
+  \end{itemize}
+
+  Luego, la descripción del sólido $E$ en coordenadas esféricas es
+
+  \[
+  E = \left\{(\rho, \phi, \theta)~|~0 \leq \rho \leq 3,~0 \leq \phi \leq \frac{\pi}{2},~0 \leq \theta \leq 2\pi\right\}
+  \]
+
+  Además, de la ecuación $z\sqrt{x^2+y^2+z^2}$, tenemos que $\rho^2= x^2+y^2+z^2$ y $z = \rho\cos{\phi}$. Por lo tanto, la integral se convierte en $\rho\cos{\phi}\sqrt{\rho^2} = \rho^2\cos{\phi}$.
+
+  De modo que, la integral se convierte en
+
+  \begin{align*}
+    \int_{-3}^{3}\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}\int_{0}^{\sqrt{9-x^2-y^2}}z\sqrt{x^2+y^2+z^2}~dz~dy~dx
+    &= \int_{0}^{2\pi}\int_{0}^{\pi/2}\int_{0}^{3}\rho^2\cos{\phi}~ \rho^2\sin{\phi}~d\rho~d\phi~d\theta\\
+    &= \int_{0}^{2\pi}\int_{0}^{\pi/2}\int_{0}^{3} \rho^4\cos{\phi}\sin{\phi}~d\rho~d\phi~d\theta\\
+    &= \int_{0}^{2\pi}~d\theta \int_{0}^{\pi/2}\sin{\phi}\cos{\phi}~d\phi \int_{0}^{3}\rho^4~d\rho\\
+    &= 2\pi \int_{0}^{\pi/2}\sin{\phi}\cos{\phi}~d\phi \cdot \left[\frac{\rho^5}{5}\right]_{0}^{3}\\
+    &= 2\pi \int_{0}^{\pi/2}\sin{\phi}\cos{\phi}~d\phi \cdot \frac{243}{5}\\
+    &= \frac{486}{5} \pi \int_{0}^{\pi/2}\sin{\phi}\cos{\phi}~d\phi
+    \end{align*}
+
+    Sea $u = \sin{\phi}$, entonces $du = \cos{\phi}~d\phi$ y $\cos{\phi}~d\phi = du$. Además, u(0) = 0 y u($\pi/2$) = 1. Por lo tanto, la integral se convierte en
+
+    \begin{align*}
+      \frac{486}{5} \pi \int_{0}^{\pi/2}\sin{\phi}\cos{\phi}~d\phi
+      &= \frac{486}{5} \pi \int_{0}^{1}u~du\\
+      &= \frac{486}{5} \pi \left[\frac{u^2}{2}\right]_{0}^{1}\\
+      &= \frac{486}{5} \pi \left(\frac{1}{2}\right)\\
+      &= \frac{243}{5} \pi
+    \end{align*}
+
+    $\therefore$ El valor de la integral es $\frac{243}{5} \pi$.
+
+  \question{Encuentra la imagen de la región triangular S con vértices en $(0, 0), (1, 1)$ y $(0, 1)$ bajo la transformación $x = u^2, y = v$.}
+
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \draw[->] (-1,0) -- (2,0) node[right] {$u$};
+      \draw[->] (0,-1) -- (0,2) node[above] {$v$};
+      \draw[fill=black] (0,0) circle (0.05) node[below left] {$(0,0)$};
+      \draw[fill=black] (1,1) circle (0.05) node[above right] {$(1,1)$};
+      \draw[fill=black] (0,1) circle (0.05) node[above left] {$(0,1)$};
+      \draw (0,0) -- (1,1) -- (0,1) -- cycle;
+    \end{tikzpicture}
+    \caption{Triángulo $S$}
+  \end{figure}
+
+  Sea $A=(0,0)$, $B=(1,1)$ y $C(0,1)$ los vértices del triángulo $S$; y sea, $S_1=\overline{AB}$, $S_2=\overline{BC}$ y $S_3=\overline{CA}$ los lados del triángulo. 
+  Entonces, la imagen de la región triangular $S$ bajo la transformación $x = u^2, y = v$ es el triángulo $T$ con vértices en $(0, 0), (1, 1)$ y $(0, 1)$.
+
+  Luego, el lado $S_1$ está dado por $u=v$ ($0 \ \leq u,v \leq 1$), de $y=v$ se tiene que $0 \leq v \leq 1$ y de $x=u^2$ se tiene que $x=u^2=v^2=y^2$. 
+  Por lo tanto, el lado $S_1$ se transforma en la curva $y^2=x$ con $0 \leq y \leq 1$.
+
+  El segundo lado $S_2$ está dado por $v=1$ ($0 \leq u \leq 1$), de $y=v$ se tiene que $y=1$ y de $x=u^2$ se tiene que $0^2 \leq x \leq 1^2$, es decir, $0 \leq x \leq 1$.
+  Por lo tanto, el lado $S_2$ se transforma en la recta $x=1$ con $0 \leq x \leq 1$.
+
+  El tercer lado $S_3$ está dado por $u=0$ ($0 \leq v \leq 1$), de $y=v$ se tiene que $0 \leq y \leq 1$ y de $x=u^2$ se tiene que $0^2 \leq x \leq 0^2$, es decir, $x=0$.
+  Por lo tanto, el lado $S_3$ se transforma en la recta $x=0$ con $0 \leq y \leq 1$.
+
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \draw[->] (-1,0) -- (2,0) node[right] {$x$};
+      \draw[->] (0,-1) -- (0,2) node[above] {$y$};
+      \draw[fill=black] (0,0) circle (0.05) node[below left] {$(0,0)$};
+      \draw[fill=black] (1,1) circle (0.05) node[above right] {$(1,1)$};
+      \draw[fill=black] (0,1) circle (0.05) node[above left] {$(0,1)$};
+      % \draw (0,0) -- (1,1) -- (0,1) -- cycle;
+    \end{tikzpicture}
+    \caption{Triángulo $T$}
+    \end{figure}
+  
+  \question{Usa la transformación $x = 2u, y = 3v$ para evaluar la integral $\iint_R x^2~dA$ donde $R$ es la región acotada por la elipse $9x^2 + 4y^2 = 36$.}
+
+  Primero se necesita evaluar el jacobiano de la transformación. 
+
+  \begin{align*}
+    \frac{\partial(x, y)}{\partial(u, v)}
+    &= \begin{vmatrix}
+      \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\
+      \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+    \end{vmatrix}\\
+    &= \begin{vmatrix}
+      2 & 0\\
+      0 & 3
+    \end{vmatrix}\\
+    &= 2 \cdot 3 - 0 \cdot 0\\
+    &= 6
+  \end{align*}
+
+  Luego, la región $R$ acotada por la elipse $9x^2 + 4y^2 = 36$ bajo la transformación $x = 2u, y = 3v$ se convierte en la región $S$ acotada por la elipse 
+  $9(2u)^2 + 4(3v)^2 = 36$, es decir, $36u^2 + 36v^2 = 36$ o $u^2 + v^2 = 1$.
+
+  Además, la función $x^2$ se convierte en $(2u)^2 = 4u^2$. Por lo tanto, la integral se convierte en
+
+  \begin{align*}
+    \iint_R x^2~dA
+    &= \iint_S 4u^2 \cdot 6~dA\\
+    &= 24 \iint_S u^2~dA
+  \end{align*}
+
+  La región $S$ es el círculo de radio 1, expresado en coordenadas polares como 
+  
+  \[
+  S = \left\{(r, \theta)~|~0 \leq r \leq 1,~0 \leq \theta \leq 2\pi\right\}
+  \]
+
+  Además, la función $u^2$ se convierte en $(r\cos{\theta})^2 = r^2\cos^2{\theta}$. Por lo tanto, la integral se convierte en
+
+  \begin{align*}
+    24 \iint_S u^2~dA
+    &= 24 \int_{0}^{2\pi}\int_{0}^{1} r^2\cos^2{\theta}~r~dr~d\theta\\
+    &= 24 \cdot \int_{0}^{2\pi}\cos^2{\theta}~d\theta \int_{0}^{1} r^3~dr\\
+    &= 24 \cdot \int_{0}^{2\pi}\cos^2{\theta}~d\theta \cdot \left[\frac{r^4}{4}\right]_{0}^{1}\\
+    &= 24 \cdot \int_{0}^{2\pi}\cos^2{\theta}~d\theta \cdot \frac{1}{4}\\
+    &= 6 \int_{0}^{2\pi}\cos^2{\theta}~d\theta\\
+    &= 6 \int_{0}^{2\pi}\frac{1 + \cos{2\theta}}{2}~d\theta\\
+    &= 3 \int_{0}^{2\pi}1 + \cos{2\theta}~d\theta\\
+    &= 3 \left[\theta + \frac{\sin{2\theta}}{2}\right]_{0}^{2\pi}\\
+    &= 3 \left[2\pi + \frac{\sin{4\pi}}{2} - 0 - \frac{\sin{0}}{2}\right]\\
+    &= 3 \left[2\pi + 0 - 0 - 0\right]\\
+    &= 6\pi
+  \end{align*}
+
+  $\therefore$ El valor de la integral es 6$\pi$.
+
+  \question{Evalúa la siguiente integral}
+  \[
+  \iint_R \frac{x-2y}{3x-y}~dA
+  \]
+  haciendo un cambio de variables apropiado y donde $R$ es el paralelogramo acotado por las líneas $x - 2y = 0,~ x - 2y = 4, ~3x - y = 1$ y $3x - y = 8$.
+
+  Para facilitar el cálculo, se hace un cambio de variables 
+
+  \[
+  u = x - 2y, \quad v = 3x - y
+  \]
+
+  Estas ecuaciones definen una transformación $T^{-1}$ del plano $xy$ al plano $uv$. De las ecuaciones anteriores se tiene que $y=3x-v$ y $x=u+2y$.
+  Para expresar $y$ en términos de $u$ y $v$, se sustituye $x=u+2y$ en la ecuación $y=3x-v$ para obtener $y=3(u+2y)-v= 3u + 6y -v$, de donde $5y = v - 3u$, o bien 
+  $y = \frac{1}{5} (v-3u)$.
+  Para expresar $x$ en términos de $u$ y $v$, se sustituye $y=3x-v$ en la ecuación $x=u+2y$ para obtener $x=u+2(3x-v) = u + 6x - 2v$, de donde $5x = 2v - u$, o bien
+  $x = \frac{1}{5} (2v - u)$.
+
+  Entonces, el jacobiano de la transformación es
+
+  \begin{align*}
+    \frac{\partial(x, y)}{\partial(u, v)}
+    &= \begin{vmatrix}
+      \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\
+      \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+    \end{vmatrix}\\
+    &= \begin{vmatrix}
+      -\frac{1}{5} & \frac{2}{5}\\
+      -\frac{3}{5} & \frac{1}{5}
+    \end{vmatrix}\\
+    &= \left(-\frac{1}{5} \cdot \frac{1}{5}\right) - \left(\frac{2}{5} \cdot -\frac{3}{5}\right)\\
+    &= -\frac{1}{25} + \frac{6}{25} \\
+    &= \frac{5}{25} \\
+    &= \frac{1}{5}
+  \end{align*}
+
+  Luego, el paralelogramo $R$ acotado por las líneas $x - 2y = 0,~ x - 2y = 4, ~3x - y = 1$ y $3x - y = 8$ 
+  se convierte en el paralelogramo $S$ acotado por las líneas: 
+
+  \begin{align*}
+    u &= x - 2y = 0\\
+    u &= x - 2y = 4\\
+    v &= 3x - y = 1\\
+    v &= 3x - y = 8
+  \end{align*}
+
+  De modo que, el área de de integración $S$ se puede describir como
+
+  \[
+  S = \left\{(u, v)~|~0 \leq u \leq 4,~1 \leq v \leq 8\right\}
+  \]
+
+  Además, la función $\frac{x-2y}{3x-y}$ se convierte en $\frac{u}{v}$. Por lo tanto, la integral se convierte en
+
+  \begin{align*}
+    \iint_R \frac{x-2y}{3x-y}~dA
+    &= \iint_S \frac{u}{v} \cdot \frac{1}{5}~dA\\
+    &= \frac{1}{5} \iint_S \frac{u}{v}~dA\\
+    &= \frac{1}{5} \int_{1}^{8}\int_{0}^{4} \frac{u}{v}~du~dv\\
+    &= \frac{1}{5} \int_{1}^{8} \frac{1}{v} ~ dv \int_{0}^{4} u~du\\
+    &= \frac{1}{5} \int_{1}^{8} \frac{1}{v} ~ dv \cdot \left[\frac{u^2}{2}\right]_{0}^{4}\\
+    &= \frac{1}{5} \int_{1}^{8} \frac{1}{v} ~ dv \cdot 8\\
+    &= \frac{1}{5} \left[\ln{v}\right]_{1}^{8} \cdot 8\\
+    &= \frac{1}{5} \left[\ln{8} - \ln{1}\right] \cdot 8\\
+    &= \frac{1}{5} \ln{8} \cdot 8\\
+    &= \frac{8}{5} \ln{8}
+  \end{align*}
+
+  $\therefore$ El valor de la integral es $\frac{8}{5} \ln{8}$.
+
+  \question{Evalúa la integral de línea sobre la curva $C$}
+
+  \begin{enumerate}
+    \item[(a)] $\int_C xy^4~ds$, donde $C$ es la mitad derecha del círculo $x^2 + y^2 = 16$.
+
+    La ecuación $x^2 + y^2 = 16$ se puede parametrizar por medio de las ecuaciones
+
+    \[
+    x= 4\cos{t} \quad y=4\sin{t}
+    \]
+
+    y la mitad derecha del círculo se describe por el intervalo del parámetro $-\frac{\pi}{2} \leq t \leq \frac{\pi}{2}$.
+
+    Luego, 
+
+    \begin{align*}
+      \int_C xy^4~ds
+      &= \int_{-\pi/2}^{\pi/2} 4\cost{t} \cdot (4\sin{t})^4 \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}~dt\\
+      &= 1024 \int_{-\pi/2}^{\pi/2} \cos{t}\sin^4{t} \sqrt{(-4\sin{t})^2+(4\cos{t})^2}~dt \\
+      &= 1024 \int_{-\pi/2}^{\pi/2} \cos{t}\sin^4{t} \sqrt{16\sin^2{t}+16\cos^2{t}}~dt \\
+      &= 1024 \int_{-\pi/2}^{\pi/2} \cos{t}\sin^4{t} \cdot 4~dt \\
+      &= 4096 \int_{-\pi/2}^{\pi/2} \cos{t}\sin^4{t}~dt \\
+      &= 4096 \left[\frac{\sin^5{t}}{5}\right]_{-\pi/2}^{\pi/2} \\
+      &= 4096 \left[\frac{1}{5} - \left(-\frac{1}{5}\right)\right] \\
+      &= 4096 \cdot \frac{2}{5}\\
+      &= \frac{8192}{5}\\
+      &=1638.4
+    \end{align*}
+
+    $\therefore$ El valor de la integral es 1638.4.
+
+    \item[(b)] $\int_C(xy+\ln{x})~dy$, donde $C$ es el arco de la parábola $y = x^2$ entre $(1, 1)$ y $(3, 9)$.
+
+    La ecuación $y = x^2$ se puede parametrizar por medio de las ecuaciones
+
+    \[
+    x = t \quad y = t^2
+    \]
+
+    y el arco de la parábola se describe por el intervalo del parámetro $1 \leq t \leq 3$.
+
+    Luego,
+
+    \begin{align*}
+      \int_C(xy+\ln{x})~dy
+      &= \int_{1}^{3} (t \cdot t^2 + \ln{t}) \cdot 2t~dt\\
+      &= \int_{1}^{3} (t^3 + \ln{t}) \cdot 2t~dt\\
+      &= 2 \int_{1}^{3} t^4 + t\ln{t}~dt\\
+      &= 2 \int_{1}^{3} t^4 ~ dt + 2 \int_{1}^{3} t\ln{t}~dt\\
+      &= 2 \left[\frac{t^5}{5}\right]_{1}^{3} + 2 \int_{1}^{3} t\ln{t}~dt\\
+      &= \frac{2}{5} \left[3^5 - 1^5\right] + 2 \int_{1}^{3} t\ln{t}~dt\\
+      &= \frac{2}{5} \left[243 - 1\right] + 2 \int_{1}^{3} t\ln{t}~dt\\
+      &= \frac{2}{5} \left[242\right] + 2 \int_{1}^{3} t\ln{t}~dt\\
+      &= \frac{484}{5} + 2 \int_{1}^{3} t\ln{t}~dt
+      \end{align*}
+
+    Sea $u = \ln{t}$ y $dv = t~dt$, entonces $du = \frac{1}{t}~dt$ y $v = \frac{t^2}{2}$. Por lo tanto, la integral se convierte en
+
+    \begin{align*}
+      \frac{484}{5} + 2 \int_{1}^{3} t\ln{t}~dt
+      &= \frac{484}{5} + 2 \left[\frac{t^2\ln{t}}{2}\right]_{1}^{3} - 2 \int_{1}^{3} \frac{t^2}{2} \cdot \frac{1}{t}~dt\\
+      &= \frac{484}{5} + 2 \left[\frac{9\ln{3}}{2} - \frac{1\ln{1}}{2}\right] - \int_{1}^{3} t~dt\\
+      &= \frac{484}{5} + 2 \left[\frac{9\ln{3}}{2} - 0\right] - \left[\frac{t^2}{2}\right]_{1}^{3}\\
+      &= \frac{484}{5} + 2 \cdot \frac{9\ln{3}}{2} - \left[\frac{9}{2} - \frac{1}{2}\right]\\
+      &= \frac{484}{5} + 9\ln{3} - \frac{8}{2}\\
+      &= \frac{484}{5} + 9\ln{3} - 4\\
+      &= \frac{484}{5} + 9\ln{3} - \frac{20}{5}\\
+      &= \frac{464}{5} + 9\ln{3}
+    \end{align*}
+
+    $\therefore$ El valor de la integral es $\frac{464}{5} + 9\ln{3}$.
+      
+  \end{enumerate}
+
+\end{questions}
+
+\vskip30pt
+\RaggedRight
+
+\newpage
+
+
+\newgeometry {
+  hmargin = {1.5cm, 1.5cm},
+  vmargin = {5cm, 1cm},
+  nohead,			% Elimina el encabezado
+  nomarginpar,	% Elimina las notas
+  includeall,
+}% \savegeometry{geometria_1}
+
+\pagestyle{foot}    % El estilo de ésta página sólo constará de pié de página
+\runningfooter{}{}{Página \thepage\ de \numpages}
+
+\end{document}

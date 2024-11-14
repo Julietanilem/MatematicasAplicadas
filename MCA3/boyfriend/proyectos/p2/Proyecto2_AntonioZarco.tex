@@ -1,0 +1,235 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}		% Caracteres latinos
+\usepackage[spanish]{babel}		% Idioma español
+\usepackage{geometry}			% Organizar el documento
+\usepackage{graphicx}			% Incluir gráficos
+\usepackage{makecell}			% Para personalizar las celdas de una tabla
+\usepackage[nohdr]{mathexam}	% Añadimos el paquete mathexam (sin header)
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usepgfplotslibrary{fillbetween}
+%\usetikzlibrary{positioning}    % yo
+\usepgfplotslibrary{polar}
+\usepackage[shortlabels]{enumitem}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{esvect}
+\usepackage[fleqn]{mathtools}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[document]{ragged2e}
+\usepackage{textpos}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{enumerate}
+%% \usepackage{wrapfig} % wrapfigure
+%% \usepackage{float}
+%% \usepackage{graphicx}
+\usepackage{here} % [H]
+\usepackage{soul}
+\spanishdecimal{.}
+
+
+\geometry{
+  a4paper,                    % Tamaño del documento
+  hmargin = {1.7cm, 1.7cm}, 	% Margen horizontal izquierdo, derecho
+  vmargin = {1cm, 1cm},	    % Margen vertical superior, inferior
+  headsep = 4mm,				% Separación entre el encabezado y el texto
+  head = .2cm,				% Tamaño del encabezado
+  % marginparsep = 5mm, 		% Seperación entre las notas y el texto
+  % marginpar = 1.5cm,		% Tamaño de las notas
+  includeall,                 % incluye el encabezado, footer y notas dentro del tamaño del documento
+  nomarginpar,	            % Elimina las notas
+  foot = 1cm,                 % Tamaño del footer
+  twoside,                	% Habilita el modo de impresión a doble cara
+}
+
+\selectlanguage{spanish}       
+\spanishdecimal{.}
+
+\newcommand{\iuni}{\pmb{\hat{\imath}}}
+\newcommand{\juni}{\pmb{\hat{\jmath}}}
+\newcommand{\kuni}{\pmb{\hat{k}}}
+% DOCUMENTO
+
+
+\begin{document}
+
+\centering
+
+\Large 
+\textbf{Proyecto 2}\\
+\large 
+Unidad 2: Integrales Triples. Integrales de línea. \\
+Alumno: Zarco Romero José Antonio\\
+Valor: 4 puntos\\
+\normalsize
+Fecha de entrega: 
+Viernes 11/10/2024
+
+\vskip10pt
+
+\normalsize
+
+\pointpoints{punto}{puntos}
+\pointformat{\bfseries\boldmath(\thepoints)}
+\vskip10pt
+
+\begin{tcolorbox}
+  \textbf{Instrucciones:}Resuelve con detalle el siguiente problema, describiendo cada uno de los pasos de
+  tu análisis. Puedes entregarlo en físico el viernes o subir tu archivo al aula virtual a mas tardar a
+  las 23:59 hrs.
+\end{tcolorbox}
+
+\begin{questions}
+
+  \question{Usa coordenadas cilíndricas para mostrar que el volumen del sólido delimitado
+    superiormente por la esfera $r^2 + z^2 = a^2$ e inferiormente por el cono $z = r\cot{(\phi_0)}$ (o
+    $\phi = \phi_0$), donde $0 < \phi_0 < \pi/2$, es}
+
+  \begin{align*}
+    V = \frac{2 \pi a^3}{3} (1 - \cos{(\phi_0)}) && (1)
+  \end{align*}
+
+  De la ecuación de la esfera $r^2 + z^2 = a^2$, tenemos que $z^2= a^2 - r^2$, igualando con $z^2 = (r\cot{(\phi_0)})^2$ obtenemos
+
+  \begin{align*}
+    (r\cot{(\phi_0)})^2 &=  a^2 - r^2\\
+    (r\cot{(\phi_0)})^2 + r^2 &= a^2 \\
+    r^2(\cot^2{(\phi_0)} + 1) &= a^2 \\
+    r^2 (\csc^2{(\phi_0)}) &= a^2 \\
+    r^2 &= \frac{a^2}{\csc^2{(\phi_0)}} \\
+    r &= \sqrt{\frac{a^2}{\csc^2{(\phi_0)}}} \\
+    r &= \frac{a}{\csc{(\phi_0)}} \\
+    r &= a \sin{(\phi_0)}
+  \end{align*}
+
+  De esta forma, tenemos que $r$ va de 0 a $a\sin{(\phi_0)}$
+
+  De la misma ecuación de la esfera $r^2 + z^2 = a^2$, tenemos que $z^2= a^2 - r^2$, o bien $z= \sqrt{a^2 - r^2}$. Por lo que,
+  $z$ va de $r\cot{(\phi_0)}$ a $\sqrt{a^2 - r^2}$
+
+  Así, tenemos que la región de integración descrita en coordenadas cilíndricas es
+
+  \[
+  S = \left\{(r,\theta, z)~|~0 \leq \theta \leq 2\pi,~0\leq r \leq a\sin{(\phi_0)},~r\cot{(\phi_0)} \leq z \leq \sqrt{a^2 - r^2} \right\}
+  \]
+
+  Luego, el volumen del solido es
+
+  \begin{align*}
+    V &= \iiint_S dV \\
+    &= \int_0^{2\pi} \int_0^{a\sin{(\phi_0)}} \int_{r\cot{(\phi_0)}}^{\sqrt{a^2 - r^2}} r ~ dz ~ dr ~ d\theta \\
+    &= \int_0^{2\pi} ~ d\theta \cdot \int_0^{a\sin{(\phi_0)}} r \left[\int_{r\cot{(\phi_0)}}^{\sqrt{a^2 - r^2}}~ dz\right]~dr \\
+    &= 2\pi \int_0^{a\sin{(\phi_0)}} r [(\sqrt{a^2 - r^2}) - (r\cot{(\phi_0)})] ~ dr \\
+    &= 2\pi \int_0^{a\sin{(\phi_0)}} r\sqrt{a^2 - r^2} - r^2 \cot{(\phi_0)} ~ dr \\
+    &= 2\pi \left[\int_0^{a\sin{(\phi_0)}} r\sqrt{a^2 - r^2}~dr - \int_0^{a\sin{(\phi_0)}}r^2 \cot{(\phi_0)} ~ dr \right]
+  \end{align*}
+
+  Sea $u = a^2-r^2$, entonces $du=-2r~dr$ y $r~dr= -\frac{du}{2}$, además $u(a\sin{(\phi_0)}) = a^2 - a^2\sin^2{(\phi_0)} = 
+  a^2(1-\sin^2{(\phi_0)}) = a^2\cos^2{(\phi_0)}$ y $u(0) = a^2$. Entonces, el volumen del solido es
+
+  \begin{align*}
+    V 
+    &= 2\pi \left[-\frac{1}{2}\int_{a^2}^{a^2\cos^2{(\phi_0)}}  u^{1/2} ~du - \int_0^{a\sin{(\phi_0)}}r^2 \cot{(\phi_0)} ~ dr \right]\\
+    &= 2\pi \left\{-\frac{1}{2} \left[\frac{u^{3/2}}{3/2}\right]_{u=a^2}^{u=a^2\cos^2{(\phi_0)}}- \int_0^{a\sin{(\phi_0)}}r^2 \cot{(\phi_0)} ~ dr \right\}\\
+    &= 2\pi \left\{-\frac{1}{2} \left[\frac{u^{3/2}}{3/2}\right]_{u=a^2}^{u=a^2\cos^2{(\phi_0)}}- \frac{1}{3}\left[r^3 \cot{(\phi_0)}\right]_{r=0}^{r=a\sin{(\phi_0)}} \right\}\\
+    &= 2\pi \left\{-\frac{1}{2} \cdot \frac{2}{3}\left[u^{3/2}\right]_{u=a^2}^{u=a^2\cos^2{(\phi_0)}}- \frac{1}{3}\left[r^3 \cot{(\phi_0)}\right]_{r=0}^{r=a\sin{(\phi_0)}} \right\}\\
+    &= -\frac{2\pi}{3} \left\{\left[u^{3/2}\right]_{u=a^2}^{u=a^2\cos^2{(\phi_0)}} + \left[r^3 \cot{(\phi_0)}\right]_{r=0}^{r=a\sin{(\phi_0)}} \right\}\\
+    &= -\frac{2\pi}{3} \left\{\left[u^{3/2}\right]_{u=a^2}^{u=a^2\cos^2{(\phi_0)}} + a^3\sin^3{(\phi_0)} \cot{(\phi_0)} \right\}\\
+    &= -\frac{2\pi}{3} \left\{(a^3\cos^3{\phi_0}-a^3) + a^3\sin^3{(\phi_0)} \cot{(\phi_0)} \right\}\\
+    &= -\frac{2\pi a^3}{3} \left\{\cos^3{\phi_0}-1 + \sin^3{(\phi_0)} \cot{(\phi_0)} \right\}\\
+    &= -\frac{2\pi a^3}{3} \left\{\cos^3{(\phi_0)}-1 + \sin^3{(\phi_0)}\cdot\frac{\cos{(\phi_0)}}{\sin{(\phi_0)}} \right\}
+  \end{align*}
+  \begin{align*}
+    &= -\frac{2\pi a^3}{3} \left\{\cos^3{(\phi_0)}-1 + \sin^2{(\phi_0)}\cos{(\phi_0)} \right\}\\
+    &= -\frac{2\pi a^3}{3} \left\{-1+\cos{(\phi_0)}[\cos^2{(\phi_0)} +\sin^2{(\phi_0)}]\right\}\\
+    &= -\frac{2\pi a^3}{3} \left\{-1+\cos{(\phi_0)}\right\}\\
+    &= \frac{2 \pi a^3}{3} (1 - \cos{(\phi_0)})
+  \end{align*}
+
+  $\therefore V = \frac{2 \pi a^3}{3} (1 - \cos{(\phi_0)})$
+
+  %2
+  \question{Deduce que el volumen de la cuña esférica dada por $\rho_1 \leq \rho \leq \rho_2$, $\theta_1 \leq \theta \leq \theta_2$, $\phi_1 \leq \phi \leq \phi_2$
+  es}
+
+  \begin{align*}
+    \Delta V = \frac{\rho_2^3 - \rho_1^3}{3} (\cos{(\phi_1)} - \cos{(\phi_2)})(\theta_2 - \theta_1) && (2)
+  \end{align*}
+
+  Tenemos que la región de integración puede ser descrita en coordenadas esféricas como
+
+  \[
+  E = \left\{ (\rho, \theta, \phi) ~ | ~ \rho_1 \leq \rho \leq \rho_2, \theta_1 \leq \theta \leq \theta_2, \phi_1 \leq \phi \leq \phi_2 \right\}
+  \]
+
+  Entonces, el volumen de la cuña esférica es
+
+  \begin{align*}
+    \int_{\phi_1}^{\phi_2} \int_{\theta_1}^{\theta_2} \int_{\rho_1}^{\rho_2} \rho^2 \sin{\phi} \, d\rho \, d\theta \, d\phi 
+    &= \int_{\phi_1}^{\phi_2} \sin{\phi} ~d\phi ~ \int_{\theta_1}^{\theta_2} ~d\theta ~ \int_{\rho_1}^{\rho_2} \rho^2 ~d\rho \\
+    &= -\cos{\phi}\Big|_{\phi= \phi_1}^{\phi = \phi_2} \cdot (\theta_2 - \theta_1) \cdot \frac{1}{3} \rho^3\Big|_{\rho = \rho_1}^{\rho = \rho_2}\\
+    &= [(-\cos{\phi_2}) - (-\cos{\phi_1})] \cdot (\theta_2 - \theta_1) \cdot \frac{1}{3} (\rho_2^3 - \rho_1^3)\\
+    &= \frac{\rho_2^3 - \rho_1^3}{3} (\cos{(\phi_1)} - \cos{(\phi_2)}) (\theta_2 - \theta_1)
+  \end{align*}
+
+  $\therefore \Delta V = \frac{\rho_2^3 - \rho_1^3}{3} (\cos{(\phi_1)} - \cos{(\phi_2)}) (\theta_2 - \theta_1)$
+
+  %3
+  \question{Usa el Teorema del Valor Medio para probar que el volumen del inciso (b) puede ser escrito
+    como}
+
+  \begin{align*}
+    \Delta V = \tilde{\rho}^2 \sin(\tilde{\phi}) \Delta \rho \Delta \theta \Delta \phi && (3)
+  \end{align*}
+
+  donde $\tilde{\rho}$ se encuentra entre $\rho_1$ y $\rho_2, \tilde{\phi}$ se encuentra entre $\phi_1$ y $\phi_2$, $\Delta \rho = \rho_2 - \rho_1$, $\Delta \theta = \theta_2 - \theta_1$, y $\Delta \phi = \phi_2 - \phi_1$.
+
+  Para la integral $\int_{\rho_1}^{\rho_2} \rho^2 ~ d\rho$ aplicamos el Teorema del Valor Medio. 
+  Sabemos que existe un $\tilde{\rho}$ tal que $\rho_1 \leq \tilde{\rho} \leq \rho_2$. Entonces,
+
+  \begin{align*}
+    \int_{\rho_1}^{\rho_2} \rho^2 ~ d\rho 
+    &= \tilde{\rho}^2 (\rho_2 - \rho_1) \\
+    &= \tilde{\rho}^2 \cdot \Delta \rho
+  \end{align*}
+
+  Igualmente, para la integral $\int_{\phi_1}^{\phi_2} \sin{\phi} \, d\phi$ aplicamos el Teorema del Valor Medio.
+  Sabemos que existe un $\tilde{\phi}$ tal que $\phi_1 \leq \tilde{\phi} \leq \phi_2$. Entonces,
+
+  \begin{align*}
+    \int_{\phi_1}^{\phi_2} \sin{\phi} \, d\phi
+    &= \sin{\tilde{\phi}} (\phi_2 - \phi_1) \\
+    &= \sin{\tilde{\phi}} \cdot \Delta \phi
+  \end{align*}
+
+  Además, para la integral $\int_{\theta_1}^{\theta_2} \theta \, d\theta$, ya que el integrando es una constante, el resultado es 
+
+  \begin{align*}
+    \int_{\theta_1}^{\theta_2}  \, d\theta
+    &= \theta_2 - \theta_1 \\
+    &= \Delta \theta
+  \end{align*}
+
+  Juntando los resultados de las integrales anteriores, el volumen del inciso (b) puede ser escrito como
+
+  \begin{align*}
+    \int_{\phi_1}^{\phi_2} \int_{\theta_1}^{\theta_2} \int_{\rho_1}^{\rho_2} \rho^2 \sin{\phi} \, d\rho \, d\theta \, d\phi 
+    &= \int_{\phi_1}^{\phi_2} \sin{\phi} ~d\phi ~ \int_{\theta_1}^{\theta_2} ~d\theta ~ \int_{\rho_1}^{\rho_2} \rho^2 ~d\rho \\
+    &= (\sin{\tilde{\phi}} \cdot \Delta \phi) \cdot (\Delta \theta) \cdot (\tilde{\rho}^2 \cdot \Delta \rho) \\
+    &= \tilde{\rho}^2 \sin{\tilde{\phi}} \Delta \rho \Delta \theta \Delta \phi
+  \end{align*}
+
+  $\therefore \Delta V = \tilde{\rho}^2 \sin{\tilde{\phi}} \Delta \rho \Delta \theta \Delta \phi$
+
+\end{questions}
+
+\end{document} 
